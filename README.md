@@ -39,7 +39,7 @@ Additional findings:
 
 ## Dataset
 
-The benchmark dataset is available on HuggingFace: [aayambansall/CER-Bench](https://huggingface.co/datasets/aayambansall/CER-Bench)
+The benchmark dataset is available on HuggingFace: [[Anonymous — will be revealed upon acceptance]](https://huggingface.co/datasets/[Anonymous — will be revealed upon acceptance])
 
 ## Repository Structure
 
@@ -63,8 +63,8 @@ CER-Bench/
 
 | Model | Base | R@10 | HuggingFace |
 |-------|------|------|-------------|
-| SynthSearch-Qwen3-8B | Qwen/Qwen3-8B | 0.428 | [aayambansall/synthsearch-qwen3-8b-sft-v1](https://huggingface.co/aayambansall/synthsearch-qwen3-8b-sft-v1) |
-| SynthSearch-gpt-oss-20b | openai/gpt-oss-20b | 0.384 | [aayambansall/synthsearch-gptoss20b-sft-v1](https://huggingface.co/aayambansall/synthsearch-gptoss20b-sft-v1) |
+| SynthSearch-Qwen3-8B | Qwen/Qwen3-8B | 0.428 | [[Anonymous — will be revealed upon acceptance]](https://huggingface.co/[Anonymous — will be revealed upon acceptance]) |
+| SynthSearch-gpt-oss-20b | openai/gpt-oss-20b | 0.384 | [[Anonymous — will be revealed upon acceptance]](https://huggingface.co/[Anonymous — will be revealed upon acceptance]) |
 
 ## Installation
 
