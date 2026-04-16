@@ -2,7 +2,9 @@
   "@context": {
     "@vocab": "https://schema.org/",
     "sc": "https://schema.org/",
-    "ml": "http://mlcommons.org/schema/"
+    "ml": "http://mlcommons.org/schema/",
+    "@language": "en",
+    "@base": "cr_base_iri/"
   },
   "@type": "sc:Dataset",
   "name": "CER-Bench",
@@ -15,7 +17,7 @@
   "distribution": [
     {
       "@type": "sc:FileObject",
-      "@id": "v1-test-file",
+      "@id": "v1-test",
       "name": "v1-test",
       "contentUrl": "https://huggingface.co/datasets/aayambansall/CER-Bench/resolve/main/v1/test.jsonl",
       "encodingFormat": "application/jsonlines",
@@ -23,7 +25,7 @@
     },
     {
       "@type": "sc:FileObject",
-      "@id": "v1-train-file",
+      "@id": "v1-train",
       "name": "v1-train",
       "contentUrl": "https://huggingface.co/datasets/aayambansall/CER-Bench/resolve/main/v1/train.jsonl",
       "encodingFormat": "application/jsonlines",
@@ -31,7 +33,7 @@
     },
     {
       "@type": "sc:FileObject",
-      "@id": "v1-dev-file",
+      "@id": "v1-dev",
       "name": "v1-dev",
       "contentUrl": "https://huggingface.co/datasets/aayambansall/CER-Bench/resolve/main/v1/dev.jsonl",
       "encodingFormat": "application/jsonlines",
@@ -39,7 +41,7 @@
     },
     {
       "@type": "sc:FileObject",
-      "@id": "v2-test-file",
+      "@id": "v2-test",
       "name": "v2-test",
       "contentUrl": "https://huggingface.co/datasets/aayambansall/CER-Bench/resolve/main/v2/test.jsonl",
       "encodingFormat": "application/jsonlines",
@@ -55,57 +57,129 @@
           "@type": "ml:Field",
           "name": "task_id",
           "description": "Unique task identifier",
-          "ml:dataType": "sc:Text",
-          "ml:source": {"fileObject": {"@id": "v1-test-file"}, "extract": {"column": "task_id"}}
+          "ml:dataType": {
+            "@id": "sc:Text"
+          },
+          "ml:source": {
+            "sc:distribution": {
+              "@id": "v1-test"
+            },
+            "ml:extract": {
+              "ml:column": "task_id"
+            }
+          }
         },
         {
           "@type": "ml:Field",
           "name": "task_family",
-          "description": "One of: constraint, comparative, contradiction, abstention, multihop, temporal, aggregation, negative",
-          "ml:dataType": "sc:Text",
-          "ml:source": {"fileObject": {"@id": "v1-test-file"}, "extract": {"column": "task_family"}}
+          "description": "Task family (constraint/comparative/contradiction/abstention/multihop/temporal/aggregation/negative)",
+          "ml:dataType": {
+            "@id": "sc:Text"
+          },
+          "ml:source": {
+            "sc:distribution": {
+              "@id": "v1-test"
+            },
+            "ml:extract": {
+              "ml:column": "task_family"
+            }
+          }
         },
         {
           "@type": "ml:Field",
           "name": "question",
           "description": "Natural-language retrieval query",
-          "ml:dataType": "sc:Text",
-          "ml:source": {"fileObject": {"@id": "v1-test-file"}, "extract": {"column": "question"}}
+          "ml:dataType": {
+            "@id": "sc:Text"
+          },
+          "ml:source": {
+            "sc:distribution": {
+              "@id": "v1-test"
+            },
+            "ml:extract": {
+              "ml:column": "question"
+            }
+          }
         },
         {
           "@type": "ml:Field",
           "name": "difficulty",
-          "description": "easy, medium, or hard",
-          "ml:dataType": "sc:Text",
-          "ml:source": {"fileObject": {"@id": "v1-test-file"}, "extract": {"column": "difficulty"}}
+          "description": "easy/medium/hard",
+          "ml:dataType": {
+            "@id": "sc:Text"
+          },
+          "ml:source": {
+            "sc:distribution": {
+              "@id": "v1-test"
+            },
+            "ml:extract": {
+              "ml:column": "difficulty"
+            }
+          }
         },
         {
           "@type": "ml:Field",
           "name": "supporting_doc_ids",
           "description": "JSON array of gold document IDs",
-          "ml:dataType": "sc:Text",
-          "ml:source": {"fileObject": {"@id": "v1-test-file"}, "extract": {"column": "supporting_doc_ids"}}
+          "ml:dataType": {
+            "@id": "sc:Text"
+          },
+          "ml:source": {
+            "sc:distribution": {
+              "@id": "v1-test"
+            },
+            "ml:extract": {
+              "ml:column": "supporting_doc_ids"
+            }
+          }
         },
         {
           "@type": "ml:Field",
           "name": "hard_negative_doc_ids",
           "description": "JSON array of hard negative document IDs",
-          "ml:dataType": "sc:Text",
-          "ml:source": {"fileObject": {"@id": "v1-test-file"}, "extract": {"column": "hard_negative_doc_ids"}}
+          "ml:dataType": {
+            "@id": "sc:Text"
+          },
+          "ml:source": {
+            "sc:distribution": {
+              "@id": "v1-test"
+            },
+            "ml:extract": {
+              "ml:column": "hard_negative_doc_ids"
+            }
+          }
         },
         {
           "@type": "ml:Field",
           "name": "expected_answer_type",
           "description": "Expected answer format",
-          "ml:dataType": "sc:Text",
-          "ml:source": {"fileObject": {"@id": "v1-test-file"}, "extract": {"column": "expected_answer_type"}}
+          "ml:dataType": {
+            "@id": "sc:Text"
+          },
+          "ml:source": {
+            "sc:distribution": {
+              "@id": "v1-test"
+            },
+            "ml:extract": {
+              "ml:column": "expected_answer_type"
+            }
+          }
         },
         {
           "@type": "ml:Field",
           "name": "reference_answer",
           "description": "Brief expected answer",
-          "ml:dataType": "sc:Text",
-          "ml:source": {"fileObject": {"@id": "v1-test-file"}, "extract": {"column": "reference_answer"}}
+          "ml:dataType": {
+            "@id": "sc:Text"
+          },
+          "ml:source": {
+            "sc:distribution": {
+              "@id": "v1-test"
+            },
+            "ml:extract": {
+              "ml:column": "reference_answer"
+            }
+          }
         }
       ]
     }
