@@ -1,0 +1,128 @@
+# Retrieval Configuration
+# SynthSearch-Biomed
+
+version: "0.1.0"
+
+# Index configurations
+indices:
+  bm25:
+    engine: "pyserini"           # or "rank_bm25" for lightweight
+    analyzer: "english"
+    k1: 1.2
+    b: 0.75
+    index_fields: ["title", "abstract_text", "section_text"]
+    index_path: "data/processed/indices/bm25/"
+
+  dense:
+    model: "allenai/specter2"
+    adapter: "allenai/specter2_proximity"   # retrieval adapter
+    embedding_dim: 768
+    batch_size: 64
+    max_length: 512
+    index_engine: "faiss"
+    index_type: "IndexFlatIP"    # inner product (cosine after normalization)
+    index_path: "data/processed/indices/dense/"
+    # For larger corpus, switch to IVF:
+    # index_type: "IndexIVFFlat"
+    # nlist: 1024
+    # nprobe: 64
+
+  hybrid:
+    bm25_weight: 0.4
+    dense_weight: 0.6
+    fusion_method: "reciprocal_rank_fusion"
+    rrf_k: 60                    # RRF constant
+
+  reranker:
+    model: "cross-encoder/ms-marco-MiniLM-L-12-v2"
+    # Alternative: "BAAI/bge-reranker-v2-m3" for multilingual
+    max_length: 512
+    batch_size: 32
+    rerank_depth: 100            # rerank top-100 from hybrid
+
+# Retrieval parameters
+retrieval:
+  top_k_values: [5, 10, 20, 50, 100]
+  primary_eval_k: 10             # primary metric is Recall@10
+
+# Baseline suite
+baselines:
+  - name: "bm25"
+    description: "BM25 lexical baseline"
+    index: "bm25"
+    reranker: null
+    
+  - name: "dense_specter2"
+    description: "SPECTER2 dense retrieval"
+    index: "dense"
+    reranker: null
+    
+  - name: "hybrid"
+    description: "BM25 + SPECTER2 hybrid with RRF"
+    index: "hybrid"
+    reranker: null
+    
+  - name: "hybrid_reranked"
+    description: "Hybrid + cross-encoder reranker"
+    index: "hybrid"
+    reranker: "reranker"
+
+# Agent configuration (Context-1-style controller)
+agent:
+  name: "synthsearch_agent"
+  backbone_llm: null             # set at runtime
+  
+  tools:
+    - name: "search"
+      description: "Search the corpus with optional metadata filters"
+      params: ["query", "filters", "top_k"]
+      
+    - name: "read"
+      description: "Read a specific document or chunk"
+      params: ["doc_id_or_chunk_id"]
+      
+    - name: "prune"
+      description: "Remove items from working evidence set"
+      params: ["item_ids", "reason"]
+      
+    - name: "expand_citations"
+      description: "Retrieve citing and cited papers for a document"
+      params: ["doc_id", "direction"]  # direction: cited_by | references | both
+      
+    - name: "refine_query"
+      description: "Generate a refined subquery based on current evidence"
+      params: ["original_query", "current_evidence_summary", "unresolved_constraints"]
+      
+    - name: "summarize_evidence"
+      description: "Summarize current working evidence set"
+      params: ["item_ids"]
+      
+    - name: "stop"
+      description: "Stop searching, return current evidence set"
+      params: ["reason"]  # "sufficient" | "abstain" | "max_steps"
+
+  # Control loop parameters
+  control:
+    max_search_steps: 8
+    max_total_tool_calls: 30
+    initial_search_top_k: 20
+    refinement_search_top_k: 10
+    max_evidence_set_size: 50     # prune when exceeding this
+    prune_threshold: 20           # target size after pruning
+    enable_citation_expansion: true
+    enable_metadata_filters: true
+    enable_scratchpad: true
+    abstention_confidence_threshold: 0.3  # abstain if confidence below this
+
+  # Rollout configuration
+  rollouts:
+    default: 1
+    rrf_rollouts: 4               # for 4x rollout + RRF fusion
+    rrf_k: 60
+
+# Output paths
+output:
+  indices_dir: "data/processed/indices/"
+  baseline_results: "results/baselines/"
+  agent_results: "results/baselines/"
+  agent_traces: "results/baselines/traces/"

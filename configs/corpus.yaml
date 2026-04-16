@@ -1,0 +1,128 @@
+# Corpus Configuration
+# SynthSearch-Biomed
+
+domain: biomedicine
+version: "0.1.0"
+
+# Corpus size targets
+size:
+  pilot: 10000       # 10K papers for initial development
+  full: 100000       # 100K papers for submission (scale to 250K if needed)
+
+# Data sources (priority order)
+sources:
+  primary:
+    - name: pmc_oa
+      description: "PubMed Central Open Access subset"
+      url: "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_bulk/"
+      provides: [full_text, metadata]
+      license: "CC BY / CC0 (varies by article)"
+      rate_limit: "10 req/sec with API key"
+
+    - name: pubmed
+      description: "PubMed abstracts and metadata via E-utilities"
+      url: "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
+      provides: [abstracts, mesh_terms, publication_types, dates]
+      license: "Public domain (NLM)"
+      rate_limit: "10 req/sec with API key, 3/sec without"
+
+  enrichment:
+    - name: openalex
+      description: "OpenAlex scholarly graph"
+      url: "https://api.openalex.org/"
+      provides: [citation_graph, concepts, institutions, topics]
+      license: "CC0"
+      rate_limit: "100K req/day (polite pool with email)"
+
+    - name: semantic_scholar
+      description: "Semantic Scholar API"
+      url: "https://api.semanticscholar.org/graph/v1/"
+      provides: [citation_graph, tldr, embedding_ids, fields_of_study]
+      license: "Free API"
+      rate_limit: "100 req/5min (free), higher with key"
+
+# Document schema
+document_schema:
+  required_fields:
+    - doc_id          # PMC ID or PubMed ID
+    - title
+    - abstract
+    - year
+    - source          # which source provided this document
+  
+  metadata_fields:
+    - authors
+    - venue           # journal name
+    - doi
+    - pmid
+    - pmcid
+    - mesh_terms      # list of MeSH descriptors
+    - publication_type  # e.g., "Research Article", "Review", "Clinical Trial"
+    - organisms       # extracted organism mentions
+    - keywords
+    - topics          # OpenAlex concepts or S2 fields of study
+    - citation_count
+    - reference_ids   # outgoing citations (list of doc_ids)
+    - cited_by_ids    # incoming citations (list of doc_ids)
+
+  content_fields:
+    - abstract_text
+    - sections        # list of {heading, text, section_type}
+    - figure_captions # list of {figure_id, caption_text}
+    - table_texts     # list of {table_id, caption, body_text}
+    - full_text_available  # boolean
+
+# Chunking configuration
+chunking:
+  strategy: "scientific_structure"   # NOT fixed-token windows
+  
+  chunk_types:
+    - type: abstract
+      max_tokens: 512
+      
+    - type: section
+      max_tokens: 1024
+      split_on: "subsection headings when available"
+      
+    - type: figure_caption
+      max_tokens: 256
+      
+    - type: table_text
+      max_tokens: 512
+
+  # Each chunk inherits document metadata
+  chunk_schema:
+    - chunk_id        # {doc_id}_{section_type}_{index}
+    - doc_id
+    - section_type    # abstract | introduction | methods | results | discussion | caption | table
+    - section_heading # original heading text
+    - text
+    - token_count
+    - position        # ordinal position in document
+
+# Filtering for benchmark-relevant subsets
+filtering:
+  # Exclude reviews, editorials, letters for the retrieval corpus
+  # (keep them in metadata for citation graph)
+  exclude_publication_types:
+    - "Editorial"
+    - "Letter"
+    - "Comment"
+    - "Erratum"
+  
+  # Focus on recent, citable research
+  year_range:
+    min: 2015
+    max: 2026
+  
+  # Require at least abstract
+  require_abstract: true
+
+# Output paths
+output:
+  raw_metadata: "data/raw/metadata/"
+  raw_fulltext: "data/raw/fulltext/"
+  parsed: "data/interim/parsed/"
+  corpus: "data/processed/corpus.jsonl"
+  chunks: "data/processed/chunks.jsonl"
+  corpus_stats: "data/processed/corpus_stats.json"

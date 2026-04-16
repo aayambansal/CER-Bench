@@ -1,0 +1,140 @@
+# Task Generation Configuration
+# SynthSearch-Biomed
+
+version: "0.1.0"
+
+# Size targets
+targets:
+  pilot: 100         # first batch for human audit
+  submission: 500     # final benchmark (300-800 range)
+
+# Task family distribution (8 families)
+family_distribution:
+  constraint: 0.15              # 15% - multi-condition intersection
+  comparative: 0.13             # 13% - both-sides evidence
+  contradiction: 0.13           # 13% - condition-dependent findings
+  abstention: 0.15              # 15% - knowing what you don't know (min 15% per spec)
+  multihop: 0.12                # 12% - cross-paper reasoning chains
+  temporal: 0.10                # 10% - consensus evolution over time
+  aggregation: 0.12             # 12% - exhaustive value collection
+  negative: 0.10                # 10% - null/negative result retrieval
+
+# Difficulty distribution
+difficulty_distribution:
+  easy: 0.20
+  medium: 0.40
+  hard: 0.40
+
+# Generation pipeline stages
+pipeline:
+  # Stage A: Seed extraction
+  seed_extraction:
+    description: "Sample documents and extract entities, conditions, methods, outcomes"
+    seed_selection:
+      method: "stratified_sample"
+      strata: ["publication_type", "year_bucket", "topic_cluster"]
+      papers_per_seed: 3         # read 3 related papers per seed cluster
+    extraction_targets:
+      - organisms
+      - cell_lines
+      - assays_and_methods
+      - interventions_and_treatments
+      - outcomes_and_measurements
+      - experimental_conditions    # temperature, dosage, duration, etc.
+      - comparison_axes            # what can be meaningfully compared
+
+  # Stage B: Task synthesis
+  task_synthesis:
+    description: "Generate questions from extracted facts"
+    templates_per_family:
+      constraint: 8              # number of question templates
+      comparative: 6
+      contradiction: 5
+      abstention: 6
+      multihop: 5
+      temporal: 5
+      aggregation: 5
+      negative: 5
+    constraints_per_task:
+      easy: [1, 2]              # min, max constraints
+      medium: [2, 3]
+      hard: [3, 6]
+    required_outputs:
+      - question
+      - decomposition_hints
+      - required_constraints
+      - supporting_doc_ids
+      - supporting_passages
+      - hard_negative_doc_ids
+      - expected_answer_type
+      - reference_answer
+
+  # Stage C: Verification
+  verification:
+    description: "Verify each task against corpus"
+    checks:
+      - name: "evidence_exists"
+        description: "All supporting docs exist in corpus and contain claimed passages"
+        required: true
+      - name: "constraints_satisfied"
+        description: "Supporting docs actually satisfy all listed constraints"
+        required: true
+      - name: "negatives_valid"
+        description: "Hard negatives match topic but fail on at least one constraint"
+        required: true
+      - name: "abstention_valid"
+        description: "For abstention tasks, no corpus doc satisfies all constraints"
+        required: true
+      - name: "difficulty_calibrated"
+        description: "BM25 top-10 check: easy tasks found, hard tasks not found"
+        required: false
+    auto_repair:
+      enabled: true
+      max_attempts: 2
+
+# Hard negative generation
+hard_negatives:
+  min_per_task: 2
+  max_per_task: 5
+  strategies:
+    - name: "same_topic_wrong_organism"
+      weight: 0.25
+    - name: "same_intervention_wrong_outcome"
+      weight: 0.20
+    - name: "same_organism_wrong_method"
+      weight: 0.20
+    - name: "high_bm25_fails_constraint"
+      weight: 0.20
+    - name: "same_mesh_heading_different_study_type"
+      weight: 0.15
+
+# LLM configuration for generation (provider set at runtime)
+llm:
+  model: null                   # set at runtime (e.g., "gpt-4o", "claude-sonnet-4-20250514")
+  temperature: 0.7              # for generation
+  verification_temperature: 0.0 # for verification (deterministic)
+  max_tokens_generation: 2048
+  max_tokens_verification: 1024
+
+# Splits
+splits:
+  train: 0.40
+  dev: 0.20
+  test: 0.40
+  # Stratify by family and difficulty
+  stratify_by: ["task_family", "difficulty"]   # 8 families x 3 difficulties = 24 strata
+  # Seed for reproducibility
+  random_seed: 42
+
+# Output paths
+output:
+  seed_extractions: "data/interim/seed_extractions.jsonl"
+  raw_tasks: "data/interim/raw_tasks.jsonl"
+  verified_tasks: "data/interim/verified_tasks.jsonl"
+  rejected_tasks: "data/interim/rejected_tasks.jsonl"
+  benchmark_train: "data/benchmark/train.jsonl"
+  benchmark_dev: "data/benchmark/dev.jsonl"
+  benchmark_test: "data/benchmark/test.jsonl"
+  benchmark_schema: "data/benchmark/schema.json"
+  generation_log: "data/interim/generation_log.jsonl"
+  audit_queue: "data/interim/audit_queue.jsonl"

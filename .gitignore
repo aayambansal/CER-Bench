@@ -1,0 +1,36 @@
+# Data (too large for git — hosted on HuggingFace)
+data/raw/
+data/interim/
+data/processed/
+*.pkl
+*.npy
+*.index
+*.npz
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.eggs/
+
+# Environment
+.env
+*.pem
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# LaTeX build artifacts
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.log
+paper/*.out
+paper/*.fdb_latexmk
+paper/*.fls
+paper/*.synctex.gz

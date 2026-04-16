@@ -1,0 +1,255 @@
+# Evaluation Configuration
+# SynthSearch-Biomed
+
+version: "0.1.0"
+
+# Metric definitions
+metrics:
+  # Layer 1: Retrieval metrics
+  retrieval:
+    - name: "recall_at_k"
+      k_values: [5, 10, 20, 50]
+      level: ["document", "passage"]
+      primary: true               # Recall@10 is the primary metric
+      
+    - name: "ndcg_at_k"
+      k_values: [10, 20]
+      level: ["document"]
+      
+    - name: "mrr"
+      level: ["document"]
+      
+    - name: "evidence_set_recall"
+      description: "Fraction of gold evidence documents retrieved"
+      level: ["document"]
+      
+    - name: "passage_recall"
+      description: "Fraction of gold passages retrieved"
+      level: ["passage"]
+      match_method: "fuzzy"       # fuzzy string matching for passage boundaries
+      fuzzy_threshold: 0.8        # 80% character overlap
+
+  # Layer 2: Workflow metrics
+  workflow:
+    - name: "constraint_coverage"
+      description: "Fraction of required constraints satisfied by retrieved evidence"
+      
+    - name: "duplicate_evidence_ratio"
+      description: "Fraction of retrieved docs that are redundant"
+      
+    - name: "search_iterations"
+      description: "Number of search steps used"
+      
+    - name: "metadata_filter_usage"
+      description: "Fraction of searches that used metadata filters"
+      
+    - name: "citation_expansion_utility"
+      description: "Fraction of final evidence found via citation expansion"
+
+  # Layer 3: Downstream answer metrics
+  downstream:
+    - name: "answer_correctness"
+      description: "LLM-judged correctness of synthesized answer"
+      judge_model: null           # set at runtime
+      
+    - name: "citation_support_rate"
+      description: "Fraction of answer claims backed by retrieved evidence"
+      
+    - name: "unsupported_claim_rate"
+      description: "Fraction of answer claims not supported by any retrieved doc"
+
+  # Layer 4: Abstention metrics
+  abstention:
+    - name: "abstention_precision"
+      description: "When system abstains, fraction that are truly unanswerable"
+      
+    - name: "abstention_recall"
+      description: "Fraction of unanswerable queries where system correctly abstains"
+      
+    - name: "abstention_f1"
+      description: "Harmonic mean of abstention precision and recall"
+
+  # Layer 5: Family-specific metrics (new families E-H)
+  family_specific:
+    # Multi-hop (Family E)
+    - name: "chain_completeness"
+      description: "Fraction of reasoning chain links covered by retrieved evidence"
+      family: "multihop"
+      
+    - name: "link_recall"
+      description: "Fraction of individual chain links found"
+      family: "multihop"
+      
+    - name: "bridging_entity_found"
+      description: "Whether the bridging entity connecting chain links was identified"
+      family: "multihop"
+    
+    # Temporal (Family F)
+    - name: "era_coverage"
+      description: "Fraction of distinct time eras represented in retrieved evidence"
+      family: "temporal"
+      
+    - name: "temporal_span_ratio"
+      description: "Ratio of retrieved temporal range to gold temporal range"
+      family: "temporal"
+    
+    # Aggregation (Family G)
+    - name: "value_completeness"
+      description: "Fraction of gold quantitative values found in retrieved evidence"
+      family: "aggregation"
+      
+    - name: "source_coverage"
+      description: "Fraction of distinct source papers reporting the value that were retrieved"
+      family: "aggregation"
+    
+    # Negative results (Family H)
+    - name: "negative_precision"
+      description: "Fraction of retrieved docs that genuinely report negative/null findings"
+      family: "negative"
+      
+    - name: "negative_recall"
+      description: "Fraction of gold negative-result docs successfully retrieved"
+      family: "negative"
+
+  # Layer 6: Efficiency metrics
+  efficiency:
+    - name: "latency_seconds"
+      description: "Wall-clock time per task"
+      
+    - name: "cost_usd"
+      description: "Estimated API cost per task"
+      
+    - name: "total_tokens"
+      description: "Total input + output tokens per task"
+      
+    - name: "model_calls"
+      description: "Number of LLM calls per task"
+
+# Evaluation splits
+evaluation:
+  # Only evaluate on dev during development
+  dev_eval: true
+  # Test eval only for final results
+  test_eval: false               # set to true for final run only
+  
+  # Significance testing
+  significance:
+    method: "paired_bootstrap"
+    n_bootstrap: 1000
+    alpha: 0.05
+    
+  # Stratified analysis (8 families)
+  stratify_by:
+    - "task_family"   # constraint, comparative, contradiction, abstention, multihop, temporal, aggregation, negative
+    - "difficulty"
+
+# Ablation configurations
+ablations:
+  - name: "no_metadata_filters"
+    description: "Agent without metadata filtering"
+    agent_override:
+      enable_metadata_filters: false
+
+  - name: "no_pruning"
+    description: "Agent without evidence pruning"
+    agent_override:
+      max_evidence_set_size: 9999
+      prune_threshold: 9999
+
+  - name: "no_citation_expansion"
+    description: "Agent without citation graph traversal"
+    agent_override:
+      enable_citation_expansion: false
+
+  - name: "no_scratchpad"
+    description: "Agent without scratchpad/summary"
+    agent_override:
+      enable_scratchpad: false
+
+  - name: "single_step"
+    description: "Agent limited to one search step"
+    agent_override:
+      max_search_steps: 1
+      max_total_tool_calls: 5
+
+  - name: "no_abstention"
+    description: "Agent forced to always return results"
+    agent_override:
+      abstention_confidence_threshold: 0.0
+
+# Reporting
+reporting:
+  # Tables to generate
+  tables:
+    - name: "main_results"
+      description: "All baselines vs agent on primary metrics"
+      metrics: ["recall_at_5", "recall_at_10", "recall_at_20", "ndcg_at_10", "mrr", "evidence_set_recall"]
+      split: "test"
+      
+    - name: "per_family_results"
+      description: "Results broken down by 8 task families"
+      metrics: ["recall_at_10", "evidence_set_recall", "constraint_coverage"]
+      split: "test"
+      group_by: "task_family"   # constraint, comparative, contradiction, abstention, multihop, temporal, aggregation, negative
+      
+    - name: "ablation_results"
+      description: "Ablation study results"
+      metrics: ["recall_at_10", "evidence_set_recall"]
+      split: "dev"
+      
+    - name: "efficiency_results"
+      description: "Cost and latency comparison"
+      metrics: ["latency_seconds", "cost_usd", "total_tokens", "model_calls"]
+      split: "dev"
+      
+    - name: "abstention_results"
+      description: "Abstention quality"
+      metrics: ["abstention_precision", "abstention_recall", "abstention_f1"]
+      split: "test"
+      
+    - name: "multihop_results"
+      description: "Multi-hop chain completeness"
+      metrics: ["chain_completeness", "link_recall", "bridging_entity_found"]
+      split: "test"
+      
+    - name: "temporal_results"
+      description: "Temporal coverage across eras"
+      metrics: ["era_coverage", "temporal_span_ratio", "recall_at_10"]
+      split: "test"
+      
+    - name: "aggregation_results"
+      description: "Exhaustive value collection quality"
+      metrics: ["recall_at_50", "value_completeness", "source_coverage"]
+      split: "test"
+      
+    - name: "negative_results"
+      description: "Negative/null result retrieval quality"
+      metrics: ["negative_precision", "negative_recall", "recall_at_10"]
+      split: "test"
+
+  # Figures to generate
+  figures:
+    - name: "recall_by_family"
+      type: "grouped_bar"
+      x: "task_family"
+      y: "recall_at_10"
+      hue: "baseline"
+      
+    - name: "recall_vs_cost"
+      type: "scatter"
+      x: "cost_usd"
+      y: "recall_at_10"
+      hue: "baseline"
+      
+    - name: "difficulty_curve"
+      type: "line"
+      x: "difficulty"
+      y: "recall_at_10"
+      hue: "baseline"
+
+# Output paths
+output:
+  metrics_dir: "results/"
+  tables_dir: "results/paper_tables/"
+  figures_dir: "results/paper_figures/"
+  reports_dir: "results/"

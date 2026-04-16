@@ -1,0 +1,20 @@
+{
+  "dataset_name": "SynthSearch-Biomed",
+  "version": "0.1.0-pilot",
+  "task_families": [
+    "abstention",
+    "aggregation",
+    "comparative",
+    "constraint",
+    "contradiction",
+    "multihop",
+    "negative",
+    "temporal"
+  ],
+  "splits": {
+    "train": 119,
+    "dev": 60,
+    "test": 125
+  },
+  "total": 304
+}
