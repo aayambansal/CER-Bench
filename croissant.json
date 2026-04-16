@@ -2,17 +2,16 @@
   "@context": {
     "@vocab": "https://schema.org/",
     "sc": "https://schema.org/",
-    "ml": "http://mlcommons.org/schema/",
-    "wd": "https://www.wikidata.org/wiki/"
+    "ml": "http://mlcommons.org/schema/"
   },
   "@type": "sc:Dataset",
   "name": "CER-Bench",
-  "description": "Constrained Evidence Retrieval Benchmark for Biomedical Literature. 304 tasks (v1) + 200 tasks (v2) across 8 retrieval families testing condition-sensitive evidence collection.",
+  "description": "Constrained Evidence Retrieval Benchmark for Biomedical Literature. 304 tasks (v1) + 200 tasks (v2) across 8 retrieval families.",
   "license": "https://www.apache.org/licenses/LICENSE-2.0",
   "url": "https://huggingface.co/datasets/aayambansall/CER-Bench",
   "version": "1.0.0",
   "datePublished": "2026-04-16",
-  "citation": "CER-Bench: A Constrained Evidence Retrieval Benchmark for Biomedical Literature. NeurIPS 2026 Evaluations and Datasets Track.",
+  "citation": "CER-Bench: A Constrained Evidence Retrieval Benchmark for Biomedical Literature. NeurIPS 2026.",
   "distribution": [
     {
       "@type": "sc:FileObject",
@@ -55,90 +54,58 @@
         {
           "@type": "ml:Field",
           "name": "task_id",
-          "ml:dataType": "sc:Text",
           "description": "Unique task identifier",
-          "ml:source": {
-            "@type": "ml:DataSource",
-            "distribution": {"@id": "v1-test-file"},
-            "ml:extract": {"ml:column": "task_id"}
-          }
+          "ml:dataType": "sc:Text",
+          "ml:source": {"fileObject": {"@id": "v1-test-file"}, "extract": {"column": "task_id"}}
         },
         {
           "@type": "ml:Field",
           "name": "task_family",
-          "ml:dataType": "sc:Text",
           "description": "One of: constraint, comparative, contradiction, abstention, multihop, temporal, aggregation, negative",
-          "ml:source": {
-            "@type": "ml:DataSource",
-            "distribution": {"@id": "v1-test-file"},
-            "ml:extract": {"ml:column": "task_family"}
-          }
+          "ml:dataType": "sc:Text",
+          "ml:source": {"fileObject": {"@id": "v1-test-file"}, "extract": {"column": "task_family"}}
         },
         {
           "@type": "ml:Field",
           "name": "question",
-          "ml:dataType": "sc:Text",
           "description": "Natural-language retrieval query",
-          "ml:source": {
-            "@type": "ml:DataSource",
-            "distribution": {"@id": "v1-test-file"},
-            "ml:extract": {"ml:column": "question"}
-          }
+          "ml:dataType": "sc:Text",
+          "ml:source": {"fileObject": {"@id": "v1-test-file"}, "extract": {"column": "question"}}
         },
         {
           "@type": "ml:Field",
           "name": "difficulty",
-          "ml:dataType": "sc:Text",
           "description": "easy, medium, or hard",
-          "ml:source": {
-            "@type": "ml:DataSource",
-            "distribution": {"@id": "v1-test-file"},
-            "ml:extract": {"ml:column": "difficulty"}
-          }
+          "ml:dataType": "sc:Text",
+          "ml:source": {"fileObject": {"@id": "v1-test-file"}, "extract": {"column": "difficulty"}}
         },
         {
           "@type": "ml:Field",
           "name": "supporting_doc_ids",
-          "ml:dataType": "sc:Text",
           "description": "JSON array of gold document IDs",
-          "ml:source": {
-            "@type": "ml:DataSource",
-            "distribution": {"@id": "v1-test-file"},
-            "ml:extract": {"ml:column": "supporting_doc_ids"}
-          }
+          "ml:dataType": "sc:Text",
+          "ml:source": {"fileObject": {"@id": "v1-test-file"}, "extract": {"column": "supporting_doc_ids"}}
         },
         {
           "@type": "ml:Field",
           "name": "hard_negative_doc_ids",
-          "ml:dataType": "sc:Text",
           "description": "JSON array of hard negative document IDs",
-          "ml:source": {
-            "@type": "ml:DataSource",
-            "distribution": {"@id": "v1-test-file"},
-            "ml:extract": {"ml:column": "hard_negative_doc_ids"}
-          }
+          "ml:dataType": "sc:Text",
+          "ml:source": {"fileObject": {"@id": "v1-test-file"}, "extract": {"column": "hard_negative_doc_ids"}}
         },
         {
           "@type": "ml:Field",
           "name": "expected_answer_type",
-          "ml:dataType": "sc:Text",
           "description": "Expected answer format",
-          "ml:source": {
-            "@type": "ml:DataSource",
-            "distribution": {"@id": "v1-test-file"},
-            "ml:extract": {"ml:column": "expected_answer_type"}
-          }
+          "ml:dataType": "sc:Text",
+          "ml:source": {"fileObject": {"@id": "v1-test-file"}, "extract": {"column": "expected_answer_type"}}
         },
         {
           "@type": "ml:Field",
           "name": "reference_answer",
-          "ml:dataType": "sc:Text",
           "description": "Brief expected answer",
-          "ml:source": {
-            "@type": "ml:DataSource",
-            "distribution": {"@id": "v1-test-file"},
-            "ml:extract": {"ml:column": "reference_answer"}
-          }
+          "ml:dataType": "sc:Text",
+          "ml:source": {"fileObject": {"@id": "v1-test-file"}, "extract": {"column": "reference_answer"}}
         }
       ]
     }
