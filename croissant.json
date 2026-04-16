@@ -2,11 +2,12 @@
   "@context": {
     "@vocab": "https://schema.org/",
     "sc": "https://schema.org/",
-    "ml": "http://mlcommons.org/schema/"
+    "ml": "http://mlcommons.org/schema/",
+    "wd": "https://www.wikidata.org/wiki/"
   },
   "@type": "sc:Dataset",
   "name": "CER-Bench",
-  "description": "Constrained Evidence Retrieval Benchmark for Biomedical Literature. 304 tasks (v1) + 200 tasks (v2) across 8 retrieval families testing condition-sensitive evidence collection in biomedical literature.",
+  "description": "Constrained Evidence Retrieval Benchmark for Biomedical Literature. 304 tasks (v1) + 200 tasks (v2) across 8 retrieval families testing condition-sensitive evidence collection.",
   "license": "https://www.apache.org/licenses/LICENSE-2.0",
   "url": "https://huggingface.co/datasets/aayambansall/CER-Bench",
   "version": "1.0.0",
@@ -15,20 +16,7 @@
   "distribution": [
     {
       "@type": "sc:FileObject",
-      "name": "v1-train",
-      "contentUrl": "https://huggingface.co/datasets/aayambansall/CER-Bench/resolve/main/v1/train.jsonl",
-      "encodingFormat": "application/jsonlines",
-      "sha256": "467a5e0ff7a2aa6fed13eba43336e216582542f3ded9031d477d747e750236c1"
-    },
-    {
-      "@type": "sc:FileObject",
-      "name": "v1-dev",
-      "contentUrl": "https://huggingface.co/datasets/aayambansall/CER-Bench/resolve/main/v1/dev.jsonl",
-      "encodingFormat": "application/jsonlines",
-      "sha256": "0979a822ac4eec5782cbcfdd5241cd3d8c792b10d7f6b407aa0eb419da5e53ec"
-    },
-    {
-      "@type": "sc:FileObject",
+      "@id": "v1-test-file",
       "name": "v1-test",
       "contentUrl": "https://huggingface.co/datasets/aayambansall/CER-Bench/resolve/main/v1/test.jsonl",
       "encodingFormat": "application/jsonlines",
@@ -36,6 +24,23 @@
     },
     {
       "@type": "sc:FileObject",
+      "@id": "v1-train-file",
+      "name": "v1-train",
+      "contentUrl": "https://huggingface.co/datasets/aayambansall/CER-Bench/resolve/main/v1/train.jsonl",
+      "encodingFormat": "application/jsonlines",
+      "sha256": "467a5e0ff7a2aa6fed13eba43336e216582542f3ded9031d477d747e750236c1"
+    },
+    {
+      "@type": "sc:FileObject",
+      "@id": "v1-dev-file",
+      "name": "v1-dev",
+      "contentUrl": "https://huggingface.co/datasets/aayambansall/CER-Bench/resolve/main/v1/dev.jsonl",
+      "encodingFormat": "application/jsonlines",
+      "sha256": "0979a822ac4eec5782cbcfdd5241cd3d8c792b10d7f6b407aa0eb419da5e53ec"
+    },
+    {
+      "@type": "sc:FileObject",
+      "@id": "v2-test-file",
       "name": "v2-test",
       "contentUrl": "https://huggingface.co/datasets/aayambansall/CER-Bench/resolve/main/v2/test.jsonl",
       "encodingFormat": "application/jsonlines",
@@ -47,19 +52,95 @@
       "@type": "ml:RecordSet",
       "name": "tasks",
       "ml:field": [
-        {"@type": "ml:Field", "name": "task_id", "dataType": "sc:Text", "description": "Unique task identifier"},
-        {"@type": "ml:Field", "name": "task_family", "dataType": "sc:Text", "description": "One of: constraint, comparative, contradiction, abstention, multihop, temporal, aggregation, negative"},
-        {"@type": "ml:Field", "name": "question", "dataType": "sc:Text", "description": "Natural-language retrieval query"},
-        {"@type": "ml:Field", "name": "difficulty", "dataType": "sc:Text", "description": "easy, medium, or hard"},
-        {"@type": "ml:Field", "name": "supporting_doc_ids", "dataType": "sc:Text", "description": "JSON array of gold document IDs"},
-        {"@type": "ml:Field", "name": "hard_negative_doc_ids", "dataType": "sc:Text", "description": "JSON array of hard negative document IDs"},
-        {"@type": "ml:Field", "name": "expected_answer_type", "dataType": "sc:Text", "description": "Expected answer format"},
-        {"@type": "ml:Field", "name": "reference_answer", "dataType": "sc:Text", "description": "Brief expected answer"}
-      ],
-      "ml:source": {
-        "@type": "ml:DataSource",
-        "distribution": "v1-test"
-      }
+        {
+          "@type": "ml:Field",
+          "name": "task_id",
+          "ml:dataType": "sc:Text",
+          "description": "Unique task identifier",
+          "ml:source": {
+            "@type": "ml:DataSource",
+            "distribution": {"@id": "v1-test-file"},
+            "ml:extract": {"ml:column": "task_id"}
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "task_family",
+          "ml:dataType": "sc:Text",
+          "description": "One of: constraint, comparative, contradiction, abstention, multihop, temporal, aggregation, negative",
+          "ml:source": {
+            "@type": "ml:DataSource",
+            "distribution": {"@id": "v1-test-file"},
+            "ml:extract": {"ml:column": "task_family"}
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "question",
+          "ml:dataType": "sc:Text",
+          "description": "Natural-language retrieval query",
+          "ml:source": {
+            "@type": "ml:DataSource",
+            "distribution": {"@id": "v1-test-file"},
+            "ml:extract": {"ml:column": "question"}
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "difficulty",
+          "ml:dataType": "sc:Text",
+          "description": "easy, medium, or hard",
+          "ml:source": {
+            "@type": "ml:DataSource",
+            "distribution": {"@id": "v1-test-file"},
+            "ml:extract": {"ml:column": "difficulty"}
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "supporting_doc_ids",
+          "ml:dataType": "sc:Text",
+          "description": "JSON array of gold document IDs",
+          "ml:source": {
+            "@type": "ml:DataSource",
+            "distribution": {"@id": "v1-test-file"},
+            "ml:extract": {"ml:column": "supporting_doc_ids"}
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "hard_negative_doc_ids",
+          "ml:dataType": "sc:Text",
+          "description": "JSON array of hard negative document IDs",
+          "ml:source": {
+            "@type": "ml:DataSource",
+            "distribution": {"@id": "v1-test-file"},
+            "ml:extract": {"ml:column": "hard_negative_doc_ids"}
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "expected_answer_type",
+          "ml:dataType": "sc:Text",
+          "description": "Expected answer format",
+          "ml:source": {
+            "@type": "ml:DataSource",
+            "distribution": {"@id": "v1-test-file"},
+            "ml:extract": {"ml:column": "expected_answer_type"}
+          }
+        },
+        {
+          "@type": "ml:Field",
+          "name": "reference_answer",
+          "ml:dataType": "sc:Text",
+          "description": "Brief expected answer",
+          "ml:source": {
+            "@type": "ml:DataSource",
+            "distribution": {"@id": "v1-test-file"},
+            "ml:extract": {"ml:column": "reference_answer"}
+          }
+        }
+      ]
     }
   ]
 }
