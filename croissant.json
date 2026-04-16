@@ -1,0 +1,53 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "sc": "https://schema.org/",
+    "ml": "http://mlcommons.org/schema/"
+  },
+  "@type": "sc:Dataset",
+  "name": "CER-Bench",
+  "description": "Constrained Evidence Retrieval Benchmark for Biomedical Literature. 304 tasks (v1) + 200 tasks (v2) across 8 retrieval families testing condition-sensitive evidence collection.",
+  "license": "https://www.apache.org/licenses/LICENSE-2.0",
+  "url": "https://huggingface.co/datasets/aayambansall/CER-Bench",
+  "distribution": [
+    {
+      "@type": "sc:FileObject",
+      "name": "v1-train",
+      "contentUrl": "https://huggingface.co/datasets/aayambansall/CER-Bench/resolve/main/v1/train.jsonl",
+      "encodingFormat": "application/jsonl"
+    },
+    {
+      "@type": "sc:FileObject",
+      "name": "v1-dev",
+      "contentUrl": "https://huggingface.co/datasets/aayambansall/CER-Bench/resolve/main/v1/dev.jsonl",
+      "encodingFormat": "application/jsonl"
+    },
+    {
+      "@type": "sc:FileObject",
+      "name": "v1-test",
+      "contentUrl": "https://huggingface.co/datasets/aayambansall/CER-Bench/resolve/main/v1/test.jsonl",
+      "encodingFormat": "application/jsonl"
+    },
+    {
+      "@type": "sc:FileObject",
+      "name": "v2-test",
+      "contentUrl": "https://huggingface.co/datasets/aayambansall/CER-Bench/resolve/main/v2/test.jsonl",
+      "encodingFormat": "application/jsonl"
+    }
+  ],
+  "ml:recordSet": [
+    {
+      "name": "tasks",
+      "field": [
+        {"name": "task_id", "dataType": "sc:Text"},
+        {"name": "task_family", "dataType": "sc:Text", "description": "One of: constraint, comparative, contradiction, abstention, multihop, temporal, aggregation, negative"},
+        {"name": "question", "dataType": "sc:Text"},
+        {"name": "difficulty", "dataType": "sc:Text"},
+        {"name": "supporting_doc_ids", "dataType": "sc:Text", "description": "JSON array of gold document IDs"},
+        {"name": "hard_negative_doc_ids", "dataType": "sc:Text"},
+        {"name": "expected_answer_type", "dataType": "sc:Text"},
+        {"name": "reference_answer", "dataType": "sc:Text"}
+      ]
+    }
+  ]
+}
