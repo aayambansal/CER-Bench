@@ -6,48 +6,60 @@
   },
   "@type": "sc:Dataset",
   "name": "CER-Bench",
-  "description": "Constrained Evidence Retrieval Benchmark for Biomedical Literature. 304 tasks (v1) + 200 tasks (v2) across 8 retrieval families testing condition-sensitive evidence collection.",
+  "description": "Constrained Evidence Retrieval Benchmark for Biomedical Literature. 304 tasks (v1) + 200 tasks (v2) across 8 retrieval families testing condition-sensitive evidence collection in biomedical literature.",
   "license": "https://www.apache.org/licenses/LICENSE-2.0",
   "url": "https://huggingface.co/datasets/aayambansall/CER-Bench",
+  "version": "1.0.0",
+  "datePublished": "2026-04-16",
+  "citation": "CER-Bench: A Constrained Evidence Retrieval Benchmark for Biomedical Literature. NeurIPS 2026 Evaluations and Datasets Track.",
   "distribution": [
     {
       "@type": "sc:FileObject",
       "name": "v1-train",
       "contentUrl": "https://huggingface.co/datasets/aayambansall/CER-Bench/resolve/main/v1/train.jsonl",
-      "encodingFormat": "application/jsonl"
+      "encodingFormat": "application/jsonlines",
+      "sha256": "467a5e0ff7a2aa6fed13eba43336e216582542f3ded9031d477d747e750236c1"
     },
     {
       "@type": "sc:FileObject",
       "name": "v1-dev",
       "contentUrl": "https://huggingface.co/datasets/aayambansall/CER-Bench/resolve/main/v1/dev.jsonl",
-      "encodingFormat": "application/jsonl"
+      "encodingFormat": "application/jsonlines",
+      "sha256": "0979a822ac4eec5782cbcfdd5241cd3d8c792b10d7f6b407aa0eb419da5e53ec"
     },
     {
       "@type": "sc:FileObject",
       "name": "v1-test",
       "contentUrl": "https://huggingface.co/datasets/aayambansall/CER-Bench/resolve/main/v1/test.jsonl",
-      "encodingFormat": "application/jsonl"
+      "encodingFormat": "application/jsonlines",
+      "sha256": "33158e70ebd3e6438530553b2686354f6d2fa07e60373e9fd4ae63bd52796d76"
     },
     {
       "@type": "sc:FileObject",
       "name": "v2-test",
       "contentUrl": "https://huggingface.co/datasets/aayambansall/CER-Bench/resolve/main/v2/test.jsonl",
-      "encodingFormat": "application/jsonl"
+      "encodingFormat": "application/jsonlines",
+      "sha256": "ac517650050e55ee41e56dee182183847ac27c566463157dd41b3d7dba550b48"
     }
   ],
   "ml:recordSet": [
     {
+      "@type": "ml:RecordSet",
       "name": "tasks",
-      "field": [
-        {"name": "task_id", "dataType": "sc:Text"},
-        {"name": "task_family", "dataType": "sc:Text", "description": "One of: constraint, comparative, contradiction, abstention, multihop, temporal, aggregation, negative"},
-        {"name": "question", "dataType": "sc:Text"},
-        {"name": "difficulty", "dataType": "sc:Text"},
-        {"name": "supporting_doc_ids", "dataType": "sc:Text", "description": "JSON array of gold document IDs"},
-        {"name": "hard_negative_doc_ids", "dataType": "sc:Text"},
-        {"name": "expected_answer_type", "dataType": "sc:Text"},
-        {"name": "reference_answer", "dataType": "sc:Text"}
-      ]
+      "ml:field": [
+        {"@type": "ml:Field", "name": "task_id", "dataType": "sc:Text", "description": "Unique task identifier"},
+        {"@type": "ml:Field", "name": "task_family", "dataType": "sc:Text", "description": "One of: constraint, comparative, contradiction, abstention, multihop, temporal, aggregation, negative"},
+        {"@type": "ml:Field", "name": "question", "dataType": "sc:Text", "description": "Natural-language retrieval query"},
+        {"@type": "ml:Field", "name": "difficulty", "dataType": "sc:Text", "description": "easy, medium, or hard"},
+        {"@type": "ml:Field", "name": "supporting_doc_ids", "dataType": "sc:Text", "description": "JSON array of gold document IDs"},
+        {"@type": "ml:Field", "name": "hard_negative_doc_ids", "dataType": "sc:Text", "description": "JSON array of hard negative document IDs"},
+        {"@type": "ml:Field", "name": "expected_answer_type", "dataType": "sc:Text", "description": "Expected answer format"},
+        {"@type": "ml:Field", "name": "reference_answer", "dataType": "sc:Text", "description": "Brief expected answer"}
+      ],
+      "ml:source": {
+        "@type": "ml:DataSource",
+        "distribution": "v1-test"
+      }
     }
   ]
 }
