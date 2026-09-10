@@ -29,6 +29,6 @@ Requires a TeX distribution with `pdflatex` and `bibtex`. The build fails on unr
 
 ## Submission bundles
 
-- `arxiv_bundle.tar.gz` — flat tarball for arXiv: `cerbench_arxiv.tex`, `cerbench_body.tex`, `cerbench_arxiv.bbl`, style files, `figures/`. arXiv compiles `cerbench_arxiv.tex` (the only file with `\documentclass`).
+- `arxiv_bundle.zip` / `arxiv_bundle.tar.gz` — the same flat arXiv upload in both accepted formats (files at the archive root, no wrapper directory): `cerbench_arxiv.tex`, `cerbench_body.tex`, `cerbench_arxiv.bbl`, style files, `figures/`. arXiv compiles `cerbench_arxiv.tex` (the only file with `\documentclass`); both archives were test-compiled standalone.
 - `OPENREVIEW_FORM.md` — title, keywords, TL;DR, abstract (TeX-safe), primary area, AI-assistance boxes.
 - `supplementary_material.zip` — anonymized supplement for OpenReview (code, task files, saved rankings, judgments, traces, audits, paper source); built by `make_supplement.py` from the committed repository tree with names and absolute paths scrubbed. Not committed to git.
