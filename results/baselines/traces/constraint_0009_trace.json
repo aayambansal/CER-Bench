@@ -1,0 +1,24 @@
+[
+  {
+    "round": 0,
+    "action": {
+      "action": "SEARCH",
+      "query": "CAR T cell therapy clinical implementation challenges tumor microenvironment CD19 solid tumors"
+    }
+  },
+  {
+    "round": 1,
+    "action": {
+      "action": "REFINE",
+      "reasoning": "Need more specific focus on CD19-targeting and clinical implementation challenges. Current results cover solid tumors well but lack specific CD19 focus and detailed clinical implementation barriers.",
+      "query": "CD19 CAR T cell therapy clinical challenges manufacturing toxicity cytokine release syndrome"
+    }
+  },
+  {
+    "round": 2,
+    "action": {
+      "action": "SEARCH",
+      "query": "CAR T cell therapy manufacturing challenges cost accessibility regulatory approval clinical implementation"
+    }
+  }
+]

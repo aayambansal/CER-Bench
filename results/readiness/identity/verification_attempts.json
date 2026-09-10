@@ -1,0 +1,8 @@
+[
+  {
+    "argv": ["/Users/aayambansal/.config/openscience/data-root/conda/envs/python/bin/python", "-B", "results/readiness/identity/verify_local.py"],
+    "returncode": 1,
+    "error": "AssertionError: ['/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/results/readiness/budget/tests.xml']",
+    "interpretation": "First replay passed candidate checks but a later broad historical snapshot check detected a changed result outside identity ownership. No outside file was modified by this phase. Verifier revised to report other-result changes while still failing on data source changes."
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "scope": "static source checks and selected evidence assertions only",
+  "citations": [
+    "beir2021",
+    "bioasq2015",
+    "buckley2004incomplete",
+    "dorismae2023",
+    "litsearch2024",
+    "medcpt2023",
+    "openscholar2026",
+    "robertson2009",
+    "rrf2009",
+    "scifact2020",
+    "specter2",
+    "trecpm2017",
+    "voorhees2000judgments",
+    "zheng2023judge"
+  ],
+  "cited_entry_count": 14,
+  "bibliography_entry_count": 27,
+  "cross_references_resolved": 5,
+  "environments_and_braces_balanced": true,
+  "unchanged_copy_sha256": {
+    "refs.bib": "746ddd21419aa6d7e653f96fffa8351f463eeab783a2a587d8913a890fd6ed77",
+    "iclr2027_conference.sty": "797deef41724e93761426ac0cbcca46279a91cc650dd1f0ce76a4f08d2098ea6",
+    "iclr2027_conference.bst": "2d67552db7ed38ccfccb5957b52f95656e25c249724761d3cf5f7922ad1844c5",
+    "natbib.sty": "88bc70c0e48461934cab5b2accef06b74a8b3ac45ad03ccd3f2a6b7e0d6d530d",
+    "fancyhdr.sty": "b56ec4434b9f4607529a4b23dc68ad8d4b94f1f631c8cddaf7da78140d53a5ea",
+    "figures/qrel_disclosure.pdf": "155ef70e796a739f58f9963a706f1c42ea12a78a125f7861daf1e0803b4bff09"
+  },
+  "manuscript_sha256": "93d3ab1540c032838ba1c381efb4aa6ecd70936f3b058baa7b1e95d489574446",
+  "main_raw_whitespace_tokens_before_statements": 4137,
+  "tex_compiled": false,
+  "pdf_pagination_or_visual_checks": false,
+  "empirical_suites_rerun": false,
+  "new_model_calls": 0
+}

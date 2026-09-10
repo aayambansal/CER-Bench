@@ -1,0 +1,25 @@
+[
+  {
+    "round": 0,
+    "action": {
+      "action": "SEARCH",
+      "query": "COVID-19 mRNA vaccination nephropathy kidney disease progression treatment complications"
+    }
+  },
+  {
+    "round": 1,
+    "action": {
+      "action": "REFINE",
+      "reasoning": "The initial search found some nephropathy cases but I need studies specifically showing NO continuous disease progression or treatment requirements. Need to search for safety studies, follow-up studies, and outcomes showing resolution or lack of progression.",
+      "query": "COVID-19 mRNA vaccine nephropathy safety outcomes follow-up resolution no progression treatment"
+    }
+  },
+  {
+    "round": 2,
+    "action": {
+      "action": "REFINE",
+      "reasoning": "I need more specific studies showing benign outcomes or lack of treatment requirements for vaccine-associated nephropathy. The current results have safety surveillance but I need studies specifically documenting that nephropathy cases resolved without treatment or didn't progress.",
+      "query": "COVID-19 vaccine associated glomerulonephritis IgA nephropathy self-limited benign outcome no treatment required"
+    }
+  }
+]

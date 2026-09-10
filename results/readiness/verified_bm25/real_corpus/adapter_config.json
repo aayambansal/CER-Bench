@@ -1,0 +1,9 @@
+{
+  "conditions": [
+    "original_top24",
+    "repeated_original_3x8",
+    "heuristic_keywords_3x8"
+  ],
+  "model": "none",
+  "provider": "offline"
+}

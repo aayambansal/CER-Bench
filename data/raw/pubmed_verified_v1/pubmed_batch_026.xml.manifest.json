@@ -1,0 +1,25 @@
+{
+  "filename": "pubmed_batch_026.xml",
+  "requested_pmids": [
+    "27798150",
+    "28770670",
+    "40287758"
+  ],
+  "request_note": "Supplemental recovery of three URL transcription errors, not an unchanged retry.",
+  "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=27798150,28770670,40287758&retmode=xml",
+  "sha256": "b8e11473037b3e33efa88a5bf8f9e0c7bff352e91ae23899ec580afb40df4aa1",
+  "retrieved_at_utc": "2026-09-09T00:33:35.322804+00:00",
+  "retrieval_time_basis": "local mtime of newly created WebFetch download; not a server publication date",
+  "content_type": "text/xml; charset=UTF-8",
+  "bytes": 134997,
+  "transport": "WebFetch",
+  "returned_pmids": [
+    "27798150",
+    "28770670",
+    "40287758"
+  ],
+  "missing_pmids": [],
+  "unexpected_pmids": [],
+  "duplicate_pmids": [],
+  "problems": []
+}

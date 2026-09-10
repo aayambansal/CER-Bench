@@ -1,0 +1,81 @@
+{
+  "split": "dev",
+  "expected_tasks": 1,
+  "duplicate_task_ids": [],
+  "files": [
+    {
+      "path": "results/readiness/live_adapter/SYNTHETIC_integration/SYNTHETIC-output/budget_runs.jsonl",
+      "sha256": "14b8162e95c78838e63b387af176e9d0068fcb3e376303041c57469569055977",
+      "rows": 7,
+      "parse_or_manifest_errors": []
+    }
+  ],
+  "groups": {
+    "budget_runs": {
+      "rows": 7,
+      "coverage_by_condition": {
+        "original_top24": {
+          "covered": 1,
+          "expected": 1,
+          "missing_task_ids": [],
+          "unexpected_task_ids": []
+        },
+        "repeated_original_3x8": {
+          "covered": 1,
+          "expected": 1,
+          "missing_task_ids": [],
+          "unexpected_task_ids": []
+        },
+        "heuristic_keywords_3x8": {
+          "covered": 1,
+          "expected": 1,
+          "missing_task_ids": [],
+          "unexpected_task_ids": []
+        },
+        "one_shot_rewrite": {
+          "covered": 1,
+          "expected": 1,
+          "missing_task_ids": [],
+          "unexpected_task_ids": []
+        },
+        "upfront_three_queries": {
+          "covered": 1,
+          "expected": 1,
+          "missing_task_ids": [],
+          "unexpected_task_ids": []
+        },
+        "evidence_feedback": {
+          "covered": 1,
+          "expected": 1,
+          "missing_task_ids": [],
+          "unexpected_task_ids": []
+        },
+        "no_accumulated_evidence": {
+          "covered": 1,
+          "expected": 1,
+          "missing_task_ids": [],
+          "unexpected_task_ids": []
+        }
+      },
+      "shards_present": [],
+      "missing_shards": null,
+      "shard_coverage_modulo_task_order": {},
+      "unexpected_shards": null,
+      "shard_count_declared": null,
+      "duplicate_identities": [],
+      "models_and_providers": [
+        [
+          "SYNTHETIC-model",
+          "openai"
+        ]
+      ],
+      "provenance_conflict": false,
+      "unbound_rows": 0,
+      "issues": [],
+      "publication_ready": false,
+      "selection_ranking_verified": false,
+      "note": "Structural audit only. Legacy query provenance, selector order, and actual provider observations cannot be reconstructed."
+    }
+  },
+  "cross_group_overlap_policy": "Separate repeats: never combine coverage or model usage."
+}

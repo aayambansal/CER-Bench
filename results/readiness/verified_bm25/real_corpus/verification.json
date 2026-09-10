@@ -1,0 +1,82 @@
+{
+  "status": "verified",
+  "label_status": "unscored_retrieval_smoke_no_qrels",
+  "summary_provenance_id": "480873185f5b1d549d03f8415f391f3758a21cdd8e332803bb5489275196b5b8",
+  "summary_sha256": "4c3872fa41dab00a22cc4d9be1ea88e00ff74004879e4a2679be909dba56e502",
+  "tests_sha256": "e6f3be9ceb156d33ce1a98e9da6961e807f14e3395f5c20ca6f1705cbd0a4003",
+  "test_count": 68,
+  "failures": 0,
+  "skips": 0,
+  "adapter_source_hashes_verified": 75,
+  "runtime_dependency_hashes_verified": 213,
+  "synthetic_files_verified_unchanged": 11,
+  "query_prefix_seconds": {
+    "minimum": 0.0009231250733137131,
+    "median": 0.0011817915365099907,
+    "maximum": 0.0015240409411489964
+  },
+  "query_diagnostics": [
+    {
+      "intention": "probe_constraint",
+      "seconds": 0.0010476657189428806,
+      "prefix_chunk_count": 40,
+      "positive_scoring_chunks": 7747,
+      "saved_hit_rows": 24
+    },
+    {
+      "intention": "probe_comparative",
+      "seconds": 0.0015240409411489964,
+      "prefix_chunk_count": 30,
+      "positive_scoring_chunks": 9673,
+      "saved_hit_rows": 24
+    },
+    {
+      "intention": "probe_contradiction",
+      "seconds": 0.0012551667168736458,
+      "prefix_chunk_count": 48,
+      "positive_scoring_chunks": 7185,
+      "saved_hit_rows": 24
+    },
+    {
+      "intention": "probe_abstention",
+      "seconds": 0.00114733399823308,
+      "prefix_chunk_count": 25,
+      "positive_scoring_chunks": 6839,
+      "saved_hit_rows": 24
+    },
+    {
+      "intention": "probe_multihop",
+      "seconds": 0.0009231250733137131,
+      "prefix_chunk_count": 26,
+      "positive_scoring_chunks": 2015,
+      "saved_hit_rows": 24
+    },
+    {
+      "intention": "probe_temporal",
+      "seconds": 0.001199082937091589,
+      "prefix_chunk_count": 24,
+      "positive_scoring_chunks": 5722,
+      "saved_hit_rows": 24
+    },
+    {
+      "intention": "probe_aggregation",
+      "seconds": 0.0011645001359283924,
+      "prefix_chunk_count": 29,
+      "positive_scoring_chunks": 7381,
+      "saved_hit_rows": 24
+    },
+    {
+      "intention": "probe_negative",
+      "seconds": 0.0014393329620361328,
+      "prefix_chunk_count": 29,
+      "positive_scoring_chunks": 7312,
+      "saved_hit_rows": 24
+    }
+  ],
+  "rss_mib": {
+    "after_build": 538.53125,
+    "after_load": 668.5,
+    "final": 1969.484375
+  },
+  "verification_code_sha256": "cbe3cab9aefbc9db5e062cd638cab6b685cb36dcd20ed83099daa06b994b19a0"
+}

@@ -1,0 +1,27 @@
+{
+  "chunk_count": 10313,
+  "document_count": 4936,
+  "files_compared": 8,
+  "first_build": "data/processed/authoritative_fulltext_v1",
+  "human_validation": false,
+  "identity_scope": "source_identity_only_not_relevance_gold",
+  "independent_builds_byte_identical": true,
+  "output_hashes": {
+    "candidate_audit.jsonl": "87004189bf70aca02a4fe470510856875a420ccef794c4f1ba99360a1e61491b",
+    "chunks.jsonl": "427b6ed6c4e9db4cef87576e9f9b1e9c30c4864023eeb7e9c32efabf1ccdd300",
+    "corpus.jsonl": "1be9556874f61f2e0def5abed5812620c75b6648e2ec11f4128e9b4bcb3e359d",
+    "dataset_manifest.json": "59d7751daeb67925903629ed6c542c1e98874d17b0499e43f3a387cc1168b5ae",
+    "excluded_metadata.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local_xml_audit.jsonl": "be7dacf6ddfd82be126b15c5352bd50f4cf54c995ebbcfe6be38de7c097663cb",
+    "source_blocks.jsonl": "93d794007014b0108cfa6c8bb23be76fccf680a2671fba6dd3ce53ae1fe83b41",
+    "summary.json": "7654feb12aec815363d0e1b73aa539af1065ec926c8373ea1c91b5aa7f9fdd34"
+  },
+  "second_build": "results/readiness/verified_fulltext/independent_build",
+  "sourcehash": "ddd792a30030a2fc5f33e0a15ca7366375ae4b633df8e84e9ad6e4c894e282ab",
+  "verified_binding": {
+    "chunks_sha256": "427b6ed6c4e9db4cef87576e9f9b1e9c30c4864023eeb7e9c32efabf1ccdd300",
+    "corpus_sha256": "1be9556874f61f2e0def5abed5812620c75b6648e2ec11f4128e9b4bcb3e359d",
+    "manifest_sha256": "59d7751daeb67925903629ed6c542c1e98874d17b0499e43f3a387cc1168b5ae"
+  },
+  "worker49_validate_inputs_passed": true
+}

@@ -1,0 +1,170 @@
+{
+  "byte_identical_audit_replay": true,
+  "byte_identical_split_replay": true,
+  "candidate_task_document_and_chunk_references_resolve": true,
+  "coverage_by_family": {
+    "abstention": {
+      "original": 38,
+      "quarantined": 4,
+      "retained": 34
+    },
+    "aggregation": {
+      "original": 38,
+      "quarantined": 10,
+      "retained": 28
+    },
+    "comparative": {
+      "original": 38,
+      "quarantined": 12,
+      "retained": 26
+    },
+    "constraint": {
+      "original": 38,
+      "quarantined": 5,
+      "retained": 33
+    },
+    "contradiction": {
+      "original": 38,
+      "quarantined": 10,
+      "retained": 28
+    },
+    "multihop": {
+      "original": 38,
+      "quarantined": 4,
+      "retained": 34
+    },
+    "negative": {
+      "original": 38,
+      "quarantined": 11,
+      "retained": 27
+    },
+    "temporal": {
+      "original": 38,
+      "quarantined": 10,
+      "retained": 28
+    }
+  },
+  "cross_split_overlap": {
+    "chunks": 0,
+    "clusters": 0,
+    "documents": 0,
+    "exact_questions": 0,
+    "lexical_near_duplicates": 0
+  },
+  "historical_files_unchanged": 90,
+  "known_6286148_evidence": [
+    {
+      "canonical_id": "PMID:38308006",
+      "claimed_pmcid": "PMC6286148",
+      "decision": "Fulltext excluded regardless of apparent identity agreement",
+      "has_fulltext": true,
+      "issues": [
+        "fulltext_removed_generation_context_untrusted",
+        "pmcid_alias_conflict",
+        "raw_article_front_pmid_conflicts_with_metadata"
+      ],
+      "metadata_title": "CRISPR technologies for genome, epigenome and transcriptome editing.",
+      "old_id": "6286148",
+      "parsed_titles": [
+        "A programmable dual RNA-guided DNA endonuclease in adaptive bacterial immunity"
+      ],
+      "raw_pmids": [
+        "PMID:22745249"
+      ],
+      "raw_sources": [
+        "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/data/raw/fulltext/6286148.xml"
+      ],
+      "raw_titles": [
+        "A programmable dual RNA-guided DNA endonuclease in adaptive bacterial immunity"
+      ],
+      "source_line": 3
+    },
+    {
+      "canonical_id": "PMID:30610625",
+      "claimed_pmcid": "PMC6286148",
+      "decision": "Fulltext excluded regardless of apparent identity agreement",
+      "has_fulltext": true,
+      "issues": [
+        "fulltext_removed_generation_context_untrusted",
+        "pmcid_alias_conflict",
+        "raw_article_front_pmid_conflicts_with_metadata"
+      ],
+      "metadata_title": "Rapid Screening of CRISPR/Cas9-Induced Mutants Using the ACT-PCR Method.",
+      "old_id": "6286148",
+      "parsed_titles": [
+        "A programmable dual RNA-guided DNA endonuclease in adaptive bacterial immunity"
+      ],
+      "raw_pmids": [
+        "PMID:22745249"
+      ],
+      "raw_sources": [
+        "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/data/raw/fulltext/6286148.xml"
+      ],
+      "raw_titles": [
+        "A programmable dual RNA-guided DNA endonuclease in adaptive bacterial immunity"
+      ],
+      "source_line": 43
+    },
+    {
+      "canonical_id": "PMID:40828286",
+      "claimed_pmcid": "PMC6286148",
+      "decision": "Fulltext excluded regardless of apparent identity agreement",
+      "has_fulltext": true,
+      "issues": [
+        "fulltext_removed_generation_context_untrusted",
+        "pmcid_alias_conflict",
+        "raw_article_front_pmid_conflicts_with_metadata"
+      ],
+      "metadata_title": "Manipulation of a New Non-model Insect Genome Using Targeted CRISPR-Era Approaches.",
+      "old_id": "6286148",
+      "parsed_titles": [
+        "A programmable dual RNA-guided DNA endonuclease in adaptive bacterial immunity"
+      ],
+      "raw_pmids": [
+        "PMID:22745249"
+      ],
+      "raw_sources": [
+        "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/data/raw/fulltext/6286148.xml"
+      ],
+      "raw_titles": [
+        "A programmable dual RNA-guided DNA endonuclease in adaptive bacterial immunity"
+      ],
+      "source_line": 339
+    }
+  ],
+  "other_results_changed_since_initial_snapshot": [
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/results/readiness/budget/tests.xml"
+  ],
+  "output_hash_entries_checked": 17,
+  "preservation_note": "Data source hashes must match. Changes to other workers' results are reported, not repaired or attributed by this verifier.",
+  "raw_xml_unreadable": [
+    {
+      "error": "Expected exactly one top-level article",
+      "pmcids": [],
+      "pmids": [],
+      "sha256": "9b1b8649ec4c421df7a23ca0154723d9de57b3d6dd44f1af1f13083bb9573670",
+      "source": "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/data/raw/fulltext/26027431.xml",
+      "status": "unreadable_identity"
+    },
+    {
+      "error": "Expected exactly one top-level article",
+      "pmcids": [],
+      "pmids": [],
+      "sha256": "36c8175f25280d3e0ebe3762273b1dae9cc8e517615d06bf753808d96fd676cc",
+      "source": "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/data/raw/fulltext/30207593.xml",
+      "status": "unreadable_identity"
+    },
+    {
+      "error": "Expected exactly one top-level article",
+      "pmcids": [],
+      "pmids": [],
+      "sha256": "1563858e27e662d35d9b6126d9136e68d4d8b855d0f4d65153188ae79e2f5084",
+      "source": "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/data/raw/fulltext/30620402.xml",
+      "status": "unreadable_identity"
+    }
+  ],
+  "release_blocked": true,
+  "source_hash_entries_checked": 663,
+  "status": "passed",
+  "task_payloads_preserved_except_split_provenance": true
+}

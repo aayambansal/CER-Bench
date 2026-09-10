@@ -1,0 +1,82 @@
+{
+  "checks": {
+    "R20_reversals_and_tau_independently_verified_with_fractions": true,
+    "all_36_R20_means_independently_verified_with_fractions": true,
+    "byte_identical_independent_forensic_runs": true,
+    "exact_missing_pair_mean_effects_verified": true,
+    "source_and_output_hashes_match": true,
+    "strict_default_still_exits_1": true,
+    "strict_failures_identical": true,
+    "v1_final_immutable": true
+  },
+  "commands": [
+    {
+      "actual_exit": 0,
+      "command": [
+        "/Users/aayambansal/.config/openscience/data-root/conda/envs/python/bin/python",
+        "scripts/44_analyze_historical_qrel_sensitivity.py",
+        "--output",
+        "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/results/readiness/qrel_sensitivity/v1_forensic_repeat",
+        "--forensic-token-analysis"
+      ],
+      "expected_exit": 0,
+      "stderr": "",
+      "stdout": "{\n  \"output\": \"/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/results/readiness/qrel_sensitivity/v1_forensic_repeat\",\n  \"interpretation\": \"historical_string_label_diagnostic_not_validated_biomedical_relevance\",\n  \"release_blocked\": true,\n  \"release_ready\": false,\n  \"input_validation_status\": \"fail\",\n  \"status\": \"forensic_token_diagnostic_only\"\n}\n"
+    },
+    {
+      "actual_exit": 1,
+      "command": [
+        "/Users/aayambansal/.config/openscience/data-root/conda/envs/python/bin/python",
+        "scripts/44_analyze_historical_qrel_sensitivity.py",
+        "--output",
+        "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/results/readiness/qrel_sensitivity/v1_strict_after_forensic"
+      ],
+      "expected_exit": 1,
+      "stderr": "",
+      "stdout": "{\n  \"status\": \"fail\",\n  \"release_blocked\": true,\n  \"errors\": [\n    {\n      \"source\": \"data/processed/corpus.jsonl\",\n      \"error\": \"duplicate corpus IDs with conflicting records\",\n      \"doc_ids\": [\n        \"2949280\",\n        \"30620402\",\n        \"4343198\",\n        \"5564292\",\n        \"5706658\",\n        \"5906799\",\n        \"6286148\",\n        \"7433347\",\n        \"7581537\",\n        \"8386155\"\n      ],\n      \"detail\": \"corpus.duplicate_records gives physical rows, PMIDs, titles and differing fields\"\n    },\n    {\n      \"source\": \"stored expanded\",\n      \"error\": \"set mismatch\",\n      \"details\": [\n        {\n          \"task_id\": \"multihop_0189\",\n          \"stored_only\": [],\n          \"reconstructed_only\": [\n            \"37307965\"\n          ],\n          \"raw_evidence\": [\n            {\n              \"physical_row\": 1337,\n              \"task_id\": \"multihop_0189\",\n              \"doc_id\": \"37307965\",\n              \"judgment\": \"RELEVANT\\n\\nTHE DOCUMENT DISCUSSES CELLULAR IMMUNOTHERAPIES\"\n            }\n          ]\n        }\n      ]\n    }\n  ],\n  \"output\": \"/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/results/readiness/qrel_sensitivity/v1_strict_after_forensic\"\n}\n"
+    }
+  ],
+  "forensic_output_sha256": {
+    "REPORT.md": "84bf6be99e99580a738a98271b926f8e636c9319fb834ea8e95148ac367f393c",
+    "analysis.json": "c1029900b026a96ac435b85696fccb32f5ae43b7a0fce2af9087a36a9a60855d",
+    "manifest.json": "12236e0328796186059ffb26e7d65f9225617f626056637e21859f023ea2b4c1",
+    "per_task_metrics.jsonl": "45219e978c9e2163380c1ceb03954456ca0696c071e5d26189067fceee372d52",
+    "qrel_versions.json": "1f50781d8b73ef12988fd41a1a1a61daa1c7dfa91d932733d74bfca3f0f8d467"
+  },
+  "input_validation_status": "fail",
+  "interpretation": "historical_string_label_diagnostic_not_validated_biomedical_relevance",
+  "pair_counts": {
+    "seed_vs_reconstructed_expanded": {
+      "concordant": 35,
+      "discordant": 9,
+      "exact_arithmetic_tau_b": 0.5843065474681431,
+      "left_tied_pairs": 1,
+      "right_tied_pairs": 0
+    },
+    "seed_vs_stored_expanded": {
+      "concordant": 35,
+      "discordant": 9,
+      "exact_arithmetic_tau_b": 0.5843065474681431,
+      "left_tied_pairs": 1,
+      "right_tied_pairs": 0
+    },
+    "stored_expanded_vs_reconstructed_expanded": {
+      "concordant": 45,
+      "discordant": 0,
+      "exact_arithmetic_tau_b": 1.0,
+      "left_tied_pairs": 0,
+      "right_tied_pairs": 0
+    }
+  },
+  "release_blocked": true,
+  "release_ready": false,
+  "status": "forensic_token_diagnostic_only",
+  "strict_v1_final_sha256": {
+    "FAILURE.json": "55ea4e22ef9e1f1dcbe312f4ef028b2b1e833c624acee996e90d7d0eed4124e4",
+    "INPUT_AUDIT.json": "9ec64d1a1bc3a2856442c43fd1f2a0ea03ec718adc2d2b647c657bb31964842e",
+    "REPORT.md": "19a3ac5b96b3ea8527162a1b9d7c8f74b2fd327fb4913e8b3b08f76d10e7e3a5",
+    "manifest.json": "8aa25d947b1817f8d1a68cce3900d87b225f9c125980241be599308081efdf16"
+  },
+  "tests_xml_sha256": "e1486c7521b7066225b5b0c23c309678d06e638a233bb24d0969483f8b8755ed",
+  "verification_script_sha256": "1b99c1dd8c90400343caaf5657474b7583beba31cd81868e1691e4bbb56ea9ac"
+}

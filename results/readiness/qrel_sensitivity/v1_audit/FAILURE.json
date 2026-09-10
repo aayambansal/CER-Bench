@@ -1,0 +1,46 @@
+{
+  "action": "Do not choose first/last duplicate records, remap to candidate identities, intersect/drop rows, or publish historical scores. Resolve the input contract before numerical analysis.",
+  "errors": [
+    {
+      "detail": "corpus.duplicate_records gives physical rows, PMIDs, titles and differing fields",
+      "doc_ids": [
+        "2949280",
+        "30620402",
+        "4343198",
+        "5564292",
+        "5706658",
+        "5906799",
+        "6286148",
+        "7433347",
+        "7581537",
+        "8386155"
+      ],
+      "error": "duplicate corpus IDs with conflicting records",
+      "source": "data/processed/corpus.jsonl"
+    },
+    {
+      "details": [
+        {
+          "reconstructed_only": [
+            "37307965"
+          ],
+          "stored_only": [],
+          "task_id": "multihop_0189"
+        }
+      ],
+      "error": "set mismatch",
+      "source": "stored expanded"
+    }
+  ],
+  "not_executed": [
+    "per-task retrieval metrics",
+    "stored score comparison",
+    "rank correlations/reversals",
+    "cluster bootstrap/permutation/Holm",
+    "label subsampling curve",
+    "fulltext strata scores"
+  ],
+  "release_blocked": true,
+  "status": "fail",
+  "version": "historical-qrel-sensitivity-v1"
+}

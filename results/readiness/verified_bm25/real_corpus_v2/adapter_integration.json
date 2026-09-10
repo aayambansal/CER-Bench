@@ -1,0 +1,14 @@
+{
+  "backend": "verified_bm25",
+  "dependency_injection": false,
+  "synthetic": false,
+  "original_jsonl_inputs": true,
+  "unicode_jsonl_reader_verified": true,
+  "status": "offline_native_dry_only",
+  "dry_plan_rows": 24,
+  "actual_native_retrieval_checks": 24,
+  "probe_count": 8,
+  "executed_provider_calls": 0,
+  "executed_generation_calls": 0,
+  "native_manifest_provenance_id": "066f72b06b6767e77b4245eac2f0c224898ba811d2354bd230cc51c493d4ec6d"
+}

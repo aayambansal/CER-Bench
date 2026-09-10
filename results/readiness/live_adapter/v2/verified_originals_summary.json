@@ -1,0 +1,37 @@
+{
+  "status": "verified_offline_only",
+  "synthetic": false,
+  "new_model_runs": 0,
+  "provider_calls": 0,
+  "human_validation": false,
+  "label_status": "unscored_retrieval_smoke_no_qrels",
+  "input_transport": "original_corpus_and_chunks_jsonl_no_array_copy",
+  "tasks": 8,
+  "dry_condition_plans": 56,
+  "deterministic_retrieval_checks": 24,
+  "planned_model_calls": 48,
+  "configured_max_attempts": 42,
+  "full_plan_fits_request_cap": false,
+  "documents": 4936,
+  "chunks": 10313,
+  "local_search_invocations": 136,
+  "local_uncached_searches": 28,
+  "max_protocol_trace_bytes": 88567,
+  "trace_max_bytes": 8388608,
+  "original_selector": "original_query_max_chunk_rank_restricted_to_candidates_top20",
+  "candidate_unique_doc_budget": 24,
+  "source_hashes_checked": 77,
+  "index_hashes": {
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/data/processed/authoritative_fulltext_v1/dataset_manifest.json": "59d7751daeb67925903629ed6c542c1e98874d17b0499e43f3a387cc1168b5ae",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/data/processed/authoritative_fulltext_v1_bm25/index.json": "1656d63a13830b62fa856586efb52424fda9c60527c81e2a4295ee87ebf67e35",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/data/processed/authoritative_fulltext_v1_bm25/postings.npz": "167bd9d7aa4d644b24e197387095a3200ea7c444048d4a8d176942847513070e"
+  },
+  "provenance_id": "f0b56a4d87a6cf78eadd8c30ad7ddba3030f882633d9b30408371512dd0e97a7",
+  "output_sha256": {
+    "selected_tasks.json": "d400d8f9a8d103ca8c712ab3e26a0893d4796e78bf0c8ca87644d03ef30b0a39",
+    "retrieval_checks.json": "3b894854d77be6f883a2b80cfc4f6c3614483d9d2d1cae1607a54f1d35f30024",
+    "manifest.json": "36e0f94ea0d6b421e9f78912e2eb16ddd6660cf51cdf018b7076ef6feefb966c",
+    "runs.json": "91b47277f9de1674f7301b39ff65d15981b5f439df22bde1d89ba9c024f6429a"
+  },
+  "verifier_sha256": "9b0c488a4c6230330b4636446acba063e0caf9fcc13eaf5c76cd892d5de1ec9f"
+}

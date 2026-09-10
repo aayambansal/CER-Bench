@@ -1,0 +1,70 @@
+{
+  "version": "v1.2-repaired-components-candidate",
+  "release_blocked": true,
+  "seed": 20260826,
+  "source_hashes": {
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/data/processed/identity_repair_v1/train.jsonl": "ea57fe4ec859929a07db04969340eb2e4eef2c141abaf45bc78899af864d4447",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/data/processed/identity_repair_v1/dev.jsonl": "42c9954113ff4d0b4b64e5477f570e6d5352b4228692df8cc3d28d1d993fc00e",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/data/processed/identity_repair_v1/test.jsonl": "ed4bd99d6a0e9bea336ee54193ad5f3d0670639e30d7f16c89040ffc514524a5",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/data/processed/identity_repair_v1/report.json": "8102bb75df7e134e314974a003566b338c0d1fd720a81a9c969c2fefd19653b7"
+  },
+  "components": 186,
+  "largest_component": 7,
+  "stale_source_split_fields_corrected": 0,
+  "split_sizes": {
+    "train": 94,
+    "dev": 49,
+    "test": 95
+  },
+  "family_counts": {
+    "train": {
+      "temporal": 12,
+      "constraint": 13,
+      "multihop": 14,
+      "comparative": 10,
+      "negative": 10,
+      "aggregation": 11,
+      "abstention": 13,
+      "contradiction": 11
+    },
+    "dev": {
+      "contradiction": 6,
+      "aggregation": 6,
+      "constraint": 8,
+      "multihop": 7,
+      "temporal": 1,
+      "negative": 7,
+      "abstention": 8,
+      "comparative": 6
+    },
+    "test": {
+      "temporal": 15,
+      "aggregation": 11,
+      "contradiction": 11,
+      "constraint": 12,
+      "abstention": 13,
+      "multihop": 13,
+      "negative": 10,
+      "comparative": 10
+    }
+  },
+  "cross_split_overlap": {
+    "documents": 0,
+    "chunks": 0,
+    "clusters": 0,
+    "exact_questions": 0,
+    "lexical_near_duplicates": 0
+  },
+  "lexical_near_duplicate_threshold": 0.85,
+  "grouped_relation_counts": {
+    "documents": 94,
+    "exact_questions": 2,
+    "lexical_near_duplicates": 7
+  },
+  "warning": "Previously exposed synthetic proxy tasks, not a fresh test or gold. Lexical checks do not establish semantic independence. Identity repair and scientific validity remain unadjudicated.",
+  "output_hashes": {
+    "train.jsonl": "9e380289e95f4d6bac4b063344f2b527b01d9596f68d24cc12b260b29e018117",
+    "dev.jsonl": "770a51bea462c0f3bf0f673b3cdc6c0026e1f70e5cb1977e00e947876f712e68",
+    "test.jsonl": "c7dd3f4b61a0e901f4a68def8bd0c90219a4fbbac0610b209d2006b7b41cc228"
+  }
+}

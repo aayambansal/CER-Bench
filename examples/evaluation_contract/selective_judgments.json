@@ -1,0 +1,5 @@
+[
+  {"task_id":"synthetic-constraint","annotation_status":"human_adjudicated","evidence_set_failure":true,"verified_support":true,"provenance":"SYNTHETIC simulated judgment of runs.json; constraints split across documents"},
+  {"task_id":"synthetic-path","annotation_status":"expert_adjudicated","evidence_set_failure":true,"verified_support":true,"provenance":"SYNTHETIC simulated judgment of runs.json; mixed incompatible paths"},
+  {"task_id":"synthetic-empty","annotation_status":"human_adjudicated","verified_support":false,"provenance":"SYNTHETIC simulated support adjudication, NOT inferred from empty gold"}
+]

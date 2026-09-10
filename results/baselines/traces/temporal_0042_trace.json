@@ -1,0 +1,25 @@
+[
+  {
+    "round": 0,
+    "action": {
+      "action": "SEARCH",
+      "query": "organoid drug screening colorectal cancer evolution broader cancer types scaffold materials 2015-2024"
+    }
+  },
+  {
+    "round": 1,
+    "action": {
+      "action": "REFINE",
+      "reasoning": "Need more specific coverage of scaffold material advances and evolution across different cancer types beyond colorectal",
+      "query": "organoid scaffold materials hydrogel Matrigel extracellular matrix cancer drug screening 2015-2024"
+    }
+  },
+  {
+    "round": 2,
+    "action": {
+      "action": "REFINE",
+      "reasoning": "Need more coverage of the evolution from colorectal to other cancer types and timeline of advances from 2015-2024",
+      "query": "organoid drug screening evolution breast lung pancreatic ovarian cancer types progression 2015 2016 2017 2018 2019 2020 2021 2022 2023 2024"
+    }
+  }
+]

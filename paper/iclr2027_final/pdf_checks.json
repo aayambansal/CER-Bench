@@ -1,0 +1,189 @@
+{
+  "build_returncode": 0,
+  "main_text_end_page": 8,
+  "within_nine_page_main_limit": true,
+  "total_pages": 13,
+  "pages": [
+    {
+      "page": 1,
+      "width": 612.0,
+      "height": 792.0,
+      "characters": 3962
+    },
+    {
+      "page": 2,
+      "width": 612.0,
+      "height": 792.0,
+      "characters": 4660
+    },
+    {
+      "page": 3,
+      "width": 612.0,
+      "height": 792.0,
+      "characters": 4158
+    },
+    {
+      "page": 4,
+      "width": 612.0,
+      "height": 792.0,
+      "characters": 3873
+    },
+    {
+      "page": 5,
+      "width": 612.0,
+      "height": 792.0,
+      "characters": 4203
+    },
+    {
+      "page": 6,
+      "width": 612.0,
+      "height": 792.0,
+      "characters": 2630
+    },
+    {
+      "page": 7,
+      "width": 612.0,
+      "height": 792.0,
+      "characters": 4451
+    },
+    {
+      "page": 8,
+      "width": 612.0,
+      "height": 792.0,
+      "characters": 4463
+    },
+    {
+      "page": 9,
+      "width": 612.0,
+      "height": 792.0,
+      "characters": 4108
+    },
+    {
+      "page": 10,
+      "width": 612.0,
+      "height": 792.0,
+      "characters": 3896
+    },
+    {
+      "page": 11,
+      "width": 612.0,
+      "height": 792.0,
+      "characters": 3946
+    },
+    {
+      "page": 12,
+      "width": 612.0,
+      "height": 792.0,
+      "characters": 4398
+    },
+    {
+      "page": 13,
+      "width": 612.0,
+      "height": 792.0,
+      "characters": 903
+    }
+  ],
+  "metadata": {
+    "format": "PDF 1.5",
+    "title": "Relevance Labels and Source Identity Can Change Scientific Retrieval Conclusions: A CER-Bench Audit",
+    "author": "Anonymous Authors",
+    "subject": "",
+    "keywords": "",
+    "creator": "LaTeX with hyperref",
+    "producer": "xdvipdfmx (0.1)",
+    "creationDate": "D:20260909051404-00'00'",
+    "modDate": "",
+    "trapped": "",
+    "encryption": null
+  },
+  "all_fonts_embedded": true,
+  "fonts": {
+    "4": {
+      "basefont": "IHAIZV+NimbusSanL-Bold",
+      "type": "Type1",
+      "embedded": true
+    },
+    "5": {
+      "basefont": "BZIVMZ+NimbusRomNo9L-Regu",
+      "type": "Type1",
+      "embedded": true
+    },
+    "6": {
+      "basefont": "IXFAWU+NimbusRomNo9L-Medi",
+      "type": "Type1",
+      "embedded": true
+    },
+    "12": {
+      "basefont": "TQTHRL+NimbusRomNo9L-ReguItal",
+      "type": "Type1",
+      "embedded": true
+    },
+    "49": {
+      "basefont": "YEUUOC+NimbusMonL-Regu",
+      "type": "Type1",
+      "embedded": true
+    },
+    "57": {
+      "basefont": "AKHCZK+CMR10",
+      "type": "Type1",
+      "embedded": true
+    },
+    "58": {
+      "basefont": "VDVGTR+CMMI10",
+      "type": "Type1",
+      "embedded": true
+    },
+    "59": {
+      "basefont": "CAFSZL+CMSY10",
+      "type": "Type1",
+      "embedded": true
+    },
+    "60": {
+      "basefont": "DDIEWW+CMMI7",
+      "type": "Type1",
+      "embedded": true
+    },
+    "61": {
+      "basefont": "FKPJSN+CMR7",
+      "type": "Type1",
+      "embedded": true
+    },
+    "62": {
+      "basefont": "PVTTLK+CMEX10",
+      "type": "Type1",
+      "embedded": true
+    },
+    "63": {
+      "basefont": "JAGKKY+CMMI5",
+      "type": "Type1",
+      "embedded": true
+    },
+    "69": {
+      "basefont": "FFRLEN+DejaVuSans",
+      "type": "Type0",
+      "embedded": true
+    },
+    "76": {
+      "basefont": "CPUQYB+DejaVuSans",
+      "type": "Type0",
+      "embedded": true
+    },
+    "93": {
+      "basefont": "NOMARO+CMSY7",
+      "type": "Type1",
+      "embedded": true
+    },
+    "94": {
+      "basefont": "KPXLOM+CMBX10",
+      "type": "Type1",
+      "embedded": true
+    }
+  },
+  "latex_issues": [],
+  "private_text_matches": [],
+  "encrypted": false,
+  "pdf_sha256": "ca26f681eddf456471396c6730c215a4ec9f1476e31fb8a69217323f825c7ab6",
+  "tex_sha256": "93d3ab1540c032838ba1c381efb4aa6ecd70936f3b058baa7b1e95d489574446",
+  "compiler_sha256": "b52b5a730e2b0b33087304f7720f649603953f270a6b1c88bb031e1ae01f7f9c",
+  "note": "Formatting checks do not establish human relevance validation, model experiments or acceptance."
+}

@@ -1,36 +1,92 @@
-# Data (too large for git — hosted on HuggingFace)
-data/raw/
+# ---------------------------------------------------------------------------
+# Corpus text is NOT redistributed (see the paper's Ethics statement and
+# data/processed/authoritative_fulltext_v1/dataset_manifest.json:
+# public_redistribution_authorized=false). Identifier-level manifests, audits,
+# hashes, offsets, task files, saved rankings, judgments, and traces ARE tracked.
+# Rebuild the corpus from public PubMed endpoints with scripts/47 and scripts/50.
+# Large derived artifacts (indices, replicate arrays, transport copies) live on
+# the Hugging Face mirror: https://huggingface.co/datasets/aayambansall/CER-Bench
+# ---------------------------------------------------------------------------
+
+# Raw sources: keep only the request ledger, batch manifests, and the pilot XML
+data/raw/*
+!data/raw/pubmed_verified_v1/
+data/raw/pubmed_verified_v1/pubmed_batch_*.xml
+
+# Interim parses
 data/interim/
-data/processed/
+
+# Processed corpora: keep manifests/audits/eligibility/mappings, drop text and indices
+data/processed/*
+!data/processed/authoritative_fulltext_v1/
+data/processed/authoritative_fulltext_v1/corpus.jsonl
+data/processed/authoritative_fulltext_v1/chunks.jsonl
+data/processed/authoritative_fulltext_v1/source_blocks.jsonl
+!data/processed/authoritative_v1/
+data/processed/authoritative_v1/corpus.jsonl
+data/processed/authoritative_v1/chunks.jsonl
+!data/processed/identity_repair_v1/
+data/processed/identity_repair_v1/corpus.jsonl
+data/processed/identity_repair_v1/chunks.jsonl
+data/processed/identity_repair_v1/quarantine_chunks.jsonl
+
+# Top-level task files duplicate data/benchmark/v1/ byte-for-byte
+data/benchmark/*.jsonl
+data/benchmark/schema.json
+
+# Results: drop text transport copies, independent rebuild copies, redundant zips, caches
+results/readiness/verified_bm25/real_corpus/adapter_transport/
+results/readiness/verified_fulltext/independent_build/
+results/readiness/qrel_disclosure/mplconfig/
+results/.mplconfig/
+results/**/*.zip
+
+# Human-validation kits: keep manifests, reports, templates, guidelines; drop
+# the blank per-pair sheets and per-document evidence text
+annotations/human_qrel/*.csv
+annotations/human_qrel_v2/annotator_*.csv
+annotations/human_qrel_v2/evidence/
+
+# Serialized models / indices (abstention head and BM25 index are on Hugging Face)
 *.pkl
 *.npy
 *.index
-*.npz
+!data/processed/authoritative_fulltext_v1_bm25/
 
 # Python
 __pycache__/
 *.pyc
 *.egg-info/
 .eggs/
+.pytest_cache/
+.ruff_cache/
 
-# Environment
+# Environment / secrets
 .env
+.env.*
 *.pem
+*.key
 
-# IDE
+# IDE / OS
 .vscode/
 .idea/
-
-# OS
 .DS_Store
 Thumbs.db
 
-# LaTeX build artifacts
-paper/*.aux
-paper/*.bbl
-paper/*.blg
-paper/*.log
-paper/*.out
-paper/*.fdb_latexmk
-paper/*.fls
-paper/*.synctex.gz
+# LaTeX build artifacts (all paper directories)
+paper/**/*.aux
+paper/**/*.bbl
+paper/**/*.blg
+paper/**/*.log
+paper/**/*.out
+paper/**/*.fdb_latexmk
+paper/**/*.fls
+paper/**/*.synctex.gz
+paper/iclr2027_final/pdf_review/
+paper/iclr2027_submission/dist/
+paper/release/supplementary_material.zip
+
+# Integration receipts that embed retrieved chunk text (summaries/verification files remain tracked)
+results/readiness/verified_bm25/real_corpus_v2/native48/retrieval_checks.json
+results/readiness/live_adapter/v2/verified_originals_dry/retrieval_checks.json
+results/**/*.tar.gz

@@ -1,0 +1,1501 @@
+000
+001
+002
+003
+004
+005
+006
+007
+008
+009
+010
+011
+012
+013
+014
+015
+016
+017
+018
+019
+020
+021
+022
+023
+024
+025
+026
+027
+028
+029
+030
+031
+032
+033
+034
+035
+036
+037
+038
+039
+040
+041
+042
+043
+044
+045
+046
+047
+048
+049
+050
+051
+052
+053
+Under review as a conference paper at ICLR 2027
+RELEVANCE LABELS AND SOURCE IDENTITY CAN
+CHANGE SCIENTIFIC RETRIEVAL CONCLUSIONS: A
+CER-BENCH AUDIT
+Anonymous authors
+Paper under double-blind review
+ABSTRACT
+Scientiﬁc retrieval evaluation depends on both which documents are labeled rel-
+evant and whether their identiﬁers refer to the intended sources. We audit these
+dependencies in CER-BENCH, a historical collection of 304 synthetic biomedi-
+cal tasks. An authoritative re-fetch of all 4,936 corpus PubMed records identi-
+ﬁes a parser error that could assign cited-paper identiﬁers to the current article:
+247 PMC identiﬁers change, and 226 changed historical PMC identiﬁers occur
+in reference lists. Separately, recomputation on ﬁxed historical rankings ﬁnds
+nine pairwise system-order reversals between seed and expanded relevance la-
+bels. A controlled experiment with 1,000 paired, nested disclosures of existing
+judgments changes the mean token-recall leader between the tested fractions 0.2
+and 0.3; paired empirical intervals overlap zero at both points. These are his-
+torical identiﬁer-level diagnostics, not validated biomedical rankings. We also
+construct a source-identity-checked retrieval dataset with 4,936 documents and
+10,313 chunks, restoring conservative own-article body text for 525 documents,
+and verify local BM25 execution without relevance scoring. No human relevance
+validation, new model experiments, or corrected-corpus leaderboard are available.
+The contribution is a joint provenance and evaluation audit, with explicit bound-
+aries between arithmetic reproducibility, source ownership, and scientiﬁc validity.
+1
+INTRODUCTION
+Scientiﬁc search often asks for an evidence set rather than an isolated topically similar paper. A com-
+parison requires both sides; a multi-paper argument requires a valid chain; and a constrained ques-
+tion may require one study satisfying several conditions jointly. Evaluating these requests requires
+more than a ranking function. It requires trustworthy source identities, an appropriate relevance
+relation, and a metric whose success condition matches the scientiﬁc question.
+Incomplete judgments and assessor variation are established problems in information retrieval (IR)
+(Buckley & Voorhees, 2004; Voorhees, 2000). We do not claim that ranking sensitivity to labels is
+new. Instead, we examine what remains defensible when label sensitivity coexists with a source-
+identity failure in a scientiﬁc retrieval collection. A score can be exactly reproducible while its
+biomedical interpretation is unsupported: matching two identiﬁer strings does not establish that
+either string was attached to the intended article text.
+CER-BENCH originally paired synthetic questions with a biomedical corpus and saved outputs from
+lexical, dense, sparse, fusion, reranking, and agentic retrieval conﬁgurations. Its construction made
+two dependencies particularly important. Generating source papers were retained as positive seed
+labels, whereas additional candidates received automated judgments. Separately, source identiﬁers
+linked PubMed metadata to locally stored article XML. This audit ﬁnds problems at both boundaries.
+The labels change the ordering of ﬁxed saved systems, and an overly broad XML traversal could
+substitute identiﬁers from references for the current article’s identiﬁers.
+Our question is therefore not which retriever wins a repaired benchmark. It is which conclusions
+survive an explicit separation of historical arithmetic, authoritative source identity, and validated
+relevance? We address this through three empirical components and a bounded software contri-
+bution. First, an all-record PubMed re-fetch establishes current article-level identity and quantiﬁes
+1
+
+054
+055
+056
+057
+058
+059
+060
+061
+062
+063
+064
+065
+066
+067
+068
+069
+070
+071
+072
+073
+074
+075
+076
+077
+078
+079
+080
+081
+082
+083
+084
+085
+086
+087
+088
+089
+090
+091
+092
+093
+094
+095
+096
+097
+098
+099
+100
+101
+102
+103
+104
+105
+106
+107
+Under review as a conference paper at ICLR 2027
+historical discrepancies. Second, exact historical rescoring and a nested disclosure experiment mea-
+sure sensitivity within an existing, biased judgment pool. Third, conservative source-owned text
+restoration and local BM25 checks establish that a new retrieval substrate can be built and exercised.
+Structural and selective evaluation contracts specify what future evidence would have to support, but
+provide no new measured capability scores.
+This framing matters for interpreting negative ﬁndings. We neither replace the historical winner with
+a new biomedical winner nor treat successful parser tests as a substitute for relevance assessment.
+Human validation was not performed. No new model experiments were run, and the corrected
+corpus has neither newly generated benchmark tasks nor an independently validated leaderboard.
+These restrictions are part of the result: they delimit which claims the retained evidence can carry.
+2
+RELATED WORK
+Relevance evaluation.
+Buckley & Voorhees (2004) study retrieval evaluation with incomplete in-
+formation, and Voorhees (2000) examine variations in relevance judgments and measured effective-
+ness. Our disclosure experiment is a conditional perturbation of available labels, not an estimator of
+exhaustive relevance. Automated judges introduce additional uncertainty; documented LLM-judge
+biases motivate caution rather than a correction factor applicable to this corpus (Zheng et al., 2023).
+In particular, a model-generated label is not equivalent to independent human adjudication.
+Scientiﬁc retrieval and evidence.
+DORIS-MAE and LitSearch target scientiﬁc document retrieval
+through multi-aspect and literature-search queries, respectively (Wang et al., 2023; Ajith et al.,
+2024). BioASQ and TREC Precision Medicine provide biomedical retrieval and question-answering
+evaluation settings (Tsatsaronis et al., 2015; Roberts et al., 2017); SciFact explicitly links scientiﬁc
+claims and evidence (Wadden et al., 2020). BEIR examines retrieval across heterogeneous datasets,
+while SciRepEval studies multiple formats for scientiﬁc representations (Thakur et al., 2021; Singh
+et al., 2023). These works motivate careful task and relevance deﬁnitions, not a claim that the his-
+torical CER-BENCH families are uniquely comprehensive.
+Retrieval infrastructure and synthesis.
+BM25 provides a transparent lexical reference (Robert-
+son & Zaragoza, 2009); reciprocal rank fusion combines rankings without equating their score scales
+(Cormack et al., 2009). MedCPT illustrates domain-speciﬁc retrieval learned from PubMed search
+logs (Jin et al., 2023). Scientiﬁc retrieval-augmented synthesis further increases the importance of
+preserving the relationship between article identity and evidence text (Asai et al., 2026). Our contri-
+bution is not a new retriever or synthesis model. It is a case-speciﬁc, joint audit of label dependence
+and source provenance, together with a limited reconstruction of the retrieval substrate.
+3
+AUDIT DESIGN AND EVIDENCE BOUNDARIES
+3.1
+HISTORICAL COLLECTION AND UNITS OF ANALYSIS
+The historical collection contains 304 synthetic tasks in eight intended families: constraint, com-
+parative, contradiction, abstention, multi-hop, temporal, aggregation, and negative-result retrieval.
+Its original train/development/test counts are 119/60/125. The test set has 108 tasks with nonempty
+seed labels and 17 with empty seed labels. We call the former supported only as an operational name
+for the nonempty-label stratum. Empty labels on the other 17 tasks are unsupported-query proxies,
+not veriﬁed evidence of corpus-wide absence.
+The historical corpus has 4,936 records and 17,902 chunks; 652 records carried a full-text ﬂag.
+Those are historical counts, not validated ownership statements. The forensic audit identiﬁed ten
+colliding corpus identiﬁer strings, representing 13 excess records under those strings. Consequently,
+our historical calculations treat document IDs as opaque tokens. They do not dereference them to
+recover biomedical meaning, choose among colliding records, or transfer their labels to corrected
+records.
+A prior post hoc identity-repair candidate retained 238 of the 304 tasks and assigned 94/49/95
+train/development/test tasks. This is not the new authoritative retrieval dataset. The tasks had al-
+ready been exposed, so rearranging them does not create a fresh held-out benchmark. A new source
+2
+
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+Under review as a conference paper at ICLR 2027
+Table 1: Distinct evidence regimes. A common count of 4,936 documents does not imply inter-
+changeable text, labels, or identities. “None” denotes no labels for evaluation in that regime.
+Regime
+Documents
+Chunks
+Label status
+Historical corpus
+4,936
+17,902
+Synthetic; identity-conﬂicted
+Authoritative metadata
+4,936
+4,914
+None; abstract chunks only
+Authoritative restored text
+4,936
+10,313
+None; unscored retrieval
+partition and new task generation remain absent. We retain these distinctions rather than combining
+historical tasks, repaired identities, and saved rankings into a nominally corrected experiment.
+3.2
+THREE DIFFERENT VALIDATION QUESTIONS
+Arithmetic validity.
+Given ﬁxed token rankings and a speciﬁed label set, are counts, denomina-
+tors, ties, and aggregate scores computed correctly? The forensic rescoring and disclosure experi-
+ment answer this question. Their success cannot repair the identity-conﬂicted inputs.
+Source identity and ownership.
+Does a document’s canonical identiﬁer match its own authori-
+tative metadata, and does restored text come from the same article rather than references or nested
+articles? PubMed re-fetching, JATS front-identity matching, and source-offset checks address this
+question. They do not establish whether a study’s ﬁnding is true or relevant to a query.
+Scientiﬁc evaluation validity.
+Are tasks meaningful, relevance judgments appropriate, evidence
+relationships valid, and evaluation splits independent of development? This requires evidence be-
+yond identiﬁer matching or executable tests. We do not claim to have completed it. Automated
+historical labels remain proxies; no humans supplied biomedical relevance judgments in this audit.
+4
+AUTHORITATIVE IDENTITY AUDIT AND TEXT RESTORATION
+4.1
+ALL-RECORD METADATA VERIFICATION
+All 4,936 intended historical PMIDs were re-fetched from PubMed EFetch XML on September 9,
+2026. The retained snapshot comprises 26 successful downloads and 140,943,352 bytes, excluding
+a separate three-record pilot. After recovery of three request-transcription errors, every intended
+PMID was returned exactly once in the ﬁnal corpus union; no intended record remained missing or
+unsupported. Actual request logs retain the mistakes and recovery rather than replacing them with
+an idealized request plan.
+The root cause was an identiﬁer lookup under PubmedData using .//ArticleId. Descendant
+traversal includes ReferenceList/Reference/ArticleIdList; these are identiﬁers of
+cited papers, not necessarily the current article. Both PMC extraction and a DOI fallback could
+therefore inherit a cited identiﬁer. In the pilot, PMIDs 38308006, 30610625, and 40828286 have no
+own PMC identiﬁer, yet the old traversal’s ﬁrst PMC value is 6286148, belonging to a cited article.
+A collision is not necessary for this error: a single incorrect association already violates ownership.
+The corrected parser uses direct article-level paths, supports namespaces, and preserves mixed-inline
+title and abstract text. Own DOI values take priority; a direct own-article electronic-location ﬁeld is
+the fallback, never a reference identiﬁer. Conﬂicting own IDs, duplicate records, missing identity,
+and unsupported record types are explicit diagnostics. Appendix B gives the scope rule in pseu-
+docode.
+The full comparison ﬁnds 247 PMC-identiﬁer changes; 226 changed historical PMC identiﬁers
+occur in reference lists of the re-fetched XML. All three changed historical DOIs also occur in cited
+references. This is direct evidence consistent with cited-ID contamination. The broader 815-record
+metadata discrepancy includes current metadata updates and changed parsing rules, so it is not a
+count of 815 proven bug-induced corruptions. Nor can the re-fetch alone identify which differences
+occurred after the historical snapshot. Exact current source agreement and causal attribution to a
+historical bug are different claims.
+3
+
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+Under review as a conference paper at ICLR 2027
+Table 2: All-record comparison with the authoritative PubMed snapshot. Field counts overlap.
+Metadata changes exclude canonical document-ID renaming and are not all attributed to the parser
+bug.
+Quantity
+Count
+Compared records
+4,936
+Records with metadata changes, excluding canonical renaming
+815
+PMC identiﬁers changed
+247
+Removals / replacements / additions
+219 / 8 / 20
+Changed historical PMC identiﬁers found in cited references
+226
+DOI changes / changed old DOIs found in references
+3 / 3
+Title changes / abstract changes
+118 / 22
+Current records with own PMC identiﬁer
+2,641
+4.2
+CONSERVATIVE OWN-ARTICLE RESTORATION
+Metadata veriﬁcation ﬁrst produced an abstract-only version. A separate restoration then rechecked
+its sources and inspected all 645 locally stored XML ﬁles. A candidate body required a unique match
+between the own JATS front PMID and PMCID and the authoritative PubMed identity. Filenames,
+cited IDs, and subarticle IDs were never identity evidence. There were 590 unique identity-matched
+raw candidates.
+Titles were checked using normalized equality or both character similarity at least 0.90 and token-
+set Jaccard at least 0.75. Of 590 candidates, 581 titles matched after normalization and seven more
+passed both thresholds. Two major mismatches were quarantined, including a local title carrying a
+retraction preﬁx. Of the 588 title-accepted candidates, 525 supplied extractable own-body text and
+63 did not. These thresholds are conservative string rules, not human semantic validation of titles or
+retraction adjudication.
+Extraction walks selected own front/body structures instead of ﬂattening the entire XML tree. It
+preserves source order, paragraphs, sections, captions, and explicit table-cell coordinates, while
+excluding references, back matter, other articles, images, and supplementary payloads. Formula
+rendering can lose structure and is explicitly marked as not semantically validated. We therefore
+describe the result as partial source-owned text restoration, not complete recovery of every visual or
+scientiﬁc element.
+The restored dataset uses the same canonical string, PMID:pmid, for each document’s doc_id
+and article_id. Its 4,936 documents have 10,313 chunks. Titles are actual indexed text, not
+hidden metadata boosts. Of 22 documents without authoritative abstracts, one gains local text and
+21 remain title-only. No document has zero chunks. Chunking uses a hard maximum of 4,096
+Unicode codepoints and at most 256 codepoints of within-document overlap. Source intersections
+bind rendered text offsets to raw-ﬁle hashes and XML locators.
+Independent rebuilding reproduced all eight dataset ﬁles byte-for-byte. Post-build checks covered
+673 source hashes and 68,828 chunk/source intersections. These checks establish deterministic
+source binding and structural ownership. They do not validate biomedical relevance, mathematical
+equivalence of formula renderings, or redistribution rights. The new corpus is a retrieval dataset
+without benchmark gold; historical questions and labels were not promoted to new gold.
+5
+HISTORICAL LABEL SENSITIVITY
+5.1
+FIXED-RANKING FORENSIC RECONSTRUCTION
+The diagnostic universe consists of the same 108 nonempty-seed test queries for every method. All
+125 saved test rows remain accounted for, with null retrieval metrics on the 17 seed-empty rows
+rather than zeros that would alter the mean. We use the ten original pooling-system identiﬁers:
+BM25, dense, BGE, E5-large, MedCPT, SPLADE, hybrid, hybrid-reranked, BGE-reranker, and
+agent. These names identify saved conﬁgurations, not new executions. Supplemental RM3 and
+4
+
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+Under review as a conference paper at ICLR 2027
+single-step-agent runs are excluded from rank correlations because they were outside the original
+pool.
+There are 264 seed query–token pairs and 3,240 raw judgment records, exactly 30 per supported
+query. The stored expanded labels contain 1,369 pairs, while reconstruction from raw judgments
+with seeds retained contains 1,370.
+The missing pair is query multihop_0189 and token
+37307965. On that query, for example, the agent’s token recall changes from 4/9 to 4/10, an
+exact macro-mean change of −1/2430 over 108 queries. This storage discrepancy is separate from
+both pooling bias and the corpus-identity error.
+For a query q, ﬁxed top-20 token set Ts,q from system s, and current positive token set Gq, we
+compute
+Rs,q(Gq) = |Ts,q ∩Gq|
+|Gq|
+,
+Ms(G) =
+1
+108
+108
+∑
+q=1
+Rs,q(Gq).
+(1)
+The seed-label leader is the agent, with M = 44/81 = 0.543209877. Under reconstructed expan-
+sion, BGE has M = 0.416792975 and the agent has M = 0.351057634, ranking ﬁfth. These values
+are token-arithmetic endpoints, not an endorsed biomedical leaderboard. We do not interpret their
+difference across label regimes as an absolute loss of retrieval ability: the rankings are ﬁxed, while
+both the numerator and relevance denominator can change.
+Across the ten systems there are nine strict pairwise order reversals out of 45 pairs between seed
+and either expanded regime. Kendall’s τb = 0.584306547 and Spearman’s ρ = 0.735565708 de-
+scribe the resulting orders. Stored and reconstructed expansion have identical system order despite
+different means. We emphasize order rather than a large historical performance table because the
+scientiﬁc ﬁnding concerns dependence of the conclusion on label construction, not a corrected esti-
+mate of each retriever’s effectiveness.
+5.2
+CONTROLLED NESTED DISCLOSURE
+The endpoint audit does not describe how much of the available pool must be disclosed before the
+ordering changes. We therefore ran a local controlled Monte Carlo experiment on the saved rankings
+and existing raw judgments. This is new computation on historical evidence, not new relevance
+annotation or model execution.
+For each replicate r ∈{1, . . . , 1000} and supported query q, we independently uniformly permute
+all 30 raw judgment records, including negatives. The generator is PCG64 with replicate seeds
+20260909 through 20261908. At each fraction f ∈{0, 0.1, . . . , 1}, reveal exactly mf = ⌊30f⌋
+records from the beginning of that permutation. Every seed positive remains present. Only newly
+revealed positive judgments add labels:
+Gq,r(f) = Gseed
+q
+∪{dq,πq,r(j) : j ≤mf, yq,πq,r(j) = 1}.
+(2)
+All systems share these sets, and each replicate uses the same query permutations across fractions.
+Thus comparisons are paired across systems and nested across disclosure levels. Revealing six
+records is not the same as adding six positives; at f = 0.2, 648 records are revealed overall but the
+mean total positive-pair count is 485.286, including seeds. At f = 0.3, 972 records are revealed and
+the mean positive-pair count is 596.013.
+Label normalization recognizes negative verdicts before positive verdicts, so the substring in
+NOT_RELEVANT cannot become a positive. Unknown labels, duplicate pairs, and contradictions
+between a negative raw label and a retained seed fail closed. Unrevealed candidates are operationally
+nonrelevant for Equation 1, not established scientiﬁc negatives. Exact integer score units based on
+a common denominator avoid artiﬁcial tie changes from ﬂoating-point summation. All 20 endpoint
+system/regime means agree with the exact forensic rational references.
+5.3
+RESULTS AND STATISTICAL INTERPRETATION
+The leader by mean token R@20 across replicates is the agent at f = 0.2 and BGE at f = 0.3. This
+brackets a change on the tested grid between six and nine revealed judgments per query. It is not an
+estimated continuous crossover threshold, evidence of monotonicity, or a universal judgment-budget
+prescription.
+5
+
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+Under review as a conference paper at ICLR 2027
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+Fraction of pooled judgments revealed
+0.25
+0.30
+0.35
+0.40
+0.45
+0.50
+0.55
+Mean R@20
+(a) Recall of identifier labels
+Other six systems
+Agent
+BGE
+SPLADE
+Hybrid
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+Fraction of pooled judgments revealed
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+Top-1 vote fraction
+(b) Winner frequency
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+Fraction of pooled judgments revealed
+0.4
+0.6
+0.8
+1.0
+Kendall tau-b
+(c) Agreement with seed order
+Figure 1: Controlled nested disclosure of the existing historical judgment pool (1,000 paired repli-
+cates; ten systems; 108 ﬁxed supported queries). Panel (a) shows all ten ﬁxed systems, highlighting
+the four with nonzero observed top-1 votes; six others are gray. Panel (b) shows tie-adjusted top-1
+frequencies and (c) tie-aware rank agreement. Bands in (a) and (c) are central empirical disclo-
+sure intervals, not population conﬁdence intervals; panel (b) shows point frequencies only. These
+are conditional identiﬁer-level diagnostics, not biomedical retrieval accuracy. Full disclosure recon-
+structs 1,370 positive pairs.
+Table 3: Paired conditional disclosure results. ∆= MBGE −Magent. Intervals are the empirical
+2.5th–97.5th percentiles of 1,000 paired differences, not conﬁdence intervals for a population mean.
+Top-1 votes are split among exact ties across all ten systems.
+f
+Revealed/query
+Mean ∆
+Empirical 95% interval
+BGE top-1
+0.2
+6
+−0.005432
+[−0.030669, 0.020421]
+18.8%
+0.3
+9
+0.011653
+[−0.013106, 0.035547]
+56.7%
+0.4
+12
+0.024971
+[0.001644, 0.047598]
+80.2%
+0.5
+15
+0.035463
+[0.014555, 0.056464]
+92.0%
+1.0
+30
+0.065735
+[0.065735, 0.065735]
+100%
+At both f = 0.2 and f = 0.3, paired empirical intervals include zero (Table 3). BGE strictly exceeds
+the agent in 34.9% and 83.1% of replicates, respectively, but wins against all ten systems in only
+18.8% and 56.7%. These are distinct statistics: beating one comparator does not imply winning
+overall. At f = 0.5, BGE receives 92.0% of top-1 votes. At full disclosure it receives every vote,
+deterministically conditional on these ﬁxed inputs. Intermediate observed rates of zero or one in
+1,000 replicates do not prove impossibility or certainty under the disclosure distribution.
+Kendall’s τb complements the leader plot because it measures pairwise order agreement through-
+out the system list and corrects for ties. The seed ordering ties BM25 and BGE, so a tie-ignorant
+6
+
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+Under review as a conference paper at ICLR 2027
+coefﬁcient would conﬂate breaking that tie with reversing a strict preference. Average ranks simi-
+larly preserve ties; strict reversals require opposite nonzero signs. Spearman correlation provides a
+rank-displacement summary of the endpoints, not an independent signiﬁcance test. Deﬁnitions are
+in Appendix A.
+The randomness here concerns which already judged records are revealed, conditional on the se-
+lected pool, automated verdicts, seeds, queries, and saved rankings. The intervals are not uncertainty
+about a biomedical population, true relevance, or a model’s future performance. Randomly disclos-
+ing records from a biased pool does not model missing-not-at-random unknown relevance outside it.
+Candidate-origin system ﬁelds were not retained in the raw judgments, so a provenance-grounded
+leave-one-system-out pooling analysis cannot be recovered. Ranking overlap is not a substitute for
+those missing origins.
+6
+WHAT THE REPAIRED INFRASTRUCTURE ESTABLISHES
+6.1
+ACTUAL LOCAL RETRIEVAL, WITHOUT ACCURACY CLAIMS
+The restored dataset was indexed using a hash-bound inverted BM25 implementation. It contains
+4,936 documents, 10,313 chunks, 63,109 lexical vocabulary terms, and 2,010,185 postings. Docu-
+ment selection uses the original query’s maximum chunk score, with stable index-order ties. This
+transparent implementation supports equation checks rather than relying on an unveriﬁed legacy
+serialized index.
+Eight predeclared, unscored probes were run under three non-LLM conditions: original-query top-
+24, repeated original query with three batches of eight new documents, and deterministic token-
+window reformulation. All 24 local runs completed with 24 unique candidates. For every probe,
+repeated-original and original-top-24 produced exactly the same candidates and primary selection,
+as expected for stable ranking with adequate candidates. Independent naive-formula comparisons
+numbered 290, with maximum absolute error 7.1054×10−15. These checks support implementation
+correctness and integration, not retrieval accuracy or the probes’ intended scientiﬁc capabilities.
+Recorded build and veriﬁed-load times were 3.16048 and 2.28054 seconds. Single loaded-index
+preﬁx-search measurements over the eight probes ranged from 0.923 to 1.524 milliseconds, with
+median 1.182 milliseconds. These are bounded local systems measurements, not a latency guar-
+antee; they do not include a live model workﬂow. Separate native-adapter checks yielded 56 dry
+condition plans and 24 ofﬂine retrieval checks, with zero provider/model calls. These are not addi-
+tional model experiments.
+6.2
+STRUCTURAL SUCCESS AND SELECTIVE EVALUATION CONTRACTS
+Document recall does not measure whether the retrieved set satisﬁes a comparison, contradiction
+relation, or multi-hop chain. A tested evaluator therefore accepts explicit evidence units and relations
+rather than inferring them from seed labels. Let S be the retrieved document preﬁx, U the required
+units, and E(d) ⊆U the units annotated for document d. Common diagnostics are
+C(S) = | ∪
+d∈S E(d)|
+|U|
+,
+A(S) = 1
+[
+U ⊆
+∪
+d∈S
+E(d)
+]
+.
+(3)
+Family success is more speciﬁc. Comparison requires both annotated sides. Contradiction re-
+quires some explicitly valid pair p with p ⊆S, and multi-hop requires some annotated valid path
+p ⊆S; path membership, not retrieval order, determines completion. Joint constraint success re-
+quires ∃d ∈S : U ⊆E(d) unless an explicit set-level policy permits union completion. Temporal
+and aggregation success require all annotated time bins or study-value units, respectively. Negative-
+result success requires evidence explicitly annotated with the negative ﬁnding. Arbitrarily combin-
+ing halves of different paths must not pass merely because their union covers every unit.
+These are implemented contracts tested on software ﬁxtures, not measured structural scores for the
+historical or restored corpus. Missing annotations yield null metrics and denominator zero, not
+seed-derived success. Unvalidated annotations can only enter a separately labeled descriptive-proxy
+mode. The evaluator’s status ﬁelds cannot authenticate a claimed adjudication; no such real human
+adjudication was performed here.
+7
+
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+Under review as a conference paper at ICLR 2027
+Selective evaluation likewise distinguishes ANSWER, ABSTAIN, and UNCERTAIN. Coverage uses
+all expected tasks; risk requires external evidence-set failure labels for the answered sets. Empty
+qrels do not establish appropriate abstention, and uncertain decisions are not relabeled as veriﬁed
+corpus absence. Consequently, this paper reports neither scientiﬁc answer accuracy nor calibrated
+selective risk.
+6.3
+CANDIDATE BUDGETS DO NOT ISOLATE AN ITERATION MECHANISM
+Seven implemented protocols share a cap of 24 unique candidate documents and an original-query
+ﬁnal selector: three non-LLM controls, one-shot rewrite, upfront three queries, evidence feedback,
+and feedback without accumulated evidence. Fixture tests and real-corpus dry checks exercise the
+interfaces; no live LLM condition has been evaluated. The heuristic is token-window reformulation,
+not RM3 or learned relevance feedback.
+Equal candidate count does not imply equal compute, prompt tokens, observed evidence, or cost. In
+the planned feedback schedules, accumulated feedback would expose eight then sixteen documents,
+whereas the no-accumulation condition would expose eight then eight; both retain query history.
+This exposure confound prevents an isolated interpretation of memory or iteration. We therefore
+withdraw any claim that historical differences establish an “iteration mechanism.” A causal compar-
+ison would require executed, provenance-bound controls and an explicit choice of which resources
+and observations are matched.
+7
+DISCUSSION AND LIMITATIONS
+The combined audit separates two mechanisms that should not be conﬂated. Changing the supplied
+relevance labels changes system order while saved rankings remain ﬁxed. Correcting source identity
+changes which scientiﬁc text can legitimately be associated with an identiﬁer. The ﬁrst is measured
+by conditional token arithmetic; the second is supported by authoritative metadata and own-article
+XML checks. We have not measured a corrected-corpus ranking change, and do not attribute the
+observed nine reversals causally to the parser bug.
+The case nevertheless reveals an important failure mode for benchmark interpretation. Recomputing
+a table exactly is insufﬁcient when source identity is wrong; repairing source identity is insufﬁcient
+when relevance labels are biased or invalid. A valid reconstruction must preserve separate evidence
+for the two operations. In this study, that separation prevents a tempting but unsupported repair:
+simply rewriting historical labels onto new canonical IDs and presenting the rescored outputs as a
+new benchmark.
+Several limits remain substantial. The collection is synthetic and historically exposed; no new
+source-disjoint task partition exists. Seed positives are forced by construction, and the expanded
+pool contains automated judgments rather than independently adjudicated relevance. Historical gen-
+eration and judging used a proprietary model, and this audit does not recreate its original service state
+or establish cross-model robustness. The disclosure design quantiﬁes variation within a ﬁnite biased
+pool, not its completeness. The source snapshot reﬂects current metadata, so not every discrepancy
+can be attributed to the old parser. Restoration is partial, with title-only documents and lossy for-
+mula/table rendering. Tests validate speciﬁed structural behavior, not scientiﬁc semantics. Finally,
+source ownership and retained license statements do not authorize blanket redistribution of article
+text.
+8
+CONCLUSION
+A joint provenance and label audit changes what can responsibly be concluded from CER-BENCH.
+The authoritative re-fetch identiﬁes cited-identiﬁer contamination, while ﬁxed historical rankings
+show nine pairwise reversals under alternative label sets. Nested disclosure locates a change of
+the mean-score leader between tested fractions 0.2 and 0.3, with overlapping-zero paired empirical
+intervals at both points. The new source-owned retrieval dataset and local BM25 checks establish
+a reproducible substrate, not a corrected biomedical leaderboard. The defensible outcome is an
+audited boundary between reproducible arithmetic, veriﬁed source identity, and still-unvalidated
+relevance.
+8
+
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+Under review as a conference paper at ICLR 2027
+REPRODUCIBILITY STATEMENT
+The retained artifacts include raw PubMed request logs and XML hashes, all-record comparisons,
+source-owned text manifests and offsets, exact historical token arithmetic, disclosure permutations
+and score arrays, and local retrieval traces. The disclosure experiment ﬁxes its random gener-
+ator, seeds, query universe, and tie policy; all endpoint means match exact rational references.
+The manuscript’s companion claim ledger maps claims to repository-relative evidence. No new
+model calls are required to reproduce the disclosed token calculations or local source/index checks.
+Provider-dependent historical generation is not independently reproduced. The ﬁnal integrated soft-
+ware suite passes all 311 tests with no failures or skips; this establishes software veriﬁcation, not
+independent biomedical validation.
+ETHICS AND AI-USE STATEMENT
+This work analyzes published scientiﬁc-source records and synthetic tasks; it reports no participant
+study or human relevance-annotation study. Human validation was not performed. AI assistance
+was used for code development, audit analysis, and manuscript preparation; this does not constitute
+independent relevance assessment. Historical task generation and judging relied on a proprietary
+language model. Neither those judgments nor this audit should be used as clinical advice or evi-
+dence of biomedical correctness. Retained provenance supports local research inspection; it does
+not establish that all article text may be redistributed. No public-release or blanket licensing approval
+is claimed.
+REFERENCES
+Anirudh Ajith, Mengzhou Xia, Alexis Chevalier, Tanya Goyal, Danqi Chen, and Tianyu Gao. Lit-
+Search: A retrieval benchmark for scientiﬁc literature search. In Proceedings of the 2024 Con-
+ference on Empirical Methods in Natural Language Processing, pp. 15068–15083, 2024. doi:
+10.18653/v1/2024.emnlp-main.840.
+Akari Asai, Jacqueline He, Rulin Shao, Weijia Shi, Amanpreet Singh, Joseph Chee Chang, Kyle
+Lo, Luca Soldaini, Sergey Feldman, Mike D’Arcy, David Wadden, et al. Synthesizing scientiﬁc
+literature with retrieval-augmented language models. Nature, 650(8103):857–863, 2026. doi:
+10.1038/s41586-025-10072-4.
+Chris Buckley and Ellen M. Voorhees. Retrieval evaluation with incomplete information. In Pro-
+ceedings of the 27th Annual International ACM SIGIR Conference on Research and Development
+in Information Retrieval, pp. 25–32. ACM, 2004. doi: 10.1145/1008992.1009000.
+Gordon V. Cormack, Charles L. A. Clarke, and Stefan Buettcher. Reciprocal rank fusion outperforms
+condorcet and individual rank learning methods. In Proceedings of the 32nd International ACM
+SIGIR Conference on Research and Development in Information Retrieval, pp. 758–759, 2009.
+doi: 10.1145/1571941.1572114.
+Qiao Jin, Won Kim, Qingyu Chen, Donald C. Comeau, Lana Yeganova, W. John Wilbur, and
+Zhiyong Lu.
+MedCPT: Contrastive pre-trained transformers with large-scale pubmed search
+logs for zero-shot biomedical information retrieval. Bioinformatics, 39(11):btad651, 2023. doi:
+10.1093/bioinformatics/btad651.
+Kirk Roberts, Dina Demner-Fushman, Ellen M. Voorhees, William R. Hersh, Steven Bedrick,
+Alexander J. Lazar, and Shubham Pant.
+Overview of the TREC 2017 precision medicine
+track. In Proceedings of The Twenty-Sixth Text REtrieval Conference (TREC 2017), 2017. URL
+https://trec.nist.gov/pubs/trec26/papers/Overview-PM.pdf.
+Stephen Robertson and Hugo Zaragoza. The probabilistic relevance framework: BM25 and beyond.
+Foundations and Trends in Information Retrieval, 4(1–2):1–174, 2009. doi: 10.1561/1500000019.
+Amanpreet Singh, Mike D’Arcy, Arman Cohan, Doug Downey, and Sergey Feldman. SciRepE-
+val: A multi-format benchmark for scientiﬁc document representations.
+In Proceedings of
+the 2023 Conference on Empirical Methods in Natural Language Processing, pp. 5548–5566,
+9
+
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+Under review as a conference paper at ICLR 2027
+2023.
+doi: 10.18653/v1/2023.emnlp-main.338.
+URL https://aclanthology.org/
+2023.emnlp-main.338/.
+Nandan Thakur, Nils Reimers, Andreas Rücklé, Abhishek Srivastava, and Iryna Gurevych. BEIR: A
+heterogeneous benchmark for zero-shot evaluation of information retrieval models. In Proceed-
+ings of the Neural Information Processing Systems Track on Datasets and Benchmarks, 2021.
+George Tsatsaronis, Georgios Balikas, Prodromos Malakasiotis, Ioannis Partalas, Matthias
+Zschunke, Michael R. Alvers, Dirk Weissenborn, Anastasia Krithara, Sergios Petridis, Dim-
+itris Polychronopoulos, et al.
+An overview of the BIOASQ large-scale biomedical seman-
+tic indexing and question answering competition.
+BMC Bioinformatics, 16:138, 2015.
+doi:
+10.1186/s12859-015-0564-6.
+Ellen M. Voorhees.
+Variations in relevance judgments and the measurement of retrieval ef-
+fectiveness.
+Information Processing & Management, 36(5):697–716, 2000.
+doi: 10.1016/
+S0306-4573(00)00010-8.
+David Wadden, Shanchuan Lin, Kyle Lo, Lucy Lu Wang, Madeleine van Zuylen, Arman Cohan,
+and Hannaneh Hajishirzi. Fact or ﬁction: Verifying scientiﬁc claims. In Proceedings of the 2020
+Conference on Empirical Methods in Natural Language Processing, pp. 7534–7550, 2020. doi:
+10.18653/v1/2020.emnlp-main.609.
+Jianyou (Andre) Wang, Kaicheng Wang, Xiaoyue Wang, Prudhviraj Naidu, Leon Bergen, and Ra-
+mamohan Paturi. Scientiﬁc document retrieval using multi-level aspect-based queries. In Ad-
+vances in Neural Information Processing Systems 36, pp. 38404–38419, 2023. doi: 10.52202/
+075280-1668.
+Lianmin Zheng, Wei-Lin Chiang, Ying Sheng, Siyuan Zhuang, Zhanghao Wu, Yonghao Zhuang,
+Zi Lin, Zhuohan Li, Dacheng Li, Eric P. Xing, Hao Zhang, Joseph E. Gonzalez, and Ion Stoica.
+Judging LLM-as-a-judge with MT-Bench and chatbot arena. In Advances in Neural Information
+Processing Systems 36, Datasets and Benchmarks Track, pp. 46595–46623, 2023. doi: 10.52202/
+075280-2020. URL https://arxiv.org/abs/2306.05685.
+A
+STATISTICAL DEFINITIONS AND SCOPE
+Fixed universe and exact means.
+The historical test universe contains 125 rows per system. Met-
+rics condition on the same 108 tasks with nonempty seed labels at all disclosure fractions. Since
+seeds are retained, their denominators never become zero. The remaining 17 rows have null retrieval
+metrics and remain explicitly excluded, not dropped from coverage accounting. Each supported
+query has equal weight 1/108, regardless of its positive-label count. Exact common-denominator
+integer arithmetic determines ordering before conversion to ﬂoating-point display values.
+Pairing and empirical intervals.
+For a pair of methods a, b, let Dr(f) = Ma,r(f) −Mb,r(f).
+Reported differences average these 1,000 paired values; interval endpoints are their empirical 0.025
+and 0.975 quantiles. They describe how scores vary when a ﬁxed ﬁnite pool is partially disclosed.
+They are not bootstrap conﬁdence intervals, hypothesis tests, or conﬁdence bounds on a win prob-
+ability. Queries and their underlying judgments are not resampled. At f = 0 and f = 1, label sets
+are ﬁxed across replicates, so their conditional intervals collapse to points by design.
+Top-1 votes and strict exceedance.
+Let Wr(f) be the set of methods attaining the exact largest
+mean in replicate r. Method s receives vote vs,r(f) = 1[s ∈Wr(f)]/|Wr(f)|. Its top-1 rate is
+1000−1 ∑
+r vs,r(f); votes sum to one per replicate. Pairwise strict exceedance instead averages
+1[Dr(f) > 0]. Neither quantity is the probability that a method is best for biomedical users. The
+manuscript reports rates, not per-replicate vote quantiles as if they were conﬁdence bounds on those
+rates.
+10
+
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+Under review as a conference paper at ICLR 2027
+Strict reversals.
+For systems a, b, a reversal relative to the seed regime occurs if
+(Ma(0) −Mb(0))(Ma,r(f) −Mb,r(f)) < 0.
+(4)
+A broken seed tie is not a reversal. There are
+(10
+2
+)
+= 45 possible pairs, including the seed-tied pair
+in the reporting denominator. Thus nine endpoint reversals correspond to 9/45, not a denominator
+that silently excludes inconvenient pairs.
+Rank correlations.
+For two score vectors over the same ten methods, let C, D count concordant
+and discordant pairs, and Tx, Ty count pairs tied only in the ﬁrst or second vector. Kendall’s coefﬁ-
+cient is
+τb =
+C −D
+√
+(C + D + Tx)(C + D + Ty)
+.
+(5)
+Average ranks are assigned to exact ties. Spearman’s ρ is the Pearson correlation of these rank vec-
+tors. The saved disclosure implementation computes tie-aware agreement between fraction pairs;
+363 comparisons against an independent SciPy calculation were recorded. The correlations summa-
+rize conditional system order, not relevance validity.
+Why no cross-regime recall-drop interpretation?
+Writing G′ = G ∪H changes recall to (|T ∩
+G| + |T ∩(H \ G)|)/(|G| + |H \ G|). A ﬁxed ranking may score lower even while retrieving
+additional newly labeled positives, because the denominator grows faster. Consequently, numerical
+endpoint differences across seed and expanded regimes are not performance deterioration from a
+model intervention. Within-fraction paired differences compare systems under the same label sets;
+across-fraction order changes diagnose dependence on those sets.
+B
+DIRECT-CHILD IDENTITY EXTRACTION AND AUDIT ROOT CAUSE
+The essential ownership rule is to select identiﬁers from the current article’s own metadata con-
+tainer. The following pseudocode omits transport and normalization details but makes the traversal
+boundary explicit:
+for record in returned_pubmed_records:
+citation = direct_child(record, "MedlineCitation")
+pmid = required_unique_text(direct_child(citation, "PMID"))
+pubmed_data = direct_child(record, "PubmedData")
+own_list = direct_child(pubmed_data, "ArticleIdList")
+own_ids = direct_children(own_list, "ArticleId")
+pmc = unique_or_absent(own_ids, type="pmc")
+doi = unique_or_absent(own_ids, type="doi")
+if doi is absent:
+article = direct_child(citation, "Article")
+doi = own_elocation_doi_or_absent(article)
+emit(pmid, normalize_pmc(pmc), doi)
+# Never fill absent own IDs from ReferenceList descendants.
+Actual parsing supports namespace-qualiﬁed elements and rejects conﬂicting identities. Repeated
+identical IDs within one own list are allowed; duplicate returned article records are not. The title and
+abstract extraction preserves mixed-inline text with itertext(), within explicitly selected own
+ﬁelds. Publication-type and other metadata differences may reﬂect both updated source content and
+parser policy, which is why Table 2 does not equate every changed row with bug contamination.
+The 26 retained batch downloads contain all intended PMIDs after recovery. Two requests each
+omitted one intended PMID, and another requested an invalid identiﬁer instead of the intended
+PMID. A supplemental batch recovered the three intended records. This yielded 4,937 unique re-
+quested IDs including one invalid non-corpus ID, but 4,936 returned unique corpus PMIDs. An
+absent optional ﬁeld in a valid returned record is not a missing article: the snapshot has 2,295
+records without PMC identiﬁers, 20 without DOI, and 22 without abstracts.
+The full-text boundary is analogous: use own front/article-meta/article-id, not ﬁle-
+name inference, arbitrary body IDs, or reference IDs. A single-article wrapper may be determin-
+istically unwrapped; ambiguous multi-article structures are rejected. Major local-title mismatches
+11
+
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+Under review as a conference paper at ICLR 2027
+quarantine local bodies without invalidating the separate authoritative PubMed metadata. These
+rules avoid turning a valid metadata record into an unveriﬁed full-text association.
+C
+TRACE, SCHEMA, AND DATA AVAILABILITY
+Historical evidence.
+Raw pooled records contain task_id, doc_id, and judgment; they
+do not preserve a candidate-origin system ﬁeld. The forensic report preserves stored and recon-
+structed qrels separately, including the exact missing-pair effect. The disclosure artifact retains
+query/candidate order, all per-query permutations, random seeds, exact score units and divisor, ﬂoat-
+ing means, average ranks, top-1 votes, reversal arrays, and tie-aware rank agreements. Its manifest
+binds the inputs, code, conﬁguration, and outputs. No corpus record is dereferenced in that disclo-
+sure experiment.
+New retrieval data.
+Each document and chunk carries a canonical doc_id, matching
+article_id, and a common versioned corpus_id.
+Each chunk has a unique opaque
+chunk_id and explicit text. Offsets are half-open Unicode-codepoint offsets in rendered text, not
+byte positions in raw XML. Source blocks retain source type, XML locator, raw path/hash, section
+ownership, and intersections with chunk-relative and document-relative ranges. Explicit rendering
+additions include block separators and table-cell coordinate labels. Retained nonindexed local ab-
+stracts are distinguished from indexed authoritative abstracts to avoid duplicate indexing.
+Protocol traces.
+The implemented budget protocol distinguishes logical searches, cache hits,
+ranked chunk output, admitted candidates, and model-visible observations. A full retrieval rank-
+ing is not automatically a model observation. Candidate admission is document-deduplicated; each
+admitted document supplies a representative chunk. The intended model trace includes request, re-
+sponse, displayed evidence, usage when available, latency, and typed errors. Character clipping is
+not token accounting. Dry plans contain no actual API observations or model responses, and cannot
+be resumed as completed experiments.
+Availability and rights.
+The accompanying repository materials are identiﬁed by rel-
+ative
+paths
+in
+CLAIMS_TO_ARTIFACTS.md.
+Principal
+locations
+are
+results/
+readiness/authoritative_corpus/,
+results/readiness/verified_
+fulltext/,
+results/readiness/qrel_sensitivity/v1_forensic/,
+and
+results/readiness/qrel_disclosure/v2/.
+The
+new
+dataset
+resides
+under
+data/processed/authoritative_fulltext_v1/.
+These
+locations
+describe
+re-
+tained artifacts, not a claim of an already completed public release. Public PubMed endpoints
+identify the metadata sources; local article text remains subject to source-speciﬁc permissions.
+License recognition is not license adjudication, and public redistribution has not been authorized by
+this audit.
+D
+SOFTWARE VERIFICATION VERSUS SCIENTIFIC EVIDENCE
+The authoritative-parser evidence records 51 targeted/adjacent passing tests at its snapshot. The
+restoration evidence records 83 passing tests and byte-identical independent builds. The disclosure
+evidence records 11 passing tests and exact agreement of 20 rational endpoints. The real-corpus
+retrieval evidence records 68 passing tests and 290 independent formula comparisons. These suites
+overlap; their counts must not be summed into a count of unique tests or independent scientiﬁc
+replications.
+An intermediate adapter veriﬁcation encountered a stale historical source-hash assertion; its failed
+and ﬁltered-run receipts are preserved. A subsequent, separately versioned native-backend integra-
+tion retained strict provenance checks, reused the immutable index, and bound the updated sources.
+The ﬁnal complete conﬁgured suite passes 311 tests with no failures, errors, skips, or deselection.
+Twenty-four actual ofﬂine retrieval checks and 24 separate dry plans ran in that integration, with
+zero model calls. Old build timings and formula comparisons are explicitly identiﬁed as histori-
+cal measurements rather than presented as rerun measurements. Snapshot-speciﬁc checks remain
+important because a legitimate source change can invalidate an earlier attestation.
+12
+
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667
+668
+669
+670
+671
+672
+673
+674
+675
+676
+677
+678
+679
+680
+681
+682
+683
+684
+685
+686
+687
+688
+689
+690
+691
+692
+693
+694
+695
+696
+697
+698
+699
+700
+701
+Under review as a conference paper at ICLR 2027
+Neither these tests nor programmatically ﬁctional structural ﬁxtures are human experiments. Simu-
+lated adjudication statuses in ﬁxtures test software branches; they must not be interpreted as annota-
+tions for real papers. Future scientiﬁc evaluation would need new tasks tied to the corrected source
+version, independently justiﬁed evidence relations, and explicit split/exposure control. Any future
+automated-only results would still require the absence of human validation to remain visible. The
+present manuscript does not ﬁll this gap with historical gold migration, fabricated structural scores,
+or unexecuted model comparisons.
+13

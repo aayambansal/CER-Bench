@@ -1,0 +1,11 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.16, pytest-9.1.1, pluggy-1.6.0
+rootdir: /Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search
+configfile: pyproject.toml
+collected 27 items
+
+tests/test_qrel_sensitivity.py ...............                           [ 55%]
+tests/test_strict_metrics.py ............                                [100%]
+
+- generated xml file: /Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/results/readiness/qrel_sensitivity/tests_final.xml -
+============================== 27 passed in 0.59s ==============================

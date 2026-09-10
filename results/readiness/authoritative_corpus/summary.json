@@ -1,0 +1,210 @@
+{
+  "schema_version": "authoritative_v1",
+  "source": "PubMed EFetch XML via WebFetch",
+  "historical_rows": 4936,
+  "unique_target_pmids": 4936,
+  "batches": 26,
+  "request_id_occurrences": 4937,
+  "unique_requested_ids": 4937,
+  "returned_records": 4936,
+  "parsed_rows": 4936,
+  "authoritative_pmc_rows": 2641,
+  "authoritative_doi_rows": 4916,
+  "abstract_chunks": 4914,
+  "restored_fulltext_rows": 0,
+  "local_xml_files": 645,
+  "fulltext_status_counts": {
+    "identity_matched_raw_candidate_text_unvalidated": 590,
+    "no_authoritative_pmc": 2295,
+    "no_matching_local_front": 2051
+  },
+  "compared_rows": 4936,
+  "changed_rows": 3096,
+  "change_counts": {
+    "doc_id": 2840,
+    "abstract": 22,
+    "authors": 26,
+    "doi": 3,
+    "pmcid": 247,
+    "title": 118,
+    "mesh_terms": 178,
+    "venue": 1,
+    "publication_types": 277,
+    "keywords": 1
+  },
+  "metadata_changed_rows_excluding_doc_id": 815,
+  "changed_old_ids_found_in_current_references": {
+    "doi": 3,
+    "pmcid": 226
+  },
+  "pmcid_change_types": {
+    "added": 20,
+    "removed": 219,
+    "replaced": 8
+  },
+  "local_xml_status_counts": {
+    "front_identity_candidate": 642,
+    "unsupported_or_multiple_articles": 3
+  },
+  "local_xml_with_permissions": 633,
+  "old_fulltext_rows": 652,
+  "absent_field_counts": {
+    "pmcid": 2295,
+    "doi": 20,
+    "abstract": 22
+  },
+  "missing_or_unsupported_pmids": [],
+  "failures": [],
+  "metadata_release_pass": true,
+  "benchmark_gold_release_pass": false,
+  "human_validation": "waived_not_done",
+  "external_identity_verified": true,
+  "biomedical_relevance_verified": false,
+  "public_redistribution_rights_verified": false,
+  "historical_gold_reused": false,
+  "historical_task_mapping_rows": 3242,
+  "download_http_failures": [],
+  "request_anomalies": [
+    {
+      "filename": "pubmed_batch_002.xml",
+      "missing_pmids": [],
+      "note": "URL transcription omitted 27798150; recovered in batch 026."
+    },
+    {
+      "filename": "pubmed_batch_003.xml",
+      "missing_pmids": [],
+      "note": "URL transcription omitted 28770670; recovered in batch 026."
+    },
+    {
+      "filename": "pubmed_batch_021.xml",
+      "missing_pmids": [
+        "40240287758"
+      ],
+      "note": "URL transcription requested invalid 40240287758 instead of 40287758; invalid ID not returned; intended PMID recovered in batch 026."
+    },
+    {
+      "filename": "pubmed_batch_026.xml",
+      "missing_pmids": [],
+      "note": "Supplemental recovery of three URL transcription errors, not an unchanged retry."
+    }
+  ],
+  "raw_bytes": 140943352,
+  "retrieval_dates": [
+    "2026-09-09"
+  ],
+  "root_cause_evidence": [
+    {
+      "pmid": "38308006",
+      "own_pmc_ids": [],
+      "buggy_first_descendant_pmc": "6286148",
+      "cited_pmc6286148": [
+        "Jinek, M. et al. A programmable dual-RNA-guided DNA endonuclease in adaptive bacterial immunity. Science 337, 816–821 (2012). First description of Cas9 reprogrammability biochemically."
+      ],
+      "pilot_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=38308006,30610625,40828286&retmode=xml",
+      "pilot_sha256": "ce89488f124e3ba1f77ac4768a9bfd88049c13d92ef5331916ea9ebb707356a0"
+    },
+    {
+      "pmid": "30610625",
+      "own_pmc_ids": [],
+      "buggy_first_descendant_pmc": "6286148",
+      "cited_pmc6286148": [
+        "Jinek M, Chylinski K, Fonfara I et al (2012) A programmable dual-RNA-guided DNA endonuclease in adaptive bacterial immunity. Science 337:816–821"
+      ],
+      "pilot_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=38308006,30610625,40828286&retmode=xml",
+      "pilot_sha256": "ce89488f124e3ba1f77ac4768a9bfd88049c13d92ef5331916ea9ebb707356a0"
+    },
+    {
+      "pmid": "40828286",
+      "own_pmc_ids": [],
+      "buggy_first_descendant_pmc": "6286148",
+      "cited_pmc6286148": [
+        "Jinek M, Chylinski K, Fonfara I et al (2012) A programmable dual-RNA-guided DNA endonuclease in adaptive bacterial immunity. Science 337:816–821"
+      ],
+      "pilot_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=38308006,30610625,40828286&retmode=xml",
+      "pilot_sha256": "ce89488f124e3ba1f77ac4768a9bfd88049c13d92ef5331916ea9ebb707356a0"
+    }
+  ],
+  "historical_corpus_sha256": "88deb174b7725b969f1eecaefd3c16121eed5349675e44a315d0f5ec18ac4668",
+  "task_inputs": [
+    {
+      "path": "data/benchmark/dev.jsonl",
+      "sha256": "0979a822ac4eec5782cbcfdd5241cd3d8c792b10d7f6b407aa0eb419da5e53ec"
+    },
+    {
+      "path": "data/benchmark/test.jsonl",
+      "sha256": "33158e70ebd3e6438530553b2686354f6d2fa07e60373e9fd4ae63bd52796d76"
+    },
+    {
+      "path": "data/benchmark/train.jsonl",
+      "sha256": "467a5e0ff7a2aa6fed13eba43336e216582542f3ded9031d477d747e750236c1"
+    },
+    {
+      "path": "data/benchmark/v1_1_component_disjoint/dev.jsonl",
+      "sha256": "f8a8895b92e5119cff00b158d4988e9aa536e6a4199a9c22650c06ebf7fddd94"
+    },
+    {
+      "path": "data/benchmark/v1_1_component_disjoint/test.jsonl",
+      "sha256": "7f78d945e34a67bf55076b9810b3c09bf4adf659c2e6c88f65659faa60a871f8"
+    },
+    {
+      "path": "data/benchmark/v1_1_component_disjoint/train.jsonl",
+      "sha256": "9d52f82cd85ea628eb9fd154b8247dd3ac5cb9c75bed8ee70eea31f895bedefa"
+    },
+    {
+      "path": "data/benchmark/v1_2_repaired_components/dev.jsonl",
+      "sha256": "770a51bea462c0f3bf0f673b3cdc6c0026e1f70e5cb1977e00e947876f712e68"
+    },
+    {
+      "path": "data/benchmark/v1_2_repaired_components/test.jsonl",
+      "sha256": "c7dd3f4b61a0e901f4a68def8bd0c90219a4fbbac0610b209d2006b7b41cc228"
+    },
+    {
+      "path": "data/benchmark/v1_2_repaired_components/train.jsonl",
+      "sha256": "9e380289e95f4d6bac4b063344f2b527b01d9596f68d24cc12b260b29e018117"
+    },
+    {
+      "path": "data/benchmark/v2/agent_test.jsonl",
+      "sha256": "c17f69f9c225bfd57541981d90ad05cdf21748cd6992ea0099ceb60cc0665e6c"
+    },
+    {
+      "path": "data/benchmark/v2/dev.jsonl",
+      "sha256": "35b8c8786c01543c30e7da0f0a722b27964f635b5dac4b6daf70fc7049c302d7"
+    },
+    {
+      "path": "data/benchmark/v2/tasks_v2.jsonl",
+      "sha256": "1039473882dca42369022be9b467c3d6cfb97fe4ee8d326876b09fdd7f3105cb"
+    },
+    {
+      "path": "data/benchmark/v2/test.jsonl",
+      "sha256": "ac517650050e55ee41e56dee182183847ac27c566463157dd41b3d7dba550b48"
+    },
+    {
+      "path": "data/benchmark/v2/train.jsonl",
+      "sha256": "a3501a0f1fc517106a475b667b88ec42aefdeacd19d127631cb211eaa94a2d0f"
+    },
+    {
+      "path": "data/interim/grounded_tasks.jsonl",
+      "sha256": "2fef545757b8ade9efeae6f590778de12f643d017c788ed2ff08895b3909eb5f"
+    },
+    {
+      "path": "data/interim/raw_tasks.jsonl",
+      "sha256": "2fef545757b8ade9efeae6f590778de12f643d017c788ed2ff08895b3909eb5f"
+    },
+    {
+      "path": "data/interim/rejected_tasks.jsonl",
+      "sha256": "bfa4410f16aba946d969e5f1ffad9959cbdeaf67e85b4b2e7dfaaa5853fa57f3"
+    },
+    {
+      "path": "data/interim/verified_tasks.jsonl",
+      "sha256": "2fef545757b8ade9efeae6f590778de12f643d017c788ed2ff08895b3909eb5f"
+    },
+    {
+      "path": "data/training/training_tasks.jsonl",
+      "sha256": "e5258fbf46296d4f3397b96e378d2e94b27c3baf8348d62c64659ca9ff8979e5"
+    }
+  ],
+  "implementation_sha256": {
+    "scripts/47_build_authoritative_corpus.py": "7446fe528a0dd3dd5572d10fd25e48f0a32b698130abf9d08f4b45f2f8b8905a",
+    "src/corpus/pubmed_xml.py": "65df7853f3f2a54cff95ca751e405dbf495f4a1bfe45ef3a2a4ceeb645ab523d"
+  }
+}

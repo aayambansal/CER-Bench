@@ -1,0 +1,25 @@
+[
+  {
+    "round": 0,
+    "action": {
+      "action": "SEARCH",
+      "query": "organoid establishment success rates pediatric cancer types organoid-based studies"
+    }
+  },
+  {
+    "round": 1,
+    "action": {
+      "action": "REFINE",
+      "reasoning": "The results focus on general organoid studies and adult cancers (breast, prostate, pancreatic, bladder) but lack specific information about pediatric cancers and their establishment success rates. Need to search more specifically for pediatric cancer organoids.",
+      "query": "pediatric cancer organoids establishment success rates children tumor organoids"
+    }
+  },
+  {
+    "round": 2,
+    "action": {
+      "action": "REFINE",
+      "reasoning": "Still not finding specific pediatric cancer organoid studies. Need to search for specific pediatric cancer types that commonly use organoids, such as neuroblastoma, pediatric brain tumors, sarcomas, and leukemia.",
+      "query": "neuroblastoma organoids pediatric brain tumor organoids sarcoma organoids childhood cancer establishment rates"
+    }
+  }
+]

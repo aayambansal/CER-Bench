@@ -1,0 +1,141 @@
+{
+  "schema": "verified-bm25-synthetic-benchmark-v1",
+  "label_status": "synthetic_structural_not_gold",
+  "publication_claim": false,
+  "executable": "/Users/aayambansal/.config/openscience/data-root/conda/envs/python/bin/python",
+  "python_version": "3.11.16 (main, Sep  2 2026, 23:33:55) [Clang 21.1.8 ]",
+  "source_sha256": {
+    "cli": "a9d3b9f8c0123479573c288c9235b13d77ffe73c3032bbb1a2097a644a4ae290",
+    "retriever": "a15c6639ba2482b6f9b5fa83b3aa08bcd34fc35fbfaa8abc2ba76ddd5c97d4a6"
+  },
+  "measurements": [
+    {
+      "documents": 200,
+      "chunks": 600,
+      "seed": 1729,
+      "tokens": 46800,
+      "vocabulary": 23,
+      "postings": 10197,
+      "queries": [
+        "algae transport cold",
+        "yeast repair saline",
+        "moss growth cold",
+        "bacteria transport saline",
+        "culture measured signal"
+      ],
+      "query_repetitions": 3,
+      "build_seconds": 0.015146667137742043,
+      "verified_load_seconds": 0.012607249896973372,
+      "score_seconds": [
+        4.504062235355377e-05,
+        1.6707926988601685e-05,
+        3.258325159549713e-05,
+        1.3042241334915161e-05,
+        3.179209306836128e-05,
+        1.3875309377908707e-05,
+        1.237494871020317e-05,
+        1.4292076230049133e-05,
+        1.4124903827905655e-05,
+        1.9290950149297714e-05,
+        1.1499971151351929e-05,
+        1.1709053069353104e-05,
+        1.1916738003492355e-05,
+        1.8875114619731903e-05,
+        6.845779716968536e-05
+      ],
+      "full_search_seconds": [
+        0.0002409578301012516,
+        0.0003249160945415497,
+        0.00018187519162893295,
+        0.0002492908388376236,
+        0.00020425021648406982,
+        0.00019191578030586243,
+        0.0001916252076625824,
+        0.0001905839890241623,
+        0.00019124988466501236,
+        0.00020954106003046036,
+        0.0001899171620607376,
+        0.0001967092975974083,
+        0.00021204166114330292,
+        0.0002327500842511654,
+        0.0002537909895181656
+      ],
+      "score_median_seconds": 1.4292076230049133e-05,
+      "full_search_median_seconds": 0.00020425021648406982,
+      "input_hashes": {
+        "corpus_sha256": "bbe656d3ac3388c3b4dd5a056da9bbd76f5781f4c16eb105c82c1a2cca601d81",
+        "chunks_sha256": "e02216038982d5380358cf7ee634b127e6d38a0cf96cd3e55b2c317223e7909a",
+        "manifest_sha256": "f1211654b6f40a05a212b2ba0b9fbc73998b1b3a4bacff3eaa14b52a2d633ec5"
+      },
+      "npz_bytes": 8922
+    },
+    {
+      "documents": 2000,
+      "chunks": 6000,
+      "seed": 1729,
+      "tokens": 468000,
+      "vocabulary": 23,
+      "postings": 101963,
+      "queries": [
+        "algae transport cold",
+        "yeast repair saline",
+        "moss growth cold",
+        "bacteria transport saline",
+        "culture measured signal"
+      ],
+      "query_repetitions": 3,
+      "build_seconds": 0.1688900412991643,
+      "verified_load_seconds": 0.10721645830199122,
+      "score_seconds": [
+        6.54999166727066e-05,
+        4.154210910201073e-05,
+        4.637520760297775e-05,
+        7.679173722863197e-05,
+        8.783303201198578e-05,
+        4.849955439567566e-05,
+        3.3041927963495255e-05,
+        4.841713234782219e-05,
+        4.5416876673698425e-05,
+        8.950009942054749e-05,
+        6.0375314205884933e-05,
+        4.870770499110222e-05,
+        3.729201853275299e-05,
+        3.1999778002500534e-05,
+        7.812492549419403e-05
+      ],
+      "full_search_seconds": [
+        0.0019850418902933598,
+        0.0023393332958221436,
+        0.002204833086580038,
+        0.0019376249983906746,
+        0.0030857082456350327,
+        0.0016366667114198208,
+        0.0015268749557435513,
+        0.0028915838338434696,
+        0.001968749798834324,
+        0.0028630001470446587,
+        0.002232958097010851,
+        0.0020627081394195557,
+        0.0016346662305295467,
+        0.001568999607115984,
+        0.0019272500649094582
+      ],
+      "score_median_seconds": 4.849955439567566e-05,
+      "full_search_median_seconds": 0.0019850418902933598,
+      "input_hashes": {
+        "corpus_sha256": "04ad4e4e3e66bc69efb5e1f6e3842975b5d2b7c1faac7a9f1db057e1dac48a66",
+        "chunks_sha256": "11e1170cd2b7bb3ebebc40b043b5211e35bf4d851cc147debd949deb34e95ae6",
+        "manifest_sha256": "b91f790b6417d1290fcad09de32e94431105aec61b50295e1d0b99908e46764d"
+      },
+      "npz_bytes": 192182
+    }
+  ],
+  "unmeasured_projection": {
+    "target_chunks": 1000000,
+    "assumption": "Same 78-token lengths, vocabulary, query posting density; linear build/load and N log N full-search scaling from largest synthetic point. Not a confidence interval or measured real corpus.",
+    "build_seconds": 28.14834021652738,
+    "verified_load_seconds": 17.869409716998536,
+    "full_search_seconds": 0.5254003237937585
+  },
+  "limitations": "Small vocabulary and warm local caches; no peak-RSS measurement; full hit JSON serialization excluded; extrapolation can be very inaccurate. Temporary inputs regenerated by seed and generator code."
+}

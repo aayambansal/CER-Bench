@@ -1,0 +1,278 @@
+% WORKING REVISION: BLOCKED. No claim of independent biomedical validation.
+\documentclass{article}
+\usepackage{iclr2027_conference,times}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs,amsmath,amssymb}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\cer}{\textsc{CER-Bench}}
+\title{Relevance Construction Can Reverse Scientific Retrieval Rankings:\\A CER-Bench Audit}
+\author{Anonymous Authors}
+% Keep review mode. Do not enable \iclrfinalcopy.
+\begin{document}
+\maketitle
+
+\begin{center}
+\fbox{\parbox{0.91\linewidth}{\textbf{Internal working draft---not cleared for submission.}
+Source identity and relevance validation remain unresolved. Numerical results below
+are explicitly historical string-label diagnostics, not independently validated
+biomedical retrieval results. Confirmatory human and matched-budget experiments
+have not been completed.}}
+\end{center}
+
+\begin{abstract}
+Scientific retrieval benchmarks use relevance judgments to turn evidence sets into
+system rankings. We examine how those judgments affect conclusions in CER-Bench,
+a collection of 304 synthetic questions spanning eight biomedical retrieval
+requirements. In the historical saved rankings, changing from source-seed labels
+to pooled model judgments produces nine strict pairwise rank reversals among ten
+systems at Recall@20, with Kendall's $\tau_b=0.584$ and Spearman's $\rho=0.736$.
+These are calculations over saved identifier strings, not a determination of the
+biologically correct system ordering. A stricter provenance audit also identifies
+conflicting document identities, mismatched article attachments, and a missing
+relevant pair in the stored expanded labels. We therefore separate arithmetic
+reproducibility from evidence validity. We provide tested, fail-closed evaluation
+contracts for structural evidence completion, selective retrieval, component
+splits, and candidate-budget controls. Independent human relevance judgments,
+fresh held-out queries, and identity-corrected retrieval runs remain prerequisites
+for confirmatory claims.
+\end{abstract}
+
+\section{Introduction}
+Finding papers on a topic does not ensure that a retrieved set satisfies a
+scientific question. A comparison needs evidence for both sides; a contradiction
+requires opposing findings in interpretable conditions; and an evidence chain may
+fail if a necessary link is absent. Yet these requirements are often reduced to
+document membership in a relevance set.
+
+Relevance-set construction is itself a source of uncertainty. Pooling addresses
+incomplete judgments without making a collection exhaustive
+\citep{buckley2004incomplete}; assessor variation can also change evaluation
+\citep{voorhees2000judgments}. Synthetic questions introduce an additional
+dependency when the papers used to write a question are subsequently treated as
+its gold evidence. Using the same model family for generation and expanded
+judgments does not provide an independent reference standard
+\citep{zheng2023judge}.
+
+Our motivating question is therefore not whether one retrieval architecture wins
+on one label set. It is: \emph{how stable is the architecture comparison to the
+construction and validation of those labels?} CER-Bench provides a diagnostic
+case study, but the historical corpus does not currently justify confirmatory
+biomedical conclusions. This revision makes that distinction explicit rather
+than retaining an unsupported claim of agent superiority.
+
+\section{Historical Collection and Evidence Audit}
+The historical collection contains 4,936 corpus records and 17,902 chunk records,
+not that many unique validated identities. Only 4,923 document identifiers and
+17,770 chunk identifiers are distinct. The saved text-availability flags indicate
+652 fulltext-bearing records and 4,284 abstract-only records. These are historical
+flags, not certification of correct article attachment.
+
+The 304 questions are balanced across constraint, comparative, contradiction,
+abstention, multi-hop, temporal, aggregation, and negative-result families.
+Original train/development/test counts are 119/60/125. Retrieval means use the
+108 test questions with nonempty seed labels; 17 empty-label questions are
+separate proxy unsupportedness cases. Reference answers are not scored.
+
+\paragraph{Identity is an upstream requirement.}
+Ten duplicated document identifiers refer to conflicting PMID/title records.
+Those identifiers occur at 174 ranked positions across twelve saved methods,
+affecting 44 test questions. Independently, 58 corpus records disagree with the
+PMID in the attached local XML article front. This is evidence of incorrect local
+attachment, not merely inconsistent formatting. Dictionary loading by a duplicated
+identifier can overwrite the record used to display a retrieved hit. We cannot
+recover a trustworthy producing experiment by choosing the first or last record.
+
+\paragraph{Conservative repair candidate.}
+A separate local candidate uses canonical PMID names and retains only
+unambiguously attributable abstract chunks. It strips all full text, excludes
+tasks touching unsafe evidence, and records every exclusion. It retains 4,936
+metadata records, 4,856 abstract chunks, and 238 tasks; 80 metadata records lack
+retained chunks. This is a lossy candidate, not an equivalent benchmark or a
+validated full-text collection. Historical rankings are not remapped into it.
+
+\paragraph{Split integrity is necessary but insufficient.}
+The original test overlaps train/development evidence and contains two repeated
+questions. Component reassignment of the conservative candidate yields
+94/49/95 tasks, grouping annotated evidence and exact/lexical question duplicates.
+All implemented overlap checks pass. However, these questions were already
+generated and examined. Post-hoc reassignment cannot create an unexposed
+confirmatory test set, and no semantic-cluster independence claim follows from
+the absence of explicit cluster annotations.
+
+\section{Relevance Regimes and Historical Arithmetic}
+\paragraph{Seed labels.}
+The sampled construction papers become seed-relevant identifiers, with 264
+query--document pairs across the 108 supported test questions. Membership in the
+generation context does not independently prove necessity or sufficiency for the
+final question.
+
+\paragraph{Pooled labels.}
+The saved adjudication file contains 3,240 binary model judgments: 1,106 normalize
+to relevant and 2,134 to not relevant. We normalize \texttt{NOT\_RELEVANT} before
+\texttt{RELEVANT} and reject unknown verdicts. Seed retention plus these judgments
+reconstructs 1,370 expanded pairs, whereas the saved expanded file contains 1,369.
+The omitted pair is query \texttt{multihop\_0189}, document \texttt{37307965}; its
+verdict contains explanatory text after the relevant prefix. Both historical
+versions are retained and reported, not silently substituted.
+
+\paragraph{Cluster proxies.}
+The earlier v2 construction labels topic-cluster members before independently
+verifying each paper against the final question. These labels are not a second
+gold standard. We do not use the historical v2 contrast as confirmation of the
+correct biomedical ordering in this revision.
+
+\subsection{Token-level ranking sensitivity}
+For forensic accounting only, document identifiers can be treated as opaque
+tokens. This calculation does not dereference conflicted corpus records. Every
+saved primary run covers all 125 expected test IDs; missing and duplicate rows
+are errors rather than silently changing the evaluation universe. Means below
+use the same 108 nonempty-seed questions.
+
+\begin{table}[t]
+\centering\small
+\caption{Historical token Recall@20. These are not identity-validated biomedical
+results. Expanded columns use different relevance denominators from seed labels;
+compare ordering within a column, not absolute recall across columns.}
+\begin{tabular}{lrrr}
+\toprule
+Method & Seed & Stored expanded & Reconstructed expanded\\
+\midrule
+BM25 & .4676 & .3214 & .3210\\
+SPECTER2 & .3441 & .3015 & .3013\\
+BGE & .4676 & .4161 & .4168\\
+E5-large & .4645 & .3622 & .3628\\
+MedCPT & .2731 & .2749 & .2756\\
+SPLADE & .5170 & .3876 & .3874\\
+Hybrid & .5015 & .3769 & .3764\\
+Hybrid + CE & .3596 & .3361 & .3356\\
+BM25 + BGE reranker & .4043 & .3189 & .3185\\
+Agent, historical three-round label & .5432 & .3515 & .3511\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Among the ten pooled systems, the seed-to-expanded comparison has 35 concordant
+pairs, nine strict reversals, and one seed tie (BM25/BGE). Tie-aware correlation is
+$\tau_b=0.5843065$ and $\rho=0.7355657$. Reconstructing the missing relevant pair
+changes individual means but not this ordering. The seed-label leader becomes
+fifth under either expanded-label version. This is evidence that \emph{the saved
+label schemes yield different rankings}, not evidence that either ranking is
+biologically correct.
+
+Component-level bootstrap and sign-flip diagnostics are retained as secondary
+forensic outputs. They use known shared-evidence/question components and
+Holm correction over six prespecified contrasts. They do not repair relevance
+validity, protocol provenance, test reuse, or unrecorded dependence.
+
+\section{Capability Satisfaction Requires Set-level Evaluation}
+For question $q$, let $U_q$ be an independently annotated set of required evidence
+units, and $U_q(d)$ the units supported by document $d$. For retrieved set $R_k$,
+\begin{align}
+\operatorname{UnitCoverage}@k &=
+\frac{|U_q\cap\bigcup_{d\in R_k} U_q(d)|}{|U_q|},\\
+\operatorname{SetCompletion}@k &=
+\mathbb{1}\!\left[U_q\subseteq\bigcup_{d\in R_k}U_q(d)\right].
+\end{align}
+These union metrics remain insufficient for relational requirements. We therefore
+define family success separately: same-document constraint conjunction unless a
+set-level policy is explicitly annotated; both comparison sides; completion of
+an adjudicated contradiction pair; completion of one valid multi-hop path;
+required temporal bins; required study--value units; and an explicitly annotated
+negative-result hit. Combining halves of incompatible paths must not pass.
+
+The implementation requires explicit evidence provenance and human/expert
+annotation status. Missing annotations yield \emph{not evaluated}, not zero or
+an inferred role assignment. Optional proxy scores are reported separately.
+Synthetic fixtures verify metric behavior but are not empirical capability results.
+
+\section{Candidate-budget and Selective Retrieval Protocols}
+\paragraph{Do not attribute exposure gains to reasoning.}
+Increasing the historical controller from one to three rounds also changes its
+candidate exposure. Moreover, the released script's defaults and available
+traces do not uniquely establish the manuscript's historical 3-by-8 protocol.
+We withdraw the inference that ``iteration is the mechanism.''
+
+The new protocol compares original-query top-24, repeated original-query 3-by-8,
+heuristic expansion, one-shot LLM rewriting, three upfront queries without
+feedback, evidence-conditioned iterative refinement, and refinement with only
+the latest round's evidence. Every condition is capped at 24 unique candidate
+documents; the final top-20 uses a common original-query selector, with RRF as a
+diagnostic. Candidate equality is not equality of compute: observations, calls,
+tokens, truncation, and failures must also be reported. RM3 must be separately
+implemented and identified, not used as a name for a heuristic expander.
+
+These conditions are implemented and fixture-tested, but live experiments have
+not been run. The 62-task legacy eight-shard run is incomplete and unbound to the
+new protocol. It cannot be resumed as if it were a provenance-matched run.
+
+\paragraph{Abstention is not empty-gold recall.}
+Standard rankers return rankings; this alone is not a meaningful failure to
+perform calibrated abstention. We distinguish \texttt{ANSWER}, \texttt{ABSTAIN},
+and \texttt{UNCERTAIN}. Coverage is the fraction answered; selective risk is the
+externally judged evidence-set failure rate among answers. If answer losses are
+missing, full selective risk is undefined. Score ties enter coverage curves as
+blocks. Threshold selection uses development data only and is explicitly
+empirical, not a conformal or population-risk guarantee. Human-verified absence
+requires a documented search protocol and cannot be inferred from a finite set
+of unsuccessful retrieved candidates.
+
+\section{Confirmatory Experiments Still Required}
+No confirmatory result is claimed in this section. Before submission clearance,
+the following evidence is required:
+\begin{enumerate}
+\item Adjudicate source identities, restore and validate full text, rebuild
+indices, and freeze corpus/label/index revisions.
+\item Lock genuinely new evidence components and human-written queries before
+method selection; keep human reference labels outside controller inputs.
+\item Obtain independent, blinded biomedical judgments from two annotators,
+with disagreement adjudication, evidence spans, structural roles and agreement
+statistics. Include construction seeds, major-system pools and out-of-pool checks.
+\item Run complete candidate-budget controls across unrelated controller
+families with per-call observations and failures. Calibrate on development data.
+\item Recompute all-method document, structural, and selective metrics;
+evaluate rank reversals and label-completeness sensitivity; stratify on validated
+text availability and independent query origin.
+\end{enumerate}
+The provisional local annotation kit and 80 blank human-query slots are
+preparation artifacts only. A broad top-20 union is much larger than 20 papers
+per question; workload and budget must be assessed before collection. No human
+annotators or new external model/compute runs are currently authorized.
+
+\section{Discussion}
+The strongest surviving observation is a statement about historical evaluation
+arithmetic: relevance construction changes the reported winner. The current
+evidence does not identify the correct biomedical ranking or establish a causal
+advantage of adaptive retrieval. Source identity, label construction, candidate
+exposure, and capability satisfaction must be audited separately. Passing a
+software test or reproducing a table does not validate the evidence behind it.
+The revised workflow makes these boundaries executable and blocks packaging
+until a separately reviewed release replaces the compromised snapshot.
+\label{page:mainend}
+
+\section*{AI use statement}
+AI tools assisted historical question generation, controller execution and
+automated judgments, as well as the local code audit, test implementation,
+protocol development and drafting of this revision. No AI-produced judgment is
+represented as independent human validation. This is a working disclosure;
+authors must review and confirm its completeness before submission.
+
+\section*{Ethics statement}
+No new human study or clinical experiment was conducted in this local revision.
+Prepared annotation sheets contain no completed human data. Before collection,
+authors must determine applicable consent, compensation and institutional ethics
+requirements. Public bibliographic availability is not a blanket redistribution
+license for abstracts or article text. No clinical reliability claim is made.
+
+\section*{Reproducibility statement}
+New scripts preserve historical inputs and record input/code hashes, missing
+outputs, exclusions and failures. Identity-candidate and forensic diagnostics
+were reproduced locally; evaluation fixtures test contracts rather than model
+quality. Paid/model runs and human judgments were not performed. This draft has
+not been compiled or passed a final page/font/anonymity check. Internal absolute
+paths, annotation coordinator files and unsanitized evidence must not be included
+in a review supplement without explicit review.
+
+\bibliographystyle{iclr2027_conference}
+\bibliography{refs}
+\end{document}

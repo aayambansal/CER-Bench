@@ -1,0 +1,149 @@
+{
+  "calibration": null,
+  "configuration": {
+    "allow_proxy": false,
+    "annotations": null,
+    "calibration": null,
+    "calibration_split": null,
+    "corpus": "results/readiness/live_adapter/SYNTHETIC_integration/corpus.json",
+    "max_risk": 0.1,
+    "missing_policy": "error",
+    "output": "results/readiness/live_adapter/SYNTHETIC_integration/SYNTHETIC-strict-evaluation.json",
+    "runs": "results/readiness/live_adapter/SYNTHETIC_integration/SYNTHETIC-output/evidence_feedback.common_selector_docs.eval.json",
+    "selective_judgments": null,
+    "structural_k": 10,
+    "tasks": "results/readiness/live_adapter/SYNTHETIC_integration/SYNTHETIC-output/selected_tasks.json"
+  },
+  "documents": {
+    "coverage": {
+      "actual": 1,
+      "expected": 1,
+      "fraction": 1.0,
+      "missing": 0,
+      "missing_task_ids": []
+    },
+    "judgments": {
+      "empty_gold": 0,
+      "missing": 1,
+      "nonempty": 0
+    },
+    "metrics": {
+      "MRR": {
+        "denominator": 0,
+        "value": null
+      },
+      "Recall@10": {
+        "denominator": 0,
+        "value": null
+      },
+      "Recall@20": {
+        "denominator": 0,
+        "value": null
+      },
+      "Recall@5": {
+        "denominator": 0,
+        "value": null
+      },
+      "nDCG@10": {
+        "denominator": 0,
+        "value": null
+      }
+    },
+    "missing_policy": "error",
+    "per_task": [
+      {
+        "metrics": {
+          "MRR": null,
+          "Recall@10": null,
+          "Recall@20": null,
+          "Recall@5": null,
+          "nDCG@10": null
+        },
+        "missing_output_penalty": false,
+        "output_present": true,
+        "status": "missing_judgments",
+        "task_id": "SYNTHETIC-task"
+      }
+    ],
+    "schema_version": "cerbench.evaluation.v1",
+    "status": "not_evaluated"
+  },
+  "hashes": {
+    "algorithm": "sha256",
+    "inputs": {
+      "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/results/readiness/live_adapter/SYNTHETIC_integration/SYNTHETIC-output/evidence_feedback.common_selector_docs.eval.json": "4d8974f10a5daa71a0ff51ffdf012074b49706cc349b804915ffa8ee16b6bf96",
+      "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/results/readiness/live_adapter/SYNTHETIC_integration/SYNTHETIC-output/selected_tasks.json": "309b5cce5bf96d9f1e8d0bbcaf4e89756dc0b5083d6ea4afc8619a026dc0e226",
+      "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/results/readiness/live_adapter/SYNTHETIC_integration/corpus.json": "61a8f9ef5e2c94674c528d915cad9cbea6bd1165bc9990dd7cd36696b5d9f770"
+    },
+    "scripts": {
+      "scripts/40_evaluate_validated_runs.py": "2b479218a9b8379782a3b42865da4f1f99fa1d101120ade57952c4ce6cc829b1",
+      "src/evaluation/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "src/evaluation/selective.py": "45d5e0e56300f2f848b635d105d5790712ead47d8a499c99c746d3befabb4947",
+      "src/evaluation/strict_metrics.py": "2d5284ffabd3a904dbb17591b6716489f8070c6d788d384be06b2010bfb149e1",
+      "src/evaluation/structural_metrics.py": "57e65e2c156eb2601d58f90c760760fa1273345fb91c0e539425be2852a58c23"
+    }
+  },
+  "schema_version": "cerbench.evaluation.v1",
+  "selective": {
+    "reason": "no_selective_inputs",
+    "status": "not_evaluated"
+  },
+  "status": "completed",
+  "structural": {
+    "by_family": {
+      "constraint": {
+        "descriptive_proxy": {
+          "denominator": 0,
+          "metrics": {
+            "family_success": null,
+            "set_completion": null,
+            "unit_coverage": null
+          }
+        },
+        "evaluated": {
+          "denominator": 0,
+          "metrics": {
+            "family_success": null,
+            "set_completion": null,
+            "unit_coverage": null
+          }
+        },
+        "not_evaluated": 1
+      }
+    },
+    "cutoff": 10,
+    "per_task": [
+      {
+        "denominator": 0,
+        "metrics": null,
+        "missing_output_penalty": false,
+        "output_present": true,
+        "reason": "missing_annotation",
+        "status": "not_evaluated",
+        "task_family": "constraint",
+        "task_id": "SYNTHETIC-task"
+      }
+    ],
+    "status": "not_evaluated",
+    "summary": {
+      "descriptive_proxy": {
+        "denominator": 0,
+        "metrics": {
+          "family_success": null,
+          "set_completion": null,
+          "unit_coverage": null
+        }
+      },
+      "evaluated": {
+        "denominator": 0,
+        "metrics": {
+          "family_success": null,
+          "set_completion": null,
+          "unit_coverage": null
+        }
+      },
+      "not_evaluated": 1
+    }
+  },
+  "warnings": []
+}

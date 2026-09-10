@@ -16,7 +16,7 @@ jsonlines>=4.0         # JSONL I/O
 
 # Retrieval - BM25
 pyserini>=0.22         # BM25 via Lucene (requires Java 11+)
-# rank-bm25>=0.2.2     # lightweight alternative (uncomment if no Java)
+rank-bm25>=0.2.2       # lightweight implementation used by the released scripts
 
 # Retrieval - Dense
 transformers>=4.40

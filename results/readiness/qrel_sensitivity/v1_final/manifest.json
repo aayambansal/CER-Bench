@@ -1,0 +1,64 @@
+{
+  "command": [
+    "/Users/aayambansal/.config/openscience/data-root/conda/envs/python/bin/python",
+    "scripts/44_analyze_historical_qrel_sensitivity.py",
+    "--resamples",
+    "10000",
+    "--repeats",
+    "200"
+  ],
+  "environment": {
+    "executable": "/Users/aayambansal/.config/openscience/data-root/conda/envs/python/bin/python",
+    "numpy": "2.4.6",
+    "numpy_file_sha256": "92a46f791e453926d3292af2582b89995a289475f0eaaea71a949823200b838a",
+    "platform": "macOS-26.2-arm64-arm-64bit",
+    "python": "3.11.16 (main, Sep  2 2026, 23:33:55) [Clang 21.1.8 ]",
+    "python_executable_sha256": "c80b4a33a48c1b93092dbd7478b65afd3a6d441e19afb67317b323da61a3f861",
+    "scipy": "1.17.1",
+    "scipy_file_sha256": "335bc6e0a9909dc7534f9569a3685a92dc8001cb8c63a6da4c239849ff02d4d0"
+  },
+  "environment_sha256": "81b04970b9ab8844aff1af22f9e4bb2145e15290ddba3faf5f31e65f77a376ac",
+  "inputs_and_code_sha256": {
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/data/benchmark/dev.jsonl": "0979a822ac4eec5782cbcfdd5241cd3d8c792b10d7f6b407aa0eb419da5e53ec",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/data/benchmark/test.jsonl": "33158e70ebd3e6438530553b2686354f6d2fa07e60373e9fd4ae63bd52796d76",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/data/benchmark/train.jsonl": "467a5e0ff7a2aa6fed13eba43336e216582542f3ded9031d477d747e750236c1",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/data/processed/corpus.jsonl": "88deb174b7725b969f1eecaefd3c16121eed5349675e44a315d0f5ec18ac4668",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/data/processed/identity_repair_v1/report.json": "8102bb75df7e134e314974a003566b338c0d1fd720a81a9c969c2fefd19653b7",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/docs/QREL_SENSITIVITY_METHODS.md": "1343a6165fabfeb1799e71c3ccc037ba799d5e3bad78a2051a3347051619934e",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/results/baselines/agent_single_step_test.jsonl": "b64da87d3fd43719fa9bd3bf53357ad279f57247f00698d581e3880f818b22c7",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/results/baselines/agent_test.jsonl": "ead66df82745c014cb63b554100d688997a727db63d1b249ef0dad75538e156b",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/results/baselines/bge_reranker_test.jsonl": "3ff6205c195179ecd707a5d3a8f7aeeb322b6850539ba9ca928acd5e49ea03e6",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/results/baselines/bge_test.jsonl": "2808af1dea81f231c4eaac9762c332b91c11a8965db7ddeb54bc13865279d72b",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/results/baselines/bm25_test.jsonl": "930d54199116c7bf03db50765ead7c56af0f2705bf5e2c360486fed2ca88ce91",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/results/baselines/dense_test.jsonl": "372baa1d74b0ef7fab59c7bb2225a7edc250e4df17d5881270e415b534528370",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/results/baselines/e5large_test.jsonl": "843724239551ad51868aab4958dbed4c53eb2bfe66e1b53c478a6b2a8f8f500a",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/results/baselines/expanded_gold.json": "f2f887465fd91da946ae503c7ac71346893eeab2dfe34e473b53b4ed91668330",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/results/baselines/gold_adjudication.jsonl": "a3632cb4d2d4b0e42f37f82813ddc440aa0a82baf4fc9aa472b48e17d4d9bd7c",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/results/baselines/hybrid_reranked_test.jsonl": "a867daea83d4dd8a960c2d83d7f226707eea1650c26e391322420b5192c11d8e",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/results/baselines/hybrid_test.jsonl": "9bb461e37d102b5c4766194982afa1fc4298968cbdda4562989ef66a60818f2b",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/results/baselines/medcpt_test.jsonl": "7fc493acbb821039248b64a63d02784ccbf17133394e44c745bafb0b6452f1b0",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/results/baselines/rm3_test.jsonl": "95f1ce445e2879ae2c0455c9d7ce6200322b8103c6bd1ab3fad89006ac72d070",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/results/baselines/scores_test_adjudicated.json": "b2ff9b80a366acda3d85702e472b3fdf07a08ada5a3c0892d3b97221259c549f",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/results/baselines/splade_test.jsonl": "730edd82c7a768b0b7a4c46ad66b6da1a836bbc88a35d2a7f21a6912a530af92",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/scripts/31_submission_audit.py": "c6dd9e4934a9955c6ede6517ff961e042a5bc1918dc7f9b22c838569b8889626",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/scripts/38_make_component_disjoint_splits.py": "b45c3faba507f4f6570af1be19bfb76d600e8521d4d0b7e965af93a4e43bb136",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/scripts/44_analyze_historical_qrel_sensitivity.py": "af7b3f4d4bf1c870736ef74e34c1a7b82b6ce722426b2be5340a33ba7a60d6ef",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/src/corpus/identity.py": "84690618957bbd622ad2af37f9358785598152d14ecb271f5ead655fcf70a978",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/src/evaluation/strict_metrics.py": "2d5284ffabd3a904dbb17591b6716489f8070c6d788d384be06b2010bfb149e1",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/tests/test_qrel_sensitivity.py": "abaf153e1943ee52a80a2a43c5af82bfe5e61a2c98368139f02e2ecf30fe5d4f"
+  },
+  "outputs_sha256": {
+    "FAILURE.json": "55ea4e22ef9e1f1dcbe312f4ef028b2b1e833c624acee996e90d7d0eed4124e4",
+    "INPUT_AUDIT.json": "9ec64d1a1bc3a2856442c43fd1f2a0ea03ec718adc2d2b647c657bb31964842e",
+    "REPORT.md": "19a3ac5b96b3ea8527162a1b9d7c8f74b2fd327fb4913e8b3b08f76d10e7e3a5"
+  },
+  "release_blocked": true,
+  "requested_parameters_not_executed": {
+    "repeats": 200,
+    "resamples": 10000,
+    "seed": 20260909
+  },
+  "source_changes_during_audit": [],
+  "status": "fail",
+  "version": "historical-qrel-sensitivity-v1"
+}

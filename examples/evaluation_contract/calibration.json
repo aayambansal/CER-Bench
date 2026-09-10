@@ -1,0 +1,5 @@
+[
+  {"task_id":"synthetic-dev-1","confidence":0.9,"evidence_set_failure":false,"annotation_status":"human_adjudicated","provenance":"SYNTHETIC simulated dev candidate judgment"},
+  {"task_id":"synthetic-dev-2","confidence":0.5,"evidence_set_failure":true,"annotation_status":"human_adjudicated","provenance":"SYNTHETIC simulated dev candidate judgment"},
+  {"task_id":"synthetic-dev-3","confidence":0.5,"evidence_set_failure":false,"annotation_status":"human_adjudicated","provenance":"SYNTHETIC simulated dev candidate judgment"}
+]

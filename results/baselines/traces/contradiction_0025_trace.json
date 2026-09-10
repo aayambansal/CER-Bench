@@ -1,0 +1,25 @@
+[
+  {
+    "round": 0,
+    "action": {
+      "action": "SEARCH",
+      "query": "CRISPR base editing precision off-target effects experimental systems analysis"
+    }
+  },
+  {
+    "round": 1,
+    "action": {
+      "action": "REFINE",
+      "reasoning": "Need more specific papers comparing base editing precision claims vs broader CRISPR challenges, and papers analyzing experimental design differences",
+      "query": "CRISPR base editing high precision minimal off-target versus conventional CRISPR challenges experimental design scope"
+    }
+  },
+  {
+    "round": 2,
+    "action": {
+      "action": "REFINE",
+      "reasoning": "Need papers that directly discuss contradictions or discrepancies in CRISPR safety/precision reports, and comparative studies of base editing vs conventional CRISPR",
+      "query": "base editing safety precision claims contradictions CRISPR off-target discrepancies experimental conditions"
+    }
+  }
+]

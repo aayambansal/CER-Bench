@@ -1,0 +1,6 @@
+{
+  "action": "Inspect named source IDs/rows; do not intersect/drop/repair historical inputs. Rerun in a new directory only after resolving the diagnostic.",
+  "error": "corpus IDs: duplicate IDs/units",
+  "release_blocked": true,
+  "status": "fail"
+}

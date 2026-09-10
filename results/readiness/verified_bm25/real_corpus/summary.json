@@ -1,0 +1,84 @@
+{
+  "schema": "verified-real-corpus-smoke-v1",
+  "status": "complete_unscored_smoke",
+  "label_status": "unscored_retrieval_smoke_no_qrels",
+  "human_validation": false,
+  "publication_claim": false,
+  "documents": 4936,
+  "chunks": 10313,
+  "vocabulary": 63109,
+  "tokens": 4243853,
+  "postings": 2010185,
+  "probe_count": 8,
+  "protocol_runs": 24,
+  "index_paths": [
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/data/processed/authoritative_fulltext_v1_bm25/index.json",
+    "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/data/processed/authoritative_fulltext_v1_bm25/postings.npz"
+  ],
+  "index_sha256": {
+    "index.json": "1656d63a13830b62fa856586efb52424fda9c60527c81e2a4295ee87ebf67e35",
+    "postings.npz": "167bd9d7aa4d644b24e197387095a3200ea7c444048d4a8d176942847513070e"
+  },
+  "index_bytes": {
+    "index.json": 1641922,
+    "postings.npz": 4804331
+  },
+  "input_hashes": {
+    "corpus_sha256": "1be9556874f61f2e0def5abed5812620c75b6648e2ec11f4128e9b4bcb3e359d",
+    "chunks_sha256": "427b6ed6c4e9db4cef87576e9f9b1e9c30c4864023eeb7e9c32efabf1ccdd300",
+    "manifest_sha256": "59d7751daeb67925903629ed6c542c1e98874d17b0499e43f3a387cc1168b5ae"
+  },
+  "source_sha256": {
+    "results/readiness/verified_bm25/real_corpus/run_smoke.py": "bd5cd0f51354d5bd27e694dc0d4951794a3a0e8234492d3a0a279a684251b58e",
+    "src/retrieval/verified_bm25.py": "a15c6639ba2482b6f9b5fa83b3aa08bcd34fc35fbfaa8abc2ba76ddd5c97d4a6",
+    "scripts/49_index_and_run_verified_bm25.py": "a9d3b9f8c0123479573c288c9235b13d77ffe73c3032bbb1a2097a644a4ae290",
+    "src/evaluation/budget_protocol.py": "8ef980f8b5c577620ede2220ebb5e8015ff7175396be4283c1de4a1dd3b1c00d",
+    "scripts/48_run_live_budget.py": "dc0ee0aecc162407a393962110cd0cd7961349a891378808ba9789f898c0e04b",
+    "src/agents/provider_clients.py": "c677ccdcda5f3e8e5834fe0bbd1f134c1b75d7a7fa2cf77eabbd257b8375d4d8"
+  },
+  "resources": {
+    "measurement": "Actual single-process wall time without tracemalloc. RSS is cumulative process-lifetime high water including interpreter/native allocations, not a phase-specific delta.",
+    "build": {
+      "wall_seconds": 3.1604844578541815,
+      "process_peak_rss_before_bytes": 55312384,
+      "process_peak_rss_after_bytes": 564690944
+    },
+    "verified_load": {
+      "wall_seconds": 2.2805354590527713,
+      "process_peak_rss_before_bytes": 564690944,
+      "process_peak_rss_after_bytes": 700973056
+    }
+  },
+  "process_peak_rss_final_bytes": 2065154048,
+  "formula_comparisons": 290,
+  "formula_max_absolute_error": 7.105427357601002e-15,
+  "adapter_dry_plan_rows": 24,
+  "executed_model_calls": 0,
+  "feedback_generation_executed": false,
+  "synthetic_outputs_preserved": true,
+  "checks": {
+    "original_max_selector": true,
+    "repeated_original_equivalence": true,
+    "all_three_nonllm_conditions": true,
+    "input_index_code_hashes": true,
+    "independent_naive_formula": true,
+    "adapter_offline_dry": true
+  },
+  "output_sha256": {
+    "adapter_tasks.jsonl": "030449b19b969b2134d3945584fea695f0af13fb38f37e0108832dbcb971abfa",
+    "build_load_resources.json": "917042c6b6730ba874adde23af3e65223170e4742d3d177b3754ebc2c402109a",
+    "protocol_diagnostics.json": "c8ea21cf387cec746b8746107912ac0de4574edc979eae15e23ec71769cbc8b3",
+    "adapter_integration.json": "a6902cd324255e434c14270417745fd214d299f3ab871dea386a40e926ece847",
+    "predeclared_plan.json": "9ef22563898fced8127e4385c6df7d50e10dfbd351e605d09dee0cf8d2ab3200",
+    "query_diagnostics.json": "c569db5936ad1e42cb7cb0075e20d25c390fe8396d93879c83f34f65870b7151",
+    "adapter_config.json": "8bb5624404568439267e82e7c40dccb10c8ec2925bbb5215e4712c58fbd9995d",
+    "independent_formula_checks.json": "0f53bc94177145d195e1fbf136499aa3a35407e8dc0ed59b5bc59eaa4ca05811",
+    "adapter_dry/selected_tasks.json": "d400d8f9a8d103ca8c712ab3e26a0893d4796e78bf0c8ca87644d03ef30b0a39",
+    "adapter_dry/output.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "adapter_dry/manifest.json": "ff27a3d8d4b6417c6381463ff5f9d3243349eb25258f68077e488be5df147662",
+    "adapter_dry/runs.json": "a9c6d0fbcaf314a1f0c796b7ccf6a31c82b720901bc6a26e1b77823f2dfd4040",
+    "adapter_transport/corpus.json": "bf582a191cfd01f024e7e91eb9d19a17b48375b2ba6b8d30f7d86ae9af267d52",
+    "adapter_transport/chunks.json": "88a303c90f232cad40f203543c54c18fd183d54e4cc1df784961846357863d11"
+  },
+  "provenance_id": "480873185f5b1d549d03f8415f391f3758a21cdd8e332803bb5489275196b5b8"
+}

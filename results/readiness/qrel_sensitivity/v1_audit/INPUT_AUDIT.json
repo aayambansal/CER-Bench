@@ -1,0 +1,2144 @@
+{
+  "corpus": {
+    "distinct_ids": 4923,
+    "duplicate_id_count": 10,
+    "duplicate_records": [
+      {
+        "differing_fields": [
+          "abstract",
+          "authors",
+          "cited_by_count",
+          "concepts",
+          "doi",
+          "keywords",
+          "mesh_terms",
+          "openalex_id",
+          "pmid",
+          "referenced_work_ids",
+          "title",
+          "topics",
+          "venue",
+          "venue_abbrev",
+          "year"
+        ],
+        "doc_id": "2949280",
+        "physical_rows": [
+          2828,
+          2861
+        ],
+        "records": [
+          {
+            "has_fulltext": false,
+            "physical_row": 2828,
+            "pmcid": "2949280",
+            "pmid": "39546202",
+            "title": "Dissection of Gene Expression at the Single-Cell Level: scRNA-seq."
+          },
+          {
+            "has_fulltext": false,
+            "physical_row": 2861,
+            "pmcid": "2949280",
+            "pmid": "39982678",
+            "title": "scRDiT: Generating Single-cell RNA-seq Data by Diffusion Transformers and Accelerating Sampling."
+          }
+        ]
+      },
+      {
+        "differing_fields": [
+          "abstract",
+          "authors",
+          "cited_by_count",
+          "concepts",
+          "doi",
+          "is_oa",
+          "keywords",
+          "mesh_terms",
+          "openalex_id",
+          "pmid",
+          "publication_types",
+          "referenced_work_ids",
+          "seed_query",
+          "title",
+          "topics",
+          "venue",
+          "venue_abbrev",
+          "year"
+        ],
+        "doc_id": "30620402",
+        "physical_rows": [
+          574,
+          1693
+        ],
+        "records": [
+          {
+            "has_fulltext": true,
+            "physical_row": 574,
+            "pmcid": "30620402",
+            "pmid": "33566254",
+            "title": "Dissociated response and clinical benefit in patients treated with nivolumab monotherapy."
+          },
+          {
+            "has_fulltext": true,
+            "physical_row": 1693,
+            "pmcid": "30620402",
+            "pmid": "33259039",
+            "title": "A giant step forward: chimeric antigen receptor T-cell therapy for lymphoma."
+          }
+        ]
+      },
+      {
+        "differing_fields": [
+          "abstract",
+          "authors",
+          "cited_by_count",
+          "concepts",
+          "doi",
+          "is_oa",
+          "keywords",
+          "mesh_terms",
+          "openalex_id",
+          "pmid",
+          "referenced_work_ids",
+          "title",
+          "topics",
+          "venue",
+          "venue_abbrev",
+          "year"
+        ],
+        "doc_id": "4343198",
+        "physical_rows": [
+          84,
+          181
+        ],
+        "records": [
+          {
+            "has_fulltext": true,
+            "physical_row": 84,
+            "pmcid": "4343198",
+            "pmid": "30610645",
+            "title": "Targeted Base Editing with CRISPR-Deaminase in Tomato."
+          },
+          {
+            "has_fulltext": true,
+            "physical_row": 181,
+            "pmcid": "4343198",
+            "pmid": "33597771",
+            "title": "Simple and reliable detection of CRISPR-induced on-target effects by qgPCR and SNP genotyping."
+          }
+        ]
+      },
+      {
+        "differing_fields": [
+          "abstract",
+          "authors",
+          "cited_by_count",
+          "concepts",
+          "doi",
+          "keywords",
+          "mesh_terms",
+          "openalex_id",
+          "pmid",
+          "referenced_work_ids",
+          "title",
+          "topics",
+          "venue",
+          "venue_abbrev"
+        ],
+        "doc_id": "5564292",
+        "physical_rows": [
+          703,
+          749
+        ],
+        "records": [
+          {
+            "has_fulltext": true,
+            "physical_row": 703,
+            "pmcid": "5564292",
+            "pmid": "39542905",
+            "title": "Effect of performance status on the therapeutic effect of nivolumab in recurrent or metastatic squamous cell carcinoma of the head and neck."
+          },
+          {
+            "has_fulltext": true,
+            "physical_row": 749,
+            "pmcid": "5564292",
+            "pmid": "40465127",
+            "title": "Impact of medications on the efficacy of immune checkpoint inhibitors in patients with recurrent or metastatic head and neck cancer."
+          }
+        ]
+      },
+      {
+        "differing_fields": [
+          "abstract",
+          "authors",
+          "cited_by_count",
+          "concepts",
+          "doi",
+          "keywords",
+          "mesh_terms",
+          "openalex_id",
+          "pmid",
+          "publication_types",
+          "referenced_work_ids",
+          "title",
+          "topics",
+          "venue",
+          "venue_abbrev"
+        ],
+        "doc_id": "5706658",
+        "physical_rows": [
+          50,
+          57,
+          92
+        ],
+        "records": [
+          {
+            "has_fulltext": true,
+            "physical_row": 50,
+            "pmcid": "5706658",
+            "pmid": "39085660",
+            "title": "CRISPR-Cpf1 system and its applications in animal genome editing."
+          },
+          {
+            "has_fulltext": true,
+            "physical_row": 57,
+            "pmcid": "5706658",
+            "pmid": "39158822",
+            "title": "Next-generation CRISPR technology for genome, epigenome and mitochondrial editing."
+          },
+          {
+            "has_fulltext": true,
+            "physical_row": 92,
+            "pmcid": "5706658",
+            "pmid": "39012436",
+            "title": "CRISPR beyond: harnessing compact RNA-guided endonucleases for enhanced genome editing."
+          }
+        ]
+      },
+      {
+        "differing_fields": [
+          "abstract",
+          "authors",
+          "cited_by_count",
+          "concepts",
+          "doi",
+          "mesh_terms",
+          "openalex_id",
+          "pmid",
+          "publication_types",
+          "referenced_work_ids",
+          "seed_query",
+          "title",
+          "topics",
+          "venue",
+          "venue_abbrev",
+          "year"
+        ],
+        "doc_id": "5906799",
+        "physical_rows": [
+          1463,
+          3455
+        ],
+        "records": [
+          {
+            "has_fulltext": false,
+            "physical_row": 1463,
+            "pmcid": "5906799",
+            "pmid": "41028170",
+            "title": "In vivo chimeric antigen receptor (CAR)-T cell therapy."
+          },
+          {
+            "has_fulltext": false,
+            "physical_row": 3455,
+            "pmcid": "5906799",
+            "pmid": "37311817",
+            "title": "mRNA-based cancer therapeutics."
+          }
+        ]
+      },
+      {
+        "differing_fields": [
+          "abstract",
+          "authors",
+          "cited_by_count",
+          "concepts",
+          "doi",
+          "keywords",
+          "mesh_terms",
+          "openalex_id",
+          "pmid",
+          "publication_types",
+          "referenced_work_ids",
+          "title",
+          "topics",
+          "venue",
+          "venue_abbrev",
+          "year"
+        ],
+        "doc_id": "6286148",
+        "physical_rows": [
+          3,
+          43,
+          339
+        ],
+        "records": [
+          {
+            "has_fulltext": true,
+            "physical_row": 3,
+            "pmcid": "6286148",
+            "pmid": "38308006",
+            "title": "CRISPR technologies for genome, epigenome and transcriptome editing."
+          },
+          {
+            "has_fulltext": true,
+            "physical_row": 43,
+            "pmcid": "6286148",
+            "pmid": "30610625",
+            "title": "Rapid Screening of CRISPR/Cas9-Induced Mutants Using the ACT-PCR Method."
+          },
+          {
+            "has_fulltext": true,
+            "physical_row": 339,
+            "pmcid": "6286148",
+            "pmid": "40828286",
+            "title": "Manipulation of a New Non-model Insect Genome Using Targeted CRISPR-Era Approaches."
+          }
+        ]
+      },
+      {
+        "differing_fields": [
+          "abstract",
+          "authors",
+          "cited_by_count",
+          "concepts",
+          "doi",
+          "mesh_terms",
+          "openalex_id",
+          "pmid",
+          "referenced_work_ids",
+          "title",
+          "topics",
+          "venue",
+          "venue_abbrev"
+        ],
+        "doc_id": "7433347",
+        "physical_rows": [
+          1483,
+          1493
+        ],
+        "records": [
+          {
+            "has_fulltext": false,
+            "physical_row": 1483,
+            "pmcid": "7433347",
+            "pmid": "40562951",
+            "title": "Neurological complications of CAR T cell therapy for cancers."
+          },
+          {
+            "has_fulltext": false,
+            "physical_row": 1493,
+            "pmcid": "7433347",
+            "pmid": "39548270",
+            "title": "Allogeneic chimeric antigen receptor cell therapies for cancer: progress made and remaining roadblocks."
+          }
+        ]
+      },
+      {
+        "differing_fields": [
+          "abstract",
+          "authors",
+          "cited_by_count",
+          "concepts",
+          "doi",
+          "is_oa",
+          "mesh_terms",
+          "openalex_id",
+          "pmid",
+          "publication_types",
+          "referenced_work_ids",
+          "title",
+          "topics",
+          "venue",
+          "venue_abbrev",
+          "year"
+        ],
+        "doc_id": "7581537",
+        "physical_rows": [
+          3476,
+          3573
+        ],
+        "records": [
+          {
+            "has_fulltext": false,
+            "physical_row": 3476,
+            "pmcid": "7581537",
+            "pmid": "35534554",
+            "title": "The clinical progress of mRNA vaccines and immunotherapies."
+          },
+          {
+            "has_fulltext": false,
+            "physical_row": 3573,
+            "pmcid": "7581537",
+            "pmid": "37679571",
+            "title": "Enhancing the immunogenicity of lipid-nanoparticle mRNA vaccines by adjuvanting the ionizable lipid and the mRNA."
+          }
+        ]
+      },
+      {
+        "differing_fields": [
+          "abstract",
+          "authors",
+          "cited_by_count",
+          "concepts",
+          "doi",
+          "is_oa",
+          "keywords",
+          "mesh_terms",
+          "openalex_id",
+          "pmid",
+          "publication_types",
+          "referenced_work_ids",
+          "title",
+          "topics",
+          "venue",
+          "venue_abbrev",
+          "year"
+        ],
+        "doc_id": "8386155",
+        "physical_rows": [
+          3704,
+          3766,
+          3905
+        ],
+        "records": [
+          {
+            "has_fulltext": false,
+            "physical_row": 3704,
+            "pmcid": "8386155",
+            "pmid": "41203968",
+            "title": "Degradable cyclic amino alcohol ionizable lipids as vectors for potent influenza mRNA vaccines."
+          },
+          {
+            "has_fulltext": false,
+            "physical_row": 3766,
+            "pmcid": "8386155",
+            "pmid": "41258061",
+            "title": "Patent analysis of mRNA therapy using deep learning."
+          },
+          {
+            "has_fulltext": false,
+            "physical_row": 3905,
+            "pmcid": "8386155",
+            "pmid": "36376393",
+            "title": "Safety and immunogenicity of a prefusion non-stabilized spike protein mRNA COVID-19 vaccine: a phase I trial."
+          }
+        ]
+      }
+    ],
+    "excess_rows": 13,
+    "note": "ID set used only to detect unknown references; no row selected or identities merged.",
+    "rows": 4936
+  },
+  "errors": [
+    {
+      "detail": "corpus.duplicate_records gives physical rows, PMIDs, titles and differing fields",
+      "doc_ids": [
+        "2949280",
+        "30620402",
+        "4343198",
+        "5564292",
+        "5706658",
+        "5906799",
+        "6286148",
+        "7433347",
+        "7581537",
+        "8386155"
+      ],
+      "error": "duplicate corpus IDs with conflicting records",
+      "source": "data/processed/corpus.jsonl"
+    },
+    {
+      "details": [
+        {
+          "reconstructed_only": [
+            "37307965"
+          ],
+          "stored_only": [],
+          "task_id": "multihop_0189"
+        }
+      ],
+      "error": "set mismatch",
+      "source": "stored expanded"
+    }
+  ],
+  "identity_candidate_scope_only": {
+    "candidate": {
+      "chunk_records": 4856,
+      "corpus_records": 4936,
+      "documents_without_retained_chunks": 80,
+      "fulltext_records": 0,
+      "task_source_splits": {
+        "dev": 47,
+        "test": 100,
+        "train": 91
+      },
+      "tasks": 238
+    },
+    "fulltext_records_removed": 652,
+    "original": {
+      "chunk_records": 17902,
+      "corpus_records": 4936,
+      "tasks": 304,
+      "unique_chunk_ids": 17770,
+      "unique_doc_ids": 4923
+    },
+    "quarantine": {
+      "chunk_records": 13046,
+      "corpus_records": 0,
+      "tasks": 66
+    },
+    "raw_front_pmid_disagreement_records": 58,
+    "release_blocked": true,
+    "task_quarantine_reasons": {
+      "Unknown or ambiguous identity '2840480': ['PMID:20181571', 'PMID:34687393']": 1,
+      "Unknown or ambiguous identity '6072291': ['PMID:29917168', 'PMID:39436622']": 2,
+      "Unknown or ambiguous identity '6286148': ['PMID:22745249', 'PMID:30610625', 'PMID:38308006', 'PMID:40828286']": 1,
+      "Unknown or ambiguous identity '8386155': ['PMID:34433919', 'PMID:36376393', 'PMID:41203968', 'PMID:41258061']": 5,
+      "Unknown or ambiguous identity '8809250': ['PMID:35021064', 'PMID:35960410']": 2,
+      "Unknown or ambiguous identity 'PMC10543554': ['PMID:37536390', 'PMID:38498284']": 1,
+      "Unsafe or uncovered task document: PMC10083744 -> PMID:37011994": 1,
+      "Unsafe or uncovered task document: PMC10661033 -> PMID:37873982": 1,
+      "Unsafe or uncovered task document: PMC10750355 -> PMID:38149256": 1,
+      "Unsafe or uncovered task document: PMC10920990 -> PMID:38254257": 2,
+      "Unsafe or uncovered task document: PMC11262809 -> PMID:39038932": 1,
+      "Unsafe or uncovered task document: PMC11522629 -> PMID:39472591": 1,
+      "Unsafe or uncovered task document: PMC11681278 -> PMID:39690735": 1,
+      "Unsafe or uncovered task document: PMC11749330 -> PMID:39762076": 1,
+      "Unsafe or uncovered task document: PMC11966048 -> PMID:40181973": 1,
+      "Unsafe or uncovered task document: PMC11972677 -> PMID:39565908": 1,
+      "Unsafe or uncovered task document: PMC12335072 -> PMID:40783691": 1,
+      "Unsafe or uncovered task document: PMC12449060 -> PMID:40268745": 1,
+      "Unsafe or uncovered task document: PMC12512135 -> PMID:40929146": 1,
+      "Unsafe or uncovered task document: PMC12540109 -> PMID:41132658": 1,
+      "Unsafe or uncovered task document: PMC12618235 -> PMID:40993242": 1,
+      "Unsafe or uncovered task document: PMC12659764 -> PMID:41308007": 1,
+      "Unsafe or uncovered task document: PMC12660989 -> PMID:41309688": 1,
+      "Unsafe or uncovered task document: PMC12738840 -> PMID:41390513": 1,
+      "Unsafe or uncovered task document: PMC12866100 -> PMID:41418774": 1,
+      "Unsafe or uncovered task document: PMC12949465 -> PMID:41757824": 1,
+      "Unsafe or uncovered task document: PMC4932911 -> PMID:27366893": 1,
+      "Unsafe or uncovered task document: PMC5007268 -> PMID:27236514": 1,
+      "Unsafe or uncovered task document: PMC5378993 -> PMID:25566747": 1,
+      "Unsafe or uncovered task document: PMC5458674 -> PMID:28288698": 1,
+      "Unsafe or uncovered task document: PMC5548805 -> PMID:28790350": 1,
+      "Unsafe or uncovered task document: PMC6422651 -> PMID:30648285": 1,
+      "Unsafe or uncovered task document: PMC6636881 -> PMID:31021235": 3,
+      "Unsafe or uncovered task document: PMC6731247 -> PMID:31492831": 1,
+      "Unsafe or uncovered task document: PMC7040215 -> PMID:31761839": 1,
+      "Unsafe or uncovered task document: PMC7090318 -> PMID:32200959": 1,
+      "Unsafe or uncovered task document: PMC7246811 -> PMID:32349280": 1,
+      "Unsafe or uncovered task document: PMC7319709 -> PMID:32581058": 1,
+      "Unsafe or uncovered task document: PMC7471311 -> PMID:32884119": 1,
+      "Unsafe or uncovered task document: PMC7587235 -> PMID:33140115": 1,
+      "Unsafe or uncovered task document: PMC7805375 -> PMID:33436486": 1,
+      "Unsafe or uncovered task document: PMC8048939 -> PMID:33421132": 2,
+      "Unsafe or uncovered task document: PMC8293650 -> PMID:33843684": 1,
+      "Unsafe or uncovered task document: PMC8556784 -> PMID:34717542": 3,
+      "Unsafe or uncovered task document: PMC8704727 -> PMID:35034861": 1,
+      "Unsafe or uncovered task document: PMC8758007 -> PMID:35029182": 1,
+      "Unsafe or uncovered task document: PMC8968349 -> PMID:34962995": 1,
+      "Unsafe or uncovered task document: PMC9369596 -> PMID:35897954": 1,
+      "Unsafe or uncovered task document: PMC9484609 -> PMID:35654594": 1,
+      "Unsafe or uncovered task document: PMC9508007 -> PMID:35006344": 1,
+      "Unsafe or uncovered task document: PMC9552178 -> PMID:36238308": 1,
+      "Unsafe or uncovered task document: PMC9728170 -> PMID:32807756": 1,
+      "Unsafe or uncovered task document: PMC9816180 -> PMID:36604493": 1,
+      "Unsafe or uncovered task document: PMC9821013 -> PMID:36614109": 1
+    },
+    "version": "identity-repair-v1-candidate"
+  },
+  "judgments": {
+    "duplicate_corpus_id_references": [
+      {
+        "doc_id": "4343198",
+        "judgment": "NOT_RELEVANT",
+        "physical_row": 178,
+        "task_id": "constraint_0087"
+      },
+      {
+        "doc_id": "6286148",
+        "judgment": "NOT_RELEVANT",
+        "physical_row": 180,
+        "task_id": "constraint_0087"
+      },
+      {
+        "doc_id": "5564292",
+        "judgment": "NOT_RELEVANT",
+        "physical_row": 322,
+        "task_id": "constraint_0079"
+      },
+      {
+        "doc_id": "4343198",
+        "judgment": "NOT_RELEVANT",
+        "physical_row": 469,
+        "task_id": "comparative_0011"
+      },
+      {
+        "doc_id": "6286148",
+        "judgment": "NOT_RELEVANT",
+        "physical_row": 470,
+        "task_id": "comparative_0011"
+      },
+      {
+        "doc_id": "4343198",
+        "judgment": "NOT_RELEVANT\n\nTHE CANDIDATE DOCUMENT IS ABOUT",
+        "physical_row": 924,
+        "task_id": "contradiction_0149"
+      },
+      {
+        "doc_id": "5564292",
+        "judgment": "RELEVANT\n\nTHIS DOCUMENT IS RELEVANT BECAUSE IT DIRECTLY",
+        "physical_row": 985,
+        "task_id": "contradiction_0022"
+      },
+      {
+        "doc_id": "5706658",
+        "judgment": "NOT_RELEVANT\n\nTHE CANDIDATE DOCUMENT FOCUSES ON",
+        "physical_row": 1067,
+        "task_id": "contradiction_0139"
+      },
+      {
+        "doc_id": "30620402",
+        "judgment": "NOT_RELEVANT\n\nTHE DOCUMENT DISCUSSES CAR",
+        "physical_row": 1171,
+        "task_id": "contradiction_0138"
+      },
+      {
+        "doc_id": "7581537",
+        "judgment": "RELEVANT\n\nTHIS DOCUMENT IS RELEVANT BECAUSE IT DIRECTLY",
+        "physical_row": 1219,
+        "task_id": "contradiction_0125"
+      },
+      {
+        "doc_id": "8386155",
+        "judgment": "NOT_RELEVANT\n\nTHE CANDIDATE DOCUMENT IS ABOUT",
+        "physical_row": 1312,
+        "task_id": "contradiction_0120"
+      },
+      {
+        "doc_id": "30620402",
+        "judgment": "RELEVANT\n\nTHE DOCUMENT DISCUSSES CAR-T",
+        "physical_row": 1505,
+        "task_id": "multihop_0040"
+      },
+      {
+        "doc_id": "2949280",
+        "judgment": "RELEVANT\n\nTHIS DOCUMENT IS RELEVANT BECAUSE IT ADDRESSES",
+        "physical_row": 1831,
+        "task_id": "temporal_0240"
+      },
+      {
+        "doc_id": "4343198",
+        "judgment": "NOT_RELEVANT\n\nTHE DOCUMENT FOCUSES SPECIFICALLY ON",
+        "physical_row": 1997,
+        "task_id": "temporal_0238"
+      },
+      {
+        "doc_id": "5706658",
+        "judgment": "RELEVANT\n\nTHE DOCUMENT DISCUSSES THE EVOLUTION OF",
+        "physical_row": 1998,
+        "task_id": "temporal_0238"
+      },
+      {
+        "doc_id": "6286148",
+        "judgment": "NOT_RELEVANT\n\nTHE DOCUMENT FOCUSES SPECIFICALLY ON",
+        "physical_row": 1999,
+        "task_id": "temporal_0238"
+      },
+      {
+        "doc_id": "4343198",
+        "judgment": "NOT_RELEVANT\n\nTHE DOCUMENT FOCUSES ON DETECTING",
+        "physical_row": 2301,
+        "task_id": "negative_0295"
+      },
+      {
+        "doc_id": "4343198",
+        "judgment": "RELEVANT\n\nTHIS DOCUMENT IS RELEVANT BECAUSE IT DISCUSSES",
+        "physical_row": 2631,
+        "task_id": "aggregation_0268"
+      },
+      {
+        "doc_id": "6286148",
+        "judgment": "NOT_RELEVANT\n\nTHIS DOCUMENT APPEARS TO BE",
+        "physical_row": 2634,
+        "task_id": "aggregation_0268"
+      },
+      {
+        "doc_id": "30620402",
+        "judgment": "NOT_RELEVANT\n\nTHE DOCUMENT IS ABOUT CA",
+        "physical_row": 2701,
+        "task_id": "aggregation_0264"
+      },
+      {
+        "doc_id": "5564292",
+        "judgment": "NOT_RELEVANT\n\nTHE DOCUMENT FOCUSES ON THE",
+        "physical_row": 2720,
+        "task_id": "aggregation_0264"
+      },
+      {
+        "doc_id": "5564292",
+        "judgment": "NOT_RELEVANT\n\nTHIS DOCUMENT IS ABOUT IMMUNE",
+        "physical_row": 2740,
+        "task_id": "aggregation_0267"
+      },
+      {
+        "doc_id": "5706658",
+        "judgment": "NOT_RELEVANT\n\nTHE DOCUMENT IS ABOUT",
+        "physical_row": 2741,
+        "task_id": "aggregation_0267"
+      },
+      {
+        "doc_id": "8386155",
+        "judgment": "RELEVANT\n\nTHIS DOCUMENT IS RELEVANT BECAUSE IT DESCRIBES",
+        "physical_row": 2745,
+        "task_id": "aggregation_0267"
+      },
+      {
+        "doc_id": "4343198",
+        "judgment": "RELEVANT\n\nTHIS DOCUMENT IS RELEVANT BECAUSE IT DISCUSSES",
+        "physical_row": 2846,
+        "task_id": "aggregation_0266"
+      },
+      {
+        "doc_id": "5706658",
+        "judgment": "NOT_RELEVANT\n\nTHE DOCUMENT DISCUSSES C",
+        "physical_row": 2849,
+        "task_id": "aggregation_0266"
+      },
+      {
+        "doc_id": "5564292",
+        "judgment": "RELEVANT\n\nTHE DOCUMENT CONTAINS QUANTITATIVE DATA THAT",
+        "physical_row": 2901,
+        "task_id": "aggregation_0246"
+      },
+      {
+        "doc_id": "5564292",
+        "judgment": "NOT_RELEVANT\n\nTHIS DOCUMENT IS ABOUT THE",
+        "physical_row": 2932,
+        "task_id": "aggregation_0249"
+      },
+      {
+        "doc_id": "5564292",
+        "judgment": "NOT_RELEVANT\n\nTHIS DOCUMENT IS ABOUT IMMUNE",
+        "physical_row": 2958,
+        "task_id": "aggregation_0258"
+      },
+      {
+        "doc_id": "4343198",
+        "judgment": "NOT_RELEVANT\n\nTHE DOCUMENT FOCUSES ON DETECTING",
+        "physical_row": 3054,
+        "task_id": "negative_0303"
+      },
+      {
+        "doc_id": "5706658",
+        "judgment": "NOT_RELEVANT\n\nTHE DOCUMENT DISCUSSES TECHNICAL LIMITATIONS",
+        "physical_row": 3055,
+        "task_id": "negative_0303"
+      },
+      {
+        "doc_id": "6286148",
+        "judgment": "NOT_RELEVANT\n\nTHE DOCUMENT DISCUSSES C",
+        "physical_row": 3057,
+        "task_id": "negative_0303"
+      },
+      {
+        "doc_id": "4343198",
+        "judgment": "NOT_RELEVANT\n\nTHE DOCUMENT FOCUSES ON DETECTION",
+        "physical_row": 3235,
+        "task_id": "negative_0287"
+      },
+      {
+        "doc_id": "5706658",
+        "judgment": "NOT_RELEVANT\n\nTHE DOCUMENT DISCUSSES C",
+        "physical_row": 3238,
+        "task_id": "negative_0287"
+      }
+    ],
+    "expanded_pairs_on_duplicate_corpus_ids": [
+      {
+        "doc_id": "5564292",
+        "task_id": "contradiction_0022"
+      },
+      {
+        "doc_id": "6286148",
+        "task_id": "contradiction_0139"
+      },
+      {
+        "doc_id": "7581537",
+        "task_id": "contradiction_0125"
+      },
+      {
+        "doc_id": "30620402",
+        "task_id": "multihop_0040"
+      },
+      {
+        "doc_id": "2949280",
+        "task_id": "temporal_0240"
+      },
+      {
+        "doc_id": "5706658",
+        "task_id": "temporal_0238"
+      },
+      {
+        "doc_id": "8386155",
+        "task_id": "temporal_0211"
+      },
+      {
+        "doc_id": "8386155",
+        "task_id": "temporal_0229"
+      },
+      {
+        "doc_id": "4343198",
+        "task_id": "aggregation_0268"
+      },
+      {
+        "doc_id": "8386155",
+        "task_id": "aggregation_0267"
+      },
+      {
+        "doc_id": "4343198",
+        "task_id": "aggregation_0266"
+      },
+      {
+        "doc_id": "5564292",
+        "task_id": "aggregation_0246"
+      }
+    ],
+    "expanded_qrel_pairs": 1370,
+    "not_relevant": 2134,
+    "per_task_counts": {
+      "aggregation_0049": 30,
+      "aggregation_0050": 30,
+      "aggregation_0051": 30,
+      "aggregation_0244": 30,
+      "aggregation_0246": 30,
+      "aggregation_0249": 30,
+      "aggregation_0255": 30,
+      "aggregation_0257": 30,
+      "aggregation_0258": 30,
+      "aggregation_0259": 30,
+      "aggregation_0264": 30,
+      "aggregation_0266": 30,
+      "aggregation_0267": 30,
+      "aggregation_0268": 30,
+      "aggregation_0269": 30,
+      "aggregation_0270": 30,
+      "aggregation_0272": 30,
+      "comparative_0011": 30,
+      "comparative_0012": 30,
+      "comparative_0013": 30,
+      "comparative_0016": 30,
+      "comparative_0017": 30,
+      "comparative_0091": 30,
+      "comparative_0092": 30,
+      "comparative_0095": 30,
+      "comparative_0096": 30,
+      "comparative_0097": 30,
+      "comparative_0098": 30,
+      "comparative_0100": 30,
+      "comparative_0108": 30,
+      "comparative_0113": 30,
+      "comparative_0118": 30,
+      "constraint_0002": 30,
+      "constraint_0003": 30,
+      "constraint_0005": 30,
+      "constraint_0006": 30,
+      "constraint_0009": 30,
+      "constraint_0062": 30,
+      "constraint_0063": 30,
+      "constraint_0072": 30,
+      "constraint_0073": 30,
+      "constraint_0076": 30,
+      "constraint_0077": 30,
+      "constraint_0079": 30,
+      "constraint_0084": 30,
+      "constraint_0087": 30,
+      "constraint_0089": 30,
+      "contradiction_0020": 30,
+      "contradiction_0022": 30,
+      "contradiction_0120": 30,
+      "contradiction_0124": 30,
+      "contradiction_0125": 30,
+      "contradiction_0127": 30,
+      "contradiction_0128": 30,
+      "contradiction_0131": 30,
+      "contradiction_0133": 30,
+      "contradiction_0138": 30,
+      "contradiction_0139": 30,
+      "contradiction_0144": 30,
+      "contradiction_0147": 30,
+      "contradiction_0149": 30,
+      "multihop_0035": 30,
+      "multihop_0040": 30,
+      "multihop_0179": 30,
+      "multihop_0180": 30,
+      "multihop_0181": 30,
+      "multihop_0184": 30,
+      "multihop_0186": 30,
+      "multihop_0187": 30,
+      "multihop_0189": 30,
+      "multihop_0190": 30,
+      "multihop_0194": 30,
+      "multihop_0196": 30,
+      "multihop_0198": 30,
+      "multihop_0207": 30,
+      "multihop_0208": 30,
+      "multihop_0209": 30,
+      "negative_0055": 30,
+      "negative_0056": 30,
+      "negative_0275": 30,
+      "negative_0277": 30,
+      "negative_0279": 30,
+      "negative_0285": 30,
+      "negative_0286": 30,
+      "negative_0287": 30,
+      "negative_0295": 30,
+      "negative_0296": 30,
+      "negative_0298": 30,
+      "negative_0299": 30,
+      "negative_0302": 30,
+      "negative_0303": 30,
+      "temporal_0044": 30,
+      "temporal_0046": 30,
+      "temporal_0047": 30,
+      "temporal_0211": 30,
+      "temporal_0224": 30,
+      "temporal_0226": 30,
+      "temporal_0227": 30,
+      "temporal_0229": 30,
+      "temporal_0230": 30,
+      "temporal_0231": 30,
+      "temporal_0232": 30,
+      "temporal_0235": 30,
+      "temporal_0236": 30,
+      "temporal_0237": 30,
+      "temporal_0238": 30,
+      "temporal_0239": 30,
+      "temporal_0240": 30
+    },
+    "raw_count": 3240,
+    "relevant": 1106,
+    "stored_expanded_set_mismatches": [
+      {
+        "reconstructed_only": [
+          "37307965"
+        ],
+        "stored_only": [],
+        "task_id": "multihop_0189"
+      }
+    ]
+  },
+  "release_blocked": true,
+  "runs": {
+    "agent": {
+      "affected_task_count": 10,
+      "duplicate_corpus_id_reference_count": 10,
+      "duplicate_corpus_id_references": [
+        {
+          "doc_id": "4343198",
+          "rank": 13,
+          "task_id": "comparative_0011"
+        },
+        {
+          "doc_id": "6286148",
+          "rank": 9,
+          "task_id": "contradiction_0139"
+        },
+        {
+          "doc_id": "7581537",
+          "rank": 4,
+          "task_id": "contradiction_0125"
+        },
+        {
+          "doc_id": "30620402",
+          "rank": 3,
+          "task_id": "abstention_0173"
+        },
+        {
+          "doc_id": "30620402",
+          "rank": 11,
+          "task_id": "abstention_0150"
+        },
+        {
+          "doc_id": "30620402",
+          "rank": 1,
+          "task_id": "multihop_0040"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 17,
+          "task_id": "aggregation_0272"
+        },
+        {
+          "doc_id": "8386155",
+          "rank": 2,
+          "task_id": "aggregation_0255"
+        },
+        {
+          "doc_id": "7581537",
+          "rank": 8,
+          "task_id": "negative_0299"
+        },
+        {
+          "doc_id": "5706658",
+          "rank": 7,
+          "task_id": "negative_0303"
+        }
+      ],
+      "empty_rankings": [],
+      "missing_ids": [],
+      "row_count": 125,
+      "unknown_ids": []
+    },
+    "agent_single_step": {
+      "affected_task_count": 5,
+      "duplicate_corpus_id_reference_count": 5,
+      "duplicate_corpus_id_references": [
+        {
+          "doc_id": "7581537",
+          "rank": 2,
+          "task_id": "contradiction_0125"
+        },
+        {
+          "doc_id": "30620402",
+          "rank": 3,
+          "task_id": "abstention_0173"
+        },
+        {
+          "doc_id": "30620402",
+          "rank": 1,
+          "task_id": "multihop_0040"
+        },
+        {
+          "doc_id": "8386155",
+          "rank": 2,
+          "task_id": "aggregation_0255"
+        },
+        {
+          "doc_id": "7581537",
+          "rank": 8,
+          "task_id": "negative_0299"
+        }
+      ],
+      "empty_rankings": [],
+      "missing_ids": [],
+      "row_count": 125,
+      "unknown_ids": []
+    },
+    "bge": {
+      "affected_task_count": 11,
+      "duplicate_corpus_id_reference_count": 13,
+      "duplicate_corpus_id_references": [
+        {
+          "doc_id": "4343198",
+          "rank": 5,
+          "task_id": "comparative_0011"
+        },
+        {
+          "doc_id": "5906799",
+          "rank": 18,
+          "task_id": "comparative_0100"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 4,
+          "task_id": "contradiction_0022"
+        },
+        {
+          "doc_id": "6286148",
+          "rank": 1,
+          "task_id": "contradiction_0139"
+        },
+        {
+          "doc_id": "7433347",
+          "rank": 13,
+          "task_id": "abstention_0165"
+        },
+        {
+          "doc_id": "7581537",
+          "rank": 18,
+          "task_id": "multihop_0209"
+        },
+        {
+          "doc_id": "2949280",
+          "rank": 4,
+          "task_id": "temporal_0240"
+        },
+        {
+          "doc_id": "6286148",
+          "rank": 3,
+          "task_id": "temporal_0238"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 16,
+          "task_id": "abstention_0154"
+        },
+        {
+          "doc_id": "6286148",
+          "rank": 19,
+          "task_id": "aggregation_0266"
+        },
+        {
+          "doc_id": "5706658",
+          "rank": 20,
+          "task_id": "aggregation_0266"
+        },
+        {
+          "doc_id": "4343198",
+          "rank": 5,
+          "task_id": "negative_0303"
+        },
+        {
+          "doc_id": "6286148",
+          "rank": 12,
+          "task_id": "negative_0303"
+        }
+      ],
+      "empty_rankings": [],
+      "missing_ids": [],
+      "row_count": 125,
+      "unknown_ids": []
+    },
+    "bge_reranker": {
+      "affected_task_count": 16,
+      "duplicate_corpus_id_reference_count": 17,
+      "duplicate_corpus_id_references": [
+        {
+          "doc_id": "5564292",
+          "rank": 2,
+          "task_id": "contradiction_0022"
+        },
+        {
+          "doc_id": "6286148",
+          "rank": 2,
+          "task_id": "contradiction_0139"
+        },
+        {
+          "doc_id": "7581537",
+          "rank": 14,
+          "task_id": "contradiction_0125"
+        },
+        {
+          "doc_id": "30620402",
+          "rank": 10,
+          "task_id": "abstention_0173"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 6,
+          "task_id": "abstention_0170"
+        },
+        {
+          "doc_id": "5906799",
+          "rank": 16,
+          "task_id": "abstention_0165"
+        },
+        {
+          "doc_id": "7433347",
+          "rank": 8,
+          "task_id": "aggregation_0272"
+        },
+        {
+          "doc_id": "4343198",
+          "rank": 9,
+          "task_id": "negative_0295"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 12,
+          "task_id": "abstention_0154"
+        },
+        {
+          "doc_id": "30620402",
+          "rank": 4,
+          "task_id": "aggregation_0264"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 3,
+          "task_id": "aggregation_0267"
+        },
+        {
+          "doc_id": "5706658",
+          "rank": 20,
+          "task_id": "aggregation_0267"
+        },
+        {
+          "doc_id": "5706658",
+          "rank": 3,
+          "task_id": "aggregation_0266"
+        },
+        {
+          "doc_id": "7581537",
+          "rank": 14,
+          "task_id": "negative_0299"
+        },
+        {
+          "doc_id": "4343198",
+          "rank": 10,
+          "task_id": "negative_0303"
+        },
+        {
+          "doc_id": "4343198",
+          "rank": 20,
+          "task_id": "negative_0279"
+        },
+        {
+          "doc_id": "5706658",
+          "rank": 1,
+          "task_id": "negative_0287"
+        }
+      ],
+      "empty_rankings": [],
+      "missing_ids": [],
+      "row_count": 125,
+      "unknown_ids": []
+    },
+    "bm25": {
+      "affected_task_count": 10,
+      "duplicate_corpus_id_reference_count": 10,
+      "duplicate_corpus_id_references": [
+        {
+          "doc_id": "5564292",
+          "rank": 8,
+          "task_id": "contradiction_0022"
+        },
+        {
+          "doc_id": "6286148",
+          "rank": 1,
+          "task_id": "contradiction_0139"
+        },
+        {
+          "doc_id": "30620402",
+          "rank": 2,
+          "task_id": "abstention_0150"
+        },
+        {
+          "doc_id": "5906799",
+          "rank": 20,
+          "task_id": "multihop_0209"
+        },
+        {
+          "doc_id": "6286148",
+          "rank": 6,
+          "task_id": "temporal_0238"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 7,
+          "task_id": "abstention_0154"
+        },
+        {
+          "doc_id": "8386155",
+          "rank": 2,
+          "task_id": "aggregation_0255"
+        },
+        {
+          "doc_id": "7581537",
+          "rank": 9,
+          "task_id": "negative_0299"
+        },
+        {
+          "doc_id": "4343198",
+          "rank": 14,
+          "task_id": "negative_0303"
+        },
+        {
+          "doc_id": "4343198",
+          "rank": 15,
+          "task_id": "negative_0287"
+        }
+      ],
+      "empty_rankings": [],
+      "missing_ids": [],
+      "row_count": 125,
+      "unknown_ids": []
+    },
+    "dense": {
+      "affected_task_count": 13,
+      "duplicate_corpus_id_reference_count": 15,
+      "duplicate_corpus_id_references": [
+        {
+          "doc_id": "6286148",
+          "rank": 18,
+          "task_id": "constraint_0087"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 17,
+          "task_id": "constraint_0079"
+        },
+        {
+          "doc_id": "6286148",
+          "rank": 5,
+          "task_id": "comparative_0011"
+        },
+        {
+          "doc_id": "6286148",
+          "rank": 7,
+          "task_id": "contradiction_0139"
+        },
+        {
+          "doc_id": "5706658",
+          "rank": 14,
+          "task_id": "contradiction_0139"
+        },
+        {
+          "doc_id": "30620402",
+          "rank": 18,
+          "task_id": "contradiction_0138"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 18,
+          "task_id": "abstention_0166"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 17,
+          "task_id": "abstention_0170"
+        },
+        {
+          "doc_id": "7581537",
+          "rank": 20,
+          "task_id": "multihop_0209"
+        },
+        {
+          "doc_id": "2949280",
+          "rank": 16,
+          "task_id": "temporal_0240"
+        },
+        {
+          "doc_id": "6286148",
+          "rank": 4,
+          "task_id": "temporal_0238"
+        },
+        {
+          "doc_id": "5706658",
+          "rank": 10,
+          "task_id": "temporal_0238"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 18,
+          "task_id": "negative_0296"
+        },
+        {
+          "doc_id": "6286148",
+          "rank": 15,
+          "task_id": "aggregation_0268"
+        },
+        {
+          "doc_id": "5706658",
+          "rank": 19,
+          "task_id": "aggregation_0266"
+        }
+      ],
+      "empty_rankings": [],
+      "missing_ids": [],
+      "row_count": 125,
+      "unknown_ids": []
+    },
+    "e5large": {
+      "affected_task_count": 7,
+      "duplicate_corpus_id_reference_count": 7,
+      "duplicate_corpus_id_references": [
+        {
+          "doc_id": "4343198",
+          "rank": 17,
+          "task_id": "constraint_0087"
+        },
+        {
+          "doc_id": "4343198",
+          "rank": 10,
+          "task_id": "comparative_0011"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 12,
+          "task_id": "contradiction_0022"
+        },
+        {
+          "doc_id": "6286148",
+          "rank": 5,
+          "task_id": "contradiction_0139"
+        },
+        {
+          "doc_id": "2949280",
+          "rank": 5,
+          "task_id": "temporal_0240"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 15,
+          "task_id": "abstention_0154"
+        },
+        {
+          "doc_id": "8386155",
+          "rank": 2,
+          "task_id": "aggregation_0255"
+        }
+      ],
+      "empty_rankings": [],
+      "missing_ids": [],
+      "row_count": 125,
+      "unknown_ids": []
+    },
+    "hybrid": {
+      "affected_task_count": 26,
+      "duplicate_corpus_id_reference_count": 32,
+      "duplicate_corpus_id_references": [
+        {
+          "doc_id": "4343198",
+          "rank": 6,
+          "task_id": "constraint_0005"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 1,
+          "task_id": "constraint_0079"
+        },
+        {
+          "doc_id": "4343198",
+          "rank": 6,
+          "task_id": "comparative_0011"
+        },
+        {
+          "doc_id": "6286148",
+          "rank": 18,
+          "task_id": "comparative_0011"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 8,
+          "task_id": "contradiction_0022"
+        },
+        {
+          "doc_id": "6286148",
+          "rank": 1,
+          "task_id": "contradiction_0139"
+        },
+        {
+          "doc_id": "4343198",
+          "rank": 1,
+          "task_id": "contradiction_0131"
+        },
+        {
+          "doc_id": "8386155",
+          "rank": 2,
+          "task_id": "contradiction_0120"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 1,
+          "task_id": "abstention_0166"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 1,
+          "task_id": "abstention_0173"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 1,
+          "task_id": "abstention_0170"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 2,
+          "task_id": "abstention_0159"
+        },
+        {
+          "doc_id": "30620402",
+          "rank": 13,
+          "task_id": "abstention_0150"
+        },
+        {
+          "doc_id": "5906799",
+          "rank": 20,
+          "task_id": "multihop_0209"
+        },
+        {
+          "doc_id": "2949280",
+          "rank": 1,
+          "task_id": "temporal_0240"
+        },
+        {
+          "doc_id": "6286148",
+          "rank": 1,
+          "task_id": "temporal_0238"
+        },
+        {
+          "doc_id": "5706658",
+          "rank": 2,
+          "task_id": "temporal_0238"
+        },
+        {
+          "doc_id": "4343198",
+          "rank": 6,
+          "task_id": "temporal_0238"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 6,
+          "task_id": "aggregation_0272"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 5,
+          "task_id": "negative_0296"
+        },
+        {
+          "doc_id": "5706658",
+          "rank": 6,
+          "task_id": "negative_0296"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 1,
+          "task_id": "abstention_0154"
+        },
+        {
+          "doc_id": "4343198",
+          "rank": 2,
+          "task_id": "aggregation_0268"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 2,
+          "task_id": "aggregation_0267"
+        },
+        {
+          "doc_id": "8386155",
+          "rank": 6,
+          "task_id": "aggregation_0255"
+        },
+        {
+          "doc_id": "5706658",
+          "rank": 7,
+          "task_id": "aggregation_0266"
+        },
+        {
+          "doc_id": "6286148",
+          "rank": 12,
+          "task_id": "aggregation_0266"
+        },
+        {
+          "doc_id": "4343198",
+          "rank": 18,
+          "task_id": "aggregation_0266"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 3,
+          "task_id": "aggregation_0249"
+        },
+        {
+          "doc_id": "7581537",
+          "rank": 9,
+          "task_id": "negative_0299"
+        },
+        {
+          "doc_id": "4343198",
+          "rank": 2,
+          "task_id": "negative_0303"
+        },
+        {
+          "doc_id": "4343198",
+          "rank": 3,
+          "task_id": "negative_0287"
+        }
+      ],
+      "empty_rankings": [],
+      "missing_ids": [],
+      "row_count": 125,
+      "unknown_ids": []
+    },
+    "hybrid_reranked": {
+      "affected_task_count": 20,
+      "duplicate_corpus_id_reference_count": 23,
+      "duplicate_corpus_id_references": [
+        {
+          "doc_id": "4343198",
+          "rank": 16,
+          "task_id": "constraint_0087"
+        },
+        {
+          "doc_id": "6286148",
+          "rank": 17,
+          "task_id": "constraint_0087"
+        },
+        {
+          "doc_id": "4343198",
+          "rank": 15,
+          "task_id": "comparative_0011"
+        },
+        {
+          "doc_id": "6286148",
+          "rank": 19,
+          "task_id": "comparative_0011"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 5,
+          "task_id": "contradiction_0022"
+        },
+        {
+          "doc_id": "6286148",
+          "rank": 13,
+          "task_id": "contradiction_0139"
+        },
+        {
+          "doc_id": "5706658",
+          "rank": 17,
+          "task_id": "contradiction_0139"
+        },
+        {
+          "doc_id": "4343198",
+          "rank": 3,
+          "task_id": "contradiction_0131"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 3,
+          "task_id": "abstention_0173"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 7,
+          "task_id": "abstention_0170"
+        },
+        {
+          "doc_id": "7433347",
+          "rank": 19,
+          "task_id": "abstention_0165"
+        },
+        {
+          "doc_id": "5906799",
+          "rank": 14,
+          "task_id": "multihop_0209"
+        },
+        {
+          "doc_id": "2949280",
+          "rank": 10,
+          "task_id": "temporal_0240"
+        },
+        {
+          "doc_id": "5706658",
+          "rank": 10,
+          "task_id": "temporal_0238"
+        },
+        {
+          "doc_id": "4343198",
+          "rank": 17,
+          "task_id": "negative_0302"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 4,
+          "task_id": "abstention_0154"
+        },
+        {
+          "doc_id": "6286148",
+          "rank": 2,
+          "task_id": "aggregation_0268"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 15,
+          "task_id": "aggregation_0267"
+        },
+        {
+          "doc_id": "6286148",
+          "rank": 8,
+          "task_id": "aggregation_0266"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 12,
+          "task_id": "aggregation_0246"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 13,
+          "task_id": "aggregation_0249"
+        },
+        {
+          "doc_id": "7581537",
+          "rank": 6,
+          "task_id": "negative_0299"
+        },
+        {
+          "doc_id": "4343198",
+          "rank": 8,
+          "task_id": "negative_0303"
+        }
+      ],
+      "empty_rankings": [],
+      "missing_ids": [],
+      "row_count": 125,
+      "unknown_ids": []
+    },
+    "medcpt": {
+      "affected_task_count": 7,
+      "duplicate_corpus_id_reference_count": 7,
+      "duplicate_corpus_id_references": [
+        {
+          "doc_id": "5906799",
+          "rank": 17,
+          "task_id": "constraint_0062"
+        },
+        {
+          "doc_id": "5906799",
+          "rank": 13,
+          "task_id": "comparative_0100"
+        },
+        {
+          "doc_id": "7433347",
+          "rank": 16,
+          "task_id": "comparative_0017"
+        },
+        {
+          "doc_id": "7581537",
+          "rank": 16,
+          "task_id": "contradiction_0125"
+        },
+        {
+          "doc_id": "4343198",
+          "rank": 17,
+          "task_id": "abstention_0160"
+        },
+        {
+          "doc_id": "2949280",
+          "rank": 15,
+          "task_id": "temporal_0240"
+        },
+        {
+          "doc_id": "4343198",
+          "rank": 3,
+          "task_id": "negative_0287"
+        }
+      ],
+      "empty_rankings": [],
+      "missing_ids": [],
+      "row_count": 125,
+      "unknown_ids": []
+    },
+    "rm3": {
+      "affected_task_count": 12,
+      "duplicate_corpus_id_reference_count": 12,
+      "duplicate_corpus_id_references": [
+        {
+          "doc_id": "5564292",
+          "rank": 11,
+          "task_id": "contradiction_0022"
+        },
+        {
+          "doc_id": "6286148",
+          "rank": 1,
+          "task_id": "contradiction_0139"
+        },
+        {
+          "doc_id": "7581537",
+          "rank": 18,
+          "task_id": "contradiction_0125"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 20,
+          "task_id": "abstention_0170"
+        },
+        {
+          "doc_id": "30620402",
+          "rank": 2,
+          "task_id": "abstention_0150"
+        },
+        {
+          "doc_id": "5906799",
+          "rank": 17,
+          "task_id": "multihop_0209"
+        },
+        {
+          "doc_id": "6286148",
+          "rank": 15,
+          "task_id": "temporal_0238"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 13,
+          "task_id": "abstention_0154"
+        },
+        {
+          "doc_id": "8386155",
+          "rank": 4,
+          "task_id": "aggregation_0255"
+        },
+        {
+          "doc_id": "7581537",
+          "rank": 8,
+          "task_id": "negative_0299"
+        },
+        {
+          "doc_id": "4343198",
+          "rank": 8,
+          "task_id": "negative_0303"
+        },
+        {
+          "doc_id": "4343198",
+          "rank": 10,
+          "task_id": "negative_0287"
+        }
+      ],
+      "empty_rankings": [],
+      "missing_ids": [],
+      "row_count": 125,
+      "unknown_ids": []
+    },
+    "splade": {
+      "affected_task_count": 21,
+      "duplicate_corpus_id_reference_count": 23,
+      "duplicate_corpus_id_references": [
+        {
+          "doc_id": "4343198",
+          "rank": 20,
+          "task_id": "constraint_0087"
+        },
+        {
+          "doc_id": "4343198",
+          "rank": 18,
+          "task_id": "comparative_0011"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 3,
+          "task_id": "contradiction_0022"
+        },
+        {
+          "doc_id": "6286148",
+          "rank": 1,
+          "task_id": "contradiction_0139"
+        },
+        {
+          "doc_id": "7581537",
+          "rank": 3,
+          "task_id": "contradiction_0125"
+        },
+        {
+          "doc_id": "4343198",
+          "rank": 10,
+          "task_id": "contradiction_0131"
+        },
+        {
+          "doc_id": "30620402",
+          "rank": 10,
+          "task_id": "abstention_0173"
+        },
+        {
+          "doc_id": "30620402",
+          "rank": 5,
+          "task_id": "abstention_0150"
+        },
+        {
+          "doc_id": "7433347",
+          "rank": 19,
+          "task_id": "multihop_0189"
+        },
+        {
+          "doc_id": "7581537",
+          "rank": 8,
+          "task_id": "multihop_0209"
+        },
+        {
+          "doc_id": "6286148",
+          "rank": 18,
+          "task_id": "temporal_0238"
+        },
+        {
+          "doc_id": "8386155",
+          "rank": 18,
+          "task_id": "temporal_0211"
+        },
+        {
+          "doc_id": "4343198",
+          "rank": 18,
+          "task_id": "negative_0295"
+        },
+        {
+          "doc_id": "5706658",
+          "rank": 9,
+          "task_id": "negative_0056"
+        },
+        {
+          "doc_id": "8386155",
+          "rank": 2,
+          "task_id": "temporal_0229"
+        },
+        {
+          "doc_id": "7581537",
+          "rank": 3,
+          "task_id": "temporal_0229"
+        },
+        {
+          "doc_id": "4343198",
+          "rank": 5,
+          "task_id": "aggregation_0268"
+        },
+        {
+          "doc_id": "30620402",
+          "rank": 6,
+          "task_id": "aggregation_0264"
+        },
+        {
+          "doc_id": "5564292",
+          "rank": 15,
+          "task_id": "aggregation_0264"
+        },
+        {
+          "doc_id": "8386155",
+          "rank": 2,
+          "task_id": "aggregation_0267"
+        },
+        {
+          "doc_id": "7581537",
+          "rank": 4,
+          "task_id": "negative_0299"
+        },
+        {
+          "doc_id": "6286148",
+          "rank": 7,
+          "task_id": "negative_0303"
+        },
+        {
+          "doc_id": "4343198",
+          "rank": 4,
+          "task_id": "negative_0279"
+        }
+      ],
+      "empty_rankings": [],
+      "missing_ids": [],
+      "row_count": 125,
+      "unknown_ids": []
+    }
+  },
+  "scope_counts": {
+    "distinct_test_tasks_with_run_duplicate_identity_references": 44,
+    "judgment_duplicate_identity_reference_count": 34,
+    "run_duplicate_identity_references": 174,
+    "seed_or_negative_reference_count_all_splits": 6
+  },
+  "status": "fail",
+  "stored_scores": {
+    "comparison": "not_performed_if_validation_errors; no recomputed scores",
+    "methods": [
+      "agent",
+      "agent_gpt54",
+      "agent_single_step",
+      "bge",
+      "bge_reranker",
+      "bm25",
+      "colbert",
+      "dense",
+      "e5large",
+      "hybrid",
+      "hybrid_reranked",
+      "medcpt",
+      "splade"
+    ],
+    "nonprimary": [
+      "agent_gpt54",
+      "colbert"
+    ],
+    "primary_missing": [
+      "rm3"
+    ]
+  },
+  "tasks": {
+    "duplicate_corpus_id_references": [
+      {
+        "doc_id": "8386155",
+        "field": "supporting_doc_ids",
+        "split": "train",
+        "task_id": "negative_0060"
+      },
+      {
+        "doc_id": "8386155",
+        "field": "supporting_doc_ids",
+        "split": "train",
+        "task_id": "temporal_0218"
+      },
+      {
+        "doc_id": "8386155",
+        "field": "supporting_doc_ids",
+        "split": "dev",
+        "task_id": "temporal_0045"
+      },
+      {
+        "doc_id": "6286148",
+        "field": "supporting_doc_ids",
+        "split": "test",
+        "task_id": "contradiction_0139"
+      },
+      {
+        "doc_id": "8386155",
+        "field": "supporting_doc_ids",
+        "split": "test",
+        "task_id": "temporal_0211"
+      },
+      {
+        "doc_id": "8386155",
+        "field": "supporting_doc_ids",
+        "split": "test",
+        "task_id": "temporal_0229"
+      }
+    ],
+    "empty_count": 17,
+    "empty_task_ids": [
+      "abstention_0033",
+      "abstention_0034",
+      "abstention_0150",
+      "abstention_0153",
+      "abstention_0154",
+      "abstention_0155",
+      "abstention_0158",
+      "abstention_0159",
+      "abstention_0160",
+      "abstention_0165",
+      "abstention_0166",
+      "abstention_0167",
+      "abstention_0170",
+      "abstention_0171",
+      "abstention_0173",
+      "abstention_0174",
+      "abstention_0177"
+    ],
+    "seed_qrel_pairs": 264,
+    "split_sizes": {
+      "dev": 60,
+      "test": 125,
+      "train": 119
+    },
+    "supported_count": 108,
+    "supported_task_ids": [
+      "aggregation_0049",
+      "aggregation_0050",
+      "aggregation_0051",
+      "aggregation_0244",
+      "aggregation_0246",
+      "aggregation_0249",
+      "aggregation_0255",
+      "aggregation_0257",
+      "aggregation_0258",
+      "aggregation_0259",
+      "aggregation_0264",
+      "aggregation_0266",
+      "aggregation_0267",
+      "aggregation_0268",
+      "aggregation_0269",
+      "aggregation_0270",
+      "aggregation_0272",
+      "comparative_0011",
+      "comparative_0012",
+      "comparative_0013",
+      "comparative_0016",
+      "comparative_0017",
+      "comparative_0091",
+      "comparative_0092",
+      "comparative_0095",
+      "comparative_0096",
+      "comparative_0097",
+      "comparative_0098",
+      "comparative_0100",
+      "comparative_0108",
+      "comparative_0113",
+      "comparative_0118",
+      "constraint_0002",
+      "constraint_0003",
+      "constraint_0005",
+      "constraint_0006",
+      "constraint_0009",
+      "constraint_0062",
+      "constraint_0063",
+      "constraint_0072",
+      "constraint_0073",
+      "constraint_0076",
+      "constraint_0077",
+      "constraint_0079",
+      "constraint_0084",
+      "constraint_0087",
+      "constraint_0089",
+      "contradiction_0020",
+      "contradiction_0022",
+      "contradiction_0120",
+      "contradiction_0124",
+      "contradiction_0125",
+      "contradiction_0127",
+      "contradiction_0128",
+      "contradiction_0131",
+      "contradiction_0133",
+      "contradiction_0138",
+      "contradiction_0139",
+      "contradiction_0144",
+      "contradiction_0147",
+      "contradiction_0149",
+      "multihop_0035",
+      "multihop_0040",
+      "multihop_0179",
+      "multihop_0180",
+      "multihop_0181",
+      "multihop_0184",
+      "multihop_0186",
+      "multihop_0187",
+      "multihop_0189",
+      "multihop_0190",
+      "multihop_0194",
+      "multihop_0196",
+      "multihop_0198",
+      "multihop_0207",
+      "multihop_0208",
+      "multihop_0209",
+      "negative_0055",
+      "negative_0056",
+      "negative_0275",
+      "negative_0277",
+      "negative_0279",
+      "negative_0285",
+      "negative_0286",
+      "negative_0287",
+      "negative_0295",
+      "negative_0296",
+      "negative_0298",
+      "negative_0299",
+      "negative_0302",
+      "negative_0303",
+      "temporal_0044",
+      "temporal_0046",
+      "temporal_0047",
+      "temporal_0211",
+      "temporal_0224",
+      "temporal_0226",
+      "temporal_0227",
+      "temporal_0229",
+      "temporal_0230",
+      "temporal_0231",
+      "temporal_0232",
+      "temporal_0235",
+      "temporal_0236",
+      "temporal_0237",
+      "temporal_0238",
+      "temporal_0239",
+      "temporal_0240"
+    ],
+    "test_count": 125
+  },
+  "version": "historical-qrel-sensitivity-v1"
+}

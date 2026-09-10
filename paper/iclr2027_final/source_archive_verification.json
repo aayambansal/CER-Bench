@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "source_archive_sha256": "8d173a9ffe0e06d2e01b269cd53415be5af4369e83f177d3288685f7a03d019c",
+  "clean_extraction_compiles": true,
+  "identical_extracted_text_and_page_geometry": true,
+  "pages": 13,
+  "recompiled_pdf_sha256": "80283cf4a317231001c40a85103b50ed5069124791e69cc23def23d8a39c0992",
+  "reference_pdf_sha256": "ca26f681eddf456471396c6730c215a4ec9f1476e31fb8a69217323f825c7ab6",
+  "note": "PDF byte hashes may differ due to build metadata; this checks text and page geometry, not scientific validity."
+}

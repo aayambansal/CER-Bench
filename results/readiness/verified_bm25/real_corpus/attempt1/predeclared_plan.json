@@ -1,0 +1,101 @@
+{
+  "schema": "verified-real-corpus-smoke-plan-v1",
+  "probes": {
+    "schema": "verified-bm25-unscored-probes-v1",
+    "selection": "Predeclared before real index build/search; one topical query per capability intention. Intentions are not verified task properties or relevance labels.",
+    "label_status": "unscored_retrieval_smoke_no_qrels",
+    "probes": [
+      {
+        "task_id": "probe_constraint",
+        "task_family": "constraint",
+        "split": "dev",
+        "question": "EGFR inhibitor resistance human lung cancer cell line assay"
+      },
+      {
+        "task_id": "probe_comparative",
+        "task_family": "comparative",
+        "split": "dev",
+        "question": "CRISPR knockout compared with RNA interference gene silencing efficiency"
+      },
+      {
+        "task_id": "probe_contradiction",
+        "task_family": "contradiction",
+        "split": "dev",
+        "question": "autophagy inhibition increases decreases cancer cell survival conflicting evidence"
+      },
+      {
+        "task_id": "probe_abstention",
+        "task_family": "abstention",
+        "split": "dev",
+        "question": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial"
+      },
+      {
+        "task_id": "probe_multihop",
+        "task_family": "multihop",
+        "split": "dev",
+        "question": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality"
+      },
+      {
+        "task_id": "probe_temporal",
+        "task_family": "temporal",
+        "split": "dev",
+        "question": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024"
+      },
+      {
+        "task_id": "probe_aggregation",
+        "task_family": "aggregation",
+        "split": "dev",
+        "question": "meta analysis immune checkpoint inhibitor melanoma overall survival studies"
+      },
+      {
+        "task_id": "probe_negative",
+        "task_family": "negative",
+        "split": "dev",
+        "question": "metformin randomized trial no improvement cancer survival negative results"
+      }
+    ]
+  },
+  "probes_sha256": "08d3ec427a1d606203b4809a40e8fe84e24d26eeb16cae0c128eda6a426eff17",
+  "source_sha256": {
+    "results/readiness/verified_bm25/real_corpus/run_smoke.py": "99ab5f9e2ee636bfd4c18d87249319ed7bdea7f57221da6e64229f7d9148da4b",
+    "src/retrieval/verified_bm25.py": "a15c6639ba2482b6f9b5fa83b3aa08bcd34fc35fbfaa8abc2ba76ddd5c97d4a6",
+    "scripts/49_index_and_run_verified_bm25.py": "a9d3b9f8c0123479573c288c9235b13d77ffe73c3032bbb1a2097a644a4ae290",
+    "src/evaluation/budget_protocol.py": "8ef980f8b5c577620ede2220ebb5e8015ff7175396be4283c1de4a1dd3b1c00d",
+    "scripts/48_run_live_budget.py": "dc0ee0aecc162407a393962110cd0cd7961349a891378808ba9789f898c0e04b",
+    "src/agents/provider_clients.py": "c677ccdcda5f3e8e5834fe0bbd1f134c1b75d7a7fa2cf77eabbd257b8375d4d8"
+  },
+  "input_sha256": {
+    "corpus": "1be9556874f61f2e0def5abed5812620c75b6648e2ec11f4128e9b4bcb3e359d",
+    "chunks": "427b6ed6c4e9db4cef87576e9f9b1e9c30c4864023eeb7e9c32efabf1ccdd300",
+    "manifest": "59d7751daeb67925903629ed6c542c1e98874d17b0499e43f3a387cc1168b5ae"
+  },
+  "conditions": [
+    "original_top24",
+    "repeated_original_3x8",
+    "heuristic_keywords_3x8"
+  ],
+  "max_unique_candidates": 24,
+  "saved_search_hit_limit": 24,
+  "saved_text_characters": 0,
+  "label_status": "unscored_retrieval_smoke_no_qrels",
+  "publication_claim": false,
+  "historical_tasks_or_qrels_used": false,
+  "human_validation": false,
+  "synthetic_preserved_sha256": {
+    "results/readiness/verified_bm25/synthetic/chunks.jsonl": "9f45754e912ea76fc2278f3d8b3fc3a086d32ed3ca3dbc6a5cea9c0c557af36d",
+    "results/readiness/verified_bm25/synthetic/corpus.jsonl": "b3256660f3481078918bb455974064e8f57054f5ec18ef74ababe6529cb654d8",
+    "results/readiness/verified_bm25/synthetic/structural_labels.json": "b613518479e0e3a3c843ae4141737a15c18f90856666c297b9e8e75e1a786213",
+    "results/readiness/verified_bm25/synthetic/tasks.jsonl": "f5b1c0ee5b3842ca48c05a19c70dd7e85e7015187cd60831e66ae55c7ba1e948",
+    "results/readiness/verified_bm25/synthetic/expected_task_ids.json": "7d4dbe79743a31a8b11dc213473cfc9c9b113d84faa219760383917b238713ea",
+    "results/readiness/verified_bm25/synthetic/qrels.json": "4ccc1db8e1c07316cbb228ea58ed70f86079b37001dea792b45496d67f522dfe",
+    "results/readiness/verified_bm25/synthetic/dataset_manifest.json": "88f99369f554345f2bb5e0eae96f1f783de3c3f0f1f2cb82219de9ee2c97fb83",
+    "results/readiness/verified_bm25/synthetic/index/postings.npz": "0daff0ab29f49089df3bf691a1b24f0beb87cb29d70f2d27357196a0fcf86965",
+    "results/readiness/verified_bm25/synthetic/index/index.json": "756989bf1435795ee744fc2a4cca535723de0cd3c388d3a83b86ab8ee4e5a8b1",
+    "results/readiness/verified_bm25/synthetic/run/runs.jsonl": "2e2c6ca82cf2a8c23789b234442f4255536fd35ebeacfa934d4612f5ae39ab6e",
+    "results/readiness/verified_bm25/synthetic/run/run_manifest.json": "a3a61baf2abf6aafd144a812356fc4b08b8c3ff7f1c1ce6f46f771a2069da527"
+  },
+  "python": "3.11.16 (main, Sep  2 2026, 23:33:55) [Clang 21.1.8 ]",
+  "executable": "/Users/aayambansal/.config/openscience/data-root/conda/envs/python/bin/python",
+  "executable_sha256": "c80b4a33a48c1b93092dbd7478b65afd3a6d441e19afb67317b323da61a3f861",
+  "numpy_version": "2.4.6"
+}

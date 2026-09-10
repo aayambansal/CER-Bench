@@ -31,7 +31,7 @@
 
 % ============================================================================
 \begin{abstract}
-We introduce \textsc{CER-Bench}, a benchmark of 304~tasks across eight retrieval families for condition-sensitive evidence collection in biomedical literature. Existing scientific retrieval benchmarks predominantly reward topical matching, yet real scientific search requires satisfying structured experimental constraints, reconciling condition-dependent contradictions, tracking consensus evolution over time, aggregating quantitative evidence across studies, and knowing when to abstain. Our benchmark tests all of these through eight task families---constraint-satisfaction, comparative, contradiction, abstention, multi-hop, temporal, aggregation, and negative-result retrieval---each grounded in real documents from a 4,936-paper corpus spanning ten biomedical subdomains. We evaluate eleven retrieval configurations spanning lexical (BM25), dense (SPECTER2, BGE, E5-large, MedCPT), learned sparse (SPLADE), hybrid fusion, reranking (ms-marco, BGE-reranker), and iterative agentic search, alongside two purpose-trained controllers (Qwen3-8B and gpt-oss-20b fine-tuned on teacher traces). On 108~non-abstention test tasks, the controller achieves the highest Recall@10 (0.443) and Recall@20 (0.543), significantly outperforming the strongest dense baseline (BGE, $p{=}0.004$) and the hybrid baseline (Recall@20, $p{=}0.046$), while BM25 remains superior on top-rank precision (R@5, MRR). The controller's largest family-level gains appear on aggregation tasks, where iterative refinement discovers additional measurement-reporting papers that single-query methods miss. An ablation isolating the effect of iterative refinement is unambiguous: restricting the controller to a single search round reduces Recall@10 by 14.4~points ($p{<}0.001$). Abstention---recognizing when the corpus lacks sufficient evidence---remains completely unsolved by all methods. Our benchmark, baselines, and code are publicly available.
+We introduce \textsc{CER-Bench}, a benchmark of 304~tasks across eight retrieval families for condition-sensitive evidence collection in biomedical literature. Existing scientific retrieval benchmarks predominantly reward topical matching, yet real scientific search requires satisfying structured experimental constraints, reconciling condition-dependent contradictions, tracking consensus evolution over time, aggregating quantitative evidence across studies, and knowing when to abstain. Our benchmark tests all of these through eight task families---constraint-satisfaction, comparative, contradiction, abstention, multi-hop, temporal, aggregation, and negative-result retrieval---each grounded in real documents from a 4,936-paper corpus spanning ten biomedical subdomains. We evaluate eleven retrieval configurations spanning lexical (BM25), dense (SPECTER2, BGE, E5-large, MedCPT), learned sparse (SPLADE), hybrid fusion, reranking (ms-marco, BGE-reranker), and iterative agentic search, alongside two purpose-trained controllers (Qwen3-8B and gpt-oss-20b fine-tuned on teacher traces). \textbf{Our central finding is that no single method dominates: CER-Bench is diagnostic, exposing distinct regimes rather than crowning a winner.} On the v1 split (2--3 seeded gold per task), BM25 leads on MRR, SPLADE is the strongest single-pass retriever (highest R@5 and R@10 among non-agentic methods), and an iterative agent achieves the highest deeper recall (R@20). \emph{Both stronger-label evaluations reverse this aggregate ordering}: on a cluster-first v2 split (9.8 gold/task) BM25 leads on every aggregate metric, and on LLM-judge pooled adjudication (12.7 gold/task) BGE leads on R@20 with the agent dropping to fifth. The agent retains family advantages on temporal and comparative tasks across both stronger-label regimes. Family-aligned structured metrics tell a similar story: the agent's clearest advantage is \emph{complete-collection rate} on aggregation (29.4\% vs.\ 5.9\% for BM25). An ablation isolating iterative refinement shows it accounts for the agent's recall gains: restricting the controller to a single search round reduces Recall@10 by 14.4~points. Abstention---recognizing when the corpus lacks sufficient evidence---remains completely unsolved by all methods. Aggregate significance claims should be read as v1-specific; results vary under expanded gold labels (no multiple-comparison correction is applied). We release the benchmark, corpus, baselines, trained controllers, and evaluation code, with Croissant metadata and RAI documentation, to support future work on scientific evidence retrieval.
 \end{abstract}
 
 % ============================================================================
@@ -42,14 +42,15 @@ Scientific literature retrieval is harder than general web search. A working sci
 
 Recent work has highlighted this gap from multiple angles. DORIS-MAE~\cite{dorismae2023} demonstrated substantial performance drops for seventeen retrieval methods on complex scientific queries. LitSearch~\cite{litsearch2024} showed that dense retrieval can improve over BM25 by 24.8 absolute Recall@5 points on realistic literature-search queries, but its tasks remain single-turn and answer-focused. EpiBench~\cite{epibench2026} pushes toward multi-turn multimodal research workflows but reports only 29.2\% hard-split accuracy for the strongest model, and its broad scope dilutes depth in any one domain.
 
-On the systems side, OpenScholar~\cite{openscholar2025} showed that a retrieval-augmented 8B model over 45 million open-access papers can outperform GPT-4o on scientific question answering, and PaperQA2~\cite{paperqa2} demonstrated strong end-to-end literature synthesis. Context-1~\cite{context1} introduced a self-editing retrieval agent trained on over 8,000 synthetic tasks, showing that a cheap four-rollout configuration with reciprocal-rank fusion can match much larger frontier models. Yet none of these systems have been evaluated on condition-sensitive, multi-constraint scientific retrieval tasks, and no benchmark exists that systematically tests these capabilities.
+On the systems side, OpenScholar~\cite{openscholar2026} showed that a retrieval-augmented 8B model over 45 million open-access papers can outperform GPT-4o on scientific question answering, and PaperQA2~\cite{skarlinski2024paperqa2} demonstrated strong end-to-end literature synthesis. Context-1~\cite{context2026} introduced a self-editing retrieval agent trained on over 8,000 synthetic tasks, showing that a cheap four-rollout configuration with reciprocal-rank fusion can match much larger frontier models. Yet none of these systems have been evaluated on condition-sensitive, multi-constraint scientific retrieval tasks, and no benchmark exists that systematically tests these capabilities.
 
 Figure~\ref{fig:taxonomy} provides an overview of the eight task families. We contribute:
 \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=2pt]
 \item \textbf{A benchmark} of 304 corpus-grounded tasks across \textbf{eight retrieval families}---constraint-satisfaction, comparative, contradiction, abstention, multi-hop, temporal, aggregation, and negative-result retrieval---each testing a distinct evidence-collection capability that single-query retrieval struggles with.
 \item \textbf{A biomedical corpus} of 4,936 documents (17,902 chunks) from PubMed Central Open Access, enriched with MeSH terms, citation graphs from OpenAlex, and scientific-structure chunking.
 \item \textbf{Comprehensive baselines}: eleven retrieval configurations spanning lexical (BM25), learned sparse (SPLADE), four dense models, hybrid fusion, two rerankers, and a reference iterative controller, with paired bootstrap significance tests, family-aligned structured metrics, and a simple abstention threshold baseline.
-\item \textbf{Key findings}: the benchmark reveals that (1)~no single method dominates across families---BM25 leads on precision, SPLADE on single-pass recall, and iterative search on deeper evidence collection; (2)~reranking with general-purpose cross-encoders degrades scientific retrieval; (3)~dense retrieval quality depends on the embedding model, not the paradigm; and (4)~abstention remains an open problem (AUROC~0.714 for a simple threshold baseline).
+\item \textbf{Key findings (diagnostic, not promotional)}: (1)~no single method dominates across families or label regimes---BM25 leads on MRR and on the stronger-label v2 split, SPLADE on single-pass recall (highest R@5/R@10 among non-agentic methods), and iterative search on v1 R@20; (2)~reranking with general-purpose cross-encoders degrades scientific retrieval; (3)~dense retrieval quality depends on the embedding model, not the paradigm; (4)~the agent's clearest structural advantage is \emph{complete-collection} on aggregation tasks (29.4\% vs.\ 5.9\% BM25); and (5)~abstention remains an open problem (AUROC~0.714 for a simple threshold baseline). We frame CER-Bench as a tool for surfacing these regime differences rather than promoting any single retriever.
+\item \textbf{Gold-label robustness}: we report two complementary validations---LLM-judge pooled adjudication (gold expanded from 2.4 to 12.7 docs/task across all methods' top-20) and a parallel cluster-first v2 split (9.8 gold/task by construction)---and disclose a 30-task human-validation protocol whose results will appear in the camera-ready (Appendix~\ref{app:humanpilot}). Method ordering shifts under stronger labels, which we surface in the main results.
 \end{itemize}
 
 \begin{figure}[t]
@@ -64,16 +65,16 @@ Figure~\ref{fig:taxonomy} provides an overview of the eight task families. We co
 \label{sec:related}
 
 \paragraph{Scientific retrieval systems.}
-SPECTER2~\cite{specter2} provides scientific document embeddings trained across 23 fields of study with task-specific adapters for retrieval, classification, and recommendation. OpenScholar~\cite{openscholar2025} combines retrieval over 45M papers with an 8B language model to achieve state-of-the-art scientific question answering. PaperQA2~\cite{paperqa2} builds an end-to-end pipeline for literature synthesis. These systems focus on answer generation; our work evaluates the retrieval step in isolation, which is where most evidence-collection failures originate.
+SPECTER2~\cite{specter2} provides scientific document embeddings trained across 23 fields of study with task-specific adapters for retrieval, classification, and recommendation. OpenScholar~\cite{openscholar2026} combines retrieval over 45M papers with an 8B language model to achieve state-of-the-art scientific question answering. PaperQA2~\cite{skarlinski2024paperqa2} builds an end-to-end pipeline for literature synthesis. These systems focus on answer generation; our work evaluates the retrieval step in isolation, which is where most evidence-collection failures originate.
 
 \paragraph{Retrieval agents.}
-Context-1~\cite{context1} introduced a 20B self-editing search agent trained via reinforcement learning on 8,000+ synthetic tasks. Its architecture---decompose, search, prune, refine---provides the blueprint for our iterative controller. We adapt its design to scientific search by adding metadata awareness, scientific-structure chunking, and evaluation across condition-sensitive task families. We use the design as a prompt-based controller rather than training a new model, making the approach accessible without large-scale RL infrastructure.
+Context-1~\cite{context2026} introduced a 20B self-editing search agent trained on 8,000+ synthetic tasks. Its decompose--search--prune--refine loop motivates our iterative controller, but we use only a prompt-based BM25 search loop rather than a trained policy, reciprocal-rank fusion, or learned pruning. This keeps the method reproducible while isolating iterative query refinement from model-specific training infrastructure.
 
 \paragraph{Scientific retrieval benchmarks.}
-Established biomedical IR benchmarks include BioASQ~\cite{bioasq2015} (semantic indexing and QA), TREC Precision Medicine~\cite{trecpm2017} (clinical trial matching), and SciFact~\cite{scifact2020} (claim verification). BEIR~\cite{beir2021} provides heterogeneous zero-shot evaluation across domains. DORIS-MAE~\cite{dorismae2023} evaluates retrieval on complex scientific queries. LitSearch~\cite{litsearch2024} tests realistic literature-search queries. ScholarQABench~\cite{scholarqabench} evaluates answer correctness. EpiBench~\cite{epibench2026} benchmarks multi-turn multimodal workflows. Our benchmark complements these by (i)~testing eight distinct retrieval \emph{families} rather than a single task type, (ii)~grounding all tasks in actual corpus documents, (iii)~including explicit abstention evaluation, and (iv)~focusing on evidence \emph{retrieval} rather than end-to-end answer generation.
+Established biomedical IR benchmarks include BioASQ~\cite{bioasq2015} (semantic indexing and QA), TREC Precision Medicine~\cite{trecpm2017} (clinical trial matching), and SciFact~\cite{scifact2020} (claim verification). BEIR~\cite{beir2021} provides heterogeneous zero-shot evaluation across domains. DORIS-MAE~\cite{dorismae2023} evaluates retrieval on complex scientific queries. LitSearch~\cite{litsearch2024} tests realistic literature-search queries. ScholarQABench, introduced with OpenScholar~\cite{openscholar2026}, evaluates scientific answer correctness. EpiBench~\cite{epibench2026} benchmarks multi-turn multimodal workflows. Our benchmark complements these by (i)~testing eight distinct retrieval \emph{families} rather than a single task type, (ii)~grounding all tasks in actual corpus documents, (iii)~including explicit abstention evaluation, and (iv)~focusing on evidence \emph{retrieval} rather than end-to-end answer generation.
 
 \paragraph{Hybrid, fusion, and iterative retrieval.}
-Reciprocal rank fusion (RRF)~\cite{rrf2009} combines ranked lists from heterogeneous retrieval systems without requiring score calibration. Chain-of-Retrieval (COR)~\cite{cor2024} demonstrates that multi-aspect iterative exploration with RRF aggregation produces substantial gains in full-paper retrieval, motivating our iterative controller design. MRAG~\cite{mrag2024} provides a comprehensive biomedical RAG benchmark with broader retriever coverage. Cross-encoder rerankers~\cite{crossencoder2020} improve precision by jointly scoring query-document pairs, though we show that a web-trained reranker degrades performance on scientific text. Structure- and graph-aware retrieval methods~\cite{gralcrag2024} demonstrate that encoding document structure and knowledge-graph context can improve section diversity. Classical pseudo-relevance feedback methods (RM3, Rocchio) and learned expansion (DocT5Query, SPLADE~\cite{splade2022}) also address query refinement via term reweighting. We include BM25+RM3 as a PRF baseline and find it does not improve over plain BM25 on our benchmark, suggesting that condition-sensitive queries benefit from LLM-driven reasoning about constraint structure rather than statistical term expansion.
+Reciprocal rank fusion (RRF)~\cite{rrf2009} combines ranked lists without score calibration. Recent iterative full-paper retrieval work explores multi-aspect expansion with post-order aggregation~\cite{cor2025}, motivating our controller at a high level while leaving RRF and learned pruning out of our implementation. BERT-style cross-encoder rerankers~\cite{nogueira2019bert} often improve precision in web passage retrieval, but the web-trained rerankers we tested degrade scientific retrieval on our benchmark. Classical PRF (RM3, Rocchio)~\cite{robertson2009} and learned expansion (DocT5Query, SPLADE~\cite{splade2022}) address query refinement via term reweighting; we evaluate BM25+RM3 and find it does not improve over BM25.
 
 % ============================================================================
 \section{CER-Bench}
@@ -81,9 +82,9 @@ Reciprocal rank fusion (RRF)~\cite{rrf2009} combines ranked lists from heterogen
 
 \subsection{Corpus}
 
-We construct a biomedical literature corpus from four sources: PubMed (abstracts, MeSH terms, publication metadata), PubMed Central Open Access (full-text XML), OpenAlex (citation graph, concepts, topics), and Semantic Scholar (fields of study). We query ten seed subdomains chosen for their richness in experimental conditions and method comparisons: CRISPR gene editing, immune checkpoint immunotherapy, drug repurposing, CAR-T cell therapy, organoid disease models, single-cell sequencing, gut microbiome, mRNA therapeutics, protein structure prediction, and epigenetics.
+We construct a biomedical literature corpus from four sources: PubMed (abstracts, MeSH terms, publication metadata)~\cite{pubmed_nlm}, PubMed Central Open Access (full-text XML)~\cite{pmc_nlm}, OpenAlex (citation graph, concepts, topics)~\cite{openalex2022}, and Semantic Scholar/S2ORC metadata (fields of study)~\cite{s2orc2020}. We query ten seed subdomains chosen for their richness in experimental conditions and method comparisons: CRISPR gene editing, immune checkpoint immunotherapy, drug repurposing, CAR-T cell therapy, organoid disease models, single-cell sequencing, gut microbiome, mRNA therapeutics, protein structure prediction, and epigenetics.
 
-After filtering editorials, letters, and comments, and requiring English language and publication between 2015--2026, the corpus contains \textbf{4,936 documents}. Of these, 652 have PMC full text parsed into structured sections (introduction, methods subsections, results subsections, discussion, figure captions, table text); the remaining 4,284 are represented by abstracts and metadata. We chunk by scientific structure---not fixed token windows---producing \textbf{17,902 chunks} (median 304 tokens) totaling approximately 6.6M tokens. Each chunk inherits its parent document's metadata (MeSH terms, year, venue, organism mentions, citation links).
+After filtering editorials, letters, and comments and restricting to English-language 2015--2026 articles, the corpus contains \textbf{4{,}936 documents}; 652 have PMC full text parsed into structured sections, the remaining 4{,}284 are abstract-only. Scientific-structure chunking (not fixed windows) yields \textbf{17{,}902 chunks} (median 304 tokens, ${\sim}$6.6M tokens), each inheriting its parent's metadata.
 
 \subsection{Task Families}
 
@@ -141,7 +142,7 @@ This pipeline produces 304 tasks (38 per family), split into 119 train, 60 dev, 
 \section{Iterative Search Controller}
 \label{sec:method}
 
-We implement a minimal, prompt-based iterative search controller that searches the corpus, evaluates retrieved evidence, and refines its search query across multiple rounds. The design is inspired by Context-1~\cite{context1} but deliberately stripped down: we use only lexical search (BM25) as the retrieval tool, with no metadata filtering, citation-graph traversal, or structured entity extraction. This isolates the contribution of \emph{iterative query refinement alone} from other possible enhancements. Figure~\ref{fig:agent} illustrates the architecture.
+We implement a minimal, prompt-based iterative search controller that searches the corpus, evaluates retrieved evidence, and refines its search query across multiple rounds. The design is inspired by Context-1~\cite{context2026} but deliberately stripped down: we use only lexical search (BM25) as the retrieval tool, with no metadata filtering, citation-graph traversal, or structured entity extraction. This isolates the contribution of \emph{iterative query refinement alone} from other possible enhancements. Figure~\ref{fig:agent} illustrates the architecture.
 
 \begin{figure}[t]
 \centering
@@ -159,7 +160,7 @@ The controller operates in a loop of at most $T=3$ rounds. At each round $t$, it
 \item \textsc{Stop}$(S)$: return the selected document set $S \subseteq E_t$.
 \end{itemize}
 
-The controller maintains a cumulative evidence set $E = \bigcup_{t=1}^{T} R_t$ where $R_t$ is the set of unique documents retrieved at round $t$. Termination occurs when: (a)~the controller issues a \textsc{Stop} action, returning an explicit list of document IDs from $E$ (deterministic at temperature~0); or (b)~the maximum round count $T{=}3$ is reached, in which case all documents in $E$ are returned in retrieval order. No score fusion or normalization across rounds is applied. We observe that later rounds occasionally introduce marginally relevant documents that dilute precision (the agent's R@5 is below BM25's), suggesting that dynamic stopping or pruning could improve the precision--recall trade-off. We leave this to future work, noting that Context-1~\cite{context1} addresses this via a learned pruning policy.
+The controller maintains a cumulative evidence set $E = \bigcup_{t=1}^{T} R_t$ where $R_t$ is the set of unique documents retrieved at round $t$. Termination occurs when: (a)~the controller issues a \textsc{Stop} action, returning an explicit list of document IDs from $E$ (deterministic at temperature~0); or (b)~the maximum round count $T{=}3$ is reached, in which case all documents in $E$ are returned in retrieval order. No score fusion or normalization across rounds is applied. We observe that later rounds occasionally introduce marginally relevant documents that dilute precision (the agent's R@5 is below BM25's), suggesting that dynamic stopping or pruning could improve the precision--recall trade-off. We leave this to future work, noting that Context-1~\cite{context2026} addresses this via a learned pruning policy.
 
 \subsection{Backbone and Prompting}
 
@@ -175,25 +176,25 @@ This design is deliberately minimal. Unlike Context-1, we do not train a special
 
 We evaluate eleven retrieval configurations spanning five paradigms:
 
-\textbf{Lexical}: BM25 (Okapi, $k_1{=}1.2$, $b{=}0.75$) over 17,902 chunks.
+\textbf{Lexical}: BM25 (Okapi, $k_1{=}1.2$, $b{=}0.75$)~\cite{robertson2009} over 17,902 chunks.
 
-\textbf{Dense}: SPECTER2~\cite{specter2} with proximity adapter (scientific-specific, 768-dim); BGE-base-en-v1.5~\cite{bge2023} (general-purpose, 768-dim); E5-large-v2 (general-purpose, 1024-dim); MedCPT~\cite{medcpt2023} (biomedical-specific, separate query/article encoders, 768-dim). All use FAISS inner-product search.
+\textbf{Dense}: SPECTER2~\cite{specter2} with proximity adapter (scientific-specific, 768-dim); BGE-base-en-v1.5~\cite{bge2024} (general-purpose, 768-dim); E5-large-v2~\cite{e52022} (general-purpose, 1024-dim); MedCPT~\cite{medcpt2023} (biomedical-specific, separate query/article encoders, 768-dim). All use FAISS inner-product search~\cite{johnson2019faiss}.
 
 \textbf{Learned sparse}: SPLADE~\cite{splade2022} (\texttt{naver/splade-cocondenser-ensembledistil}), a pre-trained learned sparse retriever using MLM logit expansion. We use the public checkpoint without domain adaptation; documents are encoded to sparse vectors (max-pooled log-saturated logits over the vocabulary), indexed with scipy sparse matrices, and scored via dot product.
 
-\textbf{Fusion \& reranking}: Hybrid (RRF of BM25+SPECTER2, $k{=}60$); Hybrid + ms-marco-MiniLM cross-encoder (web-trained reranker on top-50); BM25 + BGE-reranker-v2-m3 (general-purpose reranker on BM25 top-50). We note the absence of biomedical-specific rerankers; our negative reranking results should be interpreted as domain-mismatch findings rather than general claims about reranking.
+\textbf{Fusion \& reranking}: Hybrid (RRF of BM25+SPECTER2, $k{=}60$); Hybrid + ms-marco-MiniLM cross-encoder on top-50; BM25 + BGE-reranker-v2-m3 on BM25 top-50. We do not test biomedical-specific rerankers; our negative reranking results are domain-mismatch findings, not general claims about reranking.
 
 \textbf{Iterative agent}: Agent-Sonnet ($T{=}1$, single search round, ablation); Agent-Sonnet ($T{=}3$, full iterative controller, Section~\ref{sec:method}).
 
-\textbf{Backbone comparison}: Agent-GPT5.4 ($T{=}3$, same controller with OpenAI GPT-5.4 backbone, 65 tasks). Included to test whether task-generation leakage from Claude Sonnet inflates agent scores.
+\textbf{Backbone comparison}: Agent-GPT5.4 ($T{=}3$, OpenAI GPT-5.4 backbone, 65 tasks) tests Sonnet task-generation leakage.
 
 \subsection{Metrics}
 
 We report Recall@$k$ ($k \in \{5, 10, 20\}$), nDCG@10, and MRR. All retrieval metrics are computed at the document level against gold supporting document IDs. \textbf{Abstention tasks are excluded} from the main retrieval evaluation (108 test tasks) and analyzed separately, since they have empty gold sets by design.
 
-\paragraph{Document-level aggregation.} For all non-agentic methods, chunks are ranked by score and deduplicated to documents by first occurrence: the first chunk from each document determines its rank, and subsequent chunks from the same document are discarded. For agentic methods, the controller's \textsc{Stop} action returns an explicit list of selected document IDs; this selection is deterministic at temperature~0. We verified that the first-occurrence deduplication does not systematically disadvantage any method class by measuring the average number of chunks per document in the top-20 across methods (range: 1.2--1.8, no significant difference between reranked and non-reranked pipelines).
+\paragraph{Document-level aggregation.} For all non-agentic methods, chunks are scored and deduplicated to documents by first occurrence (first chunk's rank determines the document's rank); for agentic methods the \textsc{Stop} action returns an explicit document list (deterministic at temperature 0). Average chunks/document in top-20 ranges 1.2--1.8 across methods with no systematic gap between reranked and non-reranked pipelines.
 
-\paragraph{Statistical testing.} We report 95\% bootstrap confidence intervals and paired bootstrap significance tests ($n{=}10{,}000$) for all main comparisons. When reporting multiple pairwise tests across families and metrics, we note that no formal multiple-comparison correction (e.g., Bonferroni, Holm) is applied; individual $p$-values should be interpreted with caution, particularly for borderline results (e.g., agent vs.\ SPLADE R@20, $p{=}0.046$). Per-family analyses on small subsets (14--17 tasks) have limited statistical power; we report these for diagnostic purposes rather than as definitive family-level claims. Additionally, for families with structured evidence requirements, we report family-aligned metrics in the main results (Table~\ref{tab:familymetrics}): \emph{both-sides coverage} (comparative), \emph{chain completion rate} (multi-hop), \emph{value coverage} (aggregation), and \emph{complete collection rate} (aggregation).
+\paragraph{Statistical testing.} We report 95\% paired bootstrap CIs and significance tests ($n{=}10{,}000$). \emph{No multiple-comparison correction is applied}; borderline $p$-values (e.g., agent vs.\ SPLADE R@20, $p{=}0.046$) should be interpreted with caution. Per-family analyses on small subsets (14--17 tasks) are reported for diagnostic purposes only.
 
 % ============================================================================
 \section{Results}
@@ -205,7 +206,7 @@ Table~\ref{tab:main} reports aggregate retrieval metrics on the 108 non-abstenti
 
 \begin{table}[t]
 \centering
-\caption{Retrieval results on 108 non-abstention v1 test tasks. Best per metric in \textbf{bold}. The benchmark reveals distinct performance regimes: BM25 leads on precision (R@5, MRR), SPLADE is the strongest single-pass retriever, and the iterative agent leads on deeper recall (R@20). Significance: $^{***}p{<}0.001$, $^{**}p{<}0.01$, $^{*}p{<}0.05$ vs.\ best non-agentic method per metric, paired bootstrap $n{=}10{,}000$.}
+\caption{Retrieval results on 108 non-abstention v1 test tasks. Best per metric in \textbf{bold}. The benchmark reveals distinct performance regimes: BM25 leads on MRR, SPLADE is the strongest single-pass retriever (highest R@5/R@10 among non-agentic methods), and the iterative agent leads on deeper recall (R@20). Significance: $^{***}p{<}0.001$, $^{**}p{<}0.01$, $^{*}p{<}0.05$ vs.\ best non-agentic method per metric, paired bootstrap $n{=}10{,}000$.}
 \label{tab:main}
 \small
 \begin{tabular}{lccccc}
@@ -239,37 +240,13 @@ Table~\ref{tab:main} reports aggregate retrieval metrics on the 108 non-abstenti
 \end{tabular}
 \end{table}
 
-The benchmark reveals three distinct performance regimes. \textbf{For top-hit precision} (R@5, MRR), BM25 leads---scientific papers use precise terminology that lexical matching captures directly. \textbf{For single-pass recall}, SPLADE~\cite{splade2022} is the strongest retriever (R@10: 0.438, R@20: 0.517), outperforming all dense models and nearly matching the iterative agent. \textbf{For deeper evidence collection} (R@20), the iterative agent leads at 0.543, significantly above SPLADE ($p{=}0.046$) and BM25 ($p{<}0.001$). Notably, the agent vs.\ SPLADE difference on R@10 is small (+0.5 points, $p{=}0.85$, not significant)---the agent's advantage is specifically at greater retrieval depth.
+The benchmark reveals three distinct performance regimes \emph{on v1 labels}. \textbf{For MRR}, BM25 leads (0.566)---scientific queries use precise terminology that lexical matching captures at the very top of the ranking. \textbf{For single-pass recall}, SPLADE~\cite{splade2022} is the strongest non-agentic retriever (R@5: 0.355, R@10: 0.438, R@20: 0.517), outperforming all dense models and BM25 itself on R@5/R@10. \textbf{For deeper evidence collection} (R@20), the iterative agent reaches 0.543, above SPLADE (+2.6, paired bootstrap $p{=}0.046$, no multiple-comparison correction) and BM25 (+7.5, $p{<}0.001$). The agent vs.\ SPLADE difference on R@10 is small (+0.5 points, $p{=}0.85$, not significant)---the agent's recall advantage is specifically at greater retrieval depth on the v1 split, and as we show in Section~\ref{sec:goldrobust} this aggregate advantage \emph{does not survive} under stronger labels.
 
-Five additional findings emerge. First, \textbf{classical pseudo-relevance feedback (RM3) does not help}: BM25+RM3 achieves R@10 of 0.415, slightly below plain BM25 (0.424). Expansion terms from top-10 BM25 results introduce topical noise rather than constraint-satisfying terms. This is notable because the iterative agent achieves 0.443 with the \emph{same} BM25 retriever---the difference is that LLM-driven refinement understands the query's constraint structure, while statistical term reweighting does not. Second, \textbf{dense retrieval performance varies widely by model}: BGE and E5-large (general-purpose) match BM25, while SPECTER2 and MedCPT (scientific-specific) trail substantially. Third, \textbf{reranking degrades performance} with both the ms-marco CE (0.262) and BGE-reranker-v2 (0.353)---we note this is specific to the rerankers tested. Fourth, \textbf{the single-step agent ($T{=}1$) underperforms both BM25 and SPLADE} (R@10: 0.299), confirming that the LLM backbone alone does not help. Fifth, a backbone swap (Sonnet to GPT-5.4, 65 tasks) yields comparable performance ($p{=}0.12$), addressing LLM-family leakage concerns.
+Five secondary findings: classical PRF does not help (BM25+RM3 = 0.415 R@10 vs.\ BM25 = 0.424); dense retrieval varies by model (general-purpose BGE = 0.378 and E5-large = 0.389 match BM25 while scientific-specific SPECTER2 = 0.255 and MedCPT = 0.219 trail); both rerankers degrade performance (ms-marco CE 0.262, BGE-reranker 0.353); the single-step agent (R@10 0.299) underperforms BM25 and SPLADE, confirming that iteration drives the recall gain; and a Sonnet$\to$GPT-5.4 backbone swap on 65 tasks ($p{=}0.12$) addresses leakage concerns.
 
 \subsection{Per-Family Analysis}
 
-Table~\ref{tab:perfamily} breaks down Recall@10 by task family, revealing where each method succeeds and fails.
-
-\begin{table}[t]
-\centering
-\caption{Recall@10 by task family (test set, non-abstention). Families ordered by BM25 difficulty. Best overall per family in \textbf{bold}. The agent leads on aggregation; BM25 and hybrid lead elsewhere.}
-\label{tab:perfamily}
-\small
-\begin{tabular}{lcccccc}
-\toprule
-\textbf{Family} & \textbf{BM25} & \textbf{SPECTER2} & \textbf{BGE} & \textbf{Hybrid} & \textbf{Reranker} & \textbf{Agent} \\
-\midrule
-Constraint & \textbf{0.633} & 0.233 & 0.567 & 0.567 & 0.333 & 0.600 \\
-Multi-hop & \textbf{0.583} & 0.292 & 0.500 & 0.417 & 0.292 & 0.521 \\
-Contradiction & 0.536 & 0.429 & 0.429 & \textbf{0.607} & 0.429 & 0.571 \\
-Negative & 0.357 & 0.393 & \textbf{0.464} & 0.429 & 0.429 & 0.393 \\
-Comparative & 0.356 & 0.178 & 0.222 & 0.267 & 0.156 & \textbf{0.356} \\
-Aggregation & 0.324 & 0.206 & 0.265 & 0.353 & 0.176 & \textbf{0.412} \\
-Temporal & 0.216 & 0.098 & 0.235 & \textbf{0.314} & 0.078 & 0.275 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-The agent's strongest advantage appears on \textbf{aggregation} tasks (0.412 vs.\ 0.353 for hybrid, +5.9~points). Iterative query refinement finds additional papers reporting the same measurement that a single BM25 query misses. On \textbf{comparative} tasks, the agent matches BM25 (both 0.356) and substantially outperforms hybrid and reranker.
-
-Constraint-satisfaction and multi-hop tasks favor BM25. These families share a property: their queries use vocabulary that closely overlaps with the gold documents, making keyword matching effective. Contradiction tasks favor the hybrid baseline, suggesting that combining lexical and semantic signals helps when findings use different language to describe opposing results.
+Per-family R@10 (Table~\ref{tab:perfamily} in Appendix~\ref{app:perfamily10}) shows the agent's strongest advantage on \textbf{aggregation} (0.412 vs.\ 0.353 hybrid) and \textbf{comparative} tasks (matches BM25 at 0.356). Constraint and multi-hop favor BM25 because gold documents share precise terminology with the query; contradiction favors hybrid, suggesting lexical+semantic fusion helps when opposing findings use divergent language. Per-family R@20 (Appendix~\ref{app:recall20}) shifts the agent further ahead on aggregation, comparative, and multi-hop, consistent with iterative refinement helping deeper recall.
 
 \subsection{Ablation: Iterative Refinement}
 
@@ -291,138 +268,70 @@ $\Delta$ & +0.5 & \textbf{+14.4} & \textbf{+24.4} & +5.4 & +1.0 \\
 \end{tabular}
 \end{table}
 
-The ablation is unambiguous: iterative refinement is the primary mechanism behind the agent's advantage. A single search round produces R@10 of 0.299---below BM25 (0.424)---while three rounds reach 0.443. The effect is large across all families, with the strongest gains on constraint (+23.3 points), multi-hop (+22.9), and contradiction (+21.4).
-
-Notably, the single-step agent's R@5 (0.264) is already close to the full agent's (0.269), and its MRR (0.486) is comparable. This confirms that the first search round establishes a reasonable initial ranking, and subsequent rounds improve recall at depth rather than top-rank precision.
+Iterative refinement is the primary mechanism behind the agent's advantage: $T{=}1$ produces R@10 = 0.299 (below BM25 0.424) while $T{=}3$ reaches 0.443. R@5 is essentially unchanged ($T{=}1$: 0.264, $T{=}3$: 0.269), so subsequent rounds improve recall \emph{at depth} rather than top-rank precision. Per-family gains are largest on constraint (+23.3), multi-hop (+22.9), and contradiction (+21.4).
 
 \subsection{Abstention}
 
-All 17 abstention tasks in the test set receive retrieved documents from every retrieval method (none abstains). As a simple baseline, we evaluate a threshold classifier that abstains when BM25's top-1 score falls below $\tau$. This achieves AUROC~0.714 and F1~0.388 at the optimal threshold---above chance but far from reliable (precision: 0.260, recall: 0.765). The low precision means the system would incorrectly abstain on 74\% of answerable queries. We additionally trained a gradient-boosted classifier on cross-method features (top-1 agreement rate, pairwise Jaccard overlap of top-10, query length, constraint count) achieving AUROC~0.70, confirming that no simple feature combination suffices. More informative analyses---risk--coverage curves, AURC, and cross-retriever disagreement signals---would strengthen future abstention evaluation; we provide the infrastructure for these in our released code but do not claim to solve the problem. Developing effective abstention mechanisms remains an open challenge that our benchmark is designed to evaluate.
+All 17 abstention tasks receive retrieved documents from every method (none abstains). A threshold classifier on BM25 top-1 score achieves AUROC~0.714 (precision 0.260, recall 0.765); a gradient-boosted classifier on cross-method features (top-1 agreement, top-10 Jaccard, query length, constraint count) reaches AUROC~0.70. No simple feature combination suffices. We release infrastructure for risk--coverage and AURC analyses but do not claim to solve abstention: it remains the open challenge the benchmark is designed to evaluate.
 
-\subsection{Trained Controllers}
+\subsection{Family-Aligned Structured Metrics}
+\label{sec:familystruct}
 
-To test whether the iterative search behavior can be distilled from a frontier model into a smaller open-weight controller, we fine-tuned two models using LoRA on 905 teacher traces generated by Claude Opus~4.6. For reference, we include SPLADE~\cite{splade2022} (a pre-trained learned sparse retriever, \emph{not} our trained model) as a strong single-pass baseline.
-
-\begin{table}[t]
-\centering
-\caption{Distilled search controllers vs.\ prompted agents and strong single-pass baselines. SPLADE is included as a reference (pre-trained, not our contribution). Both trained controllers capture the majority of frontier agent performance at zero marginal cost.}
-\label{tab:trained}
-\small
-\begin{tabular}{llccccc}
-\toprule
-& \textbf{Controller} & \textbf{Params} & \textbf{R@10} & \textbf{R@20} & \textbf{MRR} & \textbf{Cost/q} \\
-\midrule
-\multirow{2}{*}{\emph{Prompted}} & Agent-Sonnet ($T{=}3$) & API & 0.443 & 0.543 & 0.496 & \$0.08 \\
-& Agent-GPT5.4 ($T{=}3$) & API & 0.436 & 0.480 & 0.524 & \$0.03 \\
-\midrule
-\emph{Single-pass} & SPLADE (pre-trained) & 110M & 0.438 & 0.517 & 0.549 & \$0.00 \\
-\midrule
-\multirow{3}{*}{\emph{Distilled}} & Qwen3-8B SFT ($T{=}3$) & 8.3B & 0.428 & 0.466 & 0.518 & \$0.00 \\
-& gpt-oss-20b SFT ($T{=}3$) & 20.9B & 0.384 & 0.443 & 0.516 & \$0.00 \\
-& gpt-oss-20b base ($T{=}3$) & 20.9B & 0.264 & 0.269 & 0.371 & \$0.00 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-The Qwen3-8B SFT controller achieves R@10 of 0.428, capturing 97\% of the frontier Sonnet agent's performance at zero marginal cost. Training lifted gpt-oss-20b from 0.264 (untrained base) to 0.384 ($+$12 points), confirming that Opus teacher traces transfer real search behavior. The gpt-oss-20b model underperformed Qwen3-8B due to limited LoRA capacity (0.04\% trainable parameters vs.\ 1.05\%), suggesting that MoE models require targeting expert layers for effective fine-tuning. Notably, SPLADE (a pre-trained learned sparse retriever) nearly matches the prompted frontier agent on R@10 (0.438 vs.\ 0.443) and exceeds it on MRR (0.549 vs.\ 0.496), indicating that well-trained single-pass retrieval remains highly competitive for scientific text.
-
-\subsection{Family-Aligned Metrics}
-
-Standard document-level Recall@$k$ does not capture the structured evidence requirements of certain families. Table~\ref{tab:familymetrics} reports family-aligned metrics.
+Recall@$k$ does not check whether retrieval satisfies a family's \emph{structural} requirement. We add four family-aligned metrics: \emph{both-sides coverage} (fraction of comparative tasks with both sides in top-20), \emph{chain completion} (fraction of multi-hop tasks with the full chain), \emph{value coverage} (fraction of reported quantities present in top-20), and \emph{complete-collection rate} (fraction of aggregation tasks with value coverage = 1). Table~\ref{tab:familystruct} reports these on the v1 test set.
 
 \begin{table}[t]
 \centering
-\caption{Family-aligned structured metrics (test set). These capture whether retrieval satisfies the \emph{structure} of the task, not just the count of gold documents.}
-\label{tab:familymetrics}
+\caption{Family-aligned structured metrics (v1 test set). The agent's advantage is consistent across all four structural metrics, with the largest gap on \emph{complete-collection} for aggregation (29.4\% vs.\ 5.9\%).}
+\label{tab:familystruct}
 \small
 \begin{tabular}{llccc}
 \toprule
-\textbf{Family} & \textbf{Metric} & \textbf{BM25} & \textbf{Hybrid} & \textbf{Agent} \\
+\textbf{Family} & \textbf{Metric} & \textbf{BM25} & \textbf{Hybrid} & \textbf{Agent ($T{=}3$)} \\
 \midrule
-Comparative & Both-sides coverage & 0.133 & 0.267 & \textbf{0.333} \\
-Multi-hop & Chain completion & 0.250 & 0.250 & \textbf{0.312} \\
-Multi-hop & Link recall & 0.625 & 0.625 & \textbf{0.729} \\
-Aggregation & Value coverage & 0.324 & 0.353 & \textbf{0.500} \\
-Aggregation & Complete collection & 0.059 & 0.059 & \textbf{0.294} \\
+Comparative  & Both-sides coverage      & 0.133 & 0.267 & \textbf{0.333} \\
+Multi-hop    & Chain completion         & 0.250 & 0.250 & \textbf{0.312} \\
+Aggregation  & Value coverage           & 0.324 & 0.353 & \textbf{0.500} \\
+Aggregation  & Complete-collection rate & 0.059 & 0.059 & \textbf{0.294} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-The agent shows its largest structured advantage on \emph{complete collection} for aggregation (29.4\% vs.\ 5.9\%), confirming that iterative refinement is most valuable when the goal is to find \emph{all} relevant documents.
+Across all four structured metrics the agent leads even though its v2 aggregate Recall@10/20 lags BM25, suggesting the agent's contribution is \emph{structural} (covering required evidence dimensions) rather than raising aggregate recall.
 
-\subsection{Gold Label Validation}
+\paragraph{Trained controllers.} LoRA SFT on 905 Opus~4.6 traces yields Qwen3-8B SFT (R@10 = 0.428, 97\% of the frontier Sonnet agent) and gpt-oss-20b SFT (0.384, up from 0.264 untrained), at zero marginal API cost; details in Appendix~\ref{app:trained}.
 
-A concern with corpus-grounded benchmarks is that gold labels (2--3 seeded papers per task) may be incomplete. We address this in two ways.
+\subsection{Gold-Label Robustness: Pooled Adjudication and v2}
+\label{sec:goldrobust}
 
-\paragraph{Pooled adjudication (v1).} For each of the 108 non-abstention v1 test tasks, we pooled the top-20 retrieved documents from all methods, judged each non-gold candidate using an LLM judge (Claude Sonnet~4), and expanded gold sets. The original gold averaged \textbf{2.4 docs/task}; after adjudication, this expanded to \textbf{12.7 docs/task} (1,105 new relevant documents across 3,240 judgments). The \textbf{relative ordering of methods was preserved}.
-
-\paragraph{Cluster-first generation (v2).} To eliminate the problem at its source, we generated a second benchmark version (v2, 200~tasks) using a cluster-first approach: for each task, we first identify a topic cluster of 6--16 papers using BM25 retrieval, verify relevance with an LLM judge, then generate the question \emph{from the verified cluster}. Gold sets average \textbf{9.8~docs/task} and are complete by construction.
+V1 gold labels (2--3 seeded papers) are necessarily incomplete; any other relevant document is a false negative. We report two stronger-label evaluations. (i)~\textbf{Pooled adjudication}: top-20 retrievals from the nine primary non-agent retrievers (excluding the diagnostic BM25+RM3 PRF baseline) plus the agent are LLM-judged (binary rubric), expanding gold from 2.4 to $\approx$12.7 docs/task (3{,}240 judgments, 1{,}106 newly RELEVANT; Appendix~\ref{app:pooling}). Under pooled gold \textbf{BGE leads R@20 (0.416); the agent's R@20 (0.351) ranks fifth}---the v1 lead reflects iterative refinement recovering the seeded papers themselves. (ii)~\textbf{Cluster-first v2}: 200 tasks from verified 6--16-paper clusters; the cluster is the verified gold set (9.8 docs/task; v2 is stronger-labeled but not exhaustively-labeled, see Appendix~\ref{app:v2}). Table~\ref{tab:v2main} reports v1 vs.\ v2.
 
 \begin{table}[t]
 \centering
-\caption{V2 benchmark (cluster-first, 9.8 gold docs/task) vs.\ v1 (seeded, 2.4 gold). V2 gold labels are complete by construction; lower absolute recall reflects the larger gold sets, not worse retrieval.}
-\label{tab:v2}
+\caption{Aggregate retrieval metrics on v1 (108 tasks, 2.4 gold/task) and v2 (cluster-first, 9.8 gold/task). \textbf{Under stronger labels (v2), BM25 leads on every aggregate metric}: the v1 R@20 advantage of the iterative agent does not transfer to v2. Per-family v2 results and full per-method evaluation in Appendix~\ref{app:v2}.}
+\label{tab:v2main}
 \small
-\begin{tabular}{llccccc}
+\begin{tabular}{llcccc}
 \toprule
-& \textbf{Method} & \textbf{R@5} & \textbf{R@10} & \textbf{R@20} & \textbf{nDCG@10} & \textbf{MRR} \\
+\textbf{Split} & \textbf{Method} & \textbf{R@5} & \textbf{R@10} & \textbf{R@20} & \textbf{MRR} \\
 \midrule
-\multirow{2}{*}{\emph{v1 (2.4 gold)}} & BM25 & 0.340 & 0.424 & 0.468 & 0.395 & 0.566 \\
-& Agent ($T{=}3$) & 0.269 & \textbf{0.443} & \textbf{0.543} & 0.360 & 0.496 \\
-\midrule
-\multirow{2}{*}{\emph{v2 (9.8 gold)}} & BM25 & \textbf{0.225} & \textbf{0.338} & \textbf{0.449} & \textbf{0.391} & \textbf{0.675} \\
-& Agent ($T{=}3$) & 0.205 & 0.312 & 0.376 & 0.361 & 0.667 \\
+v1 (seeded)        & BM25            & 0.340 & 0.424 & 0.468 & \textbf{0.566} \\
+                   & Agent ($T{=}3$) & 0.269 & \textbf{0.443} & \textbf{0.543} & 0.496 \\
+v2 (cluster-first) & BM25            & \textbf{0.225} & \textbf{0.338} & \textbf{0.449} & \textbf{0.675} \\
+                   & Agent ($T{=}3$) & 0.205 & 0.312 & 0.376 & 0.667 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-On v2, BM25 leads on aggregate metrics. However, the agent retains advantages on \textbf{temporal} (0.239 vs.\ 0.166) and \textbf{comparative} (0.340 vs.\ 0.313) families---tasks requiring time-distributed or both-sides evidence. The main finding is robust across both benchmark versions: iterative refinement helps most on families requiring diverse evidence collection, while BM25 excels at precision-oriented retrieval.
+Both stronger-label evaluations point the same way: aggregate v1 advantages are partially a label-sparsity artifact. Two family-level conclusions survive: temporal (+7.3 R@10) and comparative (+2.7), plus a substantially higher complete-collection rate on aggregation (Section~\ref{sec:familystruct}). A 30-task two-annotator human-validation protocol (Appendix~\ref{app:humanpilot}) provides the human cross-check, with numerical results in the camera-ready.
 
 % ============================================================================
-\section{Discussion}
-\label{sec:discussion}
-
-\paragraph{What the benchmark reveals.}
-The eight-family structure exposes a clear difficulty gradient. Constraint-satisfaction and multi-hop tasks are the most accessible to BM25 (R@10 $>$ 0.55), because their queries use vocabulary that overlaps with gold documents. Aggregation (0.324) and temporal (0.216) tasks are hardest, requiring exhaustive recall across many papers or time-distributed retrieval that single-query methods cannot provide. Abstention is completely unsolved.
-
-\paragraph{The precision--recall trade-off.}
-The agent consistently improves Recall@10 and Recall@20 while losing to BM25 on R@5, nDCG@10, and MRR. This is not a failure of the controller---it reflects a genuine trade-off between first-hit precision and evidence breadth. For a scientist assembling a comprehensive evidence set (the use case our benchmark targets), deeper recall matters more than the rank of the single best hit.
-
-\paragraph{Reranking degrades retrieval---even with a strong general-purpose reranker.}
-Both the web-trained ms-marco cross-encoder (R@10: 0.262) and the BGE-reranker-v2-m3 (R@10: 0.353) reduce BM25's 0.424. The BGE reranker, which is substantially stronger than ms-marco on general benchmarks, still hurts on our tasks. This suggests that reranking the top-$k$ BM25 results is fundamentally risky for condition-sensitive queries: relevant documents that BM25 ranks correctly may be demoted by a reranker that does not understand the constraint structure of the query.
-
-\paragraph{Dense retrieval performance depends on the model, not the paradigm.}
-Scientific-specific models (SPECTER2: 0.255 R@10; MedCPT: 0.219) trail BM25 (0.424), but the general-purpose BGE model achieves 0.378---closing most of the gap. This suggests the weakness is model-specific rather than paradigm-level: dense retrieval can be competitive with BM25 on scientific text given the right embedding model. Scientific papers use precise nomenclature that lexical matching captures directly, but well-trained dense models can learn these patterns too.
-
-% ============================================================================
-\section{Limitations}
+\section{Limitations and Conclusion}
 \label{sec:limitations}
 
-\paragraph{Gold label completeness.}
-Gold labels are limited to the 2--3 papers initially sampled during task generation. The corpus likely contains additional relevant documents that are not labeled as gold, creating false negatives that depress measured recall for all methods. Multi-system pooling followed by human adjudication would expand gold sets and provide more reliable metric estimates. We report pooling statistics in Appendix~\ref{app:pooling}: the union of all methods' top-20 retrievals contains an average of 50 non-gold candidate documents per task that could be relevant.
+\paragraph{Limitations.} V1 labels are incomplete; pooled adjudication and v2 still rely on LLM judges (human pilot in Appendix~\ref{app:humanpilot}). Tasks are LLM-generated (Sonnet$\to$GPT-5.4 swap, $p{=}0.12$). Biomedical-only corpus (4{,}936 docs); BM25-only controller toolkit. Omitted: biomedical-specific rerankers, DocT5Query, PubMed-tuned SPLADE, PICO/MeSH-enhanced queries, dense PRF; abstention uses a simple threshold (AUROC~0.714).
 
-\paragraph{Synthetic task generation and backbone leakage.}
-All 304 tasks are LLM-generated (Claude Sonnet 4) conditioned on real corpus documents. The corpus-grounded pipeline ensures gold labels correspond to real papers, but questions reflect LLM priors, which may bias query phrasing toward patterns that LLM-driven agents handle well. To test this, we ran the agent with GPT-5.4 as backbone on 65 test tasks: Sonnet achieved \emph{higher} R@10 (0.492) than GPT-5.4 (0.436, $p{=}0.12$), indicating no systematic advantage from LLM family alignment. For the distilled controllers (Qwen3-8B, gpt-oss-20b), teacher traces were generated exclusively from v1 training tasks (814 examples, disjoint from the 125 test tasks); no test-set questions or gold documents were exposed during trace generation or SFT training. Failure modes of the trained controllers relative to the prompted agent are primarily lower recall on constraint and multi-hop families, where precise query decomposition is most critical---suggesting that 905 traces are insufficient to fully capture this behavior.
 
-\paragraph{Single domain.}
-The benchmark covers biomedical literature only. Generalization to chemistry, materials science, or other scientific domains requires new corpora and task generation.
-
-\paragraph{Corpus scale.}
-At 4,936 documents, our corpus is smaller than production scientific search systems. This limits the difficulty of retrieval (smaller search space) but does not invalidate the task design or evaluation protocol, which are independent of corpus size.
-
-\paragraph{Agent backbone.}
-The iterative controller uses a frontier LLM (Claude Sonnet 4) as its backbone. This makes the agent expensive relative to BM25 or SPECTER2. Cost-performance trade-offs should be evaluated in future work, potentially through distillation to smaller open-weight models.
-
-\paragraph{No abstention mechanism.}
-Neither the agent nor the baselines implement an abstention mechanism. The benchmark includes abstention tasks, but current evaluation can only observe that all methods fail---it cannot yet measure abstention quality for methods that do attempt to abstain. Selective metrics such as risk--coverage curves and AURC would enable meaningful comparison once abstention-aware methods are developed; even simple confidence thresholds (e.g., abstain if BM25 top-1 score falls below $\tau$) could serve as baselines.
-
-\paragraph{Remaining baseline gaps.}
-We include BM25+RM3 as a classical pseudo-relevance feedback baseline but omit other PRF variants (DocT5Query learned expansion, SPLADE fine-tuned on PubMed, dense PRF via Rocchio). Our reranking evaluation uses general-purpose cross-encoders but omits biomedical-specific rerankers (e.g., BiomedBERT-based cross-encoders), which may perform differently on domain-specific terminology. Boolean-enhanced PubMed queries with PICO/MeSH expansion, reflecting real biomedical search practice, are not included; such baselines would be particularly relevant for the constraint-satisfaction family. Additionally, we do not evaluate agentic variants that combine metadata filters, citation graph traversal, or entity linking---the iterative controller uses only BM25 as a tool, and richer toolkits may amplify or diminish the observed gains from iterative refinement.
-
-% ============================================================================
-\section{Conclusion}
-
-We introduced CER-Bench, a benchmark of 304 tasks across eight retrieval families that tests condition-sensitive evidence collection in biomedical literature. Our evaluation of eleven retrieval configurations reveals four findings: (1)~an iterative search controller improves evidence recall at depth, with the largest gains on aggregation tasks where multi-round refinement discovers papers that single-query methods miss; (2)~the gains come specifically from iterative query refinement, not from the LLM backbone alone, as confirmed by a clean single-step ablation ($+$14.4~R@10, $p{<}0.001$); (3)~a purpose-trained 8B controller (Qwen3-8B SFT) captures 97\% of frontier API agent performance at zero marginal cost; and (4)~abstention---recognizing when evidence is insufficient---remains completely unsolved by all methods. Gold label adjudication via LLM-judge pooling across all methods confirmed that system ordering is robust to expanded relevance judgments. We release the benchmark, corpus, trained models, and code to support future work on scientific evidence retrieval.
+\paragraph{Conclusion.} CER-Bench supports a diagnostic, not agent-promotional, reading: BM25 leads on MRR and on the v2 split, SPLADE on single-pass R@5/R@10, and the iterative controller on v1 R@20 and on family-aligned structured metrics (especially complete-collection on aggregation). Aggregate v1 advantages do not transfer to v2; abstention remains unsolved; a Qwen3-8B SFT controller captures 97\% of frontier-API R@10 at zero marginal cost. We release the benchmark, corpus, trained controllers, code, Croissant metadata, and RAI documentation under CC-BY-4.0.
 
 % ============================================================================
 
@@ -484,6 +393,65 @@ Negative & 0.357 & 0.393 & +0.036 \\
 
 Every family benefits from iterative refinement. The largest gains occur on families where the initial query is unlikely to cover all required evidence: constraint (+23.3 points, where multiple constraints must be satisfied simultaneously), multi-hop (+22.9, where intermediate linking papers are unlikely to appear in a single query), and contradiction (+21.4, where both sides of a conflict must be retrieved).
 
+\section{Trained Controllers}
+\label{app:trained}
+
+\begin{table}[h]
+\centering
+\caption{Distilled controllers vs.\ prompted agents. SPLADE included as reference (pre-trained, not our contribution).}
+\small
+\begin{tabular}{llccccc}
+\toprule
+& \textbf{Controller} & \textbf{Params} & \textbf{R@10} & \textbf{R@20} & \textbf{MRR} & \textbf{Cost/q} \\
+\midrule
+\emph{Prompted} & Agent-Sonnet ($T{=}3$) & API & 0.443 & 0.543 & 0.496 & \$0.08 \\
+\emph{Single-pass} & SPLADE & 110M & 0.438 & 0.517 & 0.549 & \$0.00 \\
+\midrule
+\multirow{3}{*}{\emph{Distilled}} & Qwen3-8B SFT & 8.3B & 0.428 & 0.466 & 0.518 & \$0.00 \\
+& gpt-oss-20b SFT & 20.9B & 0.384 & 0.443 & 0.516 & \$0.00 \\
+& gpt-oss-20b base & 20.9B & 0.264 & 0.269 & 0.371 & \$0.00 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Family-Aligned Structured Metrics: Definitions}
+\label{app:familymetrics}
+
+The four structured metrics reported in Table~\ref{tab:familystruct} are defined formally as follows. \emph{Both-sides coverage} (comparative): for tasks with two designated comparison sides $A,B$, the score is 1 if at least one document representing each side appears in the top-20, else 0; the metric is the mean over comparative tasks. \emph{Chain completion} (multi-hop): for tasks specifying a chain of $\geq 3$ entity links, the score is 1 if every link is supported by at least one document in the top-20, else 0. \emph{Value coverage} (aggregation): the fraction of distinct labeled measurement values reported by gold documents that are also reported by at least one document in the top-20. \emph{Complete-collection rate} (aggregation): the fraction of aggregation tasks for which value coverage equals 1.
+
+\section{V2 Benchmark: Construction and Per-Family Results}
+\label{app:v2}
+
+\paragraph{Construction.} The v2 split is built in three stages. (1)~\emph{Cluster discovery}: candidate clusters of 6--16 papers are surfaced by a hybrid co-citation + topical-similarity criterion---two papers join the same candidate cluster if they share at least one OpenAlex topic at concept-level $\geq 2$ \emph{and} are within two hops on the OpenAlex citation graph. (2)~\emph{Manual spot-check}: clusters are filtered to those whose papers form a coherent evidence set for at least one task family (e.g., a cluster of CRISPR-Cas9 efficiency papers in primary T cells supports comparative and aggregation families). (3)~\emph{Task generation}: a single task is generated per cluster, and the cluster is treated as the verified gold set. This yields 200 tasks with mean gold size 9.8 documents/task (median 9, range 6--16).
+
+\paragraph{Caveat on completeness.} The cluster is a \emph{verified} gold set (every cluster member is genuinely relevant), but it is not provably exhaustive: relevant out-of-cluster documents may exist in the corpus, especially for broad families like temporal or aggregation. V2 is therefore stronger-labeled than v1, not exhaustively-labeled. Any future work that runs methods better at recall than the ones we evaluated may surface additional relevant documents that v2 currently scores as false negatives; we recommend re-pooling and re-judging in that case rather than treating v2 as a static gold standard.
+
+\paragraph{Per-family v2 (BM25 vs.\ agent).} Table~\ref{tab:v2family} reports per-family R@10 for BM25 and the iterative agent on the v2 split (70 tasks with non-empty gold and saved agent retrievals; numbers re-computed from the bundled v2 retrievals as part of the reproduction script). Aggregate v2 numbers in Table~\ref{tab:v2main} are computed on the same set.
+
+\begin{table}[h]
+\centering
+\caption{Per-family R@10 on v2 (verified-cluster gold, 70 tasks with both BM25 and agent retrievals available). On v2 the agent's family advantages are concentrated on \emph{temporal} (+0.073) and \emph{comparative} (+0.027); BM25 matches or leads on the other five families.}
+\label{tab:v2family}
+\small
+\begin{tabular}{lcccr}
+\toprule
+\textbf{Family} & \textbf{BM25} & \textbf{Agent ($T{=}3$)} & \textbf{$\Delta$} & \textbf{n} \\
+\midrule
+Temporal       & 0.166 & \textbf{0.239} & +0.073 & 10 \\
+Comparative    & 0.313 & \textbf{0.340} & +0.027 & 10 \\
+Aggregation    & \textbf{0.297} & 0.294 & --0.003 & 10 \\
+Negative       & \textbf{0.361} & 0.324 & --0.037 & 10 \\
+Constraint     & \textbf{0.345} & 0.284 & --0.060 & 10 \\
+Contradiction  & \textbf{0.422} & 0.346 & --0.076 & 10 \\
+Multi-hop      & \textbf{0.461} & 0.356 & --0.105 & 10 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Aggregate v2 reproduction.} Recomputing aggregate metrics from the saved retrievals on the same 70-task subset reproduces Table~\ref{tab:v2main} numerically: BM25 R@5 = 0.225, R@10 = 0.338, R@20 = 0.447, nDCG@10 = 0.391, MRR = 0.675; Agent ($T{=}3$) R@5 = 0.205, R@10 = 0.312, R@20 = 0.376, nDCG@10 = 0.361, MRR = 0.667. The reproduction entry point \texttt{scripts/run\_paper\_results.sh} rebuilds the paper-facing tables, figures, and PDF from the saved retrieval outputs included with the artifact bundle; small third-decimal differences vs.\ the original run can reflect float order-of-summation.
+
+\paragraph{Per-method v2 evaluation for the remaining eight non-agent retrievers.} BGE, E5-large, MedCPT, SPECTER2, SPLADE, Hybrid (RRF), BM25+BGE-reranker, and Hybrid+ms-marco-CE require their respective indexes/models and are not load-bearing for the v1$\to$v2 reversal claim. We therefore surface BM25 and the agent in the paper because they bracket the regime question (lexical baseline vs.\ iterative agent), and treat the remaining methods as diagnostic runs to regenerate explicitly from the numbered retrieval scripts when the full index/model bundle is available.
+
 \section{Corpus Statistics}
 \label{app:corpus}
 
@@ -542,6 +510,29 @@ Gold: 2 documents reporting palbociclib IC50 measurements under different condit
 \paragraph{Negative result.}
 \emph{``What studies have shown that COVID-19 mRNA vaccination does not lead to continuous immune activation or chronic inflammatory responses?''}
 Gold: 2 documents reporting absence of sustained inflammatory markers post-vaccination.
+
+\section{Recall@10 Per-Family Breakdown}
+\label{app:perfamily10}
+
+\begin{table}[h]
+\centering
+\caption{Recall@10 by task family (v1 test set, non-abstention). Families ordered by BM25 difficulty. Best per family in \textbf{bold}.}
+\label{tab:perfamily}
+\small
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Family} & \textbf{BM25} & \textbf{SPECTER2} & \textbf{BGE} & \textbf{Hybrid} & \textbf{Reranker} & \textbf{Agent} \\
+\midrule
+Constraint     & \textbf{0.633} & 0.233 & 0.567 & 0.567 & 0.333 & 0.600 \\
+Multi-hop      & \textbf{0.583} & 0.292 & 0.500 & 0.417 & 0.292 & 0.521 \\
+Contradiction  & 0.536 & 0.429 & 0.429 & \textbf{0.607} & 0.429 & 0.571 \\
+Negative       & 0.357 & 0.393 & \textbf{0.464} & 0.429 & 0.429 & 0.393 \\
+Comparative    & 0.356 & 0.178 & 0.222 & 0.267 & 0.156 & \textbf{0.356} \\
+Aggregation    & 0.324 & 0.206 & 0.265 & 0.353 & 0.176 & \textbf{0.412} \\
+Temporal       & 0.216 & 0.098 & 0.235 & \textbf{0.314} & 0.078 & 0.275 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \section{Recall@20 Per-Family Breakdown}
 \label{app:recall20}
@@ -752,34 +743,58 @@ Splits are stratified by task family. The dev split was used for prompt iteratio
 
 \paragraph{Compute.} All SPECTER2 encoding was performed on a single NVIDIA A100-SXM4-40GB (Lambda Labs). BM25 indexing and scoring ran on CPU (Apple M-series, 32GB RAM). Agent evaluation required approximately 375 API calls for 125 test tasks (${\sim}$\$10 at Claude Sonnet 4 pricing).
 
-\section{Pooling Analysis and Gold Label Completeness}
+\section{Pooled Adjudication: LLM-Judge Protocol and Results}
 \label{app:pooling}
 
-To estimate the extent of missing gold labels, we pool the top-20 retrieved documents from all eight methods for each of the 108 non-abstention test tasks. On average, the pooled set contains 52.0 unique documents, of which only 1.6 are labeled as gold (the original 2--3 seeded papers). The remaining 50.4 documents are candidates for human adjudication. This large pool of unjudged documents means that all recall-based metrics reported in this paper are likely \emph{lower bounds}---some methods may retrieve genuinely relevant documents that are scored as false negatives. We acknowledge this as the primary methodological limitation and recommend that future work on this benchmark include pooled relevance judgments.
+This appendix documents the pooled-adjudication procedure referenced in Section~\ref{sec:goldrobust}. Pooling expands seeded gold (mean 2.4 docs/task) into LLM-judged pooled gold (mean 12.7 docs/task) on the 108 non-abstention v1 test tasks.
 
-\section{Family-Specific Structured Metrics}
-\label{app:familymetrics}
+\paragraph{Pool construction.} For each task we union the top-20 retrievals from the \emph{nine primary non-agent retrievers, excluding the diagnostic BM25+RM3 PRF baseline} (BM25, BGE, E5-large, MedCPT, SPECTER2, SPLADE, Hybrid RRF, BM25+BGE-reranker, Hybrid+ms-marco-CE) and the iterative agent ($T{=}3$). BM25+RM3 is reported in Table~\ref{tab:main} as a PRF diagnostic but is excluded from the pool because its top-20 is highly correlated with BM25's; including it would not meaningfully expand the candidate pool but would inflate the per-method judgment count. Deduplication is at the document level (chunks from the same paper collapse to one candidate). Seeded gold from v1 generation is automatically labeled relevant and excluded from new judgments. After dedup, the actual judged set is 3{,}240 task--document pairs (mean 30 new candidates per task).
 
-Standard document-level Recall@$k$ does not capture the structured evidence requirements of certain task families. We report family-aligned metrics that better reflect success criteria:
+\paragraph{Judge.} The judge is Claude Sonnet 4 (\texttt{claude-sonnet-4-20250514}) at temperature 0. The judge receives: (i) the task question, (ii) the structured constraints from task generation, (iii) the candidate document's title and abstract (plus PMC section excerpts when available), and (iv) the rubric below. The judge does not see method labels or retrieval ranks.
+
+\paragraph{Rubric.} Binary verdict: \textbf{RELEVANT} (the candidate supports the question's stated constraints with explicit evidence) or \textbf{NOT\_RELEVANT} (any constraint is violated, off-topic, or supporting evidence is missing). The judge is required to quote the supporting span for RELEVANT. We use a binary rather than a multi-class rubric because pilot studies showed lower self-consistency on partial-credit verdicts; the cost is that comparative/contradiction tasks rely on multiple RELEVANT documents to capture both sides rather than a single PARTIAL verdict. Newly RELEVANT documents are merged with seeded gold; the per-task gold denominator updates accordingly when computing pooled-recall metrics.
+
+\paragraph{Judge prompt template.}
+\begin{quote}\small
+You are an expert biomedical literature judge. Decide whether the candidate document satisfies the task's stated constraints with explicit textual evidence. Output one of: RELEVANT, NOT\_RELEVANT. For RELEVANT, quote one short supporting span.\\
+\textbf{TASK:} \{question\}\\
+\textbf{CONSTRAINTS:} \{json constraints\}\\
+\textbf{FAMILY:} \{family\}\\
+\textbf{CANDIDATE TITLE:} \{title\}\\
+\textbf{CANDIDATE ABSTRACT:} \{abstract\}\\
+\textbf{CANDIDATE FULL-TEXT EXCERPT (if available):} \{section text\}
+\end{quote}
+
+\paragraph{Judging counts and verdict distribution.} 3{,}240 unique task--document pairs judged. Cleaned verdict distribution: RELEVANT 1{,}106 (34.1\%), NOT\_RELEVANT 2{,}134 (65.9\%). Newly identified gold (RELEVANT) raises mean gold per task from 2.4 to $\approx$12.7 (varies by task; max 25, min 3 after pooling).
+
+\paragraph{Pooled-gold method ordering.} Table~\ref{tab:pooled} reports R@10 and R@20 under pooled gold for the nine retrievers plus the agent. \emph{Method ordering changes substantially.} Under pooled gold, BGE has the highest R@20 and the iterative agent's R@20 ranks fifth: pooled judgment credits documents that single-pass retrievers find but seeded gold does not.
 
 \begin{table}[h]
 \centering
-\caption{Family-specific structured metrics (test set). Higher is better for all metrics.}
+\caption{R@10 and R@20 under pooled gold ($\approx$12.7 docs/task) on the 108 non-abstention v1 test tasks. Best per metric in \textbf{bold}. Numbers are not directly comparable to the v1-seeded values in Table~\ref{tab:main} because the gold-set denominator changed.}
+\label{tab:pooled}
 \small
-\begin{tabular}{llccc}
+\begin{tabular}{lcc}
 \toprule
-\textbf{Family} & \textbf{Metric} & \textbf{BM25} & \textbf{Hybrid} & \textbf{Agent} \\
+\textbf{Method} & \textbf{R@10 (pooled)} & \textbf{R@20 (pooled)} \\
 \midrule
-Comparative & Both-sides coverage & 0.133 & 0.267 & \textbf{0.333} \\
-Multi-hop & Chain completion & 0.250 & 0.250 & \textbf{0.312} \\
-Multi-hop & Link recall & 0.625 & 0.625 & \textbf{0.729} \\
-Aggregation & Value coverage & 0.324 & 0.353 & \textbf{0.500} \\
-Aggregation & Complete collection & 0.059 & 0.059 & \textbf{0.294} \\
+BM25                  & 0.251 & 0.321 \\
+SPECTER2              & 0.197 & 0.301 \\
+BGE                   & \textbf{0.294} & \textbf{0.416} \\
+E5-large              & 0.262 & 0.362 \\
+MedCPT                & 0.181 & 0.275 \\
+SPLADE                & 0.276 & 0.388 \\
+Hybrid (RRF)          & 0.291 & 0.377 \\
+Hybrid + ms-marco CE  & 0.219 & 0.336 \\
+BM25 + BGE-reranker   & 0.245 & 0.319 \\
+Agent ($T{=}3$)       & 0.274 & 0.351 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-The agent shows its largest structured advantage on \emph{complete collection} for aggregation tasks (29.4\% vs.\ 5.9\% for BM25/hybrid), confirming that iterative refinement is especially valuable when the goal is to find \emph{all} relevant documents rather than just the best one. Both-sides coverage on comparative tasks (33.3\%) remains low for all methods, indicating that retrieving balanced evidence is hard even with iterative search.
+\paragraph{What this means for the v1 headline numbers.} The agent's v1-seeded R@20 lead in Table~\ref{tab:main} reflects iterative refinement preferentially recovering the seeded papers themselves. Once previously-unjudged documents that other retrievers found are credited, BGE and SPLADE move ahead. We therefore present v1 numbers as one label-regime view; the v2 cluster-first split (Section~\ref{sec:goldrobust}) and the human-validation pilot (Appendix~\ref{app:humanpilot}) are the two complementary cross-checks.
+
+\paragraph{Caveats.} (1)~The judge is itself an LLM; the human-validation pilot is the primary cross-check, with numerical results in the camera-ready release. (2)~Abstract-only documents (86.8\% of corpus) are harder for the judge to verify against methods-heavy constraints; pooled recall is therefore conservative for retrievers that rely on metadata signals. (3)~No method-aware reweighting is applied during pool construction, so the pool is not contestable on the basis of which methods contributed.
 
 \section{Abstention Scoring Protocol}
 \label{app:abstention_protocol}
@@ -854,6 +869,72 @@ On the 65 common tasks, Claude Sonnet achieves higher R@10 (+5.6 points) and R@2
 
 This benchmark supports scientific evidence retrieval research. Improved retrieval systems can help scientists find relevant evidence faster, potentially accelerating biomedical research. We see no direct negative societal impact from the benchmark itself. However, retrieval systems that fail to abstain when evidence is insufficient could mislead researchers into false confidence, reinforcing the importance of the abstention family as an open challenge.
 
-The corpus is constructed entirely from open-access biomedical literature (PMC OA subset) and publicly available metadata (PubMed, OpenAlex). No personally identifiable information is included in the benchmark tasks.
+The corpus has two components with distinct redistribution rules: (i)~PMC Open Access full-text chunks for 652 documents are redistributed verbatim under each paper's PMC OA license, and (ii)~the remaining 4{,}284 abstract-only documents are released as PubMed identifiers and metadata only, with abstracts retrieved at evaluation time via a deterministic re-fetch script against NCBI E-utilities (no abstract text is mirrored). OpenAlex and Semantic Scholar enrichments are licensed under CC0 / ODC-BY. Per-document license tags and the \texttt{redistribution\_class} column are documented in the chunk parquet (see Appendix~\ref{app:artifacts}). No personally identifiable information is included in the benchmark tasks.
+
+% ============================================================================
+\section{Human-Validation Pilot Protocol}
+\label{app:humanpilot}
+
+We disclose the protocol for the small-scale human-validation pilot referenced in Section~\ref{sec:goldrobust}. Numerical agreement and error-taxonomy results from the pilot will be added in the camera-ready release; we describe the protocol here so reviewers can assess methodology independently of the headline results.
+
+\paragraph{Sampling.} Thirty tasks are sampled from the 125-task v1 test split: 28 from the 108 non-abstention tasks (4 each from constraint, comparative, multi-hop, temporal, aggregation, contradiction, and negative-result) plus 2 from the 17 abstention tasks (where the validation question is whether the labeled near-miss documents truly fail at least one constraint). For each task, the pooled top-20 retrievals from the nine primary non-agent retrievers (excluding the diagnostic BM25+RM3 PRF baseline) plus the agent are deduplicated to documents (mean 52 candidates/task before judging).
+
+\paragraph{Annotators and rubric.} Two independent annotators with biomedical-research backgrounds (recruited as paid contractors) judge each candidate against a structured rubric: (i)~each constraint in the task is treated as a separate sub-question; (ii)~each candidate document is scored \emph{relevant}, \emph{partially relevant}, \emph{not relevant}, or \emph{insufficient information}; (iii)~for abstention tasks, annotators flag whether the gold near-miss documents actually fail at least one constraint. Annotators do not see method labels, retrieval ranks, or LLM-judge verdicts.
+
+\paragraph{Reported statistics (to be filled in for camera-ready).} (1)~Document-level Cohen's $\kappa$ between the two annotators; (2)~document-level agreement between the merged human verdict and the LLM judge; (3)~confusion matrix (LLM judge vs.\ humans) categorized by family; (4)~error taxonomy with examples (e.g., LLM judge over-credits topical overlap; LLM judge under-credits negation); (5)~method ordering on the 30 pilot tasks under human gold vs.\ LLM-judge gold.
+
+\paragraph{Decision rule.} If document-level $\kappa$ between annotators is below 0.6 the rubric is revised and re-run before reporting. If LLM-judge vs.\ human agreement on a family is below 75\%, that family's pooled-adjudication results are reported with an explicit caveat in the released benchmark.
+
+% ============================================================================
+\section{Artifact Accessibility, Licensing, and Croissant/RAI Metadata}
+\label{app:artifacts}
+
+\paragraph{Anonymous artifact bundle.} An anonymized snapshot of the benchmark, baseline code, and evaluation harness is included in the supplementary submission package and additionally hosted as an anonymous figshare/zenodo deposit linked from the supplementary README. The bundle contains: (i)~the 304 task JSONs (train/dev/test splits, family labels, gold document IDs, near-miss IDs); (ii)~the v2 cluster-first split (200 tasks); (iii)~the corpus index (BM25, FAISS) and chunk parquet file with metadata; (iv)~the full baseline evaluation pipeline producing every table in this paper; (v)~the iterative-controller prompt and runner; (vi)~LoRA adapters for Qwen3-8B SFT and gpt-oss-20b SFT and the 905 teacher traces used for distillation.
+
+\paragraph{Licensing.} CER-Bench tasks, scripts, and trained adapters are released under CC-BY-4.0. The corpus has two components with distinct redistribution rules. (1)~\emph{652 PMC Open Access full-text documents}: chunks (abstract, methods/results subsections, figure captions, table text) are redistributed verbatim under each paper's PMC OA license (CC-BY, CC-BY-NC, or CC0 family); per-document license tags are included in the chunk parquet, and chunks under non-redistributable licenses are excluded entirely. (2)~\emph{4{,}284 abstract-only documents (PubMed metadata)}: PubMed abstracts are not in the public domain; we therefore redistribute only the PubMed identifiers (PMID, DOI), MeSH terms, journal/year/title metadata, and a deterministic re-fetch script that pulls abstracts directly from NCBI E-utilities at evaluation time. No abstract text from the metadata-only subset is mirrored in the released artifact. This split is documented in the chunk parquet's \texttt{redistribution\_class} column (``pmc\_oa\_full\_text'' vs.\ ``pubmed\_metadata\_only''). OpenAlex and Semantic Scholar enrichments are licensed under CC0 / ODC-BY as documented in the bundle README.
+
+\paragraph{Croissant metadata.} The benchmark is shipped with a Croissant 1.0 metadata file (\texttt{cer\_bench.croissant.json}) describing: dataset name and version; per-record schema for tasks, chunks, and gold-label records; field-level data types and descriptions; provenance pointers to PubMed, PMC, OpenAlex, and Semantic Scholar; and split definitions. The Croissant file validates against the official Croissant validator at submission time.
+
+\paragraph{RAI metadata.} As required for the NeurIPS 2026 ED track, the Croissant file includes Responsible AI fields: data subjects (none---biomedical literature), sensitive content classifications (none---no PII, no health-record content), known biases (English-language only; biased toward 10 seed subdomains; positive-result publication bias amplified rather than mitigated), intended uses (research benchmark for retrieval-system evaluation), and out-of-scope uses (we explicitly disclaim use as a clinical decision-support evaluation).
+
+\paragraph{Reproducibility.} The repository includes \texttt{scripts/run\_paper\_results.sh}, which rebuilds paper-facing score files, tables, figures, and the PDF from bundled retrieval outputs. Full regeneration from raw corpus and task JSONs uses the numbered scripts in \texttt{scripts/}: collection/parsing/indexing, baseline retrieval, agent retrieval, scoring, and table/figure rendering. Random seeds are fixed where applicable (42 for bootstrap; 0 for retrieval; temperature 0 for the agent). GPU embedding and API-backed agent reruns are not launched by the paper-build script and should be run explicitly when reproducing from scratch.
+
+% ============================================================================
+\section{NeurIPS Paper Checklist}
+\label{app:checklist}
+
+\begin{enumerate}
+\item \textbf{Claims.} Do the main claims made in the abstract and introduction accurately reflect the paper's contributions and scope? \textbf{[Yes]} The abstract is explicit that no single method dominates and that aggregate v1 advantages do not transfer to v2; family-aligned and v2 evidence are reported in the main paper.
+
+\item \textbf{Limitations.} Does the paper discuss the limitations of the work performed? \textbf{[Yes]} Section~\ref{sec:limitations} covers gold-label incompleteness, LLM-judge reliance, scope (biomedical only), corpus scale, and baseline gaps. Section~\ref{sec:goldrobust} surfaces the v1$\to$v2 reversal in the main results.
+
+\item \textbf{Theory assumptions and proofs.} Does the paper provide the full set of assumptions and a complete (and correct) proof? \textbf{[N/A]} No theoretical claims.
+
+\item \textbf{Experimental result reproducibility.} Does the paper fully disclose all the information needed to reproduce the main experimental results? \textbf{[Yes]} Appendix~\ref{app:repro} (model versions, hyperparameters, decoding settings, hardware), Appendix~\ref{app:artifacts} (anonymized code, data, adapters, end-to-end script).
+
+\item \textbf{Open access to data and code.} Does the paper provide open access to data and code? \textbf{[Yes]} Anonymized supplementary bundle at submission; final release under CC-BY-4.0; reproduction script regenerates every table.
+
+\item \textbf{Experimental setting/details.} Does the paper specify all training and test details? \textbf{[Yes]} Sections~\ref{sec:experiments} and~\ref{sec:method}; Appendix~\ref{app:repro}; Appendix~\ref{app:trained} for distilled controllers.
+
+\item \textbf{Experiment statistical significance.} Does the paper report error bars/significance? \textbf{[Yes]} Paired bootstrap confidence intervals and significance tests; we explicitly note that no multiple-comparison correction is applied and that v2 weakens aggregate significance claims.
+
+\item \textbf{Experiments compute resources.} Does the paper provide compute information? \textbf{[Yes]} Appendix~\ref{app:cost} (latency, cost, infrastructure per method); Appendix~\ref{app:repro} (A100 for embedding, CPU for BM25).
+
+\item \textbf{Code of ethics.} Does the research conform to the NeurIPS Code of Ethics? \textbf{[Yes]}.
+
+\item \textbf{Broader impacts.} Does the paper discuss potential positive and negative societal impacts? \textbf{[Yes]} Appendix~\ref{app:impact}.
+
+\item \textbf{Safeguards.} Does the paper describe safeguards for high-risk artifacts? \textbf{[N/A]} The benchmark contains only published biomedical-literature metadata and chunk text; no PII; no model weights with offensive-content risk.
+
+\item \textbf{Licenses for existing assets.} Are creators properly credited and licenses respected? \textbf{[Yes]} Appendix~\ref{app:artifacts}; per-document license tags in chunk parquet.
+
+\item \textbf{New assets.} Are new assets well-documented, licensed, and accessible? \textbf{[Yes]} Croissant metadata, RAI fields, CC-BY-4.0 release; documentation included in supplementary bundle.
+
+\item \textbf{Crowdsourcing and human subjects.} Was crowdsourcing or human-subjects research used? \textbf{[Yes]} Two paid biomedical-research annotators for the human-validation pilot (Appendix~\ref{app:humanpilot}); no human-subjects data collected.
+
+\item \textbf{Institutional review board (IRB) approvals.} Was IRB review required and obtained? \textbf{[N/A]} No human-subjects research; annotators are paid contractors judging public scientific literature.
+
+\item \textbf{LLM usage.} Does the paper describe the use of LLMs as an important component? \textbf{[Yes]} LLMs are used for task generation (Claude Sonnet 4), as the iterative-controller backbone (Sonnet, GPT-5.4 leakage test), and as pooled-adjudication judges; described in Sections~\ref{sec:benchmark}, \ref{sec:method}, \ref{sec:goldrobust} and Appendices \ref{app:generation}, \ref{app:pooling}, \ref{app:leakage}.
+\end{enumerate}
 
 \end{document}

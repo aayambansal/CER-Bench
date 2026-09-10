@@ -1,0 +1,13 @@
+STDOUT
+{
+  "validation": "blank kit integrity passed",
+  "pairs": 12657,
+  "human_judgments": 0,
+  "task_templates_per_annotator": 110,
+  "blank_query_collection_slots": 80,
+  "release_blocked": true,
+  "input_sources_hashed": 544,
+  "output_files_hashed": 3617
+}
+
+STDERR

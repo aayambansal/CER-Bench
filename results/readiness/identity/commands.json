@@ -1,0 +1,68 @@
+[
+  {
+    "argv": [
+      "/Users/aayambansal/.config/openscience/data-root/conda/envs/python/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "tests/test_identity_repair.py",
+      "tests/test_component_splits_identity.py",
+      "-p",
+      "no:cacheprovider",
+      "--junitxml=/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/results/readiness/identity/pytest.xml"
+    ],
+    "cwd": "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search",
+    "environment_overrides": {
+      "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "name": "pytest",
+    "returncode": 0
+  },
+  {
+    "argv": [
+      "/Users/aayambansal/.config/openscience/data-root/conda/envs/python/bin/python",
+      "scripts/39_audit_repair_identity.py",
+      "--root",
+      "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search",
+      "--output",
+      "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/data/processed/identity_repair_v1"
+    ],
+    "cwd": "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search",
+    "environment_overrides": {
+      "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "name": "audit",
+    "returncode": 0
+  },
+  {
+    "argv": [
+      "/Users/aayambansal/.config/openscience/data-root/conda/envs/python/bin/python",
+      "scripts/38_make_component_disjoint_splits.py",
+      "--source",
+      "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/data/processed/identity_repair_v1",
+      "--output",
+      "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/data/benchmark/v1_2_repaired_components",
+      "--seed",
+      "20260826"
+    ],
+    "cwd": "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search",
+    "environment_overrides": {
+      "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "name": "splits",
+    "returncode": 0
+  },
+  {
+    "argv": [
+      "/Users/aayambansal/.config/openscience/data-root/conda/envs/python/bin/python",
+      "-B",
+      "results/readiness/identity/verify_local.py"
+    ],
+    "cwd": "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search",
+    "name": "independent_verification",
+    "returncode": 0
+  }
+]

@@ -1,0 +1,2047 @@
+{
+  "passed": true,
+  "comparison_count": 290,
+  "sampled_chunks": 29,
+  "max_absolute_error": 7.105427357601002e-15,
+  "reference_total_tokens": 4243853,
+  "reference_vocabulary": 63109,
+  "negative_raw_idf_terms": 25,
+  "reference_average_idf": 7.827555616494054,
+  "checks": [
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:25549849:chunk:00000",
+      "actual": 0.10886707216460835,
+      "expected": 0.10886707216460746,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:28166537:chunk:00000",
+      "actual": 1.675806237890268,
+      "expected": 1.6758062378902647,
+      "absolute_error": 3.3306690738754696e-15
+    },
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:31614431:chunk:00006",
+      "actual": 7.546303860320178,
+      "expected": 7.546303860320174,
+      "absolute_error": 3.552713678800501e-15
+    },
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:32016902:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:32044472:chunk:00014",
+      "actual": 19.777009349045503,
+      "expected": 19.7770093490455,
+      "absolute_error": 3.552713678800501e-15
+    },
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:32124955:chunk:00010",
+      "actual": 11.424997781037433,
+      "expected": 11.424997781037428,
+      "absolute_error": 5.329070518200751e-15
+    },
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:32124955:chunk:00017",
+      "actual": 19.35650014425605,
+      "expected": 19.35650014425605,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:32124955:chunk:00031",
+      "actual": 5.514396365679341,
+      "expected": 5.514396365679335,
+      "absolute_error": 5.329070518200751e-15
+    },
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:32350961:chunk:00000",
+      "actual": 0.14238153237453155,
+      "expected": 0.1423815323745304,
+      "absolute_error": 1.1379786002407855e-15
+    },
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:32793190:chunk:00000",
+      "actual": 21.048958754647934,
+      "expected": 21.04895875464793,
+      "absolute_error": 3.552713678800501e-15
+    },
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:32866158:chunk:00007",
+      "actual": 3.4409629594714546,
+      "expected": 3.4409629594714555,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:34121170:chunk:00004",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:34309236:chunk:00003",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:34702316:chunk:00000",
+      "actual": 7.422217498651994,
+      "expected": 7.422217498651994,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:34806404:chunk:00000",
+      "actual": 7.526608597500689,
+      "expected": 7.5266085975006884,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:35337058:chunk:00000",
+      "actual": 3.4086313229897005,
+      "expected": 3.4086313229897014,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:35632698:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:35759727:chunk:00000",
+      "actual": 9.3787852431476,
+      "expected": 9.3787852431476,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:36007304:chunk:00000",
+      "actual": 5.280852231316064,
+      "expected": 5.280852231316063,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:36469543:chunk:00000",
+      "actual": 0.17468790970118886,
+      "expected": 0.17468790970118744,
+      "absolute_error": 1.4155343563970746e-15
+    },
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:37840031:chunk:00000",
+      "actual": 4.195058671904895,
+      "expected": 4.195058671904892,
+      "absolute_error": 2.6645352591003757e-15
+    },
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:38453657:chunk:00007",
+      "actual": 8.026076152173182,
+      "expected": 8.026076152173179,
+      "absolute_error": 3.552713678800501e-15
+    },
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:39422949:chunk:00012",
+      "actual": 1.8056963145005607,
+      "expected": 1.8056963145005598,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:39690735:chunk:00001",
+      "actual": 2.824474630960335,
+      "expected": 2.824474630960334,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:40499551:chunk:00000",
+      "actual": 1.4320500796548983,
+      "expected": 1.4320500796548965,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:41390513:chunk:00000",
+      "actual": 1.7580699067192396,
+      "expected": 1.7580699067192365,
+      "absolute_error": 3.1086244689504383e-15
+    },
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:41391248:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:41420495:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+      "chunk_id": "PMID:41954184:chunk:00000",
+      "actual": 2.904523385120835,
+      "expected": 2.9045233851208345,
+      "absolute_error": 4.440892098500626e-16
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:25549849:chunk:00000",
+      "actual": 6.048353624251012,
+      "expected": 6.048353624251011,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:28166537:chunk:00000",
+      "actual": 3.8052654023576977,
+      "expected": 3.805265402357699,
+      "absolute_error": 1.3322676295501878e-15
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:31614431:chunk:00006",
+      "actual": 7.645550623683295,
+      "expected": 7.645550623683294,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:32016902:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:32044472:chunk:00014",
+      "actual": 3.5186364794743445,
+      "expected": 3.518636479474344,
+      "absolute_error": 4.440892098500626e-16
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:32124955:chunk:00010",
+      "actual": 3.3743279567406956,
+      "expected": 3.374327956740695,
+      "absolute_error": 4.440892098500626e-16
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:32124955:chunk:00017",
+      "actual": 4.884630860526464,
+      "expected": 4.884630860526465,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:32124955:chunk:00031",
+      "actual": 4.893370863703141,
+      "expected": 4.893370863703142,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:32350961:chunk:00000",
+      "actual": 22.985492982189214,
+      "expected": 22.985492982189214,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:32793190:chunk:00000",
+      "actual": 5.887569086749568,
+      "expected": 5.887569086749567,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:32866158:chunk:00007",
+      "actual": 5.352072687725626,
+      "expected": 5.3520726877256255,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:34121170:chunk:00004",
+      "actual": 4.125154283290778,
+      "expected": 4.125154283290777,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:34309236:chunk:00003",
+      "actual": 6.463769048631514,
+      "expected": 6.463769048631512,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:34702316:chunk:00000",
+      "actual": 3.1101714741935966,
+      "expected": 3.110171474193596,
+      "absolute_error": 4.440892098500626e-16
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:34806404:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:35337058:chunk:00000",
+      "actual": 4.870390020736329,
+      "expected": 4.870390020736327,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:35632698:chunk:00000",
+      "actual": 5.283988871713694,
+      "expected": 5.283988871713692,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:35759727:chunk:00000",
+      "actual": 6.218876770504233,
+      "expected": 6.218876770504231,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:36007304:chunk:00000",
+      "actual": 5.909952838160599,
+      "expected": 5.9099528381605975,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:36469543:chunk:00000",
+      "actual": 4.67550008580361,
+      "expected": 4.67550008580361,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:37840031:chunk:00000",
+      "actual": 4.232406494070023,
+      "expected": 4.232406494070023,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:38453657:chunk:00007",
+      "actual": 6.744132512735627,
+      "expected": 6.744132512735625,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:39422949:chunk:00012",
+      "actual": 2.7430723487827295,
+      "expected": 2.743072348782729,
+      "absolute_error": 4.440892098500626e-16
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:39690735:chunk:00001",
+      "actual": 3.8833847988966594,
+      "expected": 3.8833847988966594,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:40499551:chunk:00000",
+      "actual": 26.920566553301263,
+      "expected": 26.920566553301263,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:41390513:chunk:00000",
+      "actual": 7.7338133433246785,
+      "expected": 7.7338133433246785,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:41391248:chunk:00000",
+      "actual": 5.161588739272439,
+      "expected": 5.161588739272439,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:41420495:chunk:00000",
+      "actual": 23.628909017917323,
+      "expected": 23.628909017917323,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+      "chunk_id": "PMID:41954184:chunk:00000",
+      "actual": 2.4821233063890387,
+      "expected": 2.482123306389038,
+      "absolute_error": 4.440892098500626e-16
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:25549849:chunk:00000",
+      "actual": 0.10886707216460835,
+      "expected": 0.10886707216460746,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:28166537:chunk:00000",
+      "actual": 3.804821644018698,
+      "expected": 3.804821644018694,
+      "absolute_error": 3.9968028886505635e-15
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:31614431:chunk:00006",
+      "actual": 21.549995240539467,
+      "expected": 21.549995240539467,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:32016902:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:32044472:chunk:00014",
+      "actual": 5.29390812426139,
+      "expected": 5.293908124261385,
+      "absolute_error": 4.440892098500626e-15
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:32124955:chunk:00010",
+      "actual": 20.84008333700562,
+      "expected": 20.84008333700562,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:32124955:chunk:00017",
+      "actual": 6.297917732906433,
+      "expected": 6.297917732906427,
+      "absolute_error": 6.217248937900877e-15
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:32124955:chunk:00031",
+      "actual": 19.752152391847865,
+      "expected": 19.75215239184786,
+      "absolute_error": 3.552713678800501e-15
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:32350961:chunk:00000",
+      "actual": 0.14238153237453155,
+      "expected": 0.1423815323745304,
+      "absolute_error": 1.1379786002407855e-15
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:32793190:chunk:00000",
+      "actual": 3.33121699748691,
+      "expected": 3.331216997486906,
+      "absolute_error": 3.9968028886505635e-15
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:32866158:chunk:00007",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:34121170:chunk:00004",
+      "actual": 2.891032990462749,
+      "expected": 2.8910329904627496,
+      "absolute_error": 4.440892098500626e-16
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:34309236:chunk:00003",
+      "actual": 1.916862505837491,
+      "expected": 1.9168625058374906,
+      "absolute_error": 4.440892098500626e-16
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:34702316:chunk:00000",
+      "actual": 3.4706462681973376,
+      "expected": 3.470646268197336,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:34806404:chunk:00000",
+      "actual": 3.717067042940328,
+      "expected": 3.7170670429403256,
+      "absolute_error": 2.220446049250313e-15
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:35337058:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:35632698:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:35759727:chunk:00000",
+      "actual": 1.5115343456094301,
+      "expected": 1.5115343456094277,
+      "absolute_error": 2.4424906541753444e-15
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:36007304:chunk:00000",
+      "actual": 9.376257744107567,
+      "expected": 9.376257744107564,
+      "absolute_error": 3.552713678800501e-15
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:36469543:chunk:00000",
+      "actual": 0.17468790970118886,
+      "expected": 0.17468790970118744,
+      "absolute_error": 1.4155343563970746e-15
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:37840031:chunk:00000",
+      "actual": 2.218485160805719,
+      "expected": 2.218485160805717,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:38453657:chunk:00007",
+      "actual": 4.3356401685867825,
+      "expected": 4.33564016858678,
+      "absolute_error": 2.6645352591003757e-15
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:39422949:chunk:00012",
+      "actual": 3.2204863920271163,
+      "expected": 3.2204863920271167,
+      "absolute_error": 4.440892098500626e-16
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:39690735:chunk:00001",
+      "actual": 2.586830758138845,
+      "expected": 2.5868307581388437,
+      "absolute_error": 1.3322676295501878e-15
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:40499551:chunk:00000",
+      "actual": 5.642554404293688,
+      "expected": 5.642554404293686,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:41390513:chunk:00000",
+      "actual": 4.221175690279193,
+      "expected": 4.221175690279189,
+      "absolute_error": 3.552713678800501e-15
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:41391248:chunk:00000",
+      "actual": 3.6261643325094544,
+      "expected": 3.626164332509454,
+      "absolute_error": 4.440892098500626e-16
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:41420495:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+      "chunk_id": "PMID:41954184:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:25549849:chunk:00000",
+      "actual": 2.000667861868837,
+      "expected": 2.0006678618688367,
+      "absolute_error": 4.440892098500626e-16
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:28166537:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:31614431:chunk:00006",
+      "actual": 0.30163883542342057,
+      "expected": 0.30163883542341996,
+      "absolute_error": 6.106226635438361e-16
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:32016902:chunk:00000",
+      "actual": 13.242862500691546,
+      "expected": 13.242862500691546,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:32044472:chunk:00014",
+      "actual": 5.179135832567171,
+      "expected": 5.179135832567169,
+      "absolute_error": 2.6645352591003757e-15
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:32124955:chunk:00010",
+      "actual": 4.2749237591120375,
+      "expected": 4.274923759112037,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:32124955:chunk:00017",
+      "actual": 5.956623922067977,
+      "expected": 5.956623922067976,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:32124955:chunk:00031",
+      "actual": 0.8005956910674357,
+      "expected": 0.8005956910674337,
+      "absolute_error": 1.9984014443252818e-15
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:32350961:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:32793190:chunk:00000",
+      "actual": 1.6523090967626421,
+      "expected": 1.652309096762638,
+      "absolute_error": 4.218847493575595e-15
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:32866158:chunk:00007",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:34121170:chunk:00004",
+      "actual": 9.395447517175672,
+      "expected": 9.395447517175668,
+      "absolute_error": 3.552713678800501e-15
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:34309236:chunk:00003",
+      "actual": 5.356563755804943,
+      "expected": 5.35656375580494,
+      "absolute_error": 2.6645352591003757e-15
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:34702316:chunk:00000",
+      "actual": 0.40500945214499645,
+      "expected": 0.4050094521449956,
+      "absolute_error": 8.326672684688674e-16
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:34806404:chunk:00000",
+      "actual": 0.6168667030429914,
+      "expected": 0.6168667030429902,
+      "absolute_error": 1.2212453270876722e-15
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:35337058:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:35632698:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:35759727:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:36007304:chunk:00000",
+      "actual": 1.570786621253394,
+      "expected": 1.57078662125339,
+      "absolute_error": 3.9968028886505635e-15
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:36469543:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:37840031:chunk:00000",
+      "actual": 1.1304345433356688,
+      "expected": 1.1304345433356695,
+      "absolute_error": 6.661338147750939e-16
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:38453657:chunk:00007",
+      "actual": 5.434454546232359,
+      "expected": 5.434454546232361,
+      "absolute_error": 2.6645352591003757e-15
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:39422949:chunk:00012",
+      "actual": 12.837970434888556,
+      "expected": 12.837970434888554,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:39690735:chunk:00001",
+      "actual": 2.2179409953766,
+      "expected": 2.217940995376597,
+      "absolute_error": 2.6645352591003757e-15
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:40499551:chunk:00000",
+      "actual": 0.5937497560263298,
+      "expected": 0.5937497560263311,
+      "absolute_error": 1.2212453270876722e-15
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:41390513:chunk:00000",
+      "actual": 1.0718042794179425,
+      "expected": 1.07180427941794,
+      "absolute_error": 2.4424906541753444e-15
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:41391248:chunk:00000",
+      "actual": 12.596374860144524,
+      "expected": 12.596374860144522,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:41420495:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+      "chunk_id": "PMID:41954184:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:25549849:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:28166537:chunk:00000",
+      "actual": 24.693712904807555,
+      "expected": 24.69371290480755,
+      "absolute_error": 3.552713678800501e-15
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:31614431:chunk:00006",
+      "actual": 4.786112033145697,
+      "expected": 4.786112033145697,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:32016902:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:32044472:chunk:00014",
+      "actual": 3.728684915596842,
+      "expected": 3.7286849155968405,
+      "absolute_error": 1.3322676295501878e-15
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:32124955:chunk:00010",
+      "actual": 2.5757875055389983,
+      "expected": 2.575787505538998,
+      "absolute_error": 4.440892098500626e-16
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:32124955:chunk:00017",
+      "actual": 2.5072313306169725,
+      "expected": 2.507231330616972,
+      "absolute_error": 4.440892098500626e-16
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:32124955:chunk:00031",
+      "actual": 2.5160426501835915,
+      "expected": 2.516042650183591,
+      "absolute_error": 4.440892098500626e-16
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:32350961:chunk:00000",
+      "actual": 3.038886480261544,
+      "expected": 3.038886480261544,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:32793190:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:32866158:chunk:00007",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:34121170:chunk:00004",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:34309236:chunk:00003",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:34702316:chunk:00000",
+      "actual": 28.68275231072375,
+      "expected": 28.68275231072375,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:34806404:chunk:00000",
+      "actual": 3.4729233869890987,
+      "expected": 3.4729233869890983,
+      "absolute_error": 4.440892098500626e-16
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:35337058:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:35632698:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:35759727:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:36007304:chunk:00000",
+      "actual": 2.4289724956714625,
+      "expected": 2.428972495671462,
+      "absolute_error": 4.440892098500626e-16
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:36469543:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:37840031:chunk:00000",
+      "actual": 4.016526333930831,
+      "expected": 4.01652633393083,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:38453657:chunk:00007",
+      "actual": 3.2851472578298004,
+      "expected": 3.2851472578297995,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:39422949:chunk:00012",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:39690735:chunk:00001",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:40499551:chunk:00000",
+      "actual": 3.5338455807087312,
+      "expected": 3.5338455807087312,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:41390513:chunk:00000",
+      "actual": 38.80046643432107,
+      "expected": 38.80046643432107,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:41391248:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:41420495:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+      "chunk_id": "PMID:41954184:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:25549849:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:28166537:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:31614431:chunk:00006",
+      "actual": 0.10922711260765108,
+      "expected": 0.10922711260765079,
+      "absolute_error": 2.914335439641036e-16
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:32016902:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:32044472:chunk:00014",
+      "actual": 0.08275426935920398,
+      "expected": 0.08275426935920376,
+      "absolute_error": 2.220446049250313e-16
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:32124955:chunk:00010",
+      "actual": 0.11158498492430702,
+      "expected": 0.11158498492430673,
+      "absolute_error": 2.914335439641036e-16
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:32124955:chunk:00017",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:32124955:chunk:00031",
+      "actual": 0.073358834429608,
+      "expected": 0.0733588344296078,
+      "absolute_error": 1.942890293094024e-16
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:32350961:chunk:00000",
+      "actual": 0.1529878046427454,
+      "expected": 0.152987804642745,
+      "absolute_error": 3.885780586188048e-16
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:32793190:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:32866158:chunk:00007",
+      "actual": 0.14962229538892766,
+      "expected": 0.14962229538892727,
+      "absolute_error": 3.885780586188048e-16
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:34121170:chunk:00004",
+      "actual": 3.0647515761934225,
+      "expected": 3.064751576193422,
+      "absolute_error": 4.440892098500626e-16
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:34309236:chunk:00003",
+      "actual": 0.14599962789463414,
+      "expected": 0.14599962789463375,
+      "absolute_error": 3.885780586188048e-16
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:34702316:chunk:00000",
+      "actual": 0.09877903063714538,
+      "expected": 0.09877903063714513,
+      "absolute_error": 2.498001805406602e-16
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:34806404:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:35337058:chunk:00000",
+      "actual": 39.720968903584875,
+      "expected": 39.72096890358487,
+      "absolute_error": 7.105427357601002e-15
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:35632698:chunk:00000",
+      "actual": 38.518883663709836,
+      "expected": 38.51888366370984,
+      "absolute_error": 7.105427357601002e-15
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:35759727:chunk:00000",
+      "actual": 39.53617745567927,
+      "expected": 39.536177455679265,
+      "absolute_error": 7.105427357601002e-15
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:36007304:chunk:00000",
+      "actual": 0.16908973114237802,
+      "expected": 0.16908973114237758,
+      "absolute_error": 4.440892098500626e-16
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:36469543:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:37840031:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:38453657:chunk:00007",
+      "actual": 0.10711459684287233,
+      "expected": 0.10711459684287204,
+      "absolute_error": 2.914335439641036e-16
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:39422949:chunk:00012",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:39690735:chunk:00001",
+      "actual": 2.6515113305802442,
+      "expected": 2.651511330580245,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:40499551:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:41390513:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:41391248:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:41420495:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+      "chunk_id": "PMID:41954184:chunk:00000",
+      "actual": 0.14269680818020142,
+      "expected": 0.14269680818020106,
+      "absolute_error": 3.608224830031759e-16
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:25549849:chunk:00000",
+      "actual": 1.0713601762910996,
+      "expected": 1.0713601762910987,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:28166537:chunk:00000",
+      "actual": 2.12901540612843,
+      "expected": 2.1290154061284294,
+      "absolute_error": 4.440892098500626e-16
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:31614431:chunk:00006",
+      "actual": 7.904854226561705,
+      "expected": 7.904854226561704,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:32016902:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:32044472:chunk:00014",
+      "actual": 3.728684915596842,
+      "expected": 3.7286849155968405,
+      "absolute_error": 1.3322676295501878e-15
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:32124955:chunk:00010",
+      "actual": 8.193828324477405,
+      "expected": 8.193828324477403,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:32124955:chunk:00017",
+      "actual": 3.2224637582249844,
+      "expected": 3.2224637582249835,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:32124955:chunk:00031",
+      "actual": 5.777378216683975,
+      "expected": 5.7773782166839736,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:32350961:chunk:00000",
+      "actual": 0.6295822043801225,
+      "expected": 0.6295822043801225,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:32793190:chunk:00000",
+      "actual": 7.06025085024887,
+      "expected": 7.060250850248872,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:32866158:chunk:00007",
+      "actual": 0.597766821891111,
+      "expected": 0.597766821891111,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:34121170:chunk:00004",
+      "actual": 1.417519458180372,
+      "expected": 1.4175194581803707,
+      "absolute_error": 1.3322676295501878e-15
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:34309236:chunk:00003",
+      "actual": 1.0907209681126213,
+      "expected": 1.0907209681126202,
+      "absolute_error": 1.1102230246251565e-15
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:34702316:chunk:00000",
+      "actual": 3.1598405321805645,
+      "expected": 3.1598405321805645,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:34806404:chunk:00000",
+      "actual": 23.54010597184649,
+      "expected": 23.540105971846494,
+      "absolute_error": 3.552713678800501e-15
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:35337058:chunk:00000",
+      "actual": 1.3031901006880735,
+      "expected": 1.3031901006880737,
+      "absolute_error": 2.220446049250313e-16
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:35632698:chunk:00000",
+      "actual": 1.3118902057350341,
+      "expected": 1.3118902057350343,
+      "absolute_error": 2.220446049250313e-16
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:35759727:chunk:00000",
+      "actual": 1.8859446445681827,
+      "expected": 1.885944644568183,
+      "absolute_error": 2.220446049250313e-16
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:36007304:chunk:00000",
+      "actual": 22.741694701899682,
+      "expected": 22.74169470189968,
+      "absolute_error": 3.552713678800501e-15
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:36469543:chunk:00000",
+      "actual": 2.3954686101668203,
+      "expected": 2.3954686101668208,
+      "absolute_error": 4.440892098500626e-16
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:37840031:chunk:00000",
+      "actual": 22.82151607765621,
+      "expected": 22.821516077656206,
+      "absolute_error": 3.552713678800501e-15
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:38453657:chunk:00007",
+      "actual": 12.013198560159848,
+      "expected": 12.013198560159847,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:39422949:chunk:00012",
+      "actual": 1.1642865423736726,
+      "expected": 1.1642865423736717,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:39690735:chunk:00001",
+      "actual": 5.592228891363237,
+      "expected": 5.592228891363237,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:40499551:chunk:00000",
+      "actual": 2.923170647660335,
+      "expected": 2.923170647660334,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:41390513:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:41391248:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:41420495:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+      "chunk_id": "PMID:41954184:chunk:00000",
+      "actual": 1.24087783852001,
+      "expected": 1.24087783852001,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:25549849:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:28166537:chunk:00000",
+      "actual": 4.399819633313561,
+      "expected": 4.399819633313558,
+      "absolute_error": 2.6645352591003757e-15
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:31614431:chunk:00006",
+      "actual": 7.4162302618851985,
+      "expected": 7.416230261885196,
+      "absolute_error": 2.6645352591003757e-15
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:32016902:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:32044472:chunk:00014",
+      "actual": 5.030689693109293,
+      "expected": 5.0306896931092915,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:32124955:chunk:00010",
+      "actual": 7.900434274220026,
+      "expected": 7.900434274220025,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:32124955:chunk:00017",
+      "actual": 1.6552378474545915,
+      "expected": 1.6552378474545892,
+      "absolute_error": 2.220446049250313e-15
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:32124955:chunk:00031",
+      "actual": 4.427026482604136,
+      "expected": 4.427026482604133,
+      "absolute_error": 2.6645352591003757e-15
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:32350961:chunk:00000",
+      "actual": 0.8972089176020223,
+      "expected": 0.897208917602023,
+      "absolute_error": 7.771561172376096e-16
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:32793190:chunk:00000",
+      "actual": 3.689052871019175,
+      "expected": 3.6890528710191726,
+      "absolute_error": 2.220446049250313e-15
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:32866158:chunk:00007",
+      "actual": 0.7217857760291593,
+      "expected": 0.7217857760291598,
+      "absolute_error": 5.551115123125783e-16
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:34121170:chunk:00004",
+      "actual": 19.53857125196422,
+      "expected": 19.538571251964225,
+      "absolute_error": 3.552713678800501e-15
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:34309236:chunk:00003",
+      "actual": 21.485198249620417,
+      "expected": 21.485198249620417,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:34702316:chunk:00000",
+      "actual": 3.4706462681973376,
+      "expected": 3.470646268197336,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:34806404:chunk:00000",
+      "actual": 8.968139497329862,
+      "expected": 8.968139497329863,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:35337058:chunk:00000",
+      "actual": 1.4853650097474762,
+      "expected": 1.4853650097474755,
+      "absolute_error": 6.661338147750939e-16
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:35632698:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:35759727:chunk:00000",
+      "actual": 2.054334576826753,
+      "expected": 2.0543345768267516,
+      "absolute_error": 1.3322676295501878e-15
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:36007304:chunk:00000",
+      "actual": 6.183854961906594,
+      "expected": 6.183854961906594,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:36469543:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:37840031:chunk:00000",
+      "actual": 9.552350263037942,
+      "expected": 9.552350263037946,
+      "absolute_error": 3.552713678800501e-15
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:38453657:chunk:00007",
+      "actual": 21.361631114070804,
+      "expected": 21.361631114070807,
+      "absolute_error": 3.552713678800501e-15
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:39422949:chunk:00012",
+      "actual": 2.277458173005421,
+      "expected": 2.277458173005422,
+      "absolute_error": 1.3322676295501878e-15
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:39690735:chunk:00001",
+      "actual": 4.4930132711000486,
+      "expected": 4.493013271100047,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:40499551:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:41390513:chunk:00000",
+      "actual": 1.6377309339225834,
+      "expected": 1.6377309339225812,
+      "absolute_error": 2.220446049250313e-15
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:41391248:chunk:00000",
+      "actual": 3.4896343447373606,
+      "expected": 3.4896343447373614,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:41420495:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "metformin randomized trial no improvement cancer survival negative results",
+      "chunk_id": "PMID:41954184:chunk:00000",
+      "actual": 1.113401521099973,
+      "expected": 1.113401521099974,
+      "absolute_error": 8.881784197001252e-16
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:25549849:chunk:00000",
+      "actual": 8.62806624669152,
+      "expected": 8.62806624669152,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:28166537:chunk:00000",
+      "actual": 10.092650447429643,
+      "expected": 10.09265044742964,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:31614431:chunk:00006",
+      "actual": 9.063774305856672,
+      "expected": 9.063774305856668,
+      "absolute_error": 3.552713678800501e-15
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:32016902:chunk:00000",
+      "actual": 8.805922895398439,
+      "expected": 8.805922895398437,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:32044472:chunk:00014",
+      "actual": 9.71881107547914,
+      "expected": 9.718811075479138,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:32124955:chunk:00010",
+      "actual": 10.444777197590449,
+      "expected": 10.444777197590447,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:32124955:chunk:00017",
+      "actual": 10.772302361964506,
+      "expected": 10.772302361964504,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:32124955:chunk:00031",
+      "actual": 10.663208539469533,
+      "expected": 10.663208539469528,
+      "absolute_error": 5.329070518200751e-15
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:32350961:chunk:00000",
+      "actual": 8.924222705803167,
+      "expected": 8.924222705803166,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:32793190:chunk:00000",
+      "actual": 10.544359578888647,
+      "expected": 10.544359578888646,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:32866158:chunk:00007",
+      "actual": 9.427293034546368,
+      "expected": 9.427293034546368,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:34121170:chunk:00004",
+      "actual": 9.154008249301315,
+      "expected": 9.154008249301313,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:34309236:chunk:00003",
+      "actual": 8.844086263337328,
+      "expected": 8.844086263337328,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:34702316:chunk:00000",
+      "actual": 10.526818567484087,
+      "expected": 10.526818567484085,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:34806404:chunk:00000",
+      "actual": 8.61068441879347,
+      "expected": 8.61068441879347,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:35337058:chunk:00000",
+      "actual": 8.496391200883599,
+      "expected": 8.496391200883599,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:35632698:chunk:00000",
+      "actual": 8.330104121482556,
+      "expected": 8.330104121482556,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:35759727:chunk:00000",
+      "actual": 10.410372552861388,
+      "expected": 10.410372552861384,
+      "absolute_error": 3.552713678800501e-15
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:36007304:chunk:00000",
+      "actual": 9.840965091517566,
+      "expected": 9.840965091517564,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:36469543:chunk:00000",
+      "actual": 8.389223376187704,
+      "expected": 8.389223376187704,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:37840031:chunk:00000",
+      "actual": 8.968824915021937,
+      "expected": 8.968824915021937,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:38453657:chunk:00007",
+      "actual": 10.337677396337458,
+      "expected": 10.337677396337455,
+      "absolute_error": 3.552713678800501e-15
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:39422949:chunk:00012",
+      "actual": 8.799545615022236,
+      "expected": 8.799545615022236,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:39690735:chunk:00001",
+      "actual": 9.91216178974204,
+      "expected": 9.912161789742038,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:40499551:chunk:00000",
+      "actual": 8.372508464455878,
+      "expected": 8.372508464455876,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:41390513:chunk:00000",
+      "actual": 10.330623121227534,
+      "expected": 10.330623121227532,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:41391248:chunk:00000",
+      "actual": 8.83404914613447,
+      "expected": 8.834049146134468,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:41420495:chunk:00000",
+      "actual": 9.065345397139733,
+      "expected": 9.065345397139732,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "the the cancer",
+      "chunk_id": "PMID:41954184:chunk:00000",
+      "actual": 8.725415955590504,
+      "expected": 8.725415955590503,
+      "absolute_error": 1.7763568394002505e-15
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:25549849:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:28166537:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:31614431:chunk:00006",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:32016902:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:32044472:chunk:00014",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:32124955:chunk:00010",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:32124955:chunk:00017",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:32124955:chunk:00031",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:32350961:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:32793190:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:32866158:chunk:00007",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:34121170:chunk:00004",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:34309236:chunk:00003",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:34702316:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:34806404:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:35337058:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:35632698:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:35759727:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:36007304:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:36469543:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:37840031:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:38453657:chunk:00007",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:39422949:chunk:00012",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:39690735:chunk:00001",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:40499551:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:41390513:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:41391248:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:41420495:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    },
+    {
+      "query": "zzzznotavocabularyterm999",
+      "chunk_id": "PMID:41954184:chunk:00000",
+      "actual": 0.0,
+      "expected": 0.0,
+      "absolute_error": 0.0
+    }
+  ],
+  "resources": {
+    "wall_seconds": 0.933952750172466,
+    "process_peak_rss_before_bytes": 680853504,
+    "process_peak_rss_after_bytes": 680853504
+  }
+}

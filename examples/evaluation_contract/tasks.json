@@ -1,0 +1,6 @@
+[
+  {"task_id":"synthetic-constraint","task_family":"constraint","gold_doc_ids":["syn-a","syn-b"]},
+  {"task_id":"synthetic-path","task_family":"multihop","gold_doc_ids":["syn-a","syn-b","syn-c","syn-d"]},
+  {"task_id":"synthetic-empty","task_family":"negative_result","gold_doc_ids":[]},
+  {"task_id":"synthetic-unjudged","task_family":"comparative"}
+]

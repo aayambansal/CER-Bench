@@ -1,0 +1,24 @@
+[
+  {
+    "schema_version":"cerbench.structural.v1",
+    "task_id":"synthetic-constraint",
+    "task_family":"constraint",
+    "annotation_status":"human_adjudicated",
+    "required_units":["constraint:population","constraint:outcome"],
+    "evidence_units":{"syn-a":["constraint:population"],"syn-b":["constraint:outcome"]},
+    "valid_pairs":[],
+    "valid_paths":[],
+    "provenance":{"synthetic":true,"notice":"SIMULATED status for evaluator testing; no human adjudication occurred","evidence":{"syn-a":"SYNTHETIC fixture A","syn-b":"SYNTHETIC fixture B"}}
+  },
+  {
+    "schema_version":"cerbench.structural.v1",
+    "task_id":"synthetic-path",
+    "task_family":"multihop",
+    "annotation_status":"expert_adjudicated",
+    "required_units":["hop:mechanism","hop:outcome"],
+    "evidence_units":{"syn-a":["hop:mechanism"],"syn-b":["hop:outcome"],"syn-c":["hop:mechanism"],"syn-d":["hop:outcome"]},
+    "valid_pairs":[],
+    "valid_paths":[["syn-a","syn-b"],["syn-c","syn-d"]],
+    "provenance":{"synthetic":true,"notice":"SIMULATED status for evaluator testing; no expert adjudication occurred","evidence":{"syn-a":"SYNTHETIC fixture A","syn-b":"SYNTHETIC fixture B","syn-c":"SYNTHETIC fixture C","syn-d":"SYNTHETIC fixture D"}}
+  }
+]

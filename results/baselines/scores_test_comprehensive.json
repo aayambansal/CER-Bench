@@ -1,0 +1,509 @@
+{
+  "agent_gpt54": {
+    "aggregate": {
+      "recall@5": 0.3487,
+      "recall@10": 0.4359,
+      "recall@20": 0.4795,
+      "ndcg@10": 0.4161,
+      "mrr": 0.524
+    },
+    "per_family": {
+      "constraint": {
+        "recall@5": 0.3667,
+        "recall@10": 0.4,
+        "recall@20": 0.4333
+      },
+      "comparative": {
+        "recall@5": 0.2889,
+        "recall@10": 0.3778,
+        "recall@20": 0.4667
+      },
+      "contradiction": {
+        "recall@5": 0.5357,
+        "recall@10": 0.6429,
+        "recall@20": 0.6429
+      },
+      "multihop": {
+        "recall@5": 0.3333,
+        "recall@10": 0.4,
+        "recall@20": 0.4222
+      },
+      "temporal": {
+        "recall@5": 0.0556,
+        "recall@10": 0.2778,
+        "recall@20": 0.3889
+      }
+    },
+    "n_tasks": 65
+  },
+  "agent_single_step": {
+    "aggregate": {
+      "recall@5": 0.2639,
+      "recall@10": 0.2994,
+      "recall@20": 0.2994,
+      "ndcg@10": 0.3059,
+      "mrr": 0.4857
+    },
+    "per_family": {
+      "constraint": {
+        "recall@5": 0.3333,
+        "recall@10": 0.3667,
+        "recall@20": 0.3667
+      },
+      "comparative": {
+        "recall@5": 0.1778,
+        "recall@10": 0.2,
+        "recall@20": 0.2
+      },
+      "contradiction": {
+        "recall@5": 0.3571,
+        "recall@10": 0.3571,
+        "recall@20": 0.3571
+      },
+      "multihop": {
+        "recall@5": 0.25,
+        "recall@10": 0.2917,
+        "recall@20": 0.2917
+      },
+      "temporal": {
+        "recall@5": 0.1373,
+        "recall@10": 0.2157,
+        "recall@20": 0.2157
+      },
+      "aggregation": {
+        "recall@5": 0.2647,
+        "recall@10": 0.3235,
+        "recall@20": 0.3235
+      },
+      "negative": {
+        "recall@5": 0.3571,
+        "recall@10": 0.3571,
+        "recall@20": 0.3571
+      }
+    },
+    "n_tasks": 108
+  },
+  "agent": {
+    "aggregate": {
+      "recall@5": 0.2685,
+      "recall@10": 0.4429,
+      "recall@20": 0.5432,
+      "ndcg@10": 0.3596,
+      "mrr": 0.4956
+    },
+    "per_family": {
+      "constraint": {
+        "recall@5": 0.4,
+        "recall@10": 0.6,
+        "recall@20": 0.6667
+      },
+      "comparative": {
+        "recall@5": 0.1778,
+        "recall@10": 0.3556,
+        "recall@20": 0.5111
+      },
+      "contradiction": {
+        "recall@5": 0.3571,
+        "recall@10": 0.5714,
+        "recall@20": 0.6429
+      },
+      "multihop": {
+        "recall@5": 0.2708,
+        "recall@10": 0.5208,
+        "recall@20": 0.7292
+      },
+      "temporal": {
+        "recall@5": 0.1176,
+        "recall@10": 0.2745,
+        "recall@20": 0.3725
+      },
+      "aggregation": {
+        "recall@5": 0.2353,
+        "recall@10": 0.4118,
+        "recall@20": 0.5
+      },
+      "negative": {
+        "recall@5": 0.3571,
+        "recall@10": 0.3929,
+        "recall@20": 0.3929
+      }
+    },
+    "n_tasks": 108
+  },
+  "bge_reranker": {
+    "aggregate": {
+      "recall@5": 0.2994,
+      "recall@10": 0.3534,
+      "recall@20": 0.4043,
+      "ndcg@10": 0.3173,
+      "mrr": 0.4254
+    },
+    "per_family": {
+      "constraint": {
+        "recall@5": 0.3333,
+        "recall@10": 0.3667,
+        "recall@20": 0.4667
+      },
+      "comparative": {
+        "recall@5": 0.1333,
+        "recall@10": 0.2222,
+        "recall@20": 0.2889
+      },
+      "contradiction": {
+        "recall@5": 0.5714,
+        "recall@10": 0.6071,
+        "recall@20": 0.6429
+      },
+      "multihop": {
+        "recall@5": 0.4375,
+        "recall@10": 0.5,
+        "recall@20": 0.5625
+      },
+      "temporal": {
+        "recall@5": 0.0784,
+        "recall@10": 0.1373,
+        "recall@20": 0.1961
+      },
+      "aggregation": {
+        "recall@5": 0.2353,
+        "recall@10": 0.2941,
+        "recall@20": 0.3235
+      },
+      "negative": {
+        "recall@5": 0.3571,
+        "recall@10": 0.3929,
+        "recall@20": 0.3929
+      }
+    },
+    "n_tasks": 108
+  },
+  "bge": {
+    "aggregate": {
+      "recall@5": 0.3395,
+      "recall@10": 0.3781,
+      "recall@20": 0.4676,
+      "ndcg@10": 0.3652,
+      "mrr": 0.5259
+    },
+    "per_family": {
+      "constraint": {
+        "recall@5": 0.5333,
+        "recall@10": 0.5667,
+        "recall@20": 0.6667
+      },
+      "comparative": {
+        "recall@5": 0.1778,
+        "recall@10": 0.2222,
+        "recall@20": 0.3333
+      },
+      "contradiction": {
+        "recall@5": 0.3929,
+        "recall@10": 0.4286,
+        "recall@20": 0.5714
+      },
+      "multihop": {
+        "recall@5": 0.4167,
+        "recall@10": 0.5,
+        "recall@20": 0.6042
+      },
+      "temporal": {
+        "recall@5": 0.1961,
+        "recall@10": 0.2353,
+        "recall@20": 0.3137
+      },
+      "aggregation": {
+        "recall@5": 0.2353,
+        "recall@10": 0.2647,
+        "recall@20": 0.3235
+      },
+      "negative": {
+        "recall@5": 0.4643,
+        "recall@10": 0.4643,
+        "recall@20": 0.5
+      }
+    },
+    "n_tasks": 108
+  },
+  "bm25": {
+    "aggregate": {
+      "recall@5": 0.3395,
+      "recall@10": 0.4244,
+      "recall@20": 0.4676,
+      "ndcg@10": 0.3951,
+      "mrr": 0.5664
+    },
+    "per_family": {
+      "constraint": {
+        "recall@5": 0.5333,
+        "recall@10": 0.6333,
+        "recall@20": 0.7
+      },
+      "comparative": {
+        "recall@5": 0.2444,
+        "recall@10": 0.3556,
+        "recall@20": 0.3556
+      },
+      "contradiction": {
+        "recall@5": 0.4643,
+        "recall@10": 0.5357,
+        "recall@20": 0.5714
+      },
+      "multihop": {
+        "recall@5": 0.3958,
+        "recall@10": 0.5833,
+        "recall@20": 0.625
+      },
+      "temporal": {
+        "recall@5": 0.1569,
+        "recall@10": 0.2157,
+        "recall@20": 0.3333
+      },
+      "aggregation": {
+        "recall@5": 0.2647,
+        "recall@10": 0.3235,
+        "recall@20": 0.3235
+      },
+      "negative": {
+        "recall@5": 0.3571,
+        "recall@10": 0.3571,
+        "recall@20": 0.3929
+      }
+    },
+    "n_tasks": 108
+  },
+  "dense": {
+    "aggregate": {
+      "recall@5": 0.2037,
+      "recall@10": 0.2546,
+      "recall@20": 0.3441,
+      "ndcg@10": 0.2387,
+      "mrr": 0.3612
+    },
+    "per_family": {
+      "constraint": {
+        "recall@5": 0.2333,
+        "recall@10": 0.2333,
+        "recall@20": 0.3667
+      },
+      "comparative": {
+        "recall@5": 0.0889,
+        "recall@10": 0.1778,
+        "recall@20": 0.2222
+      },
+      "contradiction": {
+        "recall@5": 0.2857,
+        "recall@10": 0.4286,
+        "recall@20": 0.5
+      },
+      "multihop": {
+        "recall@5": 0.2083,
+        "recall@10": 0.2917,
+        "recall@20": 0.4167
+      },
+      "temporal": {
+        "recall@5": 0.0784,
+        "recall@10": 0.098,
+        "recall@20": 0.2157
+      },
+      "aggregation": {
+        "recall@5": 0.2059,
+        "recall@10": 0.2059,
+        "recall@20": 0.2353
+      },
+      "negative": {
+        "recall@5": 0.3571,
+        "recall@10": 0.3929,
+        "recall@20": 0.5
+      }
+    },
+    "n_tasks": 108
+  },
+  "e5large": {
+    "aggregate": {
+      "recall@5": 0.3287,
+      "recall@10": 0.3889,
+      "recall@20": 0.4645,
+      "ndcg@10": 0.3455,
+      "mrr": 0.4666
+    },
+    "per_family": {
+      "constraint": {
+        "recall@5": 0.5667,
+        "recall@10": 0.6333,
+        "recall@20": 0.7667
+      },
+      "comparative": {
+        "recall@5": 0.2222,
+        "recall@10": 0.3111,
+        "recall@20": 0.3333
+      },
+      "contradiction": {
+        "recall@5": 0.3929,
+        "recall@10": 0.4643,
+        "recall@20": 0.6429
+      },
+      "multihop": {
+        "recall@5": 0.4792,
+        "recall@10": 0.5625,
+        "recall@20": 0.6667
+      },
+      "temporal": {
+        "recall@5": 0.1176,
+        "recall@10": 0.1961,
+        "recall@20": 0.2353
+      },
+      "aggregation": {
+        "recall@5": 0.2059,
+        "recall@10": 0.2353,
+        "recall@20": 0.2647
+      },
+      "negative": {
+        "recall@5": 0.3571,
+        "recall@10": 0.3571,
+        "recall@20": 0.3929
+      }
+    },
+    "n_tasks": 108
+  },
+  "hybrid_reranked": {
+    "aggregate": {
+      "recall@5": 0.1867,
+      "recall@10": 0.2623,
+      "recall@20": 0.3596,
+      "ndcg@10": 0.2172,
+      "mrr": 0.3277
+    },
+    "per_family": {
+      "constraint": {
+        "recall@5": 0.1667,
+        "recall@10": 0.3333,
+        "recall@20": 0.5
+      },
+      "comparative": {
+        "recall@5": 0.0889,
+        "recall@10": 0.1556,
+        "recall@20": 0.2222
+      },
+      "contradiction": {
+        "recall@5": 0.2857,
+        "recall@10": 0.4286,
+        "recall@20": 0.5357
+      },
+      "multihop": {
+        "recall@5": 0.2292,
+        "recall@10": 0.2917,
+        "recall@20": 0.3958
+      },
+      "temporal": {
+        "recall@5": 0.0392,
+        "recall@10": 0.0784,
+        "recall@20": 0.2157
+      },
+      "aggregation": {
+        "recall@5": 0.1471,
+        "recall@10": 0.1765,
+        "recall@20": 0.2353
+      },
+      "negative": {
+        "recall@5": 0.3929,
+        "recall@10": 0.4286,
+        "recall@20": 0.4643
+      }
+    },
+    "n_tasks": 108
+  },
+  "hybrid": {
+    "aggregate": {
+      "recall@5": 0.341,
+      "recall@10": 0.4167,
+      "recall@20": 0.5015,
+      "ndcg@10": 0.3646,
+      "mrr": 0.5053
+    },
+    "per_family": {
+      "constraint": {
+        "recall@5": 0.4667,
+        "recall@10": 0.5667,
+        "recall@20": 0.7
+      },
+      "comparative": {
+        "recall@5": 0.2,
+        "recall@10": 0.2667,
+        "recall@20": 0.3556
+      },
+      "contradiction": {
+        "recall@5": 0.5714,
+        "recall@10": 0.6071,
+        "recall@20": 0.6429
+      },
+      "multihop": {
+        "recall@5": 0.3542,
+        "recall@10": 0.4167,
+        "recall@20": 0.625
+      },
+      "temporal": {
+        "recall@5": 0.2157,
+        "recall@10": 0.3137,
+        "recall@20": 0.4314
+      },
+      "aggregation": {
+        "recall@5": 0.2647,
+        "recall@10": 0.3529,
+        "recall@20": 0.3529
+      },
+      "negative": {
+        "recall@5": 0.3571,
+        "recall@10": 0.4286,
+        "recall@20": 0.4286
+      }
+    },
+    "n_tasks": 108
+  },
+  "medcpt": {
+    "aggregate": {
+      "recall@5": 0.1636,
+      "recall@10": 0.2191,
+      "recall@20": 0.2731,
+      "ndcg@10": 0.1711,
+      "mrr": 0.2416
+    },
+    "per_family": {
+      "constraint": {
+        "recall@5": 0.1333,
+        "recall@10": 0.2,
+        "recall@20": 0.2333
+      },
+      "comparative": {
+        "recall@5": 0.0667,
+        "recall@10": 0.0889,
+        "recall@20": 0.1778
+      },
+      "contradiction": {
+        "recall@5": 0.2143,
+        "recall@10": 0.25,
+        "recall@20": 0.3571
+      },
+      "multihop": {
+        "recall@5": 0.2083,
+        "recall@10": 0.2708,
+        "recall@20": 0.3125
+      },
+      "temporal": {
+        "recall@5": 0.1373,
+        "recall@10": 0.2353,
+        "recall@20": 0.2549
+      },
+      "aggregation": {
+        "recall@5": 0.1176,
+        "recall@10": 0.1765,
+        "recall@20": 0.1765
+      },
+      "negative": {
+        "recall@5": 0.2857,
+        "recall@10": 0.3214,
+        "recall@20": 0.4286
+      }
+    },
+    "n_tasks": 108
+  }
+}

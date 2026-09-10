@@ -1,0 +1,58 @@
+STDOUT
+{
+  "status": "BLOCKED",
+  "submission_ready": false,
+  "blockers": [
+    {
+      "code": "identity_unadjudicated",
+      "reason": "Identity repair is a lossy candidate, not adjudicated source content."
+    },
+    {
+      "code": "historical_text_misattachment",
+      "reason": "58 corpus records disagree with local article-front PMID evidence."
+    },
+    {
+      "code": "exposed_proxy_test",
+      "reason": "Reassigned existing questions remain exposed synthetic proxy tasks."
+    },
+    {
+      "code": "historical_qrel_contract",
+      "reason": "Strict historical input audit fails; stored expanded labels omit a normalized relevant judgment and corpus IDs conflict."
+    },
+    {
+      "code": "human_validation_absent",
+      "reason": "The provisional kit contains no completed independent human validation and must be rebuilt after source repair."
+    },
+    {
+      "code": "independent_queries_absent",
+      "reason": "Human-written query slots are blank, not experimental data."
+    },
+    {
+      "code": "budget_runs_not_complete",
+      "reason": "Legacy controller shards are incomplete and lack required provenance; seven-condition plans and fake-provider tests are not model runs."
+    },
+    {
+      "code": "structural_and_selective_results_absent",
+      "reason": "Structural and selective evaluators are tested, but adjudicated real-data inputs and held-out results are absent."
+    },
+    {
+      "code": "new_pdf_not_verified",
+      "reason": "No revised empirical manuscript PDF has been compiled and independently checked in this revision."
+    },
+    {
+      "code": "author_and_scientific_clearance",
+      "reason": "Unresolved author/scientific review: authors_openreview_reciprocal_review_and_dual_submission_cleared, claim_to_result_ledger_reviewed, complete_provenance_bound_reruns_reviewed, fresh_test_locked_before_method_selection, independent_human_qrels_adjudicated, licensing_anonymity_and_pdf_reviewed, matched_budget_multi_family_results_reviewed, source_identity_and_text_adjudicated, structural_annotations_adjudicated"
+    }
+  ],
+  "software_tests": null
+}
+
+STDERR
+Traceback (most recent call last):
+  File "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/scripts/33_build_review_packages.py", line 295, in <module>
+    main()
+  File "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/scripts/33_build_review_packages.py", line 249, in main
+    subprocess.run(
+  File "/Users/aayambansal/.config/openscience/data-root/conda/envs/python/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/Users/aayambansal/.config/openscience/data-root/conda/envs/python/bin/python', '/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/scripts/45_submission_readiness.py', '--require-ready']' returned non-zero exit status 2.

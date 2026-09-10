@@ -1,0 +1,25 @@
+[
+  {
+    "round": 0,
+    "action": {
+      "action": "SEARCH",
+      "query": "computational approaches single-cell RNA sequencing polyadenylation sites cellular differentiation adipose-derived stromal cells astrocytes"
+    }
+  },
+  {
+    "round": 1,
+    "action": {
+      "action": "REFINE",
+      "reasoning": "Found good results for ADSC-astrocyte differentiation (doc 1) and polyadenylation prediction methods (doc 2, 9), but need more on computational approaches specifically for polyadenylation analysis in single-cell data during differentiation",
+      "query": "single-cell RNA-seq polyadenylation site prediction computational methods alternative polyadenylation APA differentiation"
+    }
+  },
+  {
+    "round": 2,
+    "action": {
+      "action": "REFINE",
+      "reasoning": "Need more specific methods for polyadenylation analysis in single-cell data and cellular differentiation contexts. Current results have good tools (scTail, survey paper) but missing more computational approaches and differentiation applications",
+      "query": "alternative polyadenylation APA single-cell transcriptomics computational tools algorithms cell differentiation development"
+    }
+  }
+]

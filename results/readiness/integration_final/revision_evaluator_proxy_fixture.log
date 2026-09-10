@@ -1,0 +1,4 @@
+STDOUT
+{"status": "completed", "output": "results/readiness/integration_final/final_synthetic_proxy.json", "warnings": ["descriptive_proxy: not verified structural evidence"]}
+
+STDERR

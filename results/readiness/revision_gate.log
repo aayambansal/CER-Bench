@@ -1,0 +1,17 @@
+STDOUT
+
+STDERR
+Traceback (most recent call last):
+  File "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/scripts/45_submission_readiness.py", line 162, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/scripts/45_submission_readiness.py", line 150, in main
+    result = evaluate(test_report=args.test_report)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/scripts/45_submission_readiness.py", line 93, in evaluate
+    if not overlap or any(any(v for v in metrics.values()) for metrics in overlap.values()):
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/scripts/45_submission_readiness.py", line 93, in <genexpr>
+    if not overlap or any(any(v for v in metrics.values()) for metrics in overlap.values()):
+                                         ^^^^^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'values'

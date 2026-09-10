@@ -1,0 +1,94 @@
+{
+  "single_step": {
+    "aggregate": {
+      "recall@5": 0.2639,
+      "recall@10": 0.2994,
+      "recall@20": 0.2994,
+      "ndcg@10": 0.3059,
+      "mrr": 0.4857
+    },
+    "per_family": {
+      "constraint": {
+        "recall@5": 0.3333,
+        "recall@10": 0.3667,
+        "recall@20": 0.3667
+      },
+      "comparative": {
+        "recall@5": 0.1778,
+        "recall@10": 0.2,
+        "recall@20": 0.2
+      },
+      "contradiction": {
+        "recall@5": 0.3571,
+        "recall@10": 0.3571,
+        "recall@20": 0.3571
+      },
+      "multihop": {
+        "recall@5": 0.25,
+        "recall@10": 0.2917,
+        "recall@20": 0.2917
+      },
+      "temporal": {
+        "recall@5": 0.1373,
+        "recall@10": 0.2157,
+        "recall@20": 0.2157
+      },
+      "aggregation": {
+        "recall@5": 0.2647,
+        "recall@10": 0.3235,
+        "recall@20": 0.3235
+      },
+      "negative": {
+        "recall@5": 0.3571,
+        "recall@10": 0.3571,
+        "recall@20": 0.3571
+      }
+    }
+  },
+  "multi_step": {
+    "aggregate": {
+      "recall@5": 0.2685,
+      "recall@10": 0.4429,
+      "recall@20": 0.5432,
+      "ndcg@10": 0.3596,
+      "mrr": 0.4956
+    },
+    "per_family": {
+      "constraint": {
+        "recall@5": 0.4,
+        "recall@10": 0.6,
+        "recall@20": 0.6667
+      },
+      "comparative": {
+        "recall@5": 0.1778,
+        "recall@10": 0.3556,
+        "recall@20": 0.5111
+      },
+      "contradiction": {
+        "recall@5": 0.3571,
+        "recall@10": 0.5714,
+        "recall@20": 0.6429
+      },
+      "multihop": {
+        "recall@5": 0.2708,
+        "recall@10": 0.5208,
+        "recall@20": 0.7292
+      },
+      "temporal": {
+        "recall@5": 0.1176,
+        "recall@10": 0.2745,
+        "recall@20": 0.3725
+      },
+      "aggregation": {
+        "recall@5": 0.2353,
+        "recall@10": 0.4118,
+        "recall@20": 0.5
+      },
+      "negative": {
+        "recall@5": 0.3571,
+        "recall@10": 0.3929,
+        "recall@20": 0.3929
+      }
+    }
+  }
+}

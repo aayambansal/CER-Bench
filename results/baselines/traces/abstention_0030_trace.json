@@ -1,0 +1,25 @@
+[
+  {
+    "round": 0,
+    "action": {
+      "action": "SEARCH",
+      "query": "pembrolizumab versus nivolumab pediatric metastatic melanoma first-line therapy efficacy pulmonary toxicity"
+    }
+  },
+  {
+    "round": 1,
+    "action": {
+      "action": "REFINE",
+      "reasoning": "No results specifically address pediatric patients with melanoma comparing pembrolizumab vs nivolumab. Need to search more specifically for pediatric melanoma immunotherapy studies.",
+      "query": "pediatric melanoma immunotherapy pembrolizumab nivolumab children adolescents"
+    }
+  },
+  {
+    "round": 2,
+    "action": {
+      "action": "REFINE",
+      "reasoning": "Found one relevant pediatric melanoma paper but still need more specific data on pembrolizumab vs nivolumab comparison and pulmonary toxicity. Need to search for comparative studies and safety profiles.",
+      "query": "pembrolizumab nivolumab comparative efficacy safety pulmonary toxicity melanoma"
+    }
+  }
+]

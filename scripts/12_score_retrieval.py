@@ -47,6 +47,11 @@ def mrr(retrieved: list[str], gold: set[str]) -> float:
 def main():
     parser = argparse.ArgumentParser(description="Score retrieval results")
     parser.add_argument("--split", type=str, default="dev")
+    parser.add_argument(
+        "--exclude-abstention",
+        action="store_true",
+        help="Exclude tasks with empty gold sets (used for the paper's main retrieval tables).",
+    )
     args = parser.parse_args()
 
     # Load benchmark tasks (for gold labels)
@@ -87,12 +92,16 @@ def main():
         metrics = defaultdict(list)
         family_metrics = defaultdict(lambda: defaultdict(list))
 
+        scored_count = 0
         for res in results:
             task_id = res["task_id"]
             task = tasks.get(task_id, {})
             gold_docs = set(task.get("supporting_doc_ids", []))
+            if args.exclude_abstention and not gold_docs:
+                continue
             retrieved = res.get("retrieved_docs", [])
             family = task.get("task_family", "unknown")
+            scored_count += 1
 
             for k in k_values:
                 r = recall_at_k(retrieved, list(gold_docs), k)
@@ -115,7 +124,8 @@ def main():
         all_scores[baseline] = {
             "aggregate": agg,
             "per_family": {},
-            "n_tasks": len(results),
+            "n_tasks": scored_count,
+            "excluded_empty_gold": len(results) - scored_count,
         }
 
         for family, fam_metrics in family_metrics.items():
@@ -130,12 +140,12 @@ def main():
         json.dump(all_scores, f, indent=2)
 
     # Print table
-    print(f"\n{'='*70}")
+    print(f"\n{'=' * 70}")
     print(f"RETRIEVAL SCORES ({args.split} split)")
-    print(f"{'='*70}")
+    print(f"{'=' * 70}")
     header = f"{'Baseline':<20}"
     for k in k_values:
-        header += f"{'R@'+str(k):<10}"
+        header += f"{'R@' + str(k):<10}"
     header += f"{'nDCG@10':<10}{'MRR':<10}"
     print(header)
     print("-" * 70)
@@ -150,7 +160,9 @@ def main():
 
     # Per-family breakdown for best baseline
     if all_scores:
-        best = max(all_scores.items(), key=lambda x: x[1]["aggregate"].get("recall@10", 0))
+        best = max(
+            all_scores.items(), key=lambda x: x[1]["aggregate"].get("recall@10", 0)
+        )
         print(f"\nPer-family breakdown ({best[0]}):")
         for family, fam_agg in sorted(best[1]["per_family"].items()):
             r10 = fam_agg.get("recall@10", 0)

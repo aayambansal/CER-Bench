@@ -1,0 +1,29 @@
+{
+  "pdf": {
+    "path": "cerbench_final.pdf",
+    "sha256": "ca26f681eddf456471396c6730c215a4ec9f1476e31fb8a69217323f825c7ab6"
+  },
+  "source_archive": {
+    "path": "CERBench_ICLR2027_final_source.zip",
+    "sha256": "8d173a9ffe0e06d2e01b269cd53415be5af4369e83f177d3288685f7a03d019c",
+    "files": [
+      "cerbench_final.tex",
+      "refs.bib",
+      "iclr2027_conference.sty",
+      "iclr2027_conference.bst",
+      "natbib.sty",
+      "fancyhdr.sty",
+      "figures/qrel_disclosure_readable.pdf",
+      "README.md",
+      "CLAIMS_TO_ARTIFACTS.md",
+      "pdf_checks.json"
+    ]
+  },
+  "main_text_pages": 8,
+  "total_pages": 13,
+  "complete_manuscript_delivered": true,
+  "acceptance_guaranteed": false,
+  "human_relevance_validation": false,
+  "new_model_experiments": 0,
+  "scope": "source_identity_and_historical_label_audit_not_corrected_benchmark_leaderboard"
+}

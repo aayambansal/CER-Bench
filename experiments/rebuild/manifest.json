@@ -1,0 +1,70 @@
+{
+  "campaign": "cerbench_v3_rebuild",
+  "status": "planned",
+  "objective": "Rebuild CER-Bench with document- and evidence-cluster-disjoint splits, structured task annotations, independent cross-model qrel adjudication, consistent per-method evaluation, calibrated abstention, and locked-test statistical analysis.",
+  "constraints": {
+    "direct_api_budget_usd": 300,
+    "gpu_budget_usd": 150,
+    "human_annotators_available": 0,
+    "local_hardware": "Apple M3 Max, 16 CPU cores, 128 GB unified memory",
+    "local_free_disk_gib_at_start": 119,
+    "remote_compute": "Modal requested but not yet enabled"
+  },
+  "available_credentials": {
+    "anthropic": true,
+    "openai": true,
+    "huggingface": true,
+    "ncbi": true,
+    "semantic_scholar": true,
+    "openalex": true
+  },
+  "evidence_policy": {
+    "source_seeded_labels_are_gold": false,
+    "independent_label_judges_required": 2,
+    "cross_provider_judging": true,
+    "judge_disagreements_adjudicated": true,
+    "supporting_passage_required": true,
+    "structured_role_annotation_required": true,
+    "test_used_once_after_model_lock": true,
+    "human_validation_limitation_required": true
+  },
+  "split_policy": {
+    "group_by_supporting_document": true,
+    "group_by_evidence_cluster": true,
+    "group_near_duplicate_questions": true,
+    "holdout_subdomain_evaluation": true,
+    "assert_zero_document_overlap": true,
+    "assert_zero_cluster_overlap": true
+  },
+  "primary_method_families": [
+    "BM25",
+    "SPLADE",
+    "BGE",
+    "E5",
+    "MedCPT",
+    "SPECTER2",
+    "hybrid fusion",
+    "cross-encoder reranking",
+    "budget-matched iterative retrieval",
+    "trained open controllers"
+  ],
+  "primary_analyses": [
+    "conventional retrieval metrics under each qrel regime",
+    "family-native structured metrics for every method",
+    "label-completeness ranking-stability curves",
+    "abstract-only versus full-text stratification",
+    "calibrated abstention and risk-coverage",
+    "budget-matched iteration ablations",
+    "Holm-corrected paired comparisons with bootstrap intervals",
+    "cost, latency, memory, and token accounting",
+    "held-out biomedical subdomain generalization"
+  ],
+  "stages": [
+    {"name": "audit_and_spec", "status": "in_progress"},
+    {"name": "rebuild_tasks_qrels_splits", "status": "pending"},
+    {"name": "run_retrieval_baselines", "status": "pending"},
+    {"name": "run_controllers_and_abstention", "status": "pending"},
+    {"name": "statistics_and_robustness", "status": "pending"},
+    {"name": "paper_revision_and_release", "status": "pending"}
+  ]
+}

@@ -1,82 +1,91 @@
-@article{openscholar2025,
-  title={Synthesizing Scientific Literature with Retrieval-Augmented Language Models},
-  author={Asai, Akari and Jacobs, Zora and Bhat, Shruti and Feldman, Jigar and Schoenick, Carissa and Neumann, Mark and Hajishirzi, Hannaneh},
+@article{openscholar2026,
+  title={Synthesizing scientific literature with retrieval-augmented language models},
+  author={Asai, Akari and He, Jacqueline and Shao, Rulin and Shi, Weijia and Singh, Amanpreet and Chang, Joseph Chee and Lo, Kyle and Soldaini, Luca and Feldman, Sergey and D'Arcy, Mike and Wadden, David and others},
   journal={Nature},
-  year={2025},
-  doi={10.1038/s41586-025-10072-4},
-  note={OpenScholar: 8B model over 45M papers outperforms GPT-4o on ScholarQABench}
+  volume={650},
+  number={8103},
+  pages={857--863},
+  year={2026},
+  doi={10.1038/s41586-025-10072-4}
 }
 
-@misc{context1,
-  title={Context-1: Training a Self-Editing Search Agent},
-  author={{Chroma}},
-  year={2025},
+@misc{context2026,
+  title={{Context-1}: Training a Self-Editing Search Agent},
+  author={Bashir, Hammad and Hong, Kelly and Jiang, Patrick and Shi, Zhiyi},
+  year={2026},
   howpublished={\url{https://www.trychroma.com/research/context-1}},
-  note={20B retrieval agent trained on 8,000+ synthetic tasks with RL}
+  note={Chroma technical report, accessed 2026-08-20}
 }
 
 @inproceedings{specter2,
   title={{SPECTER2}: Adapting Scientific Document Embeddings for Multi-Task Recommendation},
   author={Singh, Amanpreet and D'Arcy, Mike and Cohan, Arman and Downey, Doug and Feldman, Sergey},
-  booktitle={Findings of ACL},
+  booktitle={Findings of the Association for Computational Linguistics: ACL 2023},
   year={2023},
-  note={Scientific document embeddings with task-specific adapters across 23 fields}
+  url={https://aclanthology.org/2023.findings-acl.387/}
 }
 
 @inproceedings{dorismae2023,
-  title={{DORIS-MAE}: Scientific Document Retrieval Using Multi-aspect Extraction},
-  author={Zhu, Zongze and Jiang, Minghao and others},
-  booktitle={Proceedings of EMNLP},
+  title={Scientific Document Retrieval using Multi-level Aspect-based Queries},
+  author={Wang, Jianyou (Andre) and Wang, Kaicheng and Wang, Xiaoyue and Naidu, Prudhviraj and Bergen, Leon and Paturi, Ramamohan},
+  booktitle={Advances in Neural Information Processing Systems 36},
+  pages={38404--38419},
   year={2023},
-  note={Demonstrates performance drops for 17 retrieval methods on complex scientific queries}
+  doi={10.52202/075280-1668},
+  eprint={2310.04678},
+  archivePrefix={arXiv}
 }
 
 @inproceedings{litsearch2024,
   title={{LitSearch}: A Retrieval Benchmark for Scientific Literature Search},
-  author={Ajith, Anirudh and Xia, Mengzhou and Chevalier, Alexis and Rozovskaya, Alla and Chen, Danqi},
-  booktitle={Proceedings of EMNLP},
+  author={Ajith, Anirudh and Xia, Mengzhou and Chevalier, Alexis and Goyal, Tanya and Chen, Danqi and Gao, Tianyu},
+  booktitle={Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing},
+  pages={15068--15083},
   year={2024},
-  note={Dense retrieval beats BM25 by 24.8 Recall@5 points on realistic queries}
+  doi={10.18653/v1/2024.emnlp-main.840}
 }
 
-@article{epibench2026,
+@misc{epibench2026,
   title={{EpiBench}: Benchmarking Multi-turn Research Workflows for Multimodal Agents},
-  author={Jiang, Minghao and others},
-  journal={arXiv preprint arXiv:2604.05557},
+  author={Dong, Xuan and Zheng, Huanyang and Niu, Tianhao and Han, Zhe and Li, Pengzhan and Liu, Bofei and Liu, Zhengyang and Li, Guancheng and Zhu, Qingfu and Che, Wanxiang},
   year={2026},
-  note={29.2\% hard-split accuracy for best model on multi-turn research workflows}
+  eprint={2604.05557},
+  archivePrefix={arXiv},
+  primaryClass={cs.AI}
 }
 
-@misc{paperqa2,
-  title={{PaperQA2}: End-to-End Scientific Literature Synthesis},
-  author={Skarlinski, Michael and others},
+@misc{skarlinski2024paperqa2,
+  title={Language agents achieve superhuman synthesis of scientific knowledge},
+  author={Skarlinski, Michael D. and Cox, Sam and Laurent, Jon M. and Braza, James D. and Hinks, Michaela and Hammerling, Michael J. and Ponnapati, Manvitha and Rodriques, Samuel G. and White, Andrew D.},
   year={2024},
-  howpublished={\url{https://github.com/Future-House/paper-qa}},
-  note={End-to-end pipeline for literature synthesis}
-}
-
-@misc{scholarqabench,
-  title={{ScholarQABench}: Evaluating Scientific Question Answering with Citations},
-  author={Asai, Akari and others},
-  year={2025},
-  note={Benchmark for scientific QA with citation evaluation}
+  eprint={2409.13740},
+  archivePrefix={arXiv},
+  note={Describes PaperQA2}
 }
 
 @inproceedings{rrf2009,
   title={Reciprocal Rank Fusion Outperforms Condorcet and Individual Rank Learning Methods},
-  author={Cormack, Gordon V. and Clarke, Charles L.A. and Buettcher, Stefan},
-  booktitle={Proceedings of SIGIR},
-  year={2009},
+  author={Cormack, Gordon V. and Clarke, Charles L. A. and Buettcher, Stefan},
+  booktitle={Proceedings of the 32nd International ACM SIGIR Conference on Research and Development in Information Retrieval},
   pages={758--759},
+  year={2009},
   doi={10.1145/1571941.1572114}
 }
 
-@article{crossencoder2020,
-  title={Efficiently Teaching an Effective Dense Retriever with Balanced Topic Aware Sampling},
-  author={Hofstaetter, Sebastian and Lin, Sheng-Chieh and Yang, Jheng-Hong and Lin, Jimmy and Hanbury, Allan},
-  journal={arXiv preprint arXiv:2104.06967},
-  year={2021},
-  note={Cross-encoder reranking for information retrieval}
+@misc{cor2025,
+  title={Chain of Retrieval: Multi-Aspect Iterative Search Expansion and Post-Order Search Aggregation for Full Paper Retrieval},
+  author={Park, Sangwoo and Baek, Jinheon and Jeong, Soyeong and Hwang, Sung Ju},
+  year={2025},
+  eprint={2507.10057},
+  archivePrefix={arXiv}
+}
+
+@misc{nogueira2019bert,
+  title={Passage Re-ranking with {BERT}},
+  author={Nogueira, Rodrigo and Cho, Kyunghyun},
+  year={2019},
+  eprint={1901.04085},
+  archivePrefix={arXiv}
 }
 
 @article{robertson2009,
@@ -101,105 +110,108 @@
   doi={10.1109/TBDATA.2019.2921572}
 }
 
-@article{pubmedcentral,
-  title={{PubMed Central}: A Free Full-Text Archive of Biomedical and Life Sciences Journal Literature},
+@misc{pubmed_nlm,
+  title={{PubMed} Overview},
   author={{National Library of Medicine}},
-  journal={National Center for Biotechnology Information},
-  year={2000},
-  howpublished={\url{https://www.ncbi.nlm.nih.gov/pmc/}},
-  note={Free full-text archive for biomedical literature}
+  year={2026},
+  howpublished={\url{https://pubmed.ncbi.nlm.nih.gov/about/}},
+  note={Accessed 2026-08-20}
+}
+
+@misc{pmc_nlm,
+  title={{PubMed Central (PMC)}},
+  author={{National Library of Medicine}},
+  year={2026},
+  howpublished={\url{https://pmc.ncbi.nlm.nih.gov/}},
+  note={Accessed 2026-08-20}
 }
 
 @article{openalex2022,
-  title={{OpenAlex}: A Fully-Open Index of Scholarly Works, Authors, Venues, Institutions, and Concepts},
+  title={{OpenAlex}: A fully-open index of scholarly works, authors, venues, institutions, and concepts},
   author={Priem, Jason and Piwowar, Heather and Orr, Richard},
   journal={arXiv preprint arXiv:2205.01833},
   year={2022}
 }
 
-@article{mesh2000,
-  title={{Medical Subject Headings (MeSH)}},
-  author={{National Library of Medicine}},
-  journal={National Center for Biotechnology Information},
-  year={2000},
-  note={Controlled vocabulary for biomedical indexing}
+@inproceedings{s2orc2020,
+  title={{S2ORC}: The Semantic Scholar Open Research Corpus},
+  author={Lo, Kyle and Wang, Lucy Lu and Neumann, Mark and Kinney, Rodney and Weld, Daniel S.},
+  booktitle={Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics},
+  pages={4969--4983},
+  year={2020},
+  doi={10.18653/v1/2020.acl-main.447}
 }
 
-@article{cor2024,
-  title={Chain-of-Retrieval: Adaptive Retrieval of Multi-Aspect Information for Complex Queries},
-  author={Wang, Zhiyu and others},
-  journal={arXiv preprint arXiv:2410.14232},
+@inproceedings{bge2024,
+  title={{C-Pack}: Packed Resources For General Chinese Embeddings},
+  author={Xiao, Shitao and Liu, Zheng and Zhang, Peitian and Muennighoff, Niklas and Lian, Defu and Nie, Jian-Yun},
+  booktitle={Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+  pages={641--649},
   year={2024},
-  note={Multi-aspect iterative exploration with RRF aggregation}
+  doi={10.1145/3626772.3657878}
 }
 
-@article{mrag2024,
-  title={{MRAG}: A Modular Retrieval-Augmented Generation Framework for Biomedical Question Answering},
-  author={Xiong, Wenhan and others},
-  journal={arXiv preprint},
-  year={2024},
-  note={Comprehensive biomedical RAG benchmark with broad retriever coverage}
-}
-
-@article{gralcrag2024,
-  title={{GraLC-RAG}: Graph and Structure-Aware Retrieval-Augmented Generation},
-  author={Zhou, Yujia and others},
-  journal={arXiv preprint},
-  year={2024},
-  note={Structure/KG-aware chunking for section diversity in retrieval}
-}
-
-@article{bge2023,
-  title={{BGE}: Bidirectional Generative Embeddings for Retrieval, Classification, Clustering, and Semantic Search},
-  author={Xiao, Shitao and Liu, Zheng and Zhang, Peitian and Muennighoff, Niklas},
-  journal={arXiv preprint arXiv:2309.07597},
-  year={2023}
+@misc{e52022,
+  title={Text Embeddings by Weakly-Supervised Contrastive Pre-training},
+  author={Wang, Liang and Yang, Nan and Huang, Xiaolong and Jiao, Binxing and Yang, Linjun and Jiang, Daxin and Majumder, Rangan and Wei, Furu},
+  year={2022},
+  eprint={2212.03533},
+  archivePrefix={arXiv}
 }
 
 @inproceedings{splade2022,
-  title={{SPLADE v2}: Sparse Lexical and Expansion Model for Information Retrieval},
-  author={Formal, Thibault and Piwowarski, Benjamin and Clinchant, St{\'e}phane},
-  booktitle={Proceedings of SIGIR},
+  title={From Distillation to Hard Negative Sampling: Making Sparse Neural {IR} Models More Effective},
+  author={Formal, Thibault and Lassance, Carlos and Piwowarski, Benjamin and Clinchant, St{\'e}phane},
+  booktitle={Proceedings of the 45th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+  pages={2353--2359},
   year={2022},
-  note={Learned sparse retrieval via MLM logit expansion}
+  doi={10.1145/3477495.3531857},
+  note={SPLADE v2 training improvements; SPLADE v2 model family}
 }
 
 @article{bioasq2015,
-  title={{BioASQ}: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering},
-  author={Tsatsaronis, George and Balikas, Georgios and others},
+  title={An overview of the {BIOASQ} large-scale biomedical semantic indexing and question answering competition},
+  author={Tsatsaronis, George and Balikas, Georgios and Malakasiotis, Prodromos and Partalas, Ioannis and Zschunke, Matthias and Alvers, Michael R. and Weissenborn, Dirk and Krithara, Anastasia and Petridis, Sergios and Polychronopoulos, Dimitris and others},
   journal={BMC Bioinformatics},
   volume={16},
-  year={2015}
+  pages={138},
+  year={2015},
+  doi={10.1186/s12859-015-0564-6}
 }
 
-@article{beir2021,
+@inproceedings{beir2021,
   title={{BEIR}: A Heterogeneous Benchmark for Zero-shot Evaluation of Information Retrieval Models},
-  author={Thakur, Nandan and Reimers, Nils and R{\"u}ckl{\'e}, Andreas and Srivastava, Abhishek and Gurevych, Irena},
-  journal={NeurIPS Datasets and Benchmarks Track},
-  year={2021}
+  author={Thakur, Nandan and Reimers, Nils and R{\"u}ckl{\'e}, Andreas and Srivastava, Abhishek and Gurevych, Iryna},
+  booktitle={Proceedings of the Neural Information Processing Systems Track on Datasets and Benchmarks},
+  year={2021},
+  eprint={2104.08663},
+  archivePrefix={arXiv}
 }
 
-@article{trecpm2017,
-  title={{TREC} Precision Medicine Track},
-  author={Roberts, Kirk and Demner-Fushman, Dina and Voorhees, Ellen and others},
-  journal={TREC},
+@inproceedings{trecpm2017,
+  title={Overview of the {TREC} 2017 Precision Medicine Track},
+  author={Roberts, Kirk and Demner-Fushman, Dina and Voorhees, Ellen M. and Hersh, William R. and Bedrick, Steven and Lazar, Alexander J. and Pant, Shubham},
+  booktitle={Proceedings of The Twenty-Sixth Text REtrieval Conference ({TREC} 2017)},
   year={2017},
-  note={Biomedical IR benchmark for precision medicine}
+  url={https://trec.nist.gov/pubs/trec26/papers/Overview-PM.pdf}
 }
 
-@article{scifact2020,
-  title={{SciFact}: Verifying Scientific Claims with Abstracts},
-  author={Wadden, David and Lin, Shanchuan and Lo, Kyle and Wang, Lucy Lu and others},
-  journal={EMNLP},
-  year={2020}
+@inproceedings{scifact2020,
+  title={Fact or Fiction: Verifying Scientific Claims},
+  author={Wadden, David and Lin, Shanchuan and Lo, Kyle and Wang, Lucy Lu and van Zuylen, Madeleine and Cohan, Arman and Hajishirzi, Hannaneh},
+  booktitle={Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing},
+  pages={7534--7550},
+  year={2020},
+  doi={10.18653/v1/2020.emnlp-main.609}
 }
 
 @article{medcpt2023,
   title={{MedCPT}: Contrastive Pre-trained Transformers with Large-Scale PubMed Search Logs for Zero-Shot Biomedical Information Retrieval},
-  author={Jin, Qiao and Kim, Won and Chen, Qingyu and Comeau, Donald and Yeganova, Lana and Wilbur, John and Lu, Zhiyong},
+  author={Jin, Qiao and Kim, Won and Chen, Qingyu and Comeau, Donald C. and Yeganova, Lana and Wilbur, W. John and Lu, Zhiyong},
   journal={Bioinformatics},
   volume={39},
   number={11},
+  pages={btad651},
   year={2023},
   doi={10.1093/bioinformatics/btad651}
 }

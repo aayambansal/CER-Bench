@@ -1,0 +1,23 @@
+{
+  "version": "cerbench.submission-clearance.v1",
+  "status": "blocked",
+  "authorization": {
+    "external_api_calls": false,
+    "remote_compute": false,
+    "human_annotators_available": false,
+    "submission_upload_authorized": false
+  },
+  "required_author_review": {
+    "source_identity_and_text_adjudicated": false,
+    "independent_human_qrels_adjudicated": false,
+    "structural_annotations_adjudicated": false,
+    "fresh_test_locked_before_method_selection": false,
+    "complete_provenance_bound_reruns_reviewed": false,
+    "matched_budget_multi_family_results_reviewed": false,
+    "claim_to_result_ledger_reviewed": false,
+    "licensing_anonymity_and_pdf_reviewed": false,
+    "authors_openreview_reciprocal_review_and_dual_submission_cleared": false
+  },
+  "reviewer_attestation": null,
+  "note": "Software tests and successful PDF compilation cannot clear scientific or author requirements. Do not flip these fields to manufacture readiness. This is the blocked local-revision snapshot; a future release requires a versioned evidence review and an updated gate."
+}

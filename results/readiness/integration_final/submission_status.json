@@ -1,0 +1,83 @@
+{
+  "version": "cerbench.submission-readiness.v1",
+  "submission_ready": false,
+  "release_blocked": true,
+  "status": "BLOCKED",
+  "scope": "local_revision_snapshot_not_acceptance_prediction",
+  "blockers": [
+    {
+      "code": "identity_unadjudicated",
+      "reason": "Identity repair is a lossy candidate, not adjudicated source content."
+    },
+    {
+      "code": "historical_text_misattachment",
+      "reason": "58 corpus records disagree with local article-front PMID evidence."
+    },
+    {
+      "code": "exposed_proxy_test",
+      "reason": "Reassigned existing questions remain exposed synthetic proxy tasks."
+    },
+    {
+      "code": "historical_qrel_contract",
+      "reason": "Strict historical input audit fails; stored expanded labels omit a normalized relevant judgment and corpus IDs conflict."
+    },
+    {
+      "code": "human_validation_absent",
+      "reason": "The provisional kit contains no completed independent human validation and must be rebuilt after source repair."
+    },
+    {
+      "code": "independent_queries_absent",
+      "reason": "Human-written query slots are blank, not experimental data."
+    },
+    {
+      "code": "budget_runs_not_complete",
+      "reason": "Legacy controller shards are incomplete and lack required provenance; seven-condition plans and fake-provider tests are not model runs."
+    },
+    {
+      "code": "structural_and_selective_results_absent",
+      "reason": "Structural and selective evaluators are tested, but adjudicated real-data inputs and held-out results are absent."
+    },
+    {
+      "code": "new_pdf_not_verified",
+      "reason": "No revised empirical manuscript PDF has been compiled and independently checked in this revision."
+    },
+    {
+      "code": "author_and_scientific_clearance",
+      "reason": "Unresolved author/scientific review: authors_openreview_reciprocal_review_and_dual_submission_cleared, claim_to_result_ledger_reviewed, complete_provenance_bound_reruns_reviewed, fresh_test_locked_before_method_selection, independent_human_qrels_adjudicated, licensing_anonymity_and_pdf_reviewed, matched_budget_multi_family_results_reviewed, source_identity_and_text_adjudicated, structural_annotations_adjudicated"
+    }
+  ],
+  "local_checks": [
+    "Candidate split has zero checked annotated/lexical cross-split overlap; this is not a fresh holdout."
+  ],
+  "verified_source_bindings": 1207,
+  "software_tests": {
+    "tests": 166,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "note": "Software-only evidence; not human validation or empirical readiness."
+  },
+  "evidence_sha256": {
+    "data/processed/identity_repair_v1/report.json": "8102bb75df7e134e314974a003566b338c0d1fd720a81a9c969c2fefd19653b7",
+    "data/benchmark/v1_2_repaired_components/manifest.json": "2d53a11e174c8166cb744e32b7b98965677508afe5c195dde471c4ee3edb3613",
+    "results/readiness/qrel_sensitivity/v1_final/INPUT_AUDIT.json": "9ec64d1a1bc3a2856442c43fd1f2a0ea03ec718adc2d2b647c657bb31964842e",
+    "annotations/human_qrel_v2/manifest.json": "4b8f5be48dbefdce57f0b036f61a2b88357f3e0b87d1202c36c326e7436f23cd",
+    "annotations/human_queries_v1/manifest.json": "6bf4968201c6b8ba530cfd1e1c80be72d394748f89a4610b41e6f194eca04e66",
+    "results/readiness/budget/legacy_audit_final.json": "cb04c3fa956964f9315c594a6f589bcd0a3f4391226a31c6e60e5cf364b658b7",
+    "configs/submission_clearance.json": "4bc49f1d036e3254ecab673749d1b0c0879543c9bf83ad4df65d3f617a2663af",
+    "results/readiness/integration_final/final_tests.xml": "969d824d9eb902e768c28748196aab66c5b8f76de5669a9705b7089bc38356b5",
+    "scripts/45_submission_readiness.py": "e90275e2d6d7bbe51aa901f65f1115114ec39030d1fc56db406c47a08b7ccc47"
+  },
+  "authority": {
+    "external_api_calls": false,
+    "remote_compute": false,
+    "human_annotators_available": false,
+    "submission_upload_authorized": false
+  },
+  "deadlines": {
+    "abstract_and_author_list": "2026-09-18 23:59 AoE",
+    "full_paper_and_supplement": "2026-09-25 23:59 AoE",
+    "official_source": "https://iclr.cc/Conferences/2027/AuthorGuidelines",
+    "main_text_page_limit": 9
+  }
+}

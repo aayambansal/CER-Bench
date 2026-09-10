@@ -1,0 +1,250 @@
+{
+  "schema": "synthetic-factor-contract-v1",
+  "label_status": "synthetic_structural_not_gold",
+  "seed": 1729,
+  "generated_fiction": true,
+  "human_validated": false,
+  "documents": {
+    "D000000": {
+      "system": "algae",
+      "process": "transport",
+      "context": "cold"
+    },
+    "D000001": {
+      "system": "yeast",
+      "process": "transport",
+      "context": "cold"
+    },
+    "D000002": {
+      "system": "bacteria",
+      "process": "transport",
+      "context": "cold"
+    },
+    "D000003": {
+      "system": "moss",
+      "process": "transport",
+      "context": "cold"
+    },
+    "D000004": {
+      "system": "algae",
+      "process": "repair",
+      "context": "cold"
+    },
+    "D000005": {
+      "system": "yeast",
+      "process": "repair",
+      "context": "cold"
+    },
+    "D000006": {
+      "system": "bacteria",
+      "process": "repair",
+      "context": "cold"
+    },
+    "D000007": {
+      "system": "moss",
+      "process": "repair",
+      "context": "cold"
+    },
+    "D000008": {
+      "system": "algae",
+      "process": "growth",
+      "context": "cold"
+    },
+    "D000009": {
+      "system": "yeast",
+      "process": "growth",
+      "context": "cold"
+    },
+    "D000010": {
+      "system": "bacteria",
+      "process": "growth",
+      "context": "cold"
+    },
+    "D000011": {
+      "system": "moss",
+      "process": "growth",
+      "context": "cold"
+    },
+    "D000012": {
+      "system": "algae",
+      "process": "transport",
+      "context": "saline"
+    },
+    "D000013": {
+      "system": "yeast",
+      "process": "transport",
+      "context": "saline"
+    },
+    "D000014": {
+      "system": "bacteria",
+      "process": "transport",
+      "context": "saline"
+    },
+    "D000015": {
+      "system": "moss",
+      "process": "transport",
+      "context": "saline"
+    },
+    "D000016": {
+      "system": "algae",
+      "process": "repair",
+      "context": "saline"
+    },
+    "D000017": {
+      "system": "yeast",
+      "process": "repair",
+      "context": "saline"
+    },
+    "D000018": {
+      "system": "bacteria",
+      "process": "repair",
+      "context": "saline"
+    },
+    "D000019": {
+      "system": "moss",
+      "process": "repair",
+      "context": "saline"
+    },
+    "D000020": {
+      "system": "algae",
+      "process": "growth",
+      "context": "saline"
+    },
+    "D000021": {
+      "system": "yeast",
+      "process": "growth",
+      "context": "saline"
+    },
+    "D000022": {
+      "system": "bacteria",
+      "process": "growth",
+      "context": "saline"
+    },
+    "D000023": {
+      "system": "moss",
+      "process": "growth",
+      "context": "saline"
+    },
+    "D000024": {
+      "system": "algae",
+      "process": "transport",
+      "context": "cold"
+    },
+    "D000025": {
+      "system": "yeast",
+      "process": "transport",
+      "context": "cold"
+    },
+    "D000026": {
+      "system": "bacteria",
+      "process": "transport",
+      "context": "cold"
+    },
+    "D000027": {
+      "system": "moss",
+      "process": "transport",
+      "context": "cold"
+    },
+    "D000028": {
+      "system": "algae",
+      "process": "repair",
+      "context": "cold"
+    },
+    "D000029": {
+      "system": "yeast",
+      "process": "repair",
+      "context": "cold"
+    },
+    "D000030": {
+      "system": "bacteria",
+      "process": "repair",
+      "context": "cold"
+    },
+    "D000031": {
+      "system": "moss",
+      "process": "repair",
+      "context": "cold"
+    },
+    "D000032": {
+      "system": "algae",
+      "process": "growth",
+      "context": "cold"
+    },
+    "D000033": {
+      "system": "yeast",
+      "process": "growth",
+      "context": "cold"
+    },
+    "D000034": {
+      "system": "bacteria",
+      "process": "growth",
+      "context": "cold"
+    },
+    "D000035": {
+      "system": "moss",
+      "process": "growth",
+      "context": "cold"
+    },
+    "D000036": {
+      "system": "algae",
+      "process": "transport",
+      "context": "saline"
+    },
+    "D000037": {
+      "system": "yeast",
+      "process": "transport",
+      "context": "saline"
+    },
+    "D000038": {
+      "system": "bacteria",
+      "process": "transport",
+      "context": "saline"
+    },
+    "D000039": {
+      "system": "moss",
+      "process": "transport",
+      "context": "saline"
+    },
+    "D000040": {
+      "system": "algae",
+      "process": "repair",
+      "context": "saline"
+    },
+    "D000041": {
+      "system": "yeast",
+      "process": "repair",
+      "context": "saline"
+    },
+    "D000042": {
+      "system": "bacteria",
+      "process": "repair",
+      "context": "saline"
+    },
+    "D000043": {
+      "system": "moss",
+      "process": "repair",
+      "context": "saline"
+    },
+    "D000044": {
+      "system": "algae",
+      "process": "growth",
+      "context": "saline"
+    },
+    "D000045": {
+      "system": "yeast",
+      "process": "growth",
+      "context": "saline"
+    },
+    "D000046": {
+      "system": "bacteria",
+      "process": "growth",
+      "context": "saline"
+    },
+    "D000047": {
+      "system": "moss",
+      "process": "growth",
+      "context": "saline"
+    }
+  },
+  "retrieval_text_contains_label_metadata": false
+}

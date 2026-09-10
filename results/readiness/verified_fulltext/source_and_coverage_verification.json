@@ -1,0 +1,21 @@
+{
+  "accepted_candidates_checked": 588,
+  "all_bound_sources_still_match": true,
+  "all_section_offsets_and_ownership_passed": true,
+  "bound_sources_verified": 673,
+  "chunk_source_intersections_checked": 68828,
+  "code_hashes_still_match": true,
+  "dataset_files_byte_identical_after_verification": 8,
+  "dataset_manifest_sha256": "59d7751daeb67925903629ed6c542c1e98874d17b0499e43f3a387cc1168b5ae",
+  "duplicate_paragraph_visits": 0,
+  "human_validation": false,
+  "junit_sha256": "054fc8b562eb160ecbf53d7319673e9b8b6206435238f617a9bdd271052fe60d",
+  "limitations": "source identity and structural offsets only; no biomedical relevance or redistribution approval",
+  "no_zero_chunk_documents": true,
+  "section_entries_checked": 15854,
+  "source_blocks_checked": 64267,
+  "test_failures_or_errors": 0,
+  "tests": 83,
+  "unexplained_paragraphs": 0,
+  "verifier_sha256": "c2b97644543616fe160c4f64973566be6f4d97b6e6e02cbfc50c08d6a9d14aa5"
+}

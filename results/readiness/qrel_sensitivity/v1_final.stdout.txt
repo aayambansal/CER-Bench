@@ -1,0 +1,45 @@
+{
+  "status": "fail",
+  "release_blocked": true,
+  "errors": [
+    {
+      "source": "data/processed/corpus.jsonl",
+      "error": "duplicate corpus IDs with conflicting records",
+      "doc_ids": [
+        "2949280",
+        "30620402",
+        "4343198",
+        "5564292",
+        "5706658",
+        "5906799",
+        "6286148",
+        "7433347",
+        "7581537",
+        "8386155"
+      ],
+      "detail": "corpus.duplicate_records gives physical rows, PMIDs, titles and differing fields"
+    },
+    {
+      "source": "stored expanded",
+      "error": "set mismatch",
+      "details": [
+        {
+          "task_id": "multihop_0189",
+          "stored_only": [],
+          "reconstructed_only": [
+            "37307965"
+          ],
+          "raw_evidence": [
+            {
+              "physical_row": 1337,
+              "task_id": "multihop_0189",
+              "doc_id": "37307965",
+              "judgment": "RELEVANT\n\nTHE DOCUMENT DISCUSSES CELLULAR IMMUNOTHERAPIES"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "output": "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/results/readiness/qrel_sensitivity/v1_final"
+}

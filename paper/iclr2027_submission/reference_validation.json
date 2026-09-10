@@ -1,0 +1,30 @@
+{
+  "filepath": "refs.bib",
+  "total_entries": 27,
+  "valid_entries": 27,
+  "errors": [],
+  "warnings": [
+    {
+      "type": "missing_recommended_field",
+      "field": "pages",
+      "severity": "medium",
+      "message": "Entry abduljaleel2004rm3: Missing recommended field \"pages\"",
+      "entry": "abduljaleel2004rm3"
+    },
+    {
+      "type": "missing_recommended_field",
+      "field": "pages",
+      "severity": "medium",
+      "message": "Entry beir2021: Missing recommended field \"pages\"",
+      "entry": "beir2021"
+    },
+    {
+      "type": "missing_recommended_field",
+      "field": "pages",
+      "severity": "medium",
+      "message": "Entry trecpm2017: Missing recommended field \"pages\"",
+      "entry": "trecpm2017"
+    }
+  ],
+  "duplicates": []
+}

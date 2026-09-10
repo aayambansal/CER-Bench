@@ -1,0 +1,1371 @@
+[
+  {
+    "task_id": "probe_constraint",
+    "query": "EGFR inhibitor resistance human lung cancer cell line assay",
+    "wall_seconds": 0.0009116660803556442,
+    "process_peak_rss_before_bytes": 680853504,
+    "process_peak_rss_after_bytes": 680853504,
+    "query_tokens": [
+      "egfr",
+      "inhibitor",
+      "resistance",
+      "human",
+      "lung",
+      "cancer",
+      "cell",
+      "line",
+      "assay"
+    ],
+    "oov_tokens": [],
+    "positive_scoring_chunks": 7747,
+    "prefix_chunk_count": 40,
+    "candidate_docs": [
+      "PMID:32793190",
+      "PMID:32044472",
+      "PMID:32124955",
+      "PMID:38216592",
+      "PMID:41154602",
+      "PMID:41495830",
+      "PMID:36768566",
+      "PMID:32770608",
+      "PMID:41104396",
+      "PMID:38674150",
+      "PMID:35173719",
+      "PMID:34786889",
+      "PMID:40521034",
+      "PMID:35147894",
+      "PMID:34767024",
+      "PMID:33790087",
+      "PMID:31618686",
+      "PMID:31698087",
+      "PMID:32581058",
+      "PMID:31488816",
+      "PMID:36614109",
+      "PMID:29917168",
+      "PMID:39663448",
+      "PMID:34866626"
+    ],
+    "bounded_chunk_hits": [
+      {
+        "doc_id": "PMID:32793190",
+        "chunk_id": "PMID:32793190:chunk:00000",
+        "score": 21.048958754647934
+      },
+      {
+        "doc_id": "PMID:32044472",
+        "chunk_id": "PMID:32044472:chunk:00014",
+        "score": 19.777009349045503
+      },
+      {
+        "doc_id": "PMID:32124955",
+        "chunk_id": "PMID:32124955:chunk:00017",
+        "score": 19.35650014425605
+      },
+      {
+        "doc_id": "PMID:38216592",
+        "chunk_id": "PMID:38216592:chunk:00009",
+        "score": 19.096474909302593
+      },
+      {
+        "doc_id": "PMID:41154602",
+        "chunk_id": "PMID:41154602:chunk:00004",
+        "score": 18.14495200173902
+      },
+      {
+        "doc_id": "PMID:41495830",
+        "chunk_id": "PMID:41495830:chunk:00000",
+        "score": 17.946820576892275
+      },
+      {
+        "doc_id": "PMID:32044472",
+        "chunk_id": "PMID:32044472:chunk:00016",
+        "score": 17.868481205750115
+      },
+      {
+        "doc_id": "PMID:41154602",
+        "chunk_id": "PMID:41154602:chunk:00001",
+        "score": 17.849890709675616
+      },
+      {
+        "doc_id": "PMID:32793190",
+        "chunk_id": "PMID:32793190:chunk:00006",
+        "score": 17.020281770888964
+      },
+      {
+        "doc_id": "PMID:32044472",
+        "chunk_id": "PMID:32044472:chunk:00012",
+        "score": 16.900421182338526
+      },
+      {
+        "doc_id": "PMID:36768566",
+        "chunk_id": "PMID:36768566:chunk:00006",
+        "score": 16.872632172382822
+      },
+      {
+        "doc_id": "PMID:41154602",
+        "chunk_id": "PMID:41154602:chunk:00002",
+        "score": 16.746113394179464
+      },
+      {
+        "doc_id": "PMID:32770608",
+        "chunk_id": "PMID:32770608:chunk:00000",
+        "score": 16.70877864566947
+      },
+      {
+        "doc_id": "PMID:38216592",
+        "chunk_id": "PMID:38216592:chunk:00007",
+        "score": 16.680889946017963
+      },
+      {
+        "doc_id": "PMID:32124955",
+        "chunk_id": "PMID:32124955:chunk:00012",
+        "score": 16.190989339325082
+      },
+      {
+        "doc_id": "PMID:41104396",
+        "chunk_id": "PMID:41104396:chunk:00005",
+        "score": 16.185765118060587
+      },
+      {
+        "doc_id": "PMID:38674150",
+        "chunk_id": "PMID:38674150:chunk:00003",
+        "score": 16.041130960244228
+      },
+      {
+        "doc_id": "PMID:35173719",
+        "chunk_id": "PMID:35173719:chunk:00002",
+        "score": 15.88893206310211
+      },
+      {
+        "doc_id": "PMID:34786889",
+        "chunk_id": "PMID:34786889:chunk:00004",
+        "score": 15.877801360194487
+      },
+      {
+        "doc_id": "PMID:38674150",
+        "chunk_id": "PMID:38674150:chunk:00004",
+        "score": 15.72640860536091
+      },
+      {
+        "doc_id": "PMID:34786889",
+        "chunk_id": "PMID:34786889:chunk:00000",
+        "score": 14.918073412443999
+      },
+      {
+        "doc_id": "PMID:40521034",
+        "chunk_id": "PMID:40521034:chunk:00012",
+        "score": 14.725640741510121
+      },
+      {
+        "doc_id": "PMID:32044472",
+        "chunk_id": "PMID:32044472:chunk:00017",
+        "score": 14.724410183323752
+      },
+      {
+        "doc_id": "PMID:35147894",
+        "chunk_id": "PMID:35147894:chunk:00000",
+        "score": 14.49138393005768
+      }
+    ],
+    "truncated_saved_hit_rows": 16,
+    "same_query_budget_equivalence_verified": true
+  },
+  {
+    "task_id": "probe_comparative",
+    "query": "CRISPR knockout compared with RNA interference gene silencing efficiency",
+    "wall_seconds": 0.0011759172193706036,
+    "process_peak_rss_before_bytes": 680853504,
+    "process_peak_rss_after_bytes": 680853504,
+    "query_tokens": [
+      "crispr",
+      "knockout",
+      "compared",
+      "with",
+      "rna",
+      "interference",
+      "gene",
+      "silencing",
+      "efficiency"
+    ],
+    "oov_tokens": [],
+    "positive_scoring_chunks": 9673,
+    "prefix_chunk_count": 30,
+    "candidate_docs": [
+      "PMID:40499551",
+      "PMID:41420495",
+      "PMID:32350961",
+      "PMID:28879852",
+      "PMID:29621180",
+      "PMID:26993776",
+      "PMID:27531614",
+      "PMID:28981713",
+      "PMID:28790350",
+      "PMID:32200874",
+      "PMID:33720688",
+      "PMID:40268745",
+      "PMID:29191331",
+      "PMID:39901476",
+      "PMID:32387678",
+      "PMID:32200959",
+      "PMID:29509513",
+      "PMID:28140746",
+      "PMID:32958931",
+      "PMID:35641106",
+      "PMID:32150344",
+      "PMID:41640336",
+      "PMID:38538969",
+      "PMID:35471009"
+    ],
+    "bounded_chunk_hits": [
+      {
+        "doc_id": "PMID:40499551",
+        "chunk_id": "PMID:40499551:chunk:00000",
+        "score": 26.920566553301263
+      },
+      {
+        "doc_id": "PMID:41420495",
+        "chunk_id": "PMID:41420495:chunk:00000",
+        "score": 23.628909017917323
+      },
+      {
+        "doc_id": "PMID:32350961",
+        "chunk_id": "PMID:32350961:chunk:00000",
+        "score": 22.985492982189214
+      },
+      {
+        "doc_id": "PMID:28879852",
+        "chunk_id": "PMID:28879852:chunk:00000",
+        "score": 22.934127230126364
+      },
+      {
+        "doc_id": "PMID:29621180",
+        "chunk_id": "PMID:29621180:chunk:00001",
+        "score": 22.74559527708407
+      },
+      {
+        "doc_id": "PMID:26993776",
+        "chunk_id": "PMID:26993776:chunk:00003",
+        "score": 21.56888574738134
+      },
+      {
+        "doc_id": "PMID:27531614",
+        "chunk_id": "PMID:27531614:chunk:00000",
+        "score": 21.533555043321776
+      },
+      {
+        "doc_id": "PMID:26993776",
+        "chunk_id": "PMID:26993776:chunk:00002",
+        "score": 21.489734230435822
+      },
+      {
+        "doc_id": "PMID:28981713",
+        "chunk_id": "PMID:28981713:chunk:00000",
+        "score": 21.460530612169755
+      },
+      {
+        "doc_id": "PMID:28790350",
+        "chunk_id": "PMID:28790350:chunk:00012",
+        "score": 21.235387982735475
+      },
+      {
+        "doc_id": "PMID:32200874",
+        "chunk_id": "PMID:32200874:chunk:00000",
+        "score": 20.57862596563208
+      },
+      {
+        "doc_id": "PMID:33720688",
+        "chunk_id": "PMID:33720688:chunk:00000",
+        "score": 19.890621404846794
+      },
+      {
+        "doc_id": "PMID:40268745",
+        "chunk_id": "PMID:40268745:chunk:00007",
+        "score": 19.7727223266909
+      },
+      {
+        "doc_id": "PMID:29191331",
+        "chunk_id": "PMID:29191331:chunk:00007",
+        "score": 19.493026622381365
+      },
+      {
+        "doc_id": "PMID:39901476",
+        "chunk_id": "PMID:39901476:chunk:00013",
+        "score": 19.423660084689743
+      },
+      {
+        "doc_id": "PMID:32387678",
+        "chunk_id": "PMID:32387678:chunk:00009",
+        "score": 19.402488319113655
+      },
+      {
+        "doc_id": "PMID:39901476",
+        "chunk_id": "PMID:39901476:chunk:00006",
+        "score": 19.336867125674107
+      },
+      {
+        "doc_id": "PMID:32200959",
+        "chunk_id": "PMID:32200959:chunk:00002",
+        "score": 19.276537439120304
+      },
+      {
+        "doc_id": "PMID:29509513",
+        "chunk_id": "PMID:29509513:chunk:00000",
+        "score": 19.24243656406078
+      },
+      {
+        "doc_id": "PMID:40499551",
+        "chunk_id": "PMID:40499551:chunk:00004",
+        "score": 19.24152220631814
+      },
+      {
+        "doc_id": "PMID:40499551",
+        "chunk_id": "PMID:40499551:chunk:00003",
+        "score": 19.218339360489356
+      },
+      {
+        "doc_id": "PMID:28140746",
+        "chunk_id": "PMID:28140746:chunk:00000",
+        "score": 19.10754666922009
+      },
+      {
+        "doc_id": "PMID:32387678",
+        "chunk_id": "PMID:32387678:chunk:00008",
+        "score": 19.085117386763294
+      },
+      {
+        "doc_id": "PMID:32958931",
+        "chunk_id": "PMID:32958931:chunk:00002",
+        "score": 18.95722624892819
+      }
+    ],
+    "truncated_saved_hit_rows": 6,
+    "same_query_budget_equivalence_verified": true
+  },
+  {
+    "task_id": "probe_contradiction",
+    "query": "autophagy inhibition increases decreases cancer cell survival conflicting evidence",
+    "wall_seconds": 0.001126707997173071,
+    "process_peak_rss_before_bytes": 680853504,
+    "process_peak_rss_after_bytes": 680853504,
+    "query_tokens": [
+      "autophagy",
+      "inhibition",
+      "increases",
+      "decreases",
+      "cancer",
+      "cell",
+      "survival",
+      "conflicting",
+      "evidence"
+    ],
+    "oov_tokens": [],
+    "positive_scoring_chunks": 7185,
+    "prefix_chunk_count": 48,
+    "candidate_docs": [
+      "PMID:31614431",
+      "PMID:32124955",
+      "PMID:39082334",
+      "PMID:32198276",
+      "PMID:32437876",
+      "PMID:39596504",
+      "PMID:35219701",
+      "PMID:31618686",
+      "PMID:28288698",
+      "PMID:40003982",
+      "PMID:41104396",
+      "PMID:39513619",
+      "PMID:35053377",
+      "PMID:33619913",
+      "PMID:33375448",
+      "PMID:29729272",
+      "PMID:38063905",
+      "PMID:35304223",
+      "PMID:39422949",
+      "PMID:36109747",
+      "PMID:35008822",
+      "PMID:35443626",
+      "PMID:34206641",
+      "PMID:38454090"
+    ],
+    "bounded_chunk_hits": [
+      {
+        "doc_id": "PMID:31614431",
+        "chunk_id": "PMID:31614431:chunk:00006",
+        "score": 21.549995240539467
+      },
+      {
+        "doc_id": "PMID:32124955",
+        "chunk_id": "PMID:32124955:chunk:00010",
+        "score": 20.84008333700562
+      },
+      {
+        "doc_id": "PMID:32124955",
+        "chunk_id": "PMID:32124955:chunk:00031",
+        "score": 19.752152391847865
+      },
+      {
+        "doc_id": "PMID:39082334",
+        "chunk_id": "PMID:39082334:chunk:00010",
+        "score": 18.4657238606658
+      },
+      {
+        "doc_id": "PMID:32198276",
+        "chunk_id": "PMID:32198276:chunk:00000",
+        "score": 18.398475160894915
+      },
+      {
+        "doc_id": "PMID:32437876",
+        "chunk_id": "PMID:32437876:chunk:00006",
+        "score": 18.327075943893114
+      },
+      {
+        "doc_id": "PMID:39596504",
+        "chunk_id": "PMID:39596504:chunk:00022",
+        "score": 17.69439624723574
+      },
+      {
+        "doc_id": "PMID:39082334",
+        "chunk_id": "PMID:39082334:chunk:00005",
+        "score": 16.765154222021405
+      },
+      {
+        "doc_id": "PMID:39596504",
+        "chunk_id": "PMID:39596504:chunk:00008",
+        "score": 16.528578365138433
+      },
+      {
+        "doc_id": "PMID:39596504",
+        "chunk_id": "PMID:39596504:chunk:00018",
+        "score": 16.294550738578693
+      },
+      {
+        "doc_id": "PMID:35219701",
+        "chunk_id": "PMID:35219701:chunk:00012",
+        "score": 16.141820105309687
+      },
+      {
+        "doc_id": "PMID:39082334",
+        "chunk_id": "PMID:39082334:chunk:00013",
+        "score": 16.12824672158839
+      },
+      {
+        "doc_id": "PMID:31618686",
+        "chunk_id": "PMID:31618686:chunk:00004",
+        "score": 16.06360764307867
+      },
+      {
+        "doc_id": "PMID:28288698",
+        "chunk_id": "PMID:28288698:chunk:00006",
+        "score": 16.044858800124036
+      },
+      {
+        "doc_id": "PMID:32124955",
+        "chunk_id": "PMID:32124955:chunk:00028",
+        "score": 16.041550765414883
+      },
+      {
+        "doc_id": "PMID:39082334",
+        "chunk_id": "PMID:39082334:chunk:00003",
+        "score": 15.8415057251027
+      },
+      {
+        "doc_id": "PMID:32437876",
+        "chunk_id": "PMID:32437876:chunk:00007",
+        "score": 15.573793376613962
+      },
+      {
+        "doc_id": "PMID:31618686",
+        "chunk_id": "PMID:31618686:chunk:00003",
+        "score": 15.11698974639132
+      },
+      {
+        "doc_id": "PMID:40003982",
+        "chunk_id": "PMID:40003982:chunk:00018",
+        "score": 14.98687847683178
+      },
+      {
+        "doc_id": "PMID:32437876",
+        "chunk_id": "PMID:32437876:chunk:00013",
+        "score": 14.758861254145804
+      },
+      {
+        "doc_id": "PMID:39596504",
+        "chunk_id": "PMID:39596504:chunk:00023",
+        "score": 14.733269442104156
+      },
+      {
+        "doc_id": "PMID:41104396",
+        "chunk_id": "PMID:41104396:chunk:00002",
+        "score": 14.66344769395026
+      },
+      {
+        "doc_id": "PMID:39082334",
+        "chunk_id": "PMID:39082334:chunk:00015",
+        "score": 14.481824399499828
+      },
+      {
+        "doc_id": "PMID:39513619",
+        "chunk_id": "PMID:39513619:chunk:00006",
+        "score": 14.28843049805723
+      }
+    ],
+    "truncated_saved_hit_rows": 24,
+    "same_query_budget_equivalence_verified": true
+  },
+  {
+    "task_id": "probe_abstention",
+    "query": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial",
+    "wall_seconds": 0.001096166204661131,
+    "process_peak_rss_before_bytes": 680853504,
+    "process_peak_rss_after_bytes": 680853504,
+    "query_tokens": [
+      "quantum",
+      "entanglement",
+      "treatment",
+      "reverses",
+      "inherited",
+      "mitochondrial",
+      "disease",
+      "clinical",
+      "trial"
+    ],
+    "oov_tokens": [
+      "entanglement"
+    ],
+    "positive_scoring_chunks": 6839,
+    "prefix_chunk_count": 25,
+    "candidate_docs": [
+      "PMID:32016902",
+      "PMID:39422949",
+      "PMID:41391248",
+      "PMID:35934727",
+      "PMID:41702027",
+      "PMID:41022787",
+      "PMID:33375448",
+      "PMID:28460414",
+      "PMID:41096677",
+      "PMID:37014414",
+      "PMID:30387765",
+      "PMID:32124955",
+      "PMID:38165642",
+      "PMID:36372278",
+      "PMID:37788907",
+      "PMID:40644656",
+      "PMID:38069121",
+      "PMID:41621836",
+      "PMID:41731282",
+      "PMID:32939050",
+      "PMID:37509151",
+      "PMID:39577323",
+      "PMID:40301912",
+      "PMID:34121170"
+    ],
+    "bounded_chunk_hits": [
+      {
+        "doc_id": "PMID:32016902",
+        "chunk_id": "PMID:32016902:chunk:00000",
+        "score": 13.242862500691546
+      },
+      {
+        "doc_id": "PMID:39422949",
+        "chunk_id": "PMID:39422949:chunk:00012",
+        "score": 12.837970434888556
+      },
+      {
+        "doc_id": "PMID:41391248",
+        "chunk_id": "PMID:41391248:chunk:00000",
+        "score": 12.596374860144524
+      },
+      {
+        "doc_id": "PMID:35934727",
+        "chunk_id": "PMID:35934727:chunk:00010",
+        "score": 12.537007383719205
+      },
+      {
+        "doc_id": "PMID:41702027",
+        "chunk_id": "PMID:41702027:chunk:00000",
+        "score": 12.477653920531656
+      },
+      {
+        "doc_id": "PMID:41022787",
+        "chunk_id": "PMID:41022787:chunk:00000",
+        "score": 12.228231818018367
+      },
+      {
+        "doc_id": "PMID:33375448",
+        "chunk_id": "PMID:33375448:chunk:00000",
+        "score": 11.804213669932736
+      },
+      {
+        "doc_id": "PMID:28460414",
+        "chunk_id": "PMID:28460414:chunk:00011",
+        "score": 11.72771172309427
+      },
+      {
+        "doc_id": "PMID:41096677",
+        "chunk_id": "PMID:41096677:chunk:00033",
+        "score": 11.236693327006147
+      },
+      {
+        "doc_id": "PMID:37014414",
+        "chunk_id": "PMID:37014414:chunk:00009",
+        "score": 11.143923965405174
+      },
+      {
+        "doc_id": "PMID:30387765",
+        "chunk_id": "PMID:30387765:chunk:00000",
+        "score": 10.85041885541371
+      },
+      {
+        "doc_id": "PMID:32124955",
+        "chunk_id": "PMID:32124955:chunk:00018",
+        "score": 10.432448166869216
+      },
+      {
+        "doc_id": "PMID:38165642",
+        "chunk_id": "PMID:38165642:chunk:00000",
+        "score": 10.349916445479394
+      },
+      {
+        "doc_id": "PMID:36372278",
+        "chunk_id": "PMID:36372278:chunk:00021",
+        "score": 10.336086174900583
+      },
+      {
+        "doc_id": "PMID:37788907",
+        "chunk_id": "PMID:37788907:chunk:00000",
+        "score": 10.282941135053713
+      },
+      {
+        "doc_id": "PMID:40644656",
+        "chunk_id": "PMID:40644656:chunk:00008",
+        "score": 9.990173917612498
+      },
+      {
+        "doc_id": "PMID:38069121",
+        "chunk_id": "PMID:38069121:chunk:00007",
+        "score": 9.980678921428561
+      },
+      {
+        "doc_id": "PMID:41621836",
+        "chunk_id": "PMID:41621836:chunk:00000",
+        "score": 9.872227497595967
+      },
+      {
+        "doc_id": "PMID:41731282",
+        "chunk_id": "PMID:41731282:chunk:00003",
+        "score": 9.843683160413601
+      },
+      {
+        "doc_id": "PMID:32124955",
+        "chunk_id": "PMID:32124955:chunk:00006",
+        "score": 9.76860223639385
+      },
+      {
+        "doc_id": "PMID:32939050",
+        "chunk_id": "PMID:32939050:chunk:00001",
+        "score": 9.706112863467615
+      },
+      {
+        "doc_id": "PMID:37509151",
+        "chunk_id": "PMID:37509151:chunk:00001",
+        "score": 9.613179344683877
+      },
+      {
+        "doc_id": "PMID:39577323",
+        "chunk_id": "PMID:39577323:chunk:00000",
+        "score": 9.465592595301592
+      },
+      {
+        "doc_id": "PMID:40301912",
+        "chunk_id": "PMID:40301912:chunk:00014",
+        "score": 9.433716799449781
+      }
+    ],
+    "truncated_saved_hit_rows": 1,
+    "same_query_budget_equivalence_verified": true
+  },
+  {
+    "task_id": "probe_multihop",
+    "query": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality",
+    "wall_seconds": 0.0007626661099493504,
+    "process_peak_rss_before_bytes": 680853504,
+    "process_peak_rss_after_bytes": 680853504,
+    "query_tokens": [
+      "brca1",
+      "homologous",
+      "recombination",
+      "deficiency",
+      "parp",
+      "inhibitor",
+      "synthetic",
+      "lethality"
+    ],
+    "oov_tokens": [],
+    "positive_scoring_chunks": 2015,
+    "prefix_chunk_count": 26,
+    "candidate_docs": [
+      "PMID:41390513",
+      "PMID:34702316",
+      "PMID:28166537",
+      "PMID:32883316",
+      "PMID:35053377",
+      "PMID:41154602",
+      "PMID:39934338",
+      "PMID:32866158",
+      "PMID:41724073",
+      "PMID:34112784",
+      "PMID:35063100",
+      "PMID:29191331",
+      "PMID:30387552",
+      "PMID:41353855",
+      "PMID:38216671",
+      "PMID:33941852",
+      "PMID:33511745",
+      "PMID:33449100",
+      "PMID:33359413",
+      "PMID:35061355",
+      "PMID:40988083",
+      "PMID:27460193",
+      "PMID:26517537",
+      "PMID:32580834"
+    ],
+    "bounded_chunk_hits": [
+      {
+        "doc_id": "PMID:41390513",
+        "chunk_id": "PMID:41390513:chunk:00000",
+        "score": 38.80046643432107
+      },
+      {
+        "doc_id": "PMID:34702316",
+        "chunk_id": "PMID:34702316:chunk:00000",
+        "score": 28.68275231072375
+      },
+      {
+        "doc_id": "PMID:28166537",
+        "chunk_id": "PMID:28166537:chunk:00000",
+        "score": 24.693712904807555
+      },
+      {
+        "doc_id": "PMID:32883316",
+        "chunk_id": "PMID:32883316:chunk:00000",
+        "score": 20.68497211513987
+      },
+      {
+        "doc_id": "PMID:35053377",
+        "chunk_id": "PMID:35053377:chunk:00006",
+        "score": 20.522512148730296
+      },
+      {
+        "doc_id": "PMID:41390513",
+        "chunk_id": "PMID:41390513:chunk:00014",
+        "score": 19.5593577144308
+      },
+      {
+        "doc_id": "PMID:41154602",
+        "chunk_id": "PMID:41154602:chunk:00010",
+        "score": 18.718852131428257
+      },
+      {
+        "doc_id": "PMID:39934338",
+        "chunk_id": "PMID:39934338:chunk:00000",
+        "score": 17.996692340900196
+      },
+      {
+        "doc_id": "PMID:32866158",
+        "chunk_id": "PMID:32866158:chunk:00010",
+        "score": 16.357955789596975
+      },
+      {
+        "doc_id": "PMID:41724073",
+        "chunk_id": "PMID:41724073:chunk:00000",
+        "score": 15.966278056002114
+      },
+      {
+        "doc_id": "PMID:34112784",
+        "chunk_id": "PMID:34112784:chunk:00000",
+        "score": 15.915694975991796
+      },
+      {
+        "doc_id": "PMID:35063100",
+        "chunk_id": "PMID:35063100:chunk:00007",
+        "score": 15.90507799817263
+      },
+      {
+        "doc_id": "PMID:29191331",
+        "chunk_id": "PMID:29191331:chunk:00000",
+        "score": 15.726680216684173
+      },
+      {
+        "doc_id": "PMID:30387552",
+        "chunk_id": "PMID:30387552:chunk:00000",
+        "score": 15.549487800871535
+      },
+      {
+        "doc_id": "PMID:41353855",
+        "chunk_id": "PMID:41353855:chunk:00000",
+        "score": 15.456158845326136
+      },
+      {
+        "doc_id": "PMID:38216671",
+        "chunk_id": "PMID:38216671:chunk:00000",
+        "score": 15.074523119093552
+      },
+      {
+        "doc_id": "PMID:33941852",
+        "chunk_id": "PMID:33941852:chunk:00000",
+        "score": 14.743151019094821
+      },
+      {
+        "doc_id": "PMID:33511745",
+        "chunk_id": "PMID:33511745:chunk:00000",
+        "score": 14.576253642372219
+      },
+      {
+        "doc_id": "PMID:33449100",
+        "chunk_id": "PMID:33449100:chunk:00007",
+        "score": 14.226975897747536
+      },
+      {
+        "doc_id": "PMID:33359413",
+        "chunk_id": "PMID:33359413:chunk:00014",
+        "score": 13.87784362340258
+      },
+      {
+        "doc_id": "PMID:35061355",
+        "chunk_id": "PMID:35061355:chunk:00000",
+        "score": 13.707475788997403
+      },
+      {
+        "doc_id": "PMID:29191331",
+        "chunk_id": "PMID:29191331:chunk:00001",
+        "score": 13.383872605581544
+      },
+      {
+        "doc_id": "PMID:40988083",
+        "chunk_id": "PMID:40988083:chunk:00003",
+        "score": 13.322916515003527
+      },
+      {
+        "doc_id": "PMID:27460193",
+        "chunk_id": "PMID:27460193:chunk:00000",
+        "score": 13.303533097774714
+      }
+    ],
+    "truncated_saved_hit_rows": 2,
+    "same_query_budget_equivalence_verified": true
+  },
+  {
+    "task_id": "probe_temporal",
+    "query": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024",
+    "wall_seconds": 0.0012012082152068615,
+    "process_peak_rss_before_bytes": 680853504,
+    "process_peak_rss_after_bytes": 680853504,
+    "query_tokens": [
+      "sars",
+      "cov",
+      "2",
+      "vaccine",
+      "neutralizing",
+      "antibodies",
+      "variants",
+      "2020",
+      "2024"
+    ],
+    "oov_tokens": [],
+    "positive_scoring_chunks": 5722,
+    "prefix_chunk_count": 24,
+    "candidate_docs": [
+      "PMID:35337058",
+      "PMID:35759727",
+      "PMID:35632698",
+      "PMID:34864935",
+      "PMID:35946811",
+      "PMID:34820854",
+      "PMID:36598270",
+      "PMID:37093009",
+      "PMID:39625929",
+      "PMID:37146611",
+      "PMID:36376393",
+      "PMID:35810359",
+      "PMID:35287350",
+      "PMID:38896316",
+      "PMID:36942873",
+      "PMID:35668119",
+      "PMID:38528837",
+      "PMID:34767690",
+      "PMID:37298704",
+      "PMID:32783919",
+      "PMID:35663946",
+      "PMID:35771353",
+      "PMID:37085495",
+      "PMID:38569556"
+    ],
+    "bounded_chunk_hits": [
+      {
+        "doc_id": "PMID:35337058",
+        "chunk_id": "PMID:35337058:chunk:00000",
+        "score": 39.720968903584875
+      },
+      {
+        "doc_id": "PMID:35759727",
+        "chunk_id": "PMID:35759727:chunk:00000",
+        "score": 39.53617745567927
+      },
+      {
+        "doc_id": "PMID:35632698",
+        "chunk_id": "PMID:35632698:chunk:00000",
+        "score": 38.518883663709836
+      },
+      {
+        "doc_id": "PMID:34864935",
+        "chunk_id": "PMID:34864935:chunk:00000",
+        "score": 37.86524283662622
+      },
+      {
+        "doc_id": "PMID:35946811",
+        "chunk_id": "PMID:35946811:chunk:00000",
+        "score": 36.81456866146649
+      },
+      {
+        "doc_id": "PMID:34820854",
+        "chunk_id": "PMID:34820854:chunk:00000",
+        "score": 35.55221257210544
+      },
+      {
+        "doc_id": "PMID:36598270",
+        "chunk_id": "PMID:36598270:chunk:00000",
+        "score": 35.44495987543544
+      },
+      {
+        "doc_id": "PMID:37093009",
+        "chunk_id": "PMID:37093009:chunk:00000",
+        "score": 35.26842973256495
+      },
+      {
+        "doc_id": "PMID:39625929",
+        "chunk_id": "PMID:39625929:chunk:00000",
+        "score": 35.139979141032235
+      },
+      {
+        "doc_id": "PMID:37146611",
+        "chunk_id": "PMID:37146611:chunk:00000",
+        "score": 34.32115709733762
+      },
+      {
+        "doc_id": "PMID:36376393",
+        "chunk_id": "PMID:36376393:chunk:00000",
+        "score": 34.05004293478429
+      },
+      {
+        "doc_id": "PMID:35810359",
+        "chunk_id": "PMID:35810359:chunk:00000",
+        "score": 33.98807062084161
+      },
+      {
+        "doc_id": "PMID:35287350",
+        "chunk_id": "PMID:35287350:chunk:00000",
+        "score": 33.42779421601966
+      },
+      {
+        "doc_id": "PMID:38896316",
+        "chunk_id": "PMID:38896316:chunk:00000",
+        "score": 33.116904401533056
+      },
+      {
+        "doc_id": "PMID:36942873",
+        "chunk_id": "PMID:36942873:chunk:00000",
+        "score": 32.98801572330612
+      },
+      {
+        "doc_id": "PMID:35668119",
+        "chunk_id": "PMID:35668119:chunk:00000",
+        "score": 32.72334363420028
+      },
+      {
+        "doc_id": "PMID:38528837",
+        "chunk_id": "PMID:38528837:chunk:00000",
+        "score": 32.70893381703497
+      },
+      {
+        "doc_id": "PMID:34767690",
+        "chunk_id": "PMID:34767690:chunk:00000",
+        "score": 31.531425374472118
+      },
+      {
+        "doc_id": "PMID:37298704",
+        "chunk_id": "PMID:37298704:chunk:00000",
+        "score": 31.328569784019574
+      },
+      {
+        "doc_id": "PMID:32783919",
+        "chunk_id": "PMID:32783919:chunk:00000",
+        "score": 30.484381723312914
+      },
+      {
+        "doc_id": "PMID:35663946",
+        "chunk_id": "PMID:35663946:chunk:00000",
+        "score": 30.159132036509305
+      },
+      {
+        "doc_id": "PMID:35771353",
+        "chunk_id": "PMID:35771353:chunk:00000",
+        "score": 29.98835310727157
+      },
+      {
+        "doc_id": "PMID:37085495",
+        "chunk_id": "PMID:37085495:chunk:00000",
+        "score": 29.131805400280783
+      },
+      {
+        "doc_id": "PMID:38569556",
+        "chunk_id": "PMID:38569556:chunk:00000",
+        "score": 29.116543024188985
+      }
+    ],
+    "truncated_saved_hit_rows": 0,
+    "same_query_budget_equivalence_verified": true
+  },
+  {
+    "task_id": "probe_aggregation",
+    "query": "meta analysis immune checkpoint inhibitor melanoma overall survival studies",
+    "wall_seconds": 0.0012183748185634613,
+    "process_peak_rss_before_bytes": 680853504,
+    "process_peak_rss_after_bytes": 680853504,
+    "query_tokens": [
+      "meta",
+      "analysis",
+      "immune",
+      "checkpoint",
+      "inhibitor",
+      "melanoma",
+      "overall",
+      "survival",
+      "studies"
+    ],
+    "oov_tokens": [],
+    "positive_scoring_chunks": 7381,
+    "prefix_chunk_count": 29,
+    "candidate_docs": [
+      "PMID:34806404",
+      "PMID:37840031",
+      "PMID:36007304",
+      "PMID:41705252",
+      "PMID:36539429",
+      "PMID:33881961",
+      "PMID:35658500",
+      "PMID:34854905",
+      "PMID:36511268",
+      "PMID:35726793",
+      "PMID:39573989",
+      "PMID:39596506",
+      "PMID:36389713",
+      "PMID:40918459",
+      "PMID:38659099",
+      "PMID:33082209",
+      "PMID:41693007",
+      "PMID:32516130",
+      "PMID:36715018",
+      "PMID:33877531",
+      "PMID:33290361",
+      "PMID:39102624",
+      "PMID:41694351",
+      "PMID:34774004"
+    ],
+    "bounded_chunk_hits": [
+      {
+        "doc_id": "PMID:34806404",
+        "chunk_id": "PMID:34806404:chunk:00000",
+        "score": 23.54010597184649
+      },
+      {
+        "doc_id": "PMID:37840031",
+        "chunk_id": "PMID:37840031:chunk:00000",
+        "score": 22.82151607765621
+      },
+      {
+        "doc_id": "PMID:36007304",
+        "chunk_id": "PMID:36007304:chunk:00000",
+        "score": 22.741694701899682
+      },
+      {
+        "doc_id": "PMID:41705252",
+        "chunk_id": "PMID:41705252:chunk:00002",
+        "score": 22.47824225298254
+      },
+      {
+        "doc_id": "PMID:36539429",
+        "chunk_id": "PMID:36539429:chunk:00010",
+        "score": 21.70641743100294
+      },
+      {
+        "doc_id": "PMID:33881961",
+        "chunk_id": "PMID:33881961:chunk:00000",
+        "score": 21.66566791238946
+      },
+      {
+        "doc_id": "PMID:35658500",
+        "chunk_id": "PMID:35658500:chunk:00000",
+        "score": 21.175839200885445
+      },
+      {
+        "doc_id": "PMID:34854905",
+        "chunk_id": "PMID:34854905:chunk:00007",
+        "score": 20.66130427377168
+      },
+      {
+        "doc_id": "PMID:36511268",
+        "chunk_id": "PMID:36511268:chunk:00000",
+        "score": 20.650417994146334
+      },
+      {
+        "doc_id": "PMID:35726793",
+        "chunk_id": "PMID:35726793:chunk:00000",
+        "score": 20.477613745612935
+      },
+      {
+        "doc_id": "PMID:39573989",
+        "chunk_id": "PMID:39573989:chunk:00004",
+        "score": 20.035319189921072
+      },
+      {
+        "doc_id": "PMID:39596506",
+        "chunk_id": "PMID:39596506:chunk:00000",
+        "score": 19.923641160403204
+      },
+      {
+        "doc_id": "PMID:41705252",
+        "chunk_id": "PMID:41705252:chunk:00000",
+        "score": 19.65737897495433
+      },
+      {
+        "doc_id": "PMID:36389713",
+        "chunk_id": "PMID:36389713:chunk:00000",
+        "score": 19.650629704965382
+      },
+      {
+        "doc_id": "PMID:40918459",
+        "chunk_id": "PMID:40918459:chunk:00001",
+        "score": 19.506740679584745
+      },
+      {
+        "doc_id": "PMID:38659099",
+        "chunk_id": "PMID:38659099:chunk:00000",
+        "score": 19.499546908375095
+      },
+      {
+        "doc_id": "PMID:33881961",
+        "chunk_id": "PMID:33881961:chunk:00003",
+        "score": 18.900457279034256
+      },
+      {
+        "doc_id": "PMID:33082209",
+        "chunk_id": "PMID:33082209:chunk:00000",
+        "score": 18.81157183207914
+      },
+      {
+        "doc_id": "PMID:41693007",
+        "chunk_id": "PMID:41693007:chunk:00000",
+        "score": 18.693464933987133
+      },
+      {
+        "doc_id": "PMID:36539429",
+        "chunk_id": "PMID:36539429:chunk:00000",
+        "score": 18.487599940819663
+      },
+      {
+        "doc_id": "PMID:32516130",
+        "chunk_id": "PMID:32516130:chunk:00000",
+        "score": 18.412854089006288
+      },
+      {
+        "doc_id": "PMID:36715018",
+        "chunk_id": "PMID:36715018:chunk:00000",
+        "score": 18.393701480698297
+      },
+      {
+        "doc_id": "PMID:33877531",
+        "chunk_id": "PMID:33877531:chunk:00000",
+        "score": 18.334206443724312
+      },
+      {
+        "doc_id": "PMID:33290361",
+        "chunk_id": "PMID:33290361:chunk:00006",
+        "score": 18.324356581954785
+      }
+    ],
+    "truncated_saved_hit_rows": 5,
+    "same_query_budget_equivalence_verified": true
+  },
+  {
+    "task_id": "probe_negative",
+    "query": "metformin randomized trial no improvement cancer survival negative results",
+    "wall_seconds": 0.0012992080301046371,
+    "process_peak_rss_before_bytes": 680853504,
+    "process_peak_rss_after_bytes": 680853504,
+    "query_tokens": [
+      "metformin",
+      "randomized",
+      "trial",
+      "no",
+      "improvement",
+      "cancer",
+      "survival",
+      "negative",
+      "results"
+    ],
+    "oov_tokens": [],
+    "positive_scoring_chunks": 7312,
+    "prefix_chunk_count": 29,
+    "candidate_docs": [
+      "PMID:34309236",
+      "PMID:38453657",
+      "PMID:34121170",
+      "PMID:38847087",
+      "PMID:40003982",
+      "PMID:40947345",
+      "PMID:33447926",
+      "PMID:38100555",
+      "PMID:37528319",
+      "PMID:35220243",
+      "PMID:40918459",
+      "PMID:38861290",
+      "PMID:33620732",
+      "PMID:31816432",
+      "PMID:31256356",
+      "PMID:37849764",
+      "PMID:33881961",
+      "PMID:33815284",
+      "PMID:38961439",
+      "PMID:35247086",
+      "PMID:41407398",
+      "PMID:39422949",
+      "PMID:38358334",
+      "PMID:35623069"
+    ],
+    "bounded_chunk_hits": [
+      {
+        "doc_id": "PMID:34309236",
+        "chunk_id": "PMID:34309236:chunk:00003",
+        "score": 21.485198249620417
+      },
+      {
+        "doc_id": "PMID:38453657",
+        "chunk_id": "PMID:38453657:chunk:00007",
+        "score": 21.361631114070804
+      },
+      {
+        "doc_id": "PMID:34121170",
+        "chunk_id": "PMID:34121170:chunk:00004",
+        "score": 19.53857125196422
+      },
+      {
+        "doc_id": "PMID:38847087",
+        "chunk_id": "PMID:38847087:chunk:00002",
+        "score": 19.523031330805047
+      },
+      {
+        "doc_id": "PMID:40003982",
+        "chunk_id": "PMID:40003982:chunk:00017",
+        "score": 18.471752188410687
+      },
+      {
+        "doc_id": "PMID:38453657",
+        "chunk_id": "PMID:38453657:chunk:00002",
+        "score": 17.610348243683067
+      },
+      {
+        "doc_id": "PMID:40947345",
+        "chunk_id": "PMID:40947345:chunk:00000",
+        "score": 17.230593972238076
+      },
+      {
+        "doc_id": "PMID:33447926",
+        "chunk_id": "PMID:33447926:chunk:00006",
+        "score": 16.87468163659341
+      },
+      {
+        "doc_id": "PMID:38100555",
+        "chunk_id": "PMID:38100555:chunk:00022",
+        "score": 16.150437030311426
+      },
+      {
+        "doc_id": "PMID:37528319",
+        "chunk_id": "PMID:37528319:chunk:00007",
+        "score": 15.95388369464167
+      },
+      {
+        "doc_id": "PMID:38453657",
+        "chunk_id": "PMID:38453657:chunk:00006",
+        "score": 15.911993978448503
+      },
+      {
+        "doc_id": "PMID:35220243",
+        "chunk_id": "PMID:35220243:chunk:00000",
+        "score": 15.897288098063994
+      },
+      {
+        "doc_id": "PMID:40918459",
+        "chunk_id": "PMID:40918459:chunk:00008",
+        "score": 15.82144476307786
+      },
+      {
+        "doc_id": "PMID:38453657",
+        "chunk_id": "PMID:38453657:chunk:00004",
+        "score": 15.625829808926225
+      },
+      {
+        "doc_id": "PMID:38861290",
+        "chunk_id": "PMID:38861290:chunk:00005",
+        "score": 15.264532325167188
+      },
+      {
+        "doc_id": "PMID:33620732",
+        "chunk_id": "PMID:33620732:chunk:00002",
+        "score": 15.066880757840387
+      },
+      {
+        "doc_id": "PMID:38861290",
+        "chunk_id": "PMID:38861290:chunk:00001",
+        "score": 15.060479269268924
+      },
+      {
+        "doc_id": "PMID:38100555",
+        "chunk_id": "PMID:38100555:chunk:00015",
+        "score": 15.051327345426868
+      },
+      {
+        "doc_id": "PMID:31816432",
+        "chunk_id": "PMID:31816432:chunk:00000",
+        "score": 15.009286296992352
+      },
+      {
+        "doc_id": "PMID:31256356",
+        "chunk_id": "PMID:31256356:chunk:00000",
+        "score": 14.973155314200543
+      },
+      {
+        "doc_id": "PMID:37849764",
+        "chunk_id": "PMID:37849764:chunk:00001",
+        "score": 14.893747768919585
+      },
+      {
+        "doc_id": "PMID:33881961",
+        "chunk_id": "PMID:33881961:chunk:00004",
+        "score": 14.85244793712244
+      },
+      {
+        "doc_id": "PMID:33815284",
+        "chunk_id": "PMID:33815284:chunk:00000",
+        "score": 14.649508959780915
+      },
+      {
+        "doc_id": "PMID:38961439",
+        "chunk_id": "PMID:38961439:chunk:00000",
+        "score": 14.56807522175764
+      }
+    ],
+    "truncated_saved_hit_rows": 5,
+    "same_query_budget_equivalence_verified": true
+  }
+]

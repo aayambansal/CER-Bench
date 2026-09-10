@@ -1,0 +1,62 @@
+{
+  "version": "v1.1-component-disjoint",
+  "seed": 20260826,
+  "components": 233,
+  "largest_component": 7,
+  "assignment_cost": 0.0,
+  "split_sizes": {
+    "dev": 64,
+    "test": 120,
+    "train": 120
+  },
+  "family_counts": {
+    "train": {
+      "temporal": 15,
+      "abstention": 15,
+      "contradiction": 15,
+      "aggregation": 15,
+      "negative": 15,
+      "multihop": 15,
+      "constraint": 15,
+      "comparative": 15
+    },
+    "dev": {
+      "temporal": 8,
+      "constraint": 8,
+      "multihop": 8,
+      "negative": 8,
+      "aggregation": 8,
+      "contradiction": 8,
+      "abstention": 8,
+      "comparative": 8
+    },
+    "test": {
+      "negative": 15,
+      "temporal": 15,
+      "comparative": 15,
+      "multihop": 15,
+      "aggregation": 15,
+      "constraint": 15,
+      "abstention": 15,
+      "contradiction": 15
+    }
+  },
+  "cross_split_overlap": {
+    "train-dev": {
+      "documents": 0,
+      "exact_questions": 0
+    },
+    "train-test": {
+      "documents": 0,
+      "exact_questions": 0
+    },
+    "dev-test": {
+      "documents": 0,
+      "exact_questions": 0
+    }
+  },
+  "lexical_near_duplicate_threshold": 0.85,
+  "lexical_near_duplicate_pairs_grouped": 8,
+  "cross_split_lexical_near_duplicates": 0,
+  "construction_warning": "Tasks were generated before component assignment; this split removes document and exact-query leakage but not generation-template similarity."
+}

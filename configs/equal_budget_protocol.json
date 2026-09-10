@@ -1,0 +1,14 @@
+{
+  "protocol_version": "equal-budget-v2",
+  "candidate_unique_doc_cap": 24,
+  "rounds": 3,
+  "new_docs_per_round": 8,
+  "selector_top_k": 20,
+  "primary_selector": "original_query_rank_restricted_to_candidates",
+  "diagnostic_selector": "RRF_k60",
+  "snippet_char_cap": 420,
+  "no_accumulated_evidence": "latest_round_only_with_query_history",
+  "heuristic": "question_plus_first_and_last_24_unique_tokens_not_RM3",
+  "live_enabled": false,
+  "compute_equality_claimed": false
+}

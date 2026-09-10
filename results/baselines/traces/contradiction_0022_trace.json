@@ -1,0 +1,25 @@
+[
+  {
+    "round": 0,
+    "action": {
+      "action": "SEARCH",
+      "query": "antibiotics metabolic disorders androgen deficiency cancer treatment immune checkpoint inhibitor contradictory findings"
+    }
+  },
+  {
+    "round": 1,
+    "action": {
+      "action": "REFINE",
+      "reasoning": "Need more specific papers on antibiotics preventing androgen deficiency metabolic disorders and antibiotics impairing checkpoint inhibitor therapy. Current results have some relevant papers but need clearer evidence of the contradictory effects.",
+      "query": "antibiotics prevent androgen deficiency metabolic syndrome gut microbiota"
+    }
+  },
+  {
+    "round": 2,
+    "action": {
+      "action": "REFINE",
+      "reasoning": "Need to find specific studies showing antibiotics impairing immune checkpoint inhibitor efficacy to contrast with the metabolic benefits. Current results don't clearly show the contradictory effects.",
+      "query": "antibiotics reduce efficacy immune checkpoint inhibitors PD-1 pembrolizumab nivolumab gut microbiota"
+    }
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "source": "results/readiness/qrel_disclosure/v2/summary.json",
+  "source_sha256": "789b3d90d0ffbff386194885894ef233b046c6f1989d82b7c8c63ef0d3af1de8",
+  "script_sha256": "5af92f0c2b9e28073245097504d899b222f29a3e327c2fa495fcc1e24e041189",
+  "pdf_sha256": "f894804e39cc87ed69926525c16536d7ccaca95e7071690b9016e7154ca1c7a8",
+  "new_computation": "presentation_only_same_saved_statistics",
+  "systems_shown": 10,
+  "highlighted_systems": [
+    "agent",
+    "bge",
+    "splade",
+    "hybrid"
+  ],
+  "empirical_intervals_not_population_confidence": true
+}

@@ -1,0 +1,13 @@
+{
+  "measurement": "Actual single-process wall time without tracemalloc. RSS is cumulative process-lifetime high water including interpreter/native allocations, not a phase-specific delta.",
+  "build": {
+    "wall_seconds": 3.1444906247779727,
+    "process_peak_rss_before_bytes": 43614208,
+    "process_peak_rss_after_bytes": 573014016
+  },
+  "verified_load": {
+    "wall_seconds": 2.1896192501299083,
+    "process_peak_rss_before_bytes": 573014016,
+    "process_peak_rss_after_bytes": 680853504
+  }
+}

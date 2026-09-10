@@ -1,0 +1,24 @@
+{
+  "status": "verified",
+  "full_configured_repository_suite": true,
+  "suite_command": "python -m pytest -q --junitxml=results/readiness/verified_bm25/real_corpus_v2/all_tests.xml",
+  "counts": {
+    "tests": 311,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0
+  },
+  "human_validation": false,
+  "live": false,
+  "synthetic": false,
+  "label_status": "unscored_retrieval_smoke_no_qrels",
+  "executed_model_calls": 0,
+  "summary_provenance_id": "d833bada0b973b033da0b1402d10b2a5592c532e8dd7eb567f0db4e6ac7b3749",
+  "summary_sha256": "2851969cd27235cbb9e08201dfcb007544fd80de652cba7cec1326e3ea6e2e8a",
+  "native_manifest_sha256": "d0c50bbea3f8daac62736857befa7dc26ad45916fe7a33150ac4755dc08af883",
+  "tests_xml_sha256": "5bc775afcceb2ffb67800aa812c143885bcedb43f1fe93f9755cc6956f887bf8",
+  "verification_code_sha256": "366278fd925e1ec355b09ebe49fa88e0bee6d0f4574f35c4e9af45c7611f5af7",
+  "current_source_bindings_verified": 79,
+  "runtime_bindings_verified": 213,
+  "historical_files_unchanged": 43
+}

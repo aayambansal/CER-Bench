@@ -1,0 +1,11 @@
+STDOUT
+
+STDERR
+Traceback (most recent call last):
+  File "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/scripts/43_validate_human_labels.py", line 263, in <module>
+    main()
+  File "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/scripts/43_validate_human_labels.py", line 256, in main
+    require(args.report.resolve().is_relative_to(args.kit.resolve()), 'Report must stay inside v2 kit directory')
+  File "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/scripts/43_validate_human_labels.py", line 22, in require
+    raise ValueError(message)
+ValueError: Report must stay inside v2 kit directory

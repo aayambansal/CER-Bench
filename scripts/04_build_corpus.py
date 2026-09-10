@@ -22,7 +22,23 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from src.utils.config import load_config, get_data_dir
+from src.corpus.identity import identity_index, normalize_id, unique
+
+
+def validate_build_inputs(metadata_rows, parsed_rows):
+    """Fail before writing: copied PMCID keys alone do not establish identity."""
+    canonical = [{"pmid": normalize_id(r["pmid"], "PMID")} for r in metadata_rows]
+    unique(canonical, "pmid")
+    aliases = identity_index(metadata_rows)
+    if any(len(values) != 1 for values in aliases.values()):
+        raise ValueError("Conflicting metadata identity aliases; run identity audit")
+    parsed_ids = [{"pmcid": normalize_id(r["pmcid"], "PMCID")} for r in parsed_rows]
+    unique(parsed_ids, "pmcid")
+    for row in parsed_rows:
+        pmcid = normalize_id(row["pmcid"], "PMCID")
+        if pmcid in aliases:
+            if not row.get("pmid") or normalize_id(row["pmid"], "PMID") not in aliases[pmcid]:
+                raise ValueError("Parsed fulltext lacks matching independent PMID evidence; merge blocked")
 
 
 def _estimate_tokens(text: str) -> int:
@@ -170,6 +186,12 @@ def chunk_document(doc: dict, config: dict) -> list[dict]:
 
 
 def main():
+    # Fail even when optional historical YAML dependencies are unavailable.
+    processed = Path(__file__).resolve().parents[1] / "data/processed"
+    if any((processed / name).exists() for name in ("corpus.jsonl", "chunks.jsonl", "corpus_stats.json")):
+        raise FileExistsError("Historical corpus output exists; use 39_audit_repair_identity.py for a new candidate")
+    from src.utils.config import load_config, get_data_dir
+
     config = load_config("corpus")
     chunking_config = config.get("chunking", {})
 
@@ -184,6 +206,8 @@ def main():
     with open(metadata_path) as f:
         for line in f:
             rec = json.loads(line)
+            if rec["pmid"] in metadata:
+                raise ValueError(f"Duplicate metadata PMID: {rec['pmid']}")
             metadata[rec["pmid"]] = rec
 
     print(f"  Loaded {len(metadata)} metadata records")
@@ -196,17 +220,22 @@ def main():
         with open(parsed_path) as f:
             for line in f:
                 doc = json.loads(line)
+                if doc["pmcid"] in parsed:
+                    raise ValueError(f"Duplicate parsed PMCID: {doc['pmcid']}")
                 parsed[doc["pmcid"]] = doc
         print(f"  Loaded {len(parsed)} parsed documents")
     else:
         print("  No parsed documents found — using abstracts only")
 
     # Merge metadata + parsed text
+    validate_build_inputs(list(metadata.values()), list(parsed.values()))
     print("\nMerging and building corpus...")
     t0 = time.time()
 
     corpus_path = get_data_dir("processed") / "corpus.jsonl"
     chunks_path = get_data_dir("processed") / "chunks.jsonl"
+    if any(p.exists() for p in (corpus_path, chunks_path, corpus_path.parent / "corpus_stats.json")):
+        raise FileExistsError("Refusing to overwrite existing corpus outputs")
 
     total_docs = 0
     total_chunks = 0

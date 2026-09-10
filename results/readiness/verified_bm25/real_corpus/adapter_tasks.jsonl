@@ -1,0 +1,8 @@
+{"task_id": "probe_constraint", "task_family": "constraint", "split": "dev", "question": "EGFR inhibitor resistance human lung cancer cell line assay"}
+{"task_id": "probe_comparative", "task_family": "comparative", "split": "dev", "question": "CRISPR knockout compared with RNA interference gene silencing efficiency"}
+{"task_id": "probe_contradiction", "task_family": "contradiction", "split": "dev", "question": "autophagy inhibition increases decreases cancer cell survival conflicting evidence"}
+{"task_id": "probe_abstention", "task_family": "abstention", "split": "dev", "question": "quantum entanglement treatment reverses inherited mitochondrial disease clinical trial"}
+{"task_id": "probe_multihop", "task_family": "multihop", "split": "dev", "question": "BRCA1 homologous recombination deficiency PARP inhibitor synthetic lethality"}
+{"task_id": "probe_temporal", "task_family": "temporal", "split": "dev", "question": "SARS CoV 2 vaccine neutralizing antibodies variants 2020 2024"}
+{"task_id": "probe_aggregation", "task_family": "aggregation", "split": "dev", "question": "meta analysis immune checkpoint inhibitor melanoma overall survival studies"}
+{"task_id": "probe_negative", "task_family": "negative", "split": "dev", "question": "metformin randomized trial no improvement cancer survival negative results"}

@@ -1,0 +1,25 @@
+[
+  {
+    "round": 0,
+    "action": {
+      "action": "SEARCH",
+      "query": "CRISPR genome engineering C. elegans targeted genome modification methodological approaches"
+    }
+  },
+  {
+    "round": 1,
+    "action": {
+      "action": "REFINE",
+      "reasoning": "Need specific papers on microbiota modulation strategies for metabolic disorders to compare with CRISPR approaches",
+      "query": "gut microbiota modulation therapeutic interventions metabolic disorders methodological strategies"
+    }
+  },
+  {
+    "round": 2,
+    "action": {
+      "action": "REFINE",
+      "reasoning": "Need papers that specifically compare methodological approaches or discuss both CRISPR genome editing and microbiota modulation strategies together",
+      "query": "CRISPR genome editing versus microbiota modulation therapeutic strategies methodological comparison"
+    }
+  }
+]

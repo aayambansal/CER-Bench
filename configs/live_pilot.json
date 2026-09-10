@@ -1,0 +1,18 @@
+{
+  "approved": false,
+  "provider": "openai",
+  "model": null,
+  "input_usd_per_million": null,
+  "output_usd_per_million": null,
+  "input_token_reserve": 32768,
+  "output_token_reserve": 400,
+  "timeout_seconds": 60,
+  "max_retries": 0,
+  "max_attempts": 42,
+  "max_usd": 50,
+  "model_evidence": null,
+  "pricing_evidence": null,
+  "token_reserve_evidence": null,
+  "input_verification": null,
+  "conditions": ["original_top24", "repeated_original_3x8", "heuristic_keywords_3x8", "one_shot_rewrite", "upfront_three_queries", "evidence_feedback", "no_accumulated_evidence"]
+}

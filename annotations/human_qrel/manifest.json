@@ -1,0 +1,11 @@
+{
+  "seed": 20260826,
+  "supported_queries": 108,
+  "pooled_pairs": 3240,
+  "out_of_pool_pairs": 540,
+  "qrel_pairs_total": 3780,
+  "abstention_queries": 17,
+  "abstention_pairs_total": 1700,
+  "required_annotators_per_pair": 2,
+  "expert_adjudication": "all relevance/role disagreements and any UNCERTAIN label"
+}

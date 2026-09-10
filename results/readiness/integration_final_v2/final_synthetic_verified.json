@@ -1,0 +1,348 @@
+{
+  "calibration": {
+    "dev_count": 3,
+    "max_risk": 0.1,
+    "method": "empirical_dev_only",
+    "policy": "confidence >= threshold",
+    "selected_point": {
+      "answered": 1,
+      "coverage": 0.3333333333333333,
+      "judged": 1,
+      "risk": 0.0,
+      "threshold": 0.9
+    },
+    "status": "selected",
+    "threshold": 0.9,
+    "warning": "descriptive calibration; no conformal or population risk guarantee; task-ID disjointness is not component disjointness"
+  },
+  "configuration": {
+    "allow_proxy": false,
+    "annotations": "examples/evaluation_contract/annotations.json",
+    "calibration": "examples/evaluation_contract/calibration.json",
+    "calibration_split": "dev",
+    "corpus": "examples/evaluation_contract/corpus.json",
+    "max_risk": 0.1,
+    "missing_policy": "error",
+    "output": "results/readiness/integration_final_v2/final_synthetic_verified.json",
+    "runs": "examples/evaluation_contract/runs.json",
+    "selective_judgments": "examples/evaluation_contract/selective_judgments.json",
+    "structural_k": 10,
+    "tasks": "examples/evaluation_contract/tasks.json"
+  },
+  "documents": {
+    "coverage": {
+      "actual": 4,
+      "expected": 4,
+      "fraction": 1.0,
+      "missing": 0,
+      "missing_task_ids": []
+    },
+    "judgments": {
+      "empty_gold": 1,
+      "missing": 1,
+      "nonempty": 2
+    },
+    "metrics": {
+      "MRR": {
+        "denominator": 2,
+        "value": 1.0
+      },
+      "Recall@10": {
+        "denominator": 2,
+        "value": 0.75
+      },
+      "Recall@20": {
+        "denominator": 2,
+        "value": 0.75
+      },
+      "Recall@5": {
+        "denominator": 2,
+        "value": 0.75
+      },
+      "nDCG@10": {
+        "denominator": 2,
+        "value": 0.8183412193664159
+      }
+    },
+    "missing_policy": "error",
+    "per_task": [
+      {
+        "metrics": {
+          "MRR": 1.0,
+          "Recall@10": 1.0,
+          "Recall@20": 1.0,
+          "Recall@5": 1.0,
+          "nDCG@10": 1.0
+        },
+        "missing_output_penalty": false,
+        "output_present": true,
+        "status": "evaluated",
+        "task_id": "synthetic-constraint"
+      },
+      {
+        "metrics": {
+          "MRR": 1.0,
+          "Recall@10": 0.5,
+          "Recall@20": 0.5,
+          "Recall@5": 0.5,
+          "nDCG@10": 0.6366824387328317
+        },
+        "missing_output_penalty": false,
+        "output_present": true,
+        "status": "evaluated",
+        "task_id": "synthetic-path"
+      },
+      {
+        "metrics": {
+          "MRR": null,
+          "Recall@10": null,
+          "Recall@20": null,
+          "Recall@5": null,
+          "nDCG@10": null
+        },
+        "missing_output_penalty": false,
+        "output_present": true,
+        "status": "empty_gold",
+        "task_id": "synthetic-empty"
+      },
+      {
+        "metrics": {
+          "MRR": null,
+          "Recall@10": null,
+          "Recall@20": null,
+          "Recall@5": null,
+          "nDCG@10": null
+        },
+        "missing_output_penalty": false,
+        "output_present": true,
+        "status": "missing_judgments",
+        "task_id": "synthetic-unjudged"
+      }
+    ],
+    "schema_version": "cerbench.evaluation.v1",
+    "status": "evaluated"
+  },
+  "hashes": {
+    "algorithm": "sha256",
+    "inputs": {
+      "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/examples/evaluation_contract/annotations.json": "fd04733cd0531922a3b2ab88a4e9d799ec8eee3dc8c5f22bc5efb992b69582e7",
+      "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/examples/evaluation_contract/calibration.json": "793f49f7925fb40e19aeb19d62f520c425fd36090c52b5bab26ea6933b2dd524",
+      "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/examples/evaluation_contract/corpus.json": "de3b251f65f962e62e8a7459cfb099e4c90434d2c4687d20b40ea6a8a015dde6",
+      "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/examples/evaluation_contract/runs.json": "6b1db2836b879bf0a00f432b1ef1c9be290854e4f5d5d177e1d2fba139b08fc5",
+      "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/examples/evaluation_contract/selective_judgments.json": "26c9882bb79a3b27f3d81d0608d3ca788deae6543d5a7f9c99eafac0dbb76801",
+      "/Users/aayambansal/Desktop/research/research-repos/CERBench/analysis/synthetic-science-search/examples/evaluation_contract/tasks.json": "379e72de31404f2a83291c6094d19cdf0496d70e25f18f9fe3ed3432b813b6fe"
+    },
+    "scripts": {
+      "scripts/40_evaluate_validated_runs.py": "2b479218a9b8379782a3b42865da4f1f99fa1d101120ade57952c4ce6cc829b1",
+      "src/evaluation/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "src/evaluation/selective.py": "45d5e0e56300f2f848b635d105d5790712ead47d8a499c99c746d3befabb4947",
+      "src/evaluation/strict_metrics.py": "2d5284ffabd3a904dbb17591b6716489f8070c6d788d384be06b2010bfb149e1",
+      "src/evaluation/structural_metrics.py": "57e65e2c156eb2601d58f90c760760fa1273345fb91c0e539425be2852a58c23"
+    }
+  },
+  "schema_version": "cerbench.evaluation.v1",
+  "selective": {
+    "actual": 4,
+    "answered": 2,
+    "coverage": 0.5,
+    "decisions": {
+      "ABSTAIN": 1,
+      "ANSWER": 2,
+      "UNCERTAIN": 1
+    },
+    "expected": 4,
+    "judged_answers": 2,
+    "missing_answer_judgments": 0,
+    "missing_outputs": 0,
+    "observed_judged_answer_risk": 1.0,
+    "risk_coverage": [
+      {
+        "answered": 0,
+        "coverage": 0.0,
+        "judged": 0,
+        "risk": null,
+        "threshold": null
+      },
+      {
+        "answered": 2,
+        "coverage": 0.5,
+        "judged": 2,
+        "risk": 1.0,
+        "threshold": 0.8
+      }
+    ],
+    "risk_coverage_scope": "submitted ANSWER candidates only",
+    "selective_risk": 1.0,
+    "status": "evaluated",
+    "support_confusion": {
+      "ABSTAIN": {
+        "supported": 0,
+        "unjudged": 0,
+        "unsupported": 1
+      },
+      "ANSWER": {
+        "supported": 2,
+        "unjudged": 0,
+        "unsupported": 0
+      },
+      "UNCERTAIN": {
+        "supported": 0,
+        "unjudged": 1,
+        "unsupported": 0
+      }
+    }
+  },
+  "status": "completed",
+  "structural": {
+    "by_family": {
+      "comparative": {
+        "descriptive_proxy": {
+          "denominator": 0,
+          "metrics": {
+            "family_success": null,
+            "set_completion": null,
+            "unit_coverage": null
+          }
+        },
+        "evaluated": {
+          "denominator": 0,
+          "metrics": {
+            "family_success": null,
+            "set_completion": null,
+            "unit_coverage": null
+          }
+        },
+        "not_evaluated": 1
+      },
+      "constraint": {
+        "descriptive_proxy": {
+          "denominator": 0,
+          "metrics": {
+            "family_success": null,
+            "set_completion": null,
+            "unit_coverage": null
+          }
+        },
+        "evaluated": {
+          "denominator": 1,
+          "metrics": {
+            "family_success": 0.0,
+            "set_completion": 1.0,
+            "unit_coverage": 1.0
+          }
+        },
+        "not_evaluated": 0
+      },
+      "multihop": {
+        "descriptive_proxy": {
+          "denominator": 0,
+          "metrics": {
+            "family_success": null,
+            "set_completion": null,
+            "unit_coverage": null
+          }
+        },
+        "evaluated": {
+          "denominator": 1,
+          "metrics": {
+            "family_success": 0.0,
+            "set_completion": 1.0,
+            "unit_coverage": 1.0
+          }
+        },
+        "not_evaluated": 0
+      },
+      "negative_result": {
+        "descriptive_proxy": {
+          "denominator": 0,
+          "metrics": {
+            "family_success": null,
+            "set_completion": null,
+            "unit_coverage": null
+          }
+        },
+        "evaluated": {
+          "denominator": 0,
+          "metrics": {
+            "family_success": null,
+            "set_completion": null,
+            "unit_coverage": null
+          }
+        },
+        "not_evaluated": 1
+      }
+    },
+    "cutoff": 10,
+    "per_task": [
+      {
+        "denominator": 1,
+        "metrics": {
+          "family_success": 0,
+          "set_completion": 1,
+          "unit_coverage": 1.0
+        },
+        "missing_output_penalty": false,
+        "output_present": true,
+        "status": "evaluated",
+        "task_family": "constraint",
+        "task_id": "synthetic-constraint",
+        "warnings": []
+      },
+      {
+        "denominator": 1,
+        "metrics": {
+          "family_success": 0,
+          "set_completion": 1,
+          "unit_coverage": 1.0
+        },
+        "missing_output_penalty": false,
+        "output_present": true,
+        "status": "evaluated",
+        "task_family": "multihop",
+        "task_id": "synthetic-path",
+        "warnings": []
+      },
+      {
+        "denominator": 0,
+        "metrics": null,
+        "missing_output_penalty": false,
+        "output_present": true,
+        "reason": "missing_annotation",
+        "status": "not_evaluated",
+        "task_family": "negative_result",
+        "task_id": "synthetic-empty"
+      },
+      {
+        "denominator": 0,
+        "metrics": null,
+        "missing_output_penalty": false,
+        "output_present": true,
+        "reason": "missing_annotation",
+        "status": "not_evaluated",
+        "task_family": "comparative",
+        "task_id": "synthetic-unjudged"
+      }
+    ],
+    "status": "evaluated",
+    "summary": {
+      "descriptive_proxy": {
+        "denominator": 0,
+        "metrics": {
+          "family_success": null,
+          "set_completion": null,
+          "unit_coverage": null
+        }
+      },
+      "evaluated": {
+        "denominator": 2,
+        "metrics": {
+          "family_success": 0.0,
+          "set_completion": 1.0,
+          "unit_coverage": 1.0
+        }
+      },
+      "not_evaluated": 2
+    }
+  },
+  "warnings": []
+}

@@ -1,0 +1,80 @@
+{
+  "significance_tests": {
+    "bm25_recall@10": {
+      "p": 0.2132,
+      "diff": 0.0185
+    },
+    "bm25_recall@20": {
+      "p": 0.0004,
+      "diff": 0.0756
+    },
+    "dense_recall@10": {
+      "p": 0.0,
+      "diff": 0.1883
+    },
+    "dense_recall@20": {
+      "p": 0.0,
+      "diff": 0.1991
+    },
+    "hybrid_recall@10": {
+      "p": 0.1189,
+      "diff": 0.0262
+    },
+    "hybrid_recall@20": {
+      "p": 0.0456,
+      "diff": 0.0417
+    },
+    "hybrid_reranked_recall@10": {
+      "p": 0.0,
+      "diff": 0.1806
+    },
+    "hybrid_reranked_recall@20": {
+      "p": 0.0,
+      "diff": 0.1836
+    },
+    "agent_single_step_recall@10": {
+      "p": 0.0,
+      "diff": 0.1435
+    },
+    "agent_single_step_recall@20": {
+      "p": 0.0,
+      "diff": 0.2438
+    }
+  },
+  "cost_table": {
+    "bm25": {
+      "latency_per_task_s": 0.3,
+      "cost_per_task_usd": 0.0,
+      "infra": "CPU"
+    },
+    "dense": {
+      "latency_per_task_s": 0.5,
+      "cost_per_task_usd": 0.0001,
+      "infra": "GPU (embed) + CPU (search)"
+    },
+    "hybrid": {
+      "latency_per_task_s": 0.6,
+      "cost_per_task_usd": 0.0001,
+      "infra": "CPU + GPU"
+    },
+    "hybrid_reranked": {
+      "latency_per_task_s": 1.2,
+      "cost_per_task_usd": 0.0002,
+      "infra": "CPU + GPU + Reranker"
+    },
+    "agent": {
+      "latency_per_task_s": 17.2,
+      "cost_per_task_usd": 0.08,
+      "infra": "CPU + LLM API (3 rounds)"
+    },
+    "agent_single_step": {
+      "latency_per_task_s": 5.7,
+      "cost_per_task_usd": 0.03,
+      "infra": "CPU + LLM API (1 round)"
+    }
+  },
+  "pool_stats": {
+    "avg_pool_size": 52.0,
+    "avg_non_gold": 50.4
+  }
+}

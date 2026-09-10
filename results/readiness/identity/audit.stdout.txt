@@ -1,0 +1,47 @@
+{
+  "version": "identity-repair-v1-candidate",
+  "release_blocked": true,
+  "original": {
+    "corpus_records": 4936,
+    "unique_doc_ids": 4923,
+    "chunk_records": 17902,
+    "unique_chunk_ids": 17770,
+    "tasks": 304
+  },
+  "candidate": {
+    "corpus_records": 4936,
+    "chunk_records": 4856,
+    "tasks": 238,
+    "task_source_splits": {
+      "train": 91,
+      "dev": 47,
+      "test": 100
+    },
+    "fulltext_records": 0,
+    "documents_without_retained_chunks": 80
+  },
+  "quarantine": {
+    "corpus_records": 0,
+    "chunk_records": 13046,
+    "tasks": 66
+  },
+  "conflicting_aliases": 124,
+  "invalid_metadata": [],
+  "raw_xml_records": 645,
+  "raw_xml_status_counts": {
+    "local_front_identity": 642,
+    "unreadable_identity": 3
+  },
+  "parsed_records": 645,
+  "parsed_records_with_valid_pmcid": 645,
+  "raw_front_pmid_disagreement_records": 58,
+  "fulltext_records_removed": 652,
+  "unresolved": [
+    "Local metadata identity is not externally adjudicated; PMCID claims are removed from active candidate fields.",
+    "All parsed/fulltext content is excluded. Renaming IDs does not repair misattached fulltext or scientific claims.",
+    "Tasks touching original fulltext-bearing/conflicted records are excluded, not regenerated or reassigned.",
+    "Prose, constraints and answers remain synthetic/unverified and may contain legacy citations; explicit per-task citation maps are provided.",
+    "Old indices, qrels, results, and historical splits remain invalidated for candidate use; nothing is migrated implicitly.",
+    "Previously exposed test tasks are not fresh test data. This candidate is not gold or release-ready."
+  ]
+}

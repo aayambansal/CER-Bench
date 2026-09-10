@@ -1,0 +1,57 @@
+{
+  "byte_identical_independent_runs": true,
+  "commands": [
+    {
+      "command": [
+        "/Users/aayambansal/.config/openscience/data-root/conda/envs/python/bin/python",
+        "-m",
+        "pytest",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_qrel_sensitivity.py",
+        "tests/test_strict_metrics.py",
+        "--junitxml=results/readiness/qrel_sensitivity/tests_final.xml"
+      ],
+      "expected": 0,
+      "returncode": 0
+    },
+    {
+      "command": [
+        "/Users/aayambansal/.config/openscience/data-root/conda/envs/python/bin/python",
+        "scripts/44_analyze_historical_qrel_sensitivity.py",
+        "--output",
+        "results/readiness/qrel_sensitivity/v1_final"
+      ],
+      "expected": 1,
+      "returncode": 1
+    },
+    {
+      "command": [
+        "/Users/aayambansal/.config/openscience/data-root/conda/envs/python/bin/python",
+        "scripts/44_analyze_historical_qrel_sensitivity.py",
+        "--output",
+        "results/readiness/qrel_sensitivity/v1_repeat"
+      ],
+      "expected": 1,
+      "returncode": 1
+    }
+  ],
+  "diagnostic_status": "fail",
+  "historical_inputs_unchanged_count": 20,
+  "manifest_hashes_verified": true,
+  "numerical_outputs_absent_as_required": true,
+  "output_sha256": {
+    "FAILURE.json": "55ea4e22ef9e1f1dcbe312f4ef028b2b1e833c624acee996e90d7d0eed4124e4",
+    "INPUT_AUDIT.json": "9ec64d1a1bc3a2856442c43fd1f2a0ea03ec718adc2d2b647c657bb31964842e",
+    "REPORT.md": "19a3ac5b96b3ea8527162a1b9d7c8f74b2fd327fb4913e8b3b08f76d10e7e3a5",
+    "manifest.json": "8aa25d947b1817f8d1a68cce3900d87b225f9c125980241be599308081efdf16"
+  },
+  "release_blocked": true,
+  "test_outputs_sha256": {
+    "tests_final.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests_final.stdout.txt": "b1883e163f66ae9f7588f8978102bfcb0267c6f3f5b42bf2458054ef274e8aad",
+    "tests_final.xml": "cbf18c3e74145d2298ff4c03e975ec2e9923f3bf225f471f524cb16ac014986f"
+  },
+  "verification_script_sha256": "c2b7494839538dfc19b9dba10fb6cfb7cf1fd8db3f536f658a12f09449e9010d",
+  "verification_status": "passed"
+}

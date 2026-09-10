@@ -1,0 +1,1102 @@
+[
+  {
+    "task_id": "constraint_0089",
+    "task_family": "constraint",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "constraint_0062",
+    "task_family": "constraint",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "constraint_0003",
+    "task_family": "constraint",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "constraint_0063",
+    "task_family": "constraint",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "constraint_0084",
+    "task_family": "constraint",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "constraint_0005",
+    "task_family": "constraint",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "constraint_0077",
+    "task_family": "constraint",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "constraint_0002",
+    "task_family": "constraint",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "constraint_0087",
+    "task_family": "constraint",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "constraint_0006",
+    "task_family": "constraint",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "constraint_0076",
+    "task_family": "constraint",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "constraint_0073",
+    "task_family": "constraint",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "constraint_0079",
+    "task_family": "constraint",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "constraint_0009",
+    "task_family": "constraint",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "comparative_0013",
+    "task_family": "comparative",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "comparative_0091",
+    "task_family": "comparative",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "comparative_0118",
+    "task_family": "comparative",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "comparative_0012",
+    "task_family": "comparative",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "comparative_0097",
+    "task_family": "comparative",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "comparative_0098",
+    "task_family": "comparative",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "comparative_0017",
+    "task_family": "comparative",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "comparative_0100",
+    "task_family": "comparative",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "comparative_0113",
+    "task_family": "comparative",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "comparative_0016",
+    "task_family": "comparative",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "comparative_0095",
+    "task_family": "comparative",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "comparative_0011",
+    "task_family": "comparative",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "comparative_0108",
+    "task_family": "comparative",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "comparative_0092",
+    "task_family": "comparative",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "contradiction_0020",
+    "task_family": "contradiction",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "contradiction_0124",
+    "task_family": "contradiction",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "contradiction_0147",
+    "task_family": "contradiction",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "contradiction_0128",
+    "task_family": "contradiction",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "contradiction_0138",
+    "task_family": "contradiction",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "contradiction_0022",
+    "task_family": "contradiction",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "contradiction_0127",
+    "task_family": "contradiction",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "contradiction_0120",
+    "task_family": "contradiction",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "contradiction_0125",
+    "task_family": "contradiction",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "contradiction_0131",
+    "task_family": "contradiction",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "contradiction_0133",
+    "task_family": "contradiction",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "contradiction_0144",
+    "task_family": "contradiction",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "contradiction_0149",
+    "task_family": "contradiction",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "multihop_0196",
+    "task_family": "multihop",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "multihop_0194",
+    "task_family": "multihop",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "multihop_0208",
+    "task_family": "multihop",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "multihop_0035",
+    "task_family": "multihop",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "multihop_0181",
+    "task_family": "multihop",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "multihop_0207",
+    "task_family": "multihop",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "multihop_0189",
+    "task_family": "multihop",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "multihop_0040",
+    "task_family": "multihop",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "multihop_0190",
+    "task_family": "multihop",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "multihop_0198",
+    "task_family": "multihop",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "multihop_0180",
+    "task_family": "multihop",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "multihop_0179",
+    "task_family": "multihop",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "multihop_0209",
+    "task_family": "multihop",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "multihop_0186",
+    "task_family": "multihop",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "temporal_0239",
+    "task_family": "temporal",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "temporal_0231",
+    "task_family": "temporal",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "temporal_0227",
+    "task_family": "temporal",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "temporal_0238",
+    "task_family": "temporal",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "temporal_0224",
+    "task_family": "temporal",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "temporal_0047",
+    "task_family": "temporal",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "temporal_0240",
+    "task_family": "temporal",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "temporal_0226",
+    "task_family": "temporal",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "temporal_0044",
+    "task_family": "temporal",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "temporal_0235",
+    "task_family": "temporal",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "temporal_0237",
+    "task_family": "temporal",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "temporal_0236",
+    "task_family": "temporal",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "aggregation_0249",
+    "task_family": "aggregation",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "aggregation_0267",
+    "task_family": "aggregation",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "aggregation_0049",
+    "task_family": "aggregation",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "aggregation_0264",
+    "task_family": "aggregation",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "aggregation_0270",
+    "task_family": "aggregation",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "aggregation_0266",
+    "task_family": "aggregation",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "aggregation_0257",
+    "task_family": "aggregation",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "aggregation_0259",
+    "task_family": "aggregation",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "aggregation_0246",
+    "task_family": "aggregation",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "aggregation_0244",
+    "task_family": "aggregation",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "aggregation_0272",
+    "task_family": "aggregation",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "aggregation_0050",
+    "task_family": "aggregation",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "aggregation_0258",
+    "task_family": "aggregation",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "aggregation_0269",
+    "task_family": "aggregation",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "negative_0285",
+    "task_family": "negative",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "negative_0277",
+    "task_family": "negative",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "negative_0275",
+    "task_family": "negative",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "negative_0302",
+    "task_family": "negative",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "negative_0287",
+    "task_family": "negative",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "negative_0279",
+    "task_family": "negative",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "negative_0286",
+    "task_family": "negative",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "negative_0296",
+    "task_family": "negative",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "negative_0056",
+    "task_family": "negative",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "negative_0055",
+    "task_family": "negative",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "negative_0303",
+    "task_family": "negative",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "negative_0299",
+    "task_family": "negative",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "abstention_0033",
+    "task_family": "abstention",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "abstention_0034",
+    "task_family": "abstention",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "abstention_0150",
+    "task_family": "abstention",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "abstention_0153",
+    "task_family": "abstention",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "abstention_0154",
+    "task_family": "abstention",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "abstention_0155",
+    "task_family": "abstention",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "abstention_0158",
+    "task_family": "abstention",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "abstention_0159",
+    "task_family": "abstention",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "abstention_0160",
+    "task_family": "abstention",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "abstention_0165",
+    "task_family": "abstention",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "abstention_0166",
+    "task_family": "abstention",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "abstention_0167",
+    "task_family": "abstention",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "abstention_0170",
+    "task_family": "abstention",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "abstention_0171",
+    "task_family": "abstention",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "abstention_0173",
+    "task_family": "abstention",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "abstention_0174",
+    "task_family": "abstention",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  },
+  {
+    "task_id": "abstention_0177",
+    "task_family": "abstention",
+    "annotation_status": "unvalidated",
+    "required_units": [],
+    "evidence_units": {},
+    "valid_pairs": [],
+    "valid_paths": [],
+    "provenance": {}
+  }
+]

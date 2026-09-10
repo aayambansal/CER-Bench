@@ -1,0 +1,11 @@
+{
+  "schema": "verified-retrieval-dataset-v1",
+  "status": "synthetic_structural",
+  "corpus_id": "fiction-structural-1729-48-3",
+  "identity_validated": true,
+  "canonical_ids_unique": true,
+  "document_count": 48,
+  "chunk_count": 144,
+  "corpus_sha256": "b3256660f3481078918bb455974064e8f57054f5ec18ef74ababe6529cb654d8",
+  "chunks_sha256": "9f45754e912ea76fc2278f3d8b3fc3a086d32ed3ca3dbc6a5cea9c0c557af36d"
+}

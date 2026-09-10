@@ -1,0 +1,6 @@
+[
+  {"task_id":"synthetic-constraint","retrieved_doc_ids":["syn-a","syn-b"],"decision":"ANSWER","confidence":0.8},
+  {"task_id":"synthetic-path","retrieved_doc_ids":["syn-a","syn-d"],"decision":"ANSWER","confidence":0.8},
+  {"task_id":"synthetic-empty","retrieved_doc_ids":[],"decision":"ABSTAIN","confidence":0.9},
+  {"task_id":"synthetic-unjudged","retrieved_doc_ids":[],"decision":"UNCERTAIN","confidence":0.2}
+]
